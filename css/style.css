@@ -102,8 +102,10 @@ code {
 
 }
 
-.block-title { background-color: #FFF; padding-bottom: 450px; }
+.block-title { background-color: #FFF; padding-bottom: 300px; }
 .block-title h2 { color: #000; }
+.block-title .meta { font-size: 16px; color: #999; }
+.block-title .meta a { font-size: 16px; color: #000; }
 .block-setup { background-color: #348fd4; }
 .block-setup h2 { color: #06406c; }
 .block-setup a { color: #FFF; font-size: 40px; font-weight: normal;font-style: normal; background-color: #06406c; padding: 10px 15px; border-radius: 10px; text-decoration: none; }
