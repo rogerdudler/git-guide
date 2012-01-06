@@ -129,6 +129,11 @@
             <code>git reset --hard HEAD</code><br />
             this reverts your local repository (working dir, index and HEAD) to the last committed version. if you want to keep your working version, use <i>--mixed</i> instead of <i>--hard</i>.
         </p>
+        <p>
+            To revert your changes to the latest remote version you need to use these two commands<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
     </div>
     <div class="scrollblock block-hints">
         <h2>useful hints</h2>
