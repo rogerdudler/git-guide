@@ -24,6 +24,14 @@ h2 {
 	text-transform: lowercase;
 }
 
+h3 {
+	font-size: 40px;
+	font-weight: normal;
+	margin: 0;
+    margin-top: 40px;
+	text-transform: lowercase;
+}
+
 p {
 	width: 960px;
 	margin: 40px auto;
@@ -85,8 +93,6 @@ code {
 .block-title h2 { color: #000; }
 .block-title .meta { font-size: 16px; color: #999; }
 .block-title .meta a { font-size: 16px; color: #000; }
-.block-title ul { list-style: disc; margin: 0; padding: 0; }
-.block-title ul li a { font-size: 18px; color: #348fd4; }
 .block-setup { background-color: #348fd4; }
 .block-setup h2 { color: #06406c; }
 .block-setup h2 a { background: none; padding: 0; font-size: normal; }
@@ -116,8 +122,11 @@ code {
 .block-tagging h2 { color: #FFF; }
 .block-hints { background-color: #F2F2F2; }
 .block-hints h2 { color: #FFF; }
-.block-resources { background-color: #F2F2F2; }
-.block-resources h2 { color: #FFF; }
+.block-resources { background-color: #ffc19f; }
+.block-resources h2 { color: #cc4037; }
+.block-resources h3 { color: #7d1f19; }
+.block-resources ul { list-style: disc; margin: 0; padding: 0; }
+.block-resources ul li a { font-size: 24px; color: #cc4037; }
 .block-tagging { background-color: #348fd4; }
 .block-tagging h2 { color: #06406c; }
 .block-hints { background-color: #06406c; }
