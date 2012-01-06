@@ -1,14 +1,3 @@
-/*
-	COLORS
- 
-	Dark Blue 		#222438
-	Medium Blue		#69697A
-	Light Blue	 	#C5C3DE
-	Yellow			#FFB000
-	Red				#D92B00
-	
-*/
-
 body {
 	background: #FFF;
 	font-family: Georgia, Times New Roman, Times, serif;
@@ -35,18 +24,8 @@ h2 {
 	text-transform: lowercase;
 }
 
-h3 {
-	font-size: 40px;
-	font-weight: normal;
-	margin: 0;
-	color: #D92B00;
-	text-shadow: 0 2px 1px #000;
-    font-family: 'Alfa Slab One', cursive;
-	text-transform: uppercase;
-}
-
 p {
-	width: 80%;
+	width: 960px;
 	margin: 40px auto;
 	color: #000;
     line-height: 200%;
@@ -106,8 +85,11 @@ code {
 .block-title h2 { color: #000; }
 .block-title .meta { font-size: 16px; color: #999; }
 .block-title .meta a { font-size: 16px; color: #000; }
+.block-title ul { list-style: disc; margin: 0; padding: 0; }
+.block-title ul li a { font-size: 18px; color: #348fd4; }
 .block-setup { background-color: #348fd4; }
 .block-setup h2 { color: #06406c; }
+.block-setup h2 a { background: none; padding: 0; font-size: normal; }
 .block-setup a { color: #FFF; font-size: 40px; font-weight: normal;font-style: normal; background-color: #06406c; padding: 10px 15px; border-radius: 10px; text-decoration: none; }
 .block-setup a:hover { text-decoration: underline; }
 .block-create { background-color: #06406c; }
