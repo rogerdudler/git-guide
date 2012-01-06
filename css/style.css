@@ -7,20 +7,20 @@ body {
 }
 
 h1 {
-	font-size: 90px;
+	font-size: 60px;
 	font-weight: normal;
 	margin: 0;
-    font-family: 'Cabin Condensed', sans-serif;
-	color: #000;
+    font-family: 'Chelsea Market', cursive;
+    color: #000;
 	line-height: 1;
 }
 
 h2 {
-	font-size: 100px;
+	font-size: 70px;
 	font-weight: normal;
 	margin: 0;
 	color: #FFB000;
-    font-family: 'Cabin Condensed', sans-serif;
+    font-family: 'Chelsea Market', cursive;
 	text-transform: lowercase;
 }
 
