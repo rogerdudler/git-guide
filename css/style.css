@@ -1,0 +1,146 @@
+/*
+	COLORS
+ 
+	Dark Blue 		#222438
+	Medium Blue		#69697A
+	Light Blue	 	#C5C3DE
+	Yellow			#FFB000
+	Red				#D92B00
+	
+*/
+
+body {
+	background: #FFF;
+	font-family: Georgia, Times New Roman, Times, serif;
+	font-size: 30px;
+	text-align: center;
+    margin-top: 60px;
+}
+
+h1 {
+	font-size: 80px;
+	font-weight: normal;
+	margin: 0;
+    font-family: 'Cabin Condensed', sans-serif;
+	color: #000;
+	line-height: 1;
+}
+
+h2 {
+	font-size: 100px;
+	font-weight: normal;
+	margin: 0;
+	color: #FFB000;
+    font-family: 'Cabin Condensed', sans-serif;
+	text-transform: lowercase;
+}
+
+h3 {
+	font-size: 40px;
+	font-weight: normal;
+	margin: 0;
+	color: #D92B00;
+	text-shadow: 0 2px 1px #000;
+    font-family: 'Alfa Slab One', cursive;
+	text-transform: uppercase;
+}
+
+p {
+	width: 80%;
+	margin: 40px auto;
+	color: #000;
+    line-height: 200%;
+}
+
+a, a:visited {
+	color: #D92B00;
+	font-weight: bold;
+	font-style: italic;
+}
+
+ul {
+	list-style: none;
+}
+
+.download {
+	padding: 10px;
+}
+
+pre {
+	font-size: 18px;
+}
+
+blockquote {
+	text-align: left;
+	width: 720px;
+	margin: 10px auto;
+	background: #C5C3DE;
+	border: solid 2px #69697A;
+	padding: 0 40px;
+}
+
+code {
+    background-color: #000;
+	font-style: normal;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 15px;
+    font-family: menlo, monospace;
+}
+
+/*----------------------------------------  BLOCKS */
+
+.scrollblock {
+	position: relative;
+	margin: 0;
+	width: 100%;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.scrollblock h2 {
+
+}
+
+.block-title { background-color: #FFF; padding-bottom: 500px; }
+.block-title h2 { color: #000; }
+.block-setup { background-color: #348fd4; }
+.block-setup h2 { color: #06406c; }
+.block-setup a { color: #FFF; font-size: 40px; font-weight: normal;font-style: normal; background-color: #06406c; padding: 10px 15px; border-radius: 10px; text-decoration: none; }
+.block-setup a:hover { text-decoration: underline; }
+.block-create { background-color: #06406c; }
+.block-create h2 { color: #FFF; }
+.block-create p { color: #FFF; }
+.block-create code { background-color: #000; color: #FFF; }
+.block-checkout { background-color: #FFF; }
+.block-checkout h2 { color: #000; }
+.block-trees { background-color: #4c0d09; }
+.block-trees h2 { color: #d3b2af; }
+.block-trees p { color: #d3b2af; }
+.block-trees code { color: #000; background-color: white; }
+.block-add { background-color: #cc4037; }
+.block-add h2, .block-add p { color: #4c0d09; }
+.block-remote { background-color: #ffc19f; }
+.block-remote h2 { color: #cc4037; }
+.block-branching { background-color: #000; }
+.block-branching h2 { color: #FFF; }
+.block-branching p { color: #DDD; }
+.block-branching code { color: #000; background-color: white; }
+.block-merging { background-color: #F2F2F2; }
+.block-merging h2 { color: #666; }
+.block-tagging { background-color: #F2F2F2; }
+.block-tagging h2 { color: #FFF; }
+.block-hints { background-color: #F2F2F2; }
+.block-hints h2 { color: #FFF; }
+.block-resources { background-color: #F2F2F2; }
+.block-resources h2 { color: #FFF; }
+.block-tagging { background-color: #348fd4; }
+.block-tagging h2 { color: #06406c; }
+.block-hints { background-color: #06406c; }
+.block-hints h2 { color: #FFF; }
+.block-hints p { color: #FFF; }
+.block-hints code { background-color: #000; color: #FFF; }
+.block-revert { background-color: #fff8c9; }
+.block-revert h2 { color: #2d2700; }
+.block-revert p { color: #615400; }
