@@ -138,8 +138,8 @@
         <h2>reverting changes</h2>
         <p>
             In case you did something wrong (which for sure never happens ;) you can revert changes using the command<br />
-            <code>git reset --hard HEAD</code><br />
-            this reverts your local repository (working dir, index and HEAD) to the last committed version. if you want to keep your working version, drop <i>--hard</i>.
+            <code>git checkout -- &lt;filename&gt;</code><br />
+            this reverts your local repository to the last committed version on HEAD.
         </p>
         <p>
             To revert your changes to the latest remote version you need to use these two commands<br />
