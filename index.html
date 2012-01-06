@@ -100,9 +100,11 @@
             Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
         </p>
         <p>
-            create a new branch named "feature_x" using<br />
+            create a new branch named "feature_x" and switch to it using<br />
             <code>git checkout -b feature_x</code><br />
-            or delete it<br />
+            switch back to master<br />
+            <code>git checkout master</code><br />
+            and delete the branch again<br />
             <code>git branch -d feature_x</code><br />
             a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
             <code>git push origin &lt;branch&gt;</code>
