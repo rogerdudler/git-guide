@@ -133,6 +133,6 @@ code {
 .block-hints h2 { color: #FFF; }
 .block-hints p { color: #FFF; }
 .block-hints code { background-color: #000; color: #FFF; }
-.block-revert { background-color: #fff8c9; }
-.block-revert h2 { color: #2d2700; }
-.block-revert p { color: #615400; }
+.block-checkout-replace { background-color: #fff8c9; }
+.block-checkout-replace h2 { color: #2d2700; }
+.block-checkout-replace p { color: #615400; }
