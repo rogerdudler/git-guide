@@ -138,4 +138,5 @@ code {
 .block-checkout-replace p { color: #615400; }
 .block-comments { background-color: #FFF; padding-bottom: 50px; font-size: 14px; color: #000; }
 .block-comments h2 { color: #000; }
-.block-comments p { color: #000; }
+.block-comments #disqus-thread { width: 960px; }
+
