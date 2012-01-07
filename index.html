@@ -99,15 +99,15 @@
     <div class="scrollblock block-branching">
         <h2>branching</h2>
         <p>
-            Branches are used to develop features isolated from the <i>master</i> branch. You should <b>never</b> commit directly to the <i>master</i> branch. Use other branches and merge them back to the master branch. So, the master branch will be kept clean.
+            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            create a new branch named "feature_x" using<br />
+            create a new branch named "feature_x" and switch to it using<br />
             <code>git checkout -b feature_x</code><br />
-            rename it to "abc" using<br />
-            <code>git branch -m feature_x abc</code><br />
-            or delete it<br />
+            switch back to master<br />
+            <code>git checkout master</code><br />
+            and delete the branch again<br />
             <code>git branch -d feature_x</code><br />
             a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
             <code>git push origin &lt;branch&gt;</code>
@@ -141,16 +141,16 @@
             you can also use less characters of the commit id, it just has to be unique.
         </p>
     </div>
-    <a name="revert"></a>
-    <div class="scrollblock block-revert">
-        <h2>reverting changes</h2>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>replace local changes</h2>
         <p>
-            In case you did something wrong (which for sure never happens ;) you can revert changes using the command<br />
+            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
-            this reverts your local repository to the last committed version on HEAD.
+            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
         </p>
         <p>
-            To revert your changes to the latest remote version you need to use these two commands<br />
+            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
@@ -159,6 +159,8 @@
     <div class="scrollblock block-hints">
         <h2>useful hints</h2>
         <p>
+            built-in git GUI<br />
+            <code>gitk</code><br />
             use colorful git output<br />
             <code>git config color.ui</code><br />
             show log on just one line per commit<br />
@@ -173,6 +175,7 @@
         <h3>graphical clients</h3>
         <p>
             <ul>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
                 <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
                 <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, free)</a></li>
                 <li><a href="http://mac.github.com/">GitHub for Mac (OSX, GitHub only, free)</a></li>
