@@ -140,9 +140,25 @@
         <p>
             it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id with <br />
+            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id by looking at the... <br />
+        </p>
+    </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>log</h2>
+        <p>
+            in its simplest form, you can study repository history using..
             <code>git log</code><br />
-            you can also use fewer characters of the commit id, it just has to be unique.
+            You can add a lot of parameters to make the log look like what you want. To see only the commits of a certain author:<br />
+            <code>git log --author=bob</code><br />
+            To see a very compressed log where each commit is one line:<br />
+            <code>git log --pretty=oneline</code><br />
+            Or mabe you want to see an ASCII art tree of all the branches, decorated with the names of tags and branches: <br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            See only which files have changed: <br />
+            <code>git log --name-status</code><br />
+            These are just a few of the possible parameters you can use. For more, see 
+            <code>git log --help</code><br />
         </p>
     </div>
     <a name="checkout-replace"></a>
