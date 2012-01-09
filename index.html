@@ -18,6 +18,15 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $("#linux_link").click(function() {
+        $("#linux_install").toggle("slow");
+        return false;
+      });
+    });
+    </script>
 </head>
 <body>
     <div class="scrollblock block-title">
@@ -35,6 +44,15 @@
     <a name="setup"></a>
     <div class="scrollblock block-setup">
         <h2>setup</h2>
+        <p>
+            <a href="" id="linux_link">Install git on Linux</a>
+        </p>
+        <ul id="linux_install">
+            <li>
+                Debian, Ubuntu, Linux Mint, ...<br>
+                <code>$ sudo apt-get install git</code>
+            </li>
+        </ul>
         <p>
             <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Download git for OSX</a>
         </p>

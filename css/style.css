@@ -48,6 +48,15 @@ ul {
 	list-style: none;
 }
 
+ul#linux_install {
+    margin-top: 0;
+    display: none;
+}
+
+ul#linux_install li {
+    line-height: 1.5em;
+}
+
 .download {
 	padding: 10px;
 }
