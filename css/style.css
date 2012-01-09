@@ -10,7 +10,7 @@ h1 {
 	font-size: 60px;
 	font-weight: normal;
 	margin: 0;
-    font-family: 'Chelsea Market', cursive;
+    font-family: 'Chelsea Market', Georgia, serif;
     color: #000;
 	line-height: 1;
 }
@@ -20,7 +20,7 @@ h2 {
 	font-weight: normal;
 	margin: 0;
 	color: #FFB000;
-    font-family: 'Chelsea Market', cursive;
+    font-family: 'Chelsea Market', Georgia, serif;
 	text-transform: lowercase;
 }
 
