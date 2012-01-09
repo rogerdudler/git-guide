@@ -7,7 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-652147-13']);
       _gaq.push(['_trackPageview']);
@@ -17,17 +17,17 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    </script>-->
+    </script>
 </head>
 <body>
     <div class="scrollblock block-title">
         <h1>git - petit guide</h1>
 		<p>juste un petit guide pour bien d&eacute;marrer avec git. <!-- UNTRANSLATED -->no deep shit ;)</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-related="rogerdudler" data-hashtags="git">Tweet</a>
-        <!--<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>-->
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
             par <a href="http://www.rogerdudler.com">Roger Dudler</a>
-            <br /><!-- UNTRANSLATED -->Credits to <a href="http://www.twitter.com/tfnico">@tfnico</a> et <a href="http://www.twitter.com/fhd">@fhd</a>
+            <br />Remerciements &agrave; <a href="http://www.twitter.com/tfnico">@tfnico</a> et <a href="http://www.twitter.com/fhd">@fhd</a>
         </p>
         <img src="img/arrow.png" alt="" />
     </div>
@@ -53,7 +53,7 @@
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>mettre &agrave; jour un d&eacute;p&ocirc;t</h2>
+        <h2>cloner un d&eacute;p&ocirc;t</h2>
         <p>
 			cr&eacute;ez une copie de votre d&eacute;p&ocirc;t local en ex&eacute;cutant la commande<br />
             <code>git clone /path/to/repository</code><br />
@@ -81,7 +81,7 @@
             <code>git add *</code><br />
 			C'est la premi&egrave;re &eacute;tape dans un workflow git basique. Pour valider ces changements, utilisez<br />
             <code>git commit -m "Message de commit"</code><br />
-			Le fichier est donc ajout&eacute; &agrave; le <b>HEAD</b>, mais pas encore dans votre d&eacute;p&ocirc;t distant.
+			Le fichier est donc ajout&eacute; au <b>HEAD</b>, mais pas encore dans votre d&eacute;p&ocirc;t distant.
         </p>
     </div>
     <a name="push"></a>
@@ -120,64 +120,64 @@
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>update &amp; merge</h2>
+        <h2>mettre &agrave; jour &amp; fusionner</h2>
         <p>
-            to update your local repository to the newest commit, execute <br />
+			pour mettre &agrave; jour votre d&eacute;p&ocirc;t local vers les derni&egrave;res validations, ex&eacute;cutez la commande<br />
             <code>git pull</code><br />
-            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
-            to merge another branch into your active branch (e.g. master), use<br />
+			dans votre espace de travail pour <i>r&eacute;cup&eacute;rer</i> et <i>fusionner</i> les changements distants.<br />
+			pour fusionner une autre branche avec la branche active (par exemple master), utilisez<br />
             <code>git merge &lt;branch&gt;</code><br />
-            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
-            You are responsible to merge those <i>conflicts</i>
-            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
+			dans les deux cas, git tentre d'auto-fusionner les changements. Malheureusement, &ccedil;a n'est pas toujours possible et r&eacute;sulte par des <i>conflits</i>.
+			Vous devez alors r&eacute;gler ces <i>conflits</i>
+			manuellement en &eacute;ditant les fichiers indiqu&eacute;s par git. Apr&egrave;s l'avoir fait, vous devez les marquer comme fusionn&eacute;s avec<br />
             <code>git add &lt;filename&gt;</code><br />
-            before merging changes, you can also preview them by using<br />
+			apr&egrave;s avoir fusionn&eacute; les changements, vous pouvez en avoir un aper&ccedil;u en utilisant<br />
             <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
         </p>
     </div>
     <a name="tagging"></a>
     <div class="scrollblock block-tagging">
-        <h2>tagging</h2>
+        <h2>tags</h2>
         <p>
-            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
+			il est recommand&eacute; de cr&eacute;er des tags pour les releases de programmes. c'est un concept connu, qui existe aussi dans SVN. Vous pouvez cr&eacute;er un tag nomm&eacute; <i>1.0.0</i> en ex&eacute;cutant la commande<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id with <br />
+			le <i>1b2e1d63ff</i> d&eacute;signe les 10 premiers caract&egrave;res de l'identifiant du changement que vous voulez r&eacute;f&eacute;rencer avec ce tag. Vous pouvez obtenir cet identifiant avec <br />
             <code>git log</code><br />
-            you can also use less characters of the commit id, it just has to be unique.
+			vous pouvez utiliser moins de caract&egrave;res de cet identifiant, il doit juste rester unique.
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
+        <h2>remplacer les changements locaux</h2>
         <p>
-            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
+			Dans le cas o&ugrave; vous auriez fait quelque chose de travers (ce qui bien entendu n'arrive jamais ;) vous pouvez annuler les changements locaux en utilisant cette commande<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+			cela remplacera les changements dans votre arbre de travail avec le dernier contenu du HEAD. Les changements d&eacute;j&agrave; ajout&eacute;s &agrave; l'index, aussi bien les nouveaux fichiers, seront gard&eacute;s.
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+			Si &agrave; la place vous voulez supprimer tous les changements et validations locaux, r&eacute;cup&eacute;rez le dernier historique depuis le serveur et pointez la branche principale locale dessus comme ceci<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>useful hints</h2>
+        <h2>conseils utiles</h2>
         <p>
-            built-in git GUI<br />
+			Interface git incluse<br />
             <code>gitk</code><br />
-            use colorful git output<br />
+			utiliser des couleurs dans la sortie de git<br />
             <code>git config color.ui</code><br />
-            show log on just one line per commit<br />
+			afficher le journal sur une seule ligne pour chaque validation<br />
             <code>git config format.pretty oneline</code><br />
-            use interactive adding<br />
+			utiliser l'ajout interactif<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
-        <h2>links & resources</h2>
-        <h3>graphical clients</h3>
+        <h2>liens et ressources</h2>
+        <h3>clients graphiques</h3>
         <p>
             <ul>
                 <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
@@ -199,9 +199,9 @@
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
-        <h2>comments</h2>
+        <h2>commentaires</h2>
         <div id="disqus_thread"></div>
-        <!--<script type="text/javascript">
+        <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
 
@@ -212,7 +212,7 @@
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
 </body>
 </html>
