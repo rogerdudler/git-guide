@@ -151,3 +151,12 @@ code {
     background: #FFF url(../img/git-tower.png) no-repeat;
 }
 
+.cheatsheet {
+    display: block;
+    width: 180px;
+    height: 250px;
+    position: absolute;
+    top: 346px;
+    left: 0;
+    background: #FFF url(../img/cheatsheet.png) no-repeat;
+}
