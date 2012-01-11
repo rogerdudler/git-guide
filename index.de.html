@@ -17,6 +17,10 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+      function recordOutboundLink(link, category, action) {
+       _gat._getTrackerByName()._trackEvent(category, action);
+       setTimeout('document.location = "' + link.href + '"', 100);
+      }
     </script>
 </head>
 <body>
@@ -217,6 +221,6 @@
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-    <a href="http://www.git-tower.com/?source=rd" class="tower"></a>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
 </body>
 </html>
