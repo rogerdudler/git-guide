@@ -3,7 +3,7 @@ body {
 	font-family: Georgia, Times New Roman, Times, serif;
 	font-size: 30px;
 	text-align: center;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 h1 {
@@ -140,4 +140,14 @@ code {
 .block-comments h2 { color: #000; }
 .block-comments h3 { font-size: 16px; }
 .block-comments #disqus_thread { width: 600px; margin-left: auto; margin-right: auto; }
+
+.tower {
+    display: block;
+    width: 180px;
+    height: 260px;
+    position: absolute;
+    top: 330px;
+    right: 0;
+    background: #FFF url(../img/git-tower.png) no-repeat;
+}
 
