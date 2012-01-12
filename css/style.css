@@ -3,7 +3,8 @@ body {
 	font-family: Georgia, Times New Roman, Times, serif;
 	font-size: 30px;
 	text-align: center;
-    margin-top: 40px;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -42,6 +43,11 @@ p {
 a, a:visited {
 	color: #000;
     font-size: 12px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 ul {
@@ -92,7 +98,7 @@ code {
 .block-title { background-color: #FFF; padding-bottom: 50px; }
 .block-title h2 { color: #000; }
 .block-title .meta { font-size: 16px; color: #999; }
-.block-title .meta a { font-size: 16px; color: #000; }
+.block-title .meta a { font-size: 16px; color: #333; }
 .block-setup { background-color: #348fd4; }
 .block-setup h2 { color: #06406c; }
 .block-setup h2 a { background: none; padding: 0; font-size: normal; }
