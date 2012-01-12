@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - guia simples - sem enrola&ccedil;&atilde;o!</title>
+	<title>git - guia pr&aacute;tico - sem enrola&ccedil;&atilde;o!</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
@@ -26,8 +26,8 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git - guia simples</h1>
-        <p>apenas um guia simples para começar com git. sem enrolação ;)</p>
+        <h1>git - guia pr&aacute;tico</h1>
+        <p>apenas um guia pr&aacute;tico para come&ccedil;ar com git. sem enrola&ccedil;&atilde;o ;)</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
@@ -63,22 +63,22 @@
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>obtenha um repositório</h2>
+        <h2>obtenha um reposit&oacute;rio</h2>
         <p>
-            crie uma cópia de trabalho em um repositório local executando o comando<br />
-            <code>git clone /caminho/para/o/repositório</code><br />
-            quando usar um servidor remoto, seu comando será<br />
-            <code>git clone usuário@servidor:/caminho/para/o/repositório</code>
+            crie uma c&oacute;pia de trabalho em um reposit&oacute;rio local executando o comando<br />
+            <code>git clone /caminho/para/o/reposit&oacute;rio</code><br />
+            quando usar um servidor remoto, seu comando ser&aacute;<br />
+            <code>git clone usu&aacute;rio@servidor:/caminho/para/o/reposit&oacute;rio</code>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
         <h2>fluxo de trabalho</h2>
         <p>
-            seus repositório local consiste em três "árvores" mantidas pelo git.
-            a primeira delas é sua <code>Working Directory</code> que contém os arquivos vigentes.
-            a segunda <code>Index</code> que funciona como uma área temporária e
-            finalmente a <code>HEAD</code> que aponta para a última confirmação que você fez.
+            seus reposit&oacute;rio local consiste em tr&ecirc;s "&aacute;rvores" mantidas pelo git.
+            a primeira delas &eacute; sua <code>Working Directory</code> que cont&eacute;m os arquivos vigentes.
+            a segunda <code>Index</code> que funciona como uma &aacute;rea tempor&aacute;ria e
+            finalmente a <code>HEAD</code> que aponta para a &uacute;ltima confirma&ccedil;&atilde;o que voc&ecirc; fez.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
@@ -86,25 +86,25 @@
     <div class="scrollblock block-add">
         <h2>adicionar &amp; confirmar</h2>
         <p>
-            Você pode propor mudanças (adicioná-las ao <b>Index</b>) usando<br />
+            Voc&ecirc; pode propor mudan&ccedil;as (adicion&aacute;-las ao <b>Index</b>) usando<br />
             <code>git add &lt;arquivo&gt;</code><br />
             <code>git add *</code><br />
-            Este é o primeiro passo no fluxo de trabalho básico do git. Para realmente confirmar estas mudanças use<br />
-            <code>git commit -m "comentários das alterações"</code><br />
-            Agora o arquivo é enviado para o <b>HEAD</b>, mas ainda não para o repositório remoto.
+            Este &eacute; o primeiro passo no fluxo de trabalho b&aacute;sico do git. Para realmente confirmar estas mudan&ccedil;as use<br />
+            <code>git commit -m "coment&aacute;rios das altera&ccedil;&otilde;es"</code><br />
+            Agora o arquivo &eacute; enviado para o <b>HEAD</b>, mas ainda n&atilde;o para o reposit&oacute;rio remoto.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>enviando alterações</h2>
+        <h2>enviando altera&ccedil;&otilde;es</h2>
         <p>
-            Suas alterações agora estão no <b>HEAD</b> do sua cópia de trabalho local. Para enviar estas alterações ao seu repositório remoto, execute <br />
+            Suas altera&ccedil;&otilde;es agora est&atilde;o no <b>HEAD</b> do sua c&oacute;pia de trabalho local. Para enviar estas altera&ccedil;&otilde;es ao seu reposit&oacute;rio remoto, execute <br />
             <code>git push origin master</code><br />
-            Altere <i>master</i> para qualquer ramificação desejada, enviando suas alterações para ela.
+            Altere <i>master</i> para qualquer ramifica&ccedil;&atilde;o desejada, enviando suas altera&ccedil;&otilde;es para ela.
             <br /><br />
-            Se você não clonou um repositório existente e quer conectar seu repositório a um servdor remoto, você deve adicioná-lo com<br />
+            Se voc&ecirc; n&atilde;o clonou um reposit&oacute;rio existente e quer conectar seu reposit&oacute;rio a um servidor remoto, voc&ecirc; deve adicion&aacute;-lo com<br />
             <code>git remote add origin &lt;servidor&gt;</code><br />
-            Agora você é capaz de enviar suas alterações para o servidor remoto selecionado.<br />
+            Agora voc&ecirc; &eacute; capaz de enviar suas altera&ccedil;&otilde;es para o servidor remoto selecionado.<br />
 
         </p>
     </div>
@@ -112,7 +112,7 @@
     <div class="scrollblock block-branching">
         <h2>ramificando</h2>
         <p>
-            Ramos são utilizados para desenvolver funcionalidades isoladas umas das outras. O ramo <i>master</i> é o ramo "padrão" quando você cria um repositório. Use outros ramos para desenvolver e mescle-os ao ramo master após a conclusão.
+            Ramos s&atilde;o utilizados para desenvolver funcionalidades isoladas umas das outras. O ramo <i>master</i> &eacute; o ramo "padr&atilde;o" quando voc&ecirc; cria um reposit&oacute;rio. Use outros ramos para desenvolver e mescle-os ao ramo master ap&oacute;s a conclus&atilde;o.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
@@ -122,7 +122,7 @@
             <code>git checkout master</code><br />
             e remova o ramo da seguinte forma<br />
             <code>git branch -d funcionalidade_x</code><br />
-            um ramo <i> não está disponível a outros</i> a menos que você envie o ramo para seu repositório remoto<br />
+            um ramo <i> n&atilde;o est&aacute; dispon&iacute;vel a outros</i> a menos que voc&ecirc; envie o ramo para seu reposit&oacute;rio remoto<br />
             <code>git push origin &lt;ramo&gt;</code>
         </p>
     </div>
@@ -130,16 +130,16 @@
     <div class="scrollblock block-merging">
         <h2>atualizar &amp; mesclar</h2>
         <p>
-            para atualizar seu repositório local com a mais nova versão, execute <br />
+            para atualizar seu reposit&oacute;rio local com a mais nova vers&atilde;o, execute <br />
             <code>git pull</code><br />
-            na sua pasta de trabalho para <i>obter</i> e <i>mesclar</i> alterações remotas.<br />
+            na sua pasta de trabalho para <i>obter</i> e <i>mesclar</i> altera&ccedil;&otilde;es remotas.<br />
             para mesclar um outro ramo ao seu ramo ativo (ex. master), use<br />
             <code>git merge &lt;ramo&gt;</code><br />
-            em ambos os casos o git tenta auto-mesclar as alterações. Infelizmente, isto nem sempre é possível a resulta em <i>conflitos</i>.
-            Você é responsável por mesclar estes <i>conflitos</i>
-            manualmente editando os arquivos exibidos pelo git. Depois de alterar, você precisa marcá-los como mesclados com<br />
+            em ambos os casos o git tenta auto-mesclar as altera&ccedil;&otilde;es. Infelizmente, isto nem sempre &eacute; poss&iacute;vel e resulta em <i>conflitos</i>.
+            Voc&ecirc; &eacute; respons&aacute;vel por mesclar estes <i>conflitos</i>
+            manualmente editando os arquivos exibidos pelo git. Depois de alterar, voc&ecirc; precisa marc&aacute;-los como mesclados com<br />
             <code>git add &lt;arquivo&gt;</code><br />
-            antes de mesclar as alterações, você pode também pré-visualizá-as usando<br />
+            antes de mesclar as altera&ccedil;&otilde;es, voc&ecirc; pode tamb&eacute;m pr&eacute;-visualiz&aacute;-as usando<br />
             <code>git diff &lt;ramo origem&gt; &lt;ramo destino&gt;</code>
         </p>
     </div>
@@ -147,67 +147,67 @@
     <div class="scrollblock block-tagging">
         <h2>rotulando</h2>
         <p>
-            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
+            &eacute; recomendado criar r&oacute;tulos para releases de software. Este &eacute; um conhecido conceito, que tamb&eacute;m existe no SVN. Voc&ecirc; pode criar um novo r&oacute;tulo chamado <i>1.0.0</i> executando o comando<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id with <br />
+            o <i>1b2e1d63ff</i> representa os 10 primeiros caracteres do id de confirma&ccedil;&atilde;o que voc&ecirc; quer referenciar com seu r&oacute;tulo. Voc&ecirc; pode obter o id de confirma&ccedil;&atilde;o com <br />
             <code>git log</code><br />
-            you can also use fewer characters of the commit id, it just has to be unique.
+            voc&ecirc; pode tamb&eacute;m usar menos caracteres do id de confirma&ccedil;&atilde;o, ele somente precisa ser &uacute;nico.
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
+        <h2>sobrescrever altera&ccedil;&otilde;es locais</h2>
         <p>
-            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
-            <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+            No caso de voc&ecirc; ter feito algo errado (que seguramente nunca acontece ;) ) voc&ecirc; pode sobrescrever as altera&ccedil;&otilde;es locais usando o commando<br />
+            <code>git checkout -- &lt;arquivo&gt;</code><br />
+            isto substitui as altera&ccedil;&otilde;es na sua &aacute;rvore de trabalho com o conte&uacute;do mais recente no HEAD. Altera&ccedil;&otilde;es j&aacute; adicionadas ao index, bem como novos arquivos ser&atilde;o mantidos.
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e confirma&ccedil;&otilde;es locais, recupere o hist&oacute;rico mais recente do servidor e aponte para seu ramo master local desta forma<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>useful hints</h2>
+        <h2>dicas &uacute;teis</h2>
         <p>
-            built-in git GUI<br />
+            Inteface gr&aacute;fica padr&atilde;o<br />
             <code>gitk</code><br />
-            use colorful git output<br />
+            usar sa&iacute;das do git coloridas<br />
             <code>git config color.ui true</code><br />
-            show log on just one line per commit<br />
+            exibir log em apenas uma linha por confirma&ccedil;&atilde;o<br />
             <code>git config format.pretty oneline</code><br />
-            use interactive adding<br />
+            fazer inclus&otilde;es interativas<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
-        <h2>links & resources</h2>
-        <h3>graphical clients</h3>
+        <h2>recursos & links</h2>
+        <h3>clientes gr&aacute;ficos</h3>
         <p>
             <ul>
-                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, c&oacute;digo aberto)</a></li>
                 <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
-                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, free)</a></li>
-                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, gratuito)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, gratuito)</a></li>
             </ul>
         </p>
-        <h3>guides</h3>
+        <h3>guias</h3>
         <p>
             <ul>
-                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+                <li><a href="http://book.git-scm.com/">Livro da comunidade Git</a></li>
                 <li><a href="http://progit.org/book/">Pro Git</a></li>
-                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
-                <li><a href="http://help.github.com/">GitHub Help</a></li>
-                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+                <li><a href="http://think-like-a-git.net/">Pense como um git</a></li>
+                <li><a href="http://help.github.com/">Ajuda do GitHub</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">Um guia visual do Git</a></li>
             </ul>
         </p>
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
-        <h2>comments</h2>
+        <h2>coment&aacute;rios</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -220,7 +220,7 @@
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>Por favor habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">coment&aacute;rios powered by Disqus.</a></noscript>
     </div>
     <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
 </body>
