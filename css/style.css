@@ -145,7 +145,7 @@ code {
 .block-comments { background-color: #FFF; padding-bottom: 50px; font-size: 14px; color: #000; }
 .block-comments h2 { color: #000; }
 .block-comments h3 { font-size: 16px; }
-.block-comments #disqus_thread { width: 600px; margin-left: auto; margin-right: auto; }
+.block-comments #disqus_thread { width: 600px; text-align: left; margin-left: auto; margin-right: auto; }
 
 .tower {
     display: block;
