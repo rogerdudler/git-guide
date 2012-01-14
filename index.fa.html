@@ -87,10 +87,10 @@
         <h2>افزودن و کامیت کردن</h2>
         <p>
             شما می‌توانید تغییرات را با دستور زیر در <b>Index</b> قرار دهید.<br />
-            <code class="reverse">git add &lt;filename&gt;</code><br />
+            </p><code class="reverse">git add &lt;filename&gt;</code><p>
             <code>git add *</code><br />
             این اولین قدم از جریان کاری گیت است ولی برای کامیت کردن واقعی تغییرات باید از دستور زیر بهره برد.<br />
-            <code>git commit -m "Commit message"</code><br />
+            </p><code>git commit -m "Commit message"</code><p>
 حال کدهای شما در <b>HEAD</b> قرار دارند ولی هنوز در مخزن ریموت قرار نگرفته است.
 
                     </p>
@@ -102,11 +102,9 @@
             اکنون تغییرات شما در <b>HEAD</b> پوشه کاری محلی شما قرار دارد برای ارسال آن‌ها به مخزن ریموت دستور زیر را اجرا کنید: <br />
             <code>git push origin master</code><br />
             برای ارسال به یک شاخه دیگر به جای <i>master</i> نام آن شاخه را قرار دهید.
-            <br /><br />
-            اگر شما از یک مخزن موجود کپی نگرفته‌اید،برای وصل کردن مخزن خود به یک مخزن ریمون باید آنرا با دستور زیر اضافه کنید.<br />
-            <code>git remote add origin &lt;server&gt;</code><br />
-            حالا شما می‌توانید تغییرات را نیز به مخزن ریموت ارسال کنید.<br />
-
+            <br />            اگر شما از یک مخزن موجود کپی نگرفته‌اید،برای وصل کردن مخزن خود به یک مخزن ریموت باید آنرا با دستور زیر اضافه کنید.<br />
+           </p> <code>git remote add origin &lt;server&gt;</code><p>
+            حالا شما می‌توانید تغییرات را نیز به مخزن ریموت ارسال کنید.
         </p>
     </div>
     <a name="branching"></a>
@@ -126,26 +124,24 @@
             حذف شاخه ساخته شده<br />
             <code>git branch -d feature_x</code><br />
             شاخه ساخته شده تا به مخزن ریموت ارسال نشود توسط دیگران قابل دسترسی نیست.<br />
-            <code>git push origin &lt;branch&gt;</code>
-        </p>
-    </div>
+            </p><code>git push origin &lt;branch&gt;</code>
+        </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
         <h2>بروزرسانی و ادغام کردن</h2>
         <p>
             برای بروزکردن مخزن محلی خود با جدیدترین کامیت‌ها دستور زیر را  <br />
-            <code>git pull</code><br />
+           </p> <code>git pull</code><p>
             در پوشه کاری خود برای دریافت و ادغام تغییرات مخزن ریموت اجرا کنید. <br />
             برای ادغام یک شاخه با شاخه فعال به عنوان مثال master از دستور زیر<br />
-            <code>git merge &lt;branch&gt;</code><br />
+            </p><code>git merge &lt;branch&gt;</code><p>
             در هر دو حالت گیت سعی می‌کند به صورت اتوماتیک تغییرات را ادغام کنید ولی متاسفانه اینکار همیشه شدنی نیست و شما با مغایرت‌های برخورد می‌کنید.
-            شما باید این مغایرت‌ها را که توسط گیت نمایش می‌دهد به صورت دستی برطرف کرده و بعد از تغییرات آن‌‌ها را این گونه نشانه‌گذاری کنید
+            شما باید این مغایرت‌ها را که گیت نمایش می‌دهد به صورت دستی برطرف کرده و بعد از تغییرات آن‌‌ها را این گونه نشانه‌گذاری کنید
             <br />
-            <code>git add &lt;filename&gt;</code><br />
+            </p><code>git add &lt;filename&gt;</code><p>
             قبل از عمل ادغام شما با دستور زیر می‌توانید تغییرات را مشاهده کنید.<br />
-            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
-        </p>
-    </div>
+            </p><code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+       </div>
     <a name="tagging"></a>
     <div class="scrollblock block-tagging">
         <h2>tagging [تگ گذاری]</h2>
@@ -154,7 +150,7 @@
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
            که <i>1b2e1d63ff</i> ده کاراکتر اول ‌آی‌دی کامیت شما است برای بدست آوردن آی‌دی کامیت از دستور زیر بهره ببرید <br />
             <code>git log</code><br />
-            شما همچنین می‌توانید از کاراکترهای کمتری از آی‌دی بهره ببرید ، تنها باید این آی‌دی یکتا باشد/
+            شما همچنین می‌توانید از کاراکترهای کمتری از آی‌دی بهره ببرید ، تنها باید این آی‌دی یکتا باشد.
         </p>
     </div>
     <a name="checkout-replace"></a>
@@ -162,7 +158,8 @@
         <h2>حذف تغییرات محلی</h2>
         <p>
             اگر شما کار اشتباهی انجام داده‌اید و قصد دارید آن اشتباه حذف شود دستور زیر را اجرا کنید<br />
-            <code>git checkout -- &lt;filename&gt;</code><br />
+           
+      </p><code>git checkout -- &lt;filename&gt;</code><br /><p>
             این دستور تغییرات را با آخرین تغییراتی که در HEAD قرار دارد جایگزین می‌کند.
         </p>
         <p>
