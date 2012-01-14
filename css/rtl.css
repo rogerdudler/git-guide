@@ -1,0 +1,10 @@
+a {
+ text-decoration:none;
+}
+p {
+ direction:rtl;
+}
+.reverse {
+ direction:ltr;
+}
+

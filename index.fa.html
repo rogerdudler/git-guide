@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title> git راهنمای ساده</title>
+    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/rtl.css" type="text/css">      
+<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-652147-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function recordOutboundLink(link, category, action) {
+         _gat._getTrackerByName()._trackEvent(category, action);
+         setTimeout('document.location = "' + link.href + '"', 100);
+      }
+    </script>
+</head>
+<body>
+    <div class="scrollblock block-title">
+        <h1>git - راهنمای ساده</h1>
+        <p> تنها یک راهنمای ساده برای آغاز به کار با گیت (;</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">توییت</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="meta">
+             نوشته شده توسط  <a href="http://www.rogerdudler.com">Roger Dudler</a>[<a href="https://github.com/codepress">ترجمه توسط مهدی ‌شه‌دوست</a>]
+            <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+           این آموزش به زبان‌های <a href="index.fr.html">فرانسوی</a>، <a href="index.it.html">ایتالیایی</a>، <a href="index.de.html">آلمانی</a>،
+	    <a href="index.es.html">اسپانیایی</a> <br />
+       لطفآ هرگونه مشکلی را اینجا گزارش دهید <a href="https://github.com/rogerdudler/git-guide/issues">github</a>     
+        </p>
+        <img src="img/arrow.png" alt="" />
+    </div>
+    <!-- setup -->
+    <a name="setup"></a>
+    <div class="scrollblock block-setup">
+        <h2>نصب</h2>
+        <p>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">  دانلود گیت برای مکینتاش </a>
+        </p>
+        <p>
+            <a href="http://code.google.com/p/msysgit/downloads/list?can=3"> دانلود گیت برای ویندوز </a>
+        </p>
+        <p>
+            <a href="http://book.git-scm.com/2_installing_git.html"> دانلود گیت برای لینوکس </a>
+        </p>
+    </div>
+    <a name="create"></a>
+    <div class="scrollblock block-create">
+        <h2>ساخت یک مخزن جدید</h2>
+        <p>
+            یک پوشه جدید بسازید، آنرا باز کنید و این دستور را اجرا کنید <br />
+            <code>git init</code><br />
+  اینگونه یک مخزن گیت ایجاد می‌کنید.
+        </p>
+    </div>
+    <a name="checkout"></a>
+    <div class="scrollblock block-checkout">
+        <h2>[checkout] رونوشت گیری از مخزن</h2>
+        <p>
+            برای ساخت یک کپی کاری از مخزن، دستور زیر را اجرا کنید<br />
+            <code>git clone /path/to/repository</code><br />
+            و اگر از مخزن ریموت و غیرمحلی استفاده می‌کنید دستور زیر را به کار گیرید<br />
+            <code>git clone username@host:/path/to/repository</code>
+        </p>
+    </div>
+    <a name="trees"></a>
+    <div class="scrollblock block-trees">
+        <h2>جریان کار در گیت</h2>
+        <p>
+            مخزن محلی شما شامل ۳ درخت است که توسط گیت مدیریت می‌شود.اولی پوشه کاری <code>Working Directory</code> شما است که فایل‌های اصلی را نگه‌داری می‌کند.دومین پوشه <code>Index</code> است که به عنوان یک محیط واسط عمل می‌کند و در نهایت <code>HEAD</code> قرار دارد که شامل آخرین کامیت‌های
+شما است.
+        </p>
+        <img src="img/trees.png" alt="" />
+    </div>
+    <a name="add"></a>
+    <div class="scrollblock block-add">
+        <h2>افزودن و کامیت کردن</h2>
+        <p>
+            شما می‌توانید تغییرات را با دستور زیر در <b>Index</b> قرار دهید.<br />
+            <code class="reverse">git add &lt;filename&gt;</code><br />
+            <code>git add *</code><br />
+            این اولین قدم از جریان کاری گیت است ولی برای کامیت کردن واقعی تغییرات باید از دستور زیر بهره برد.<br />
+            <code>git commit -m "Commit message"</code><br />
+حال کدهای شما در <b>HEAD</b> قرار دارند ولی هنوز در مخزن ریموت قرار نگرفته است.
+
+                    </p>
+    </div>
+    <a name="push"></a>
+    <div class="scrollblock block-remote">
+        <h2>ارسال تغییرات</h2>
+        <p>
+            اکنون تغییرات شما در <b>HEAD</b> پوشه کاری محلی شما قرار دارد برای ارسال آن‌ها به مخزن ریموت دستور زیر را اجرا کنید: <br />
+            <code>git push origin master</code><br />
+            برای ارسال به یک شاخه دیگر به جای <i>master</i> نام آن شاخه را قرار دهید.
+            <br /><br />
+            اگر شما از یک مخزن موجود کپی نگرفته‌اید،برای وصل کردن مخزن خود به یک مخزن ریمون باید آنرا با دستور زیر اضافه کنید.<br />
+            <code>git remote add origin &lt;server&gt;</code><br />
+            حالا شما می‌توانید تغییرات را نیز به مخزن ریموت ارسال کنید.<br />
+
+        </p>
+    </div>
+    <a name="branching"></a>
+    <div class="scrollblock block-branching">
+        <h2>branching [ساخت شاخه]</h2>
+        <p>
+شاخه‌ها برای جداکردن توسعه بخش‌های گوناگون پروژه از یکدیگر استفاده می‌شوند.وقتی شما یک 
+مخزن  جدید ایجاد می‌کنید شاخه پیش‌فرض شما master است.
+
+        </p>
+        <img src="img/branches.png" alt="" />
+        <p>
+            ساخت یک شاخه جدید به اسم "feature_x" و سوئیچ کردن به آن با دستور زیر<br />
+            <code>git checkout -b feature_x</code><br />
+            برگشتن به شاخه master<br />
+            <code>git checkout master</code><br />
+            حذف شاخه ساخته شده<br />
+            <code>git branch -d feature_x</code><br />
+            شاخه ساخته شده تا به مخزن ریموت ارسال نشود توسط دیگران قابل دسترسی نیست.<br />
+            <code>git push origin &lt;branch&gt;</code>
+        </p>
+    </div>
+    <a name="update"></a>
+    <div class="scrollblock block-merging">
+        <h2>بروزرسانی و ادغام کردن</h2>
+        <p>
+            برای بروزکردن مخزن محلی خود با جدیدترین کامیت‌ها دستور زیر را  <br />
+            <code>git pull</code><br />
+            در پوشه کاری خود برای دریافت و ادغام تغییرات مخزن ریموت اجرا کنید. <br />
+            برای ادغام یک شاخه با شاخه فعال به عنوان مثال master از دستور زیر<br />
+            <code>git merge &lt;branch&gt;</code><br />
+            در هر دو حالت گیت سعی می‌کند به صورت اتوماتیک تغییرات را ادغام کنید ولی متاسفانه اینکار همیشه شدنی نیست و شما با مغایرت‌های برخورد می‌کنید.
+            شما باید این مغایرت‌ها را که توسط گیت نمایش می‌دهد به صورت دستی برطرف کرده و بعد از تغییرات آن‌‌ها را این گونه نشانه‌گذاری کنید
+            <br />
+            <code>git add &lt;filename&gt;</code><br />
+            قبل از عمل ادغام شما با دستور زیر می‌توانید تغییرات را مشاهده کنید.<br />
+            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+        </p>
+    </div>
+    <a name="tagging"></a>
+    <div class="scrollblock block-tagging">
+        <h2>tagging [تگ گذاری]</h2>
+        <p>
+            توصیه می‌شود که با انتشار نرم‌افزار آن‌ را تگ‌گذاری کنیم این موضوع مفهوم شناخته‌ شده‌ای در SVN است فرضآ اگر بخواهیم تگ <i>1.0.0</i> بسازیم باید دستور زیر را اجرا کنیم<br />
+            <code>git tag 1.0.0 1b2e1d63ff</code><br />
+           که <i>1b2e1d63ff</i> ده کاراکتر اول ‌آی‌دی کامیت شما است برای بدست آوردن آی‌دی کامیت از دستور زیر بهره ببرید <br />
+            <code>git log</code><br />
+            شما همچنین می‌توانید از کاراکترهای کمتری از آی‌دی بهره ببرید ، تنها باید این آی‌دی یکتا باشد/
+        </p>
+    </div>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>حذف تغییرات محلی</h2>
+        <p>
+            اگر شما کار اشتباهی انجام داده‌اید و قصد دارید آن اشتباه حذف شود دستور زیر را اجرا کنید<br />
+            <code>git checkout -- &lt;filename&gt;</code><br />
+            این دستور تغییرات را با آخرین تغییراتی که در HEAD قرار دارد جایگزین می‌کند.
+        </p>
+        <p>
+           اگر قصد پاک کردن تمام تغییرات محلی را دارید باید آخرین تاریخچه موجود در مخزن ریموت را دریافت کنید و در شاخه master قرار دهید.<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+    </div>
+    <a name="hints"></a>
+    <div class="scrollblock block-hints">
+        <h2>تذکرهای سودمند</h2>
+        <p>
+            کلاینت گرافیکی درونی گیت<br />
+            <code>gitk</code><br />
+            خروجی‌های گیت را رنگی کنید<br />
+            <code>git config color.ui true</code><br />
+            نمایش لاگ‌ها در یک خط برای هر کامیت<br />
+            <code>git config format.pretty oneline</code><br />
+            از افزودن تعاملی بهره ببرد<br />
+            <code>git add -i</code>
+        </p>
+    </div>
+    <a name="resources"></a>
+    <div class="scrollblock block-resources">
+        <h2>لینک‌ها و منابع</h2>
+        <h3>کلاینت‌های گرافیکی برای گیت</h3>
+        <p>
+            <ul>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, free)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+            </ul>
+        </p>
+        <h3>راهنمایی‌ها</h3>
+        <p>
+            <ul>
+                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+                <li><a href="http://progit.org/book/">گیت پیشرفته</a></li>
+                <li><a href="http://think-like-a-git.net/">شبیه یک گیت فکر کنید</a></li>
+                <li><a href="http://help.github.com/">GitHub راهنمای</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">راهنمای تصویری گیت</a></li>
+            </ul>
+        </p>
+    </div>
+    <a name="comments"></a>
+    <div class="scrollblock block-comments">
+        <h2>نظرات</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+</body>
+</html>
