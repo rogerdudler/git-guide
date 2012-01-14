@@ -3,12 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title> git راهنمای ساده</title>
+	<title>git - the simple guide - no deep shit!</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" href="css/rtl.css" type="text/css">      
-<script type="text/javascript">
+    <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-652147-13']);
       _gaq.push(['_trackPageview']);
@@ -27,165 +26,181 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git - راهنمای ساده</h1>
-        <p> تنها یک راهنمای ساده برای آغاز به کار با گیت (;</p>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">توییت</a>
+        <h1>git - the simple guide</h1>
+        <p>just a simple guide for getting started with git. no deep shit ;)</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
-             نوشته شده توسط  <a href="http://www.rogerdudler.com">Roger Dudler</a>[<a href="https://github.com/codepress">ترجمه توسط مهدی ‌شه‌دوست</a>]
+            by <a href="http://www.rogerdudler.com">Roger Dudler</a>
             <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
-           این آموزش به زبان‌های <a href="index.fr.html">فرانسوی</a>، <a href="index.it.html">ایتالیایی</a>، <a href="index.de.html">آلمانی</a>،
-	    <a href="index.es.html">اسپانیایی</a>،<a href="index.en.html">انگلیسی</a> <br />
-       لطفآ هرگونه مشکلی را اینجا گزارش دهید <a href="https://github.com/rogerdudler/git-guide/issues">github</a>     
+            this guide in <a href="index.fr.html">french</a>, <a href="index.it.html">italian</a>, <a href="index.de.html">german</a>,
+	    <a href="index.es.html">spanish</a>,<a href="index.fa.html">persian</a><br />
+            please report issues on <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
         </p>
         <img src="img/arrow.png" alt="" />
     </div>
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
-        <h2>نصب</h2>
+        <h2>setup</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">  دانلود گیت برای مکینتاش </a>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Download git for OSX</a>
         </p>
         <p>
-            <a href="http://code.google.com/p/msysgit/downloads/list?can=3"> دانلود گیت برای ویندوز </a>
+            <a href="http://code.google.com/p/msysgit/downloads/list?can=3">Download git for Windows</a>
         </p>
         <p>
-            <a href="http://book.git-scm.com/2_installing_git.html"> دانلود گیت برای لینوکس </a>
+            <a href="http://book.git-scm.com/2_installing_git.html">Download git for Linux</a>
         </p>
     </div>
     <a name="create"></a>
     <div class="scrollblock block-create">
-        <h2>ساخت یک مخزن جدید</h2>
+        <h2>create a new repository</h2>
         <p>
-            یک پوشه جدید بسازید، آنرا باز کنید و این دستور را اجرا کنید <br />
+            create a new directory, open it and perform a <br />
             <code>git init</code><br />
-  اینگونه یک مخزن گیت ایجاد می‌کنید.
+            to create a new git repository.
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>[checkout] رونوشت گیری از مخزن</h2>
+        <h2>checkout a repository</h2>
         <p>
-            برای ساخت یک کپی کاری از مخزن، دستور زیر را اجرا کنید<br />
+            create a working copy of a local repository by running the command<br />
             <code>git clone /path/to/repository</code><br />
-            و اگر از مخزن ریموت و غیرمحلی استفاده می‌کنید دستور زیر را به کار گیرید<br />
+            when using a remote server, your command will be<br />
             <code>git clone username@host:/path/to/repository</code>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>جریان کار در گیت</h2>
+        <h2>workflow</h2>
         <p>
-            مخزن محلی شما شامل ۳ درخت است که توسط گیت مدیریت می‌شود.اولی پوشه کاری <code>Working Directory</code> شما است که فایل‌های اصلی را نگه‌داری می‌کند.دومین پوشه <code>Index</code> است که به عنوان یک محیط واسط عمل می‌کند و در نهایت <code>HEAD</code> قرار دارد که شامل آخرین کامیت‌های
-شما است.
+            your local repository consists of three "trees" maintained by git.
+            the first one is your <code>Working Directory</code> which holds the actual files.
+            the second one is the <code>Index</code> which acts as a staging area and
+            finally the <code>HEAD</code> which points to the last commit you've made.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>افزودن و کامیت کردن</h2>
+        <h2>add &amp; commit</h2>
         <p>
-            شما می‌توانید تغییرات را با دستور زیر در <b>Index</b> قرار دهید.<br />
-            </p><code class="reverse">git add &lt;filename&gt;</code><br /><br />
-            <code>git add *</code><p>
-            این اولین قدم از جریان کاری گیت است ولی برای کامیت کردن واقعی تغییرات باید از دستور زیر بهره برد.<br />
-            </p><code>git commit -m "Commit message"</code><p>
-حال کدهای شما در <b>HEAD</b> قرار دارند ولی هنوز در مخزن ریموت قرار نگرفته است.
-
-                    </p>
+            You can propose changes (add it to the <b>Index</b>) using<br />
+            <code>git add &lt;filename&gt;</code><br />
+            <code>git add *</code><br />
+            This is the first step in the basic git workflow. To actually commit these changes use<br />
+            <code>git commit -m "Commit message"</code><br />
+            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+        </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>ارسال تغییرات</h2>
+        <h2>pushing changes</h2>
         <p>
-            اکنون تغییرات شما در <b>HEAD</b> پوشه کاری محلی شما قرار دارد برای ارسال آن‌ها به مخزن ریموت دستور زیر را اجرا کنید: <br />
+            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
             <code>git push origin master</code><br />
-            برای ارسال به یک شاخه دیگر به جای <i>master</i> نام آن شاخه را قرار دهید.
-            <br />            اگر شما از یک مخزن موجود کپی نگرفته‌اید،برای وصل کردن مخزن خود به یک مخزن ریموت باید آنرا با دستور زیر اضافه کنید.<br />
-           </p> <code>git remote add origin &lt;server&gt;</code><p>
-            حالا شما می‌توانید تغییرات را نیز به مخزن ریموت ارسال کنید.
+            Change <i>master</i> to whatever branch you want to push your changes to.
+            <br /><br />
+            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
+            <code>git remote add origin &lt;server&gt;</code><br />
+            Now you are able to push your changes to the selected remote server<br />
+
         </p>
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>branching [ساخت شاخه]</h2>
+        <h2>branching</h2>
         <p>
-شاخه‌ها برای جداکردن توسعه بخش‌های گوناگون پروژه از یکدیگر استفاده می‌شوند.وقتی شما یک 
-مخزن  جدید ایجاد می‌کنید شاخه پیش‌فرض شما master است.
-
+            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            ساخت یک شاخه جدید به اسم "feature_x" و سوئیچ کردن به آن با دستور زیر<br />
+            create a new branch named "feature_x" and switch to it using<br />
             <code>git checkout -b feature_x</code><br />
-            برگشتن به شاخه master<br />
+            switch back to master<br />
             <code>git checkout master</code><br />
-            حذف شاخه ساخته شده<br />
+            and delete the branch again<br />
             <code>git branch -d feature_x</code><br />
-            شاخه ساخته شده تا به مخزن ریموت ارسال نشود توسط دیگران قابل دسترسی نیست.<br />
-            </p><code>git push origin &lt;branch&gt;</code>
-        </div>
+            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
+            <code>git push origin &lt;branch&gt;</code>
+        </p>
+    </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>بروزرسانی و ادغام کردن</h2>
+        <h2>update &amp; merge</h2>
         <p>
-            برای بروزکردن مخزن محلی خود با جدیدترین کامیت‌ها دستور زیر را  <br />
-           </p> <code>git pull</code><p>
-            در پوشه کاری خود برای دریافت و ادغام تغییرات مخزن ریموت اجرا کنید. <br />
-            برای ادغام یک شاخه با شاخه فعال به عنوان مثال master از دستور زیر<br />
-            </p><code>git merge &lt;branch&gt;</code><p>
-            در هر دو حالت گیت سعی می‌کند به صورت اتوماتیک تغییرات را ادغام کنید ولی متاسفانه اینکار همیشه شدنی نیست و شما با مغایرت‌های برخورد می‌کنید.
-            شما باید این مغایرت‌ها را که گیت نمایش می‌دهد به صورت دستی برطرف کرده و بعد از تغییرات آن‌‌ها را این گونه نشانه‌گذاری کنید
-            <br />
-            </p><code>git add &lt;filename&gt;</code><p>
-            قبل از عمل ادغام شما با دستور زیر می‌توانید تغییرات را مشاهده کنید.<br />
-            </p><code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
-       </div>
+            to update your local repository to the newest commit, execute <br />
+            <code>git pull</code><br />
+            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
+            to merge another branch into your active branch (e.g. master), use<br />
+            <code>git merge &lt;branch&gt;</code><br />
+            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
+            You are responsible to merge those <i>conflicts</i>
+            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
+            <code>git add &lt;filename&gt;</code><br />
+            before merging changes, you can also preview them by using<br />
+            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+        </p>
+    </div>
     <a name="tagging"></a>
     <div class="scrollblock block-tagging">
-        <h2>tagging [تگ گذاری]</h2>
+        <h2>tagging</h2>
         <p>
-            توصیه می‌شود که با انتشار نرم‌افزار آن‌ را تگ‌گذاری کنیم این موضوع مفهوم شناخته‌ شده‌ای در SVN است فرضآ اگر بخواهیم تگ <i>1.0.0</i> بسازیم باید دستور زیر را اجرا کنیم<br />
+            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-           که <i>1b2e1d63ff</i> ده کاراکتر اول ‌آی‌دی کامیت شما است برای بدست آوردن آی‌دی کامیت از دستور زیر بهره ببرید <br />
+            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id with <br />
             <code>git log</code><br />
-            شما همچنین می‌توانید از کاراکترهای کمتری از آی‌دی بهره ببرید ، تنها باید این آی‌دی یکتا باشد.
+            you can also use fewer characters of the commit id, it just has to be unique.
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>حذف تغییرات محلی</h2>
+        <h2>replace local changes</h2>
         <p>
-            اگر شما کار اشتباهی انجام داده‌اید و قصد دارید آن اشتباه حذف شود دستور زیر را اجرا کنید<br />
-           
-      </p><code>git checkout -- &lt;filename&gt;</code><br /><p>
-            این دستور تغییرات را با آخرین تغییراتی که در HEAD قرار دارد جایگزین می‌کند.
+            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
+            <code>git checkout -- &lt;filename&gt;</code><br />
+            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
         </p>
         <p>
-           اگر قصد پاک کردن تمام تغییرات محلی را دارید باید آخرین تاریخچه موجود در مخزن ریموت را دریافت کنید و در شاخه master قرار دهید.<br />
+            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
+ <a name="checkout-replace"></a>
+    <div class="scrollblock block-recover">
+        <h2>Recover Lost Commit</h2>
+        <p>
+            Do you need history of your works on all branches in local repository ?<br />
+            <code>git reflog</code><br />
+           after execute this command, you can see list of your actions also your commits.
+            </p><code>0da4127 HEAD@{5}: commit: tiny fix
+</code>
+        <p>
+            when you  find commit, you can checkout to that commit with hash string<br />
+            <code>git checkout 0da4127</code><br />
+        </p>
+    </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>تذکرهای سودمند</h2>
+        <h2>useful hints</h2>
         <p>
-            کلاینت گرافیکی درونی گیت<br />
+            built-in git GUI<br />
             <code>gitk</code><br />
-            خروجی‌های گیت را رنگی کنید<br />
+            use colorful git output<br />
             <code>git config color.ui true</code><br />
-            نمایش لاگ‌ها در یک خط برای هر کامیت<br />
+            show log on just one line per commit<br />
             <code>git config format.pretty oneline</code><br />
-            از افزودن تعاملی بهره ببرد<br />
+            use interactive adding<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
-        <h2>لینک‌ها و منابع</h2>
-        <h3>کلاینت‌های گرافیکی برای گیت</h3>
+        <h2>links & resources</h2>
+        <h3>graphical clients</h3>
         <p>
             <ul>
                 <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
@@ -194,20 +209,20 @@
                 <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
             </ul>
         </p>
-        <h3>راهنمایی‌ها</h3>
+        <h3>guides</h3>
         <p>
             <ul>
                 <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
-                <li><a href="http://progit.org/book/">گیت پیشرفته</a></li>
-                <li><a href="http://think-like-a-git.net/">شبیه یک گیت فکر کنید</a></li>
-                <li><a href="http://help.github.com/">GitHub راهنمای</a></li>
-                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">راهنمای تصویری گیت</a></li>
+                <li><a href="http://progit.org/book/">Pro Git</a></li>
+                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
+                <li><a href="http://help.github.com/">GitHub Help</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
             </ul>
         </p>
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
-        <h2>نظرات</h2>
+        <h2>comments</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

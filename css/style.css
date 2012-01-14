@@ -140,7 +140,8 @@ code {
 .block-comments h2 { color: #000; }
 .block-comments h3 { font-size: 16px; }
 .block-comments #disqus_thread { width: 600px; margin-left: auto; margin-right: auto; }
-
+.block-recover {background-color: #FFC18F}
+.block-recover h2 { color: #000; }
 .tower {
     display: block;
     width: 180px;
