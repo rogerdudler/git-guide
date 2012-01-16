@@ -27,7 +27,7 @@
 <body>
     <div class="scrollblock block-title">
         <h1>git - een simpele uitleg</h1>
-        <p>een korte gids om je op weg te helpen met git :)</p>
+        <p>een korte gids om je op weg te helpen met git, no deep shit :)</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
@@ -55,30 +55,31 @@
     </div>
     <a name="create"></a>
     <div class="scrollblock block-create">
-        <h2>maak een nieuwe repository</h2>
+        <h2>create a new repository</h2>
         <p>
-            maak een nieuwe map, open deze map en voor <br />
+            maak een nieuwe map, open deze map en voer <br />
             <code>git init</code><br />
-            uit om een nieuwe repository te maken.
+            uit om een nieuwe repository aan te maken.
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>checkout een repository</h2>
+        <h2>checkout a repository</h2>
         <p>
-            haal een repository lokaal binnen door het volgende commando uit te voeren<br />
+            haal een repository lokaal binnen<br />
             <code>git clone /path/to/repository</code><br />
-            wanneer je git server niet lokaal staat, het command zal echter het volgende zijn<br />
+            wanneer je git server niet lokaal staat<br />
+            zal je volgende moeten uitvoeren<br />
             <code>git clone gebruikersnaam@host:/path/to/repository</code>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>werkwijze</h2>
+        <h2>workflow</h2>
         <p>
-            je lokale repository bestaat uit 3 verschillende 'trees' beheerd door git.
-            de eerste is je <code>Working Directory</code> dewelke je bestanden bevatten.
-            de tweede is de <code>Index</code> die zich als een tussen stadium gedraagd (staging area)
+            je lokale repository bestaat uit 3 verschillende 'trees' beheerd door git
+            de eerste is je <code>Working Directory</code> dewelke je bestanden bevatten
+            de tweede is de <code>Index</code> dat zich als tussen stadium gedraagd (staging area)
             en de laatste is de <code>HEAD</code> die verwijst naar de laatste 'commit' die je hebt gemaakt.
         </p>
         <img src="img/trees.png" alt="" />
@@ -87,23 +88,30 @@
     <div class="scrollblock block-add">
         <h2>add &amp; commit</h2>
         <p>
-            Je kan aanpassingen aan je files toevoegen aan de <b>Index</b> door middel van
+            Je kan aanpassingen aan je files toevoegen aan de <b>Index</b>
             <code>git add &lt;bestandsnaam&gt;</code><br />
+            of <br />
             <code>git add *</code><br />
-            Dit is de eerste stap in de basis werkwijze van git. Om aanpassingen écht door te voeren gebruik je<br />
+            Dit is de eerste stap in de basis werkwijze van git. <br />
+            Om aanpassingen écht door te voeren gebruik je<br />
             <code>git commit -m "Commit message"</code><br />
-            De aanpassingen zijn nu toegevoegd aan de <b>HEAD</b>, al zijn ze nog niet toegevoegd aan je repository als deze op een andere lokatie staat..
+            De aanpassingen zijn nu toegevoegd aan de <b>HEAD</b>,<br />
+            al zijn ze nog niet toegevoegd aan je repository als deze op een andere lokatie staat.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>aanpassingen doorsturen</h2>
+        <h2>pushing changes</h2>
         <p>
-            Je aanpassingen zit nu in de <b>HEAD</b> van je lokale werk-repository. Om deze aanpassingen door te sturen naar je repository op een andere lokatie, voer dan volgend commando uit <br />
+            Je aanpassingen zitten nu in de <b>HEAD</b> van je lokale werk-repository.<br />
+            Om deze aanpassingen door te sturen naar je repository op een andere lokatie, voer dan volgend commando uit <br />
             <code>git push origin master</code><br />
-            Verander <i>master</i> naar de branch-naam waar je je aanpassingen naar wil sturen.
+            Verander <i>master</i> naar de branch-naam<br />
+            waar je je aanpassingen naar wil sturen.
             <br /><br />
-            Als je lokale werkbestanden niet gesynchroniseerd zijn met een bestaande repository (op een andere server bijvoorbeeld), voeg dan de bestaande repository toe aan je lokale repository met volgend commando<br />
+            Als je lokale werkbestanden niet gesynchroniseerd zijn <br />
+            met een bestaande repository (op een andere server bijvoorbeeld), <br />
+            voeg dan de bestaande repository toe aan je lokale repository<br />
             <code>git remote add origin &lt;server&gt;</code><br />
             Nu kan je je lokale aanpassingen, en dus ook je lokale repository, synchroniseren met de server die je net hebt toegevoegd.<br />
         </p>
@@ -112,17 +120,21 @@
     <div class="scrollblock block-branching">
         <h2>branching</h2>
         <p>
-        Branches worden gebruikt om verschillende features te kunnen ontwikkelen in geïsoleerde omgevingen, los van elkaar. De <i>master</i> branch is de basis of standaard branch wanneer je een nieuwe repository aanmaakt. Maak nieuwe branches aan wanneer je nieuwe toevoegingen ontwikkelt en voeg ze samen met de <i>master</i> branch wanneer je klaar bent.
+            Branches worden gebruikt om verschillende features te ontwikkelen in geïsoleerde omgevingen, los van elkaar. <br />
+            De <i>master</i> branch is de basis of standaard branch wanneer je een nieuwe repository aanmaakt. <br />
+            Maak nieuwe branches aan wanneer je nieuwe toevoegingen ontwikkelt en voeg ze samen (<i>merge</i>) met de <i>master</i> branch wanneer je klaar bent.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            maak een nieuwe branch aan met de naam "feature_x" en ga er onmiddellijk naartoe<br />
+            maak een nieuwe branch aan met de naam "feature_x"<br />
+            en ga er onmiddellijk naartoe<br />
             <code>git checkout -b feature_x</code><br />
             ga terug naar de master branch<br />
             <code>git checkout master</code><br />
             verwijder de branch<br />
             <code>git branch -d feature_x</code><br />
-            een branch is <i>niet beschikbaar voor anderen</i> tenzij je ze synchroniseert met de centale repository<br />
+            een branch is <i>niet beschikbaar voor anderen</i><br />
+            tenzij je ze synchroniseert met de centale repository<br />
             <code>git push origin &lt;branch&gt;</code>
         </p>
     </div>
@@ -130,13 +142,14 @@
     <div class="scrollblock block-merging">
         <h2>update &amp; merge</h2>
         <p>
-            om je lokale repository te updaten naar de laatste versie, voer dan <br />
+            om je lokale repository te updaten naar de laatste versie, voer dan volgend commando uit in je lokale repository<br />
             <code>git pull</code><br />
-            uit in je lokale repository zodat je de aanpssingen kan <i>fetchen</i> en <i>mergen</i> met je lokale bestanden.<br />
+            op die manier kan je de aanpssingen <i>fetchen</i> en <i>mergen</i> met je lokale bestanden.<br />
             om een andere branch samen te voegen met je actieve branch (bv master branch), gebruik je<br />
             <code>git merge &lt;branch&gt;</code><br />
-            in beide gevallen probeert git de aanpassingen automatisch samen te voegen. Jammer genoeg is dit niet altijd mogelijk en resulteert dit soms in een <i>conflict</i>.
-            Je bent dan zelf verantwoordelijk om de <i>conflicten</i> manueel op te lossen en samen te voegen.
+            in beide gevallen probeert git de aanpassingen automatisch te <i>mergen</i>.<br />
+            Jammer genoeg is dit niet altijd mogelijk en resulteert dit soms in een <i>conflict</i>.
+            Je bent dan zelf verantwoordelijk om de <i>conflicten</i> manueel op te lossen en te <i>mergen</i>.
             Na de aanpassingen moet je de aangepaste bestanden opnieuw toevoegen aan je lokale repository<br />
             <code>git add &lt;filename&gt;</code><br />
             alvorens je aanpassingen dan terug samen te voegen kan je ook de aangepaste code bekijken door middel van<br />
@@ -158,13 +171,12 @@
     <div class="scrollblock block-checkout-replace">
         <h2>replace local changes</h2>
         <p>
-            
-            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
+            In het geval dat je wil terug gaan naar een vorige versie van een bestand (fouten maken kan gebeuren hé), dan kan je volgend commando uitvoeren<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+            dit zal het bestand in je huidige werkmap vervangen door de laatste versie die zich in de HEAD tree bevindt. De aanpassingen die je reeds hebt toegevoegd én de nieuw aangemaakte bestanden blijven behouden.
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            Als je nu alle lokale aanpassingen wil vervangen door de laatste versie zich op de server bevindt kan je volgende commando reeks gebruiken<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
@@ -173,20 +185,20 @@
     <div class="scrollblock block-hints">
         <h2>useful hints</h2>
         <p>
-            built-in git GUI<br />
+            ingebouwde git GUI<br />
             <code>gitk</code><br />
-            use colorful git output<br />
+            handige kleuren output voor git<br />
             <code>git config color.ui true</code><br />
-            show log on just one line per commit<br />
+            toon je log op 1 lijn per commit<br />
             <code>git config format.pretty oneline</code><br />
-            use interactive adding<br />
+            gebruikte interactieve bestands toevoeging<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
         <h2>links & resources</h2>
-        <h3>graphical clients</h3>
+        <h3>grafische software</h3>
         <p>
             <ul>
                 <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
@@ -195,7 +207,7 @@
                 <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
             </ul>
         </p>
-        <h3>guides</h3>
+        <h3>andere gidsen</h3>
         <p>
             <ul>
                 <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
