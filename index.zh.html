@@ -26,166 +26,162 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git - the simple guide</h1>
-        <p>just a simple guide for getting started with git. no deep shit ;)</p>
+        <h1>git - 简易指南</h1>
+        <p>助你开始使用 git 的简易指南，木有高深内容，;)。</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
-            by <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
-            <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
-            this guide in <a href="index.de.html">deutsch</a>, <a href="index.es.html">español</a>, <a href="index.fr.html">français</a>, <a href="index.it.html">italiano</a>, <a href="index.nl.html">nederlands</a>, <a href="index.pt_BR.html">português</a>, <a href="index.ru.html">русский</a>, <a href="index.ja.html">日本語</a>, <a href="index.zh.html">中文</a><br />
-            please report issues on <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+            作者：<a href="http://www.twitter.com/rogerdudler">罗杰·杜德勒</a>
+            <br />感谢：<a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+            其他语言 <a href="index.html">English</a>、<a href="index.de.html">deutsch</a>、<a href="index.es.html">español</a>、<a href="index.fr.html">français</a>、<a href="index.it.html">italiano</a>、<a href="index.nl.html">nederlands</a>、<a href="index.pt_BR.html">português</a>、<a href="index.ru.html">русский</a>、<a href="index.ja.html">日本語</a><br />
+            如有纰漏，请到 <a href="https://github.com/rogerdudler/git-guide/issues">github</a> 填报
         </p>
         <img src="img/arrow.png" alt="" />
     </div>
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
-        <h2>setup</h2>
+        <h2>安装</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Download git for OSX</a>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">下载 git OSX 版</a>
         </p>
         <p>
-            <a href="http://code.google.com/p/msysgit/downloads/list?can=3">Download git for Windows</a>
+            <a href="http://code.google.com/p/msysgit/downloads/list?can=3">下载 git Windows 版</a>
         </p>
         <p>
-            <a href="http://book.git-scm.com/2_installing_git.html">Download git for Linux</a>
+            <a href="http://book.git-scm.com/2_installing_git.html">下载 git Linux 版</a>
         </p>
     </div>
     <a name="create"></a>
     <div class="scrollblock block-create">
-        <h2>create a new repository</h2>
+        <h2>创建新仓库</h2>
         <p>
-            create a new directory, open it and perform a <br />
+            创建新文件夹，打开，然后执行 <br />
             <code>git init</code><br />
-            to create a new git repository.
+            以创建新的 git 仓库。
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>checkout a repository</h2>
+        <h2>检出仓库</h2>
         <p>
-            create a working copy of a local repository by running the command<br />
-            <code>git clone /path/to/repository</code><br />
-            when using a remote server, your command will be<br />
+            执行如下命令以创建一个本地仓库的克隆版本：<br />
+			<code>git clone /path/to/repository</code> <br />
+            如果是远端服务器上的仓库，你的命令会是这个样子：<br />
             <code>git clone username@host:/path/to/repository</code>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>workflow</h2>
+        <h2>工作流</h2>
         <p>
-            your local repository consists of three "trees" maintained by git.
-            the first one is your <code>Working Directory</code> which holds the actual files.
-            the second one is the <code>Index</code> which acts as a staging area and
-            finally the <code>HEAD</code> which points to the last commit you've made.
+            你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 <code>工作目录</code>，它持有实际文件；第二个是 <code>缓存区（Index）</code>，它像个缓存区域，临时保存你的改动；最后是 <code>HEAD</code>，指向你最近一次提交后的结果。
         </p>
         <img src="img/trees.png" alt="" />
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>add &amp; commit</h2>
+        <h2>添加与提交</h2>
         <p>
-            You can propose changes (add it to the <b>Index</b>) using<br />
+		    你可以计划改动（把它们添加到缓存区），使用如下命令：<br />
             <code>git add &lt;filename&gt;</code><br />
             <code>git add *</code><br />
-            This is the first step in the basic git workflow. To actually commit these changes use<br />
-            <code>git commit -m "Commit message"</code><br />
-            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+            这是 git 基本工作流程的第一步；使用如下命令以实际提交改动：<br />
+            <code>git commit -m "代码提交信息"</code><br />
+            现在，你的改动已经提交到了 <b>HEAD</b>，但是还没到你的远端仓库。
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>pushing changes</h2>
+        <h2>推送改动</h2>
         <p>
-            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
+            你的改动现在已经在本地仓库的 <b>HEAD</b> 中了。执行如下命令以将这些改动提交到远端仓库：<br />
             <code>git push origin master</code><br />
-            Change <i>master</i> to whatever branch you want to push your changes to.
+            可以把 <i>master</i> 换成你想要推送的任何分支。
             <br /><br />
-            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
+            如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：<br />
             <code>git remote add origin &lt;server&gt;</code><br />
-            Now you are able to push your changes to the selected remote server<br />
+            如此你就能够将你的改动推送到所添加的服务器上去了。<br />
 
         </p>
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>branching</h2>
+        <h2>分支</h2>
         <p>
-            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
-        </p>
+    		分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<i>master</i> 是“默认的”。在其他分支上进行开发，完成后再将它们合并到主分支上。
+		</p>
         <img src="img/branches.png" alt="" />
         <p>
-            create a new branch named "feature_x" and switch to it using<br />
+            创建一个叫做“feature_x”的分支，并切换过去：<br />
             <code>git checkout -b feature_x</code><br />
-            switch back to master<br />
+            切换回主分支：<br />
             <code>git checkout master</code><br />
-            and delete the branch again<br />
+            再把新建的分支删掉：<br />
             <code>git branch -d feature_x</code><br />
-            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
+			除非你将分支推送到远端仓库，不然该分支就是 <i>不为他人所见的</i>：<br />
             <code>git push origin &lt;branch&gt;</code>
         </p>
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>update &amp; merge</h2>
+        <h2>更新与合并</h2>
         <p>
-            to update your local repository to the newest commit, execute <br />
+            要更新你的本地仓库至最新改动，执行：<br />
             <code>git pull</code><br />
-            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
-            to merge another branch into your active branch (e.g. master), use<br />
+            以在你的工作目录中 <i>获取（fetch）</i> 并 <i>合并（merge）</i> 远端的改动。<br />
+            要合并其他分支到你的当前分支（例如 master），执行：<br />
             <code>git merge &lt;branch&gt;</code><br />
-            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
-            You are responsible to merge those <i>conflicts</i>
-            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
+            两种情况下，git 都会尝试去自动合并改动。不幸的是，自动合并并非次次都能成功，并可能导致 <i>冲突（conflicts）</i>。
+            这时候就需要你修改这些文件来人肉合并这些 <i>冲突（conflicts）</i> 了。改完之后，你需要执行如下命令以将它们标记为合并成功：<br />
             <code>git add &lt;filename&gt;</code><br />
-            before merging changes, you can also preview them by using<br />
+            在合并改动之前，也可以使用如下命令查看：<br />
             <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
         </p>
     </div>
     <a name="tagging"></a>
     <div class="scrollblock block-tagging">
-        <h2>tagging</h2>
+        <h2>标签</h2>
         <p>
-            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
+            在软件发布时创建标签，是被推荐的。这是个旧有概念，在 SVN 中也有。可以执行如下命令以创建一个叫做 <i>1.0.0</i> 的标签：<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id with <br />
+            <i>1b2e1d63ff</i> 是你想要标记的提交 ID 的前 10 位字符。使用如下命令获取提交 ID：<br />
             <code>git log</code><br />
-            you can also use fewer characters of the commit id, it just has to be unique.
+            你也可以用该提交 ID 的少一些的前几位，只要它是唯一的。
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
+        <h2>替换本地改动</h2>
         <p>
-            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
+            假如你做错事（自然，这是不可能的），你可以使用如下命令替换掉本地改动：<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
-        </p>
+			此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到缓存区的改动，以及新文件，都不受影响。
+		</p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            假如你想要丢弃你所有的本地改动与提交，可以到服务器上获取最新的版本并将你本地主分支指向到它：<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>useful hints</h2>
+        <h2>有用的贴士</h2>
         <p>
-            built-in git GUI<br />
+			内建的图形化 git：<br />
             <code>gitk</code><br />
-            use colorful git output<br />
+            彩色的 git 输出：<br />
             <code>git config color.ui true</code><br />
-            show log on just one line per commit<br />
+            显示历史记录时，只显示一行注视信息：<br />
             <code>git config format.pretty oneline</code><br />
-            use interactive adding<br />
+            交互地添加文件至缓存区：<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
-        <h2>links & resources</h2>
-        <h3>graphical clients</h3>
+        <h2>链接与资源</h2>
+        <h3>图形化界面</h3>
         <p>
             <ul>
                 <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
@@ -194,20 +190,20 @@
                 <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
             </ul>
         </p>
-        <h3>guides</h3>
+        <h3>指南与手册</h3>
         <p>
             <ul>
-                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
-                <li><a href="http://progit.org/book/">Pro Git</a></li>
-                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
-                <li><a href="http://help.github.com/">GitHub Help</a></li>
-                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+                <li><a href="http://book.git-scm.com/">Git 社区参考书</a></li>
+                <li><a href="http://progit.org/book/">专业 Git</a></li>
+                <li><a href="http://think-like-a-git.net/">如 git 思考</a></li>
+                <li><a href="http://help.github.com/">GitHub 帮助</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">图形化的 Git 指南一则</a></li>
             </ul>
         </p>
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
-        <h2>comments</h2>
+        <h2>评论</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
