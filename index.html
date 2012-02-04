@@ -158,7 +158,11 @@
             manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
             <code>git add &lt;filename&gt;</code><br />
             before merging changes, you can also preview them by using<br />
-            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code><br /><br />
+
+            to update your local repository to the newest commit, when you already have some of your own commits present in the local repository(which are not yet present on the remote repository), do <br />
+            <code>git pull --rebase</code><br />
+            This will <i>fetch</i>, <i>merge</i> and then re-apply your local commits(if present) at the top of the history tree.
         </p>
     </div>
     <a name="tagging"></a>
