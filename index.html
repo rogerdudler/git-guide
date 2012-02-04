@@ -94,6 +94,29 @@
             Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
         </p>
     </div>
+    <a name="remotes"></a>
+    <div class="scrollblock block-remotes">
+      <h2>adding remotes</h2>
+        <p>
+            Before you can perform push/pull operations, you need to add the URL of your remote repository.<br />
+            Git stores an alias or nickname for each remote repository URL.<br />
+            To view all remotes,<br />
+            <code>git remote -v</code> <br/><br/>
+
+            If you have not cloned an existing repository and want to connect your remote repository, you need to add it with<br />
+            <code>git remote add origin &lt;remote_repo_url&gt;</code><br />
+            Here <i>origin</i> is the alias for your remote repository url.
+            Now you can push or pull your changes to/from the selected remote server<br /><br />
+
+            If you cloned an existing repository, Git will automatically add the repository URL as <i>origin</i> (in this case the URL from where you cloned the repository).<br />
+
+            A few other commands to help manage these remotes, <br />
+            To remove a remote,<br/>
+            <code>git rm remote_name</code><br/>
+            To rename a remote,<br/>
+            <code>git rename old_name new_name</code>
+        <p>
+    </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
         <h2>pushing changes</h2>
@@ -101,11 +124,6 @@
             Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
             <code>git push origin master</code><br />
             Change <i>master</i> to whatever branch you want to push your changes to.
-            <br /><br />
-            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
-            <code>git remote add origin &lt;server&gt;</code><br />
-            Now you are able to push your changes to the selected remote server<br />
-
         </p>
     </div>
     <a name="branching"></a>
