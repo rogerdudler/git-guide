@@ -66,9 +66,9 @@
     <div class="scrollblock block-checkout">
         <h2>저장소 체크아웃하기</h2>
         <p>
-            로컬 저장소를 복사(클론)하기 위해, 다음 명령을 실행합니다.<br />
+            로컬 저장소를 클론(복사)하기 위해, 다음 명령을 실행합니다.<br />
             <code>git clone /path/to/repository</code><br />
-            원격 서버의 저장소를 복사(클론)하기 위해서는, 다음 명령을 실행합니다.<br />
+            원격 서버의 저장소를 클론(복사)하기 위해서는, 다음 명령을 실행합니다.<br />
             <code>git clone username@host:/path/to/repository</code>
         </p>
     </div>
@@ -87,26 +87,25 @@
     <div class="scrollblock block-add">
         <h2>추가 &amp; 커밋</h2>
         <p>
-            You can propose changes (add it to the <b>Index</b>) using<br />
+            다음 명령을 실행하여, 변경된 파일을 추가합니다.(<b>Index</b> 안에 추가됩니다)<br />
             <code>git add &lt;filename&gt;</code><br />
             <code>git add *</code><br />
-            This is the first step in the basic git workflow. To actually commit these changes use<br />
+            이것은 git 의 기본 작업흐름 첫번째 단계입니다. 실제로 변경내용을 커밋하기 위해서 다음 명령을 실행합니다.<br />
             <code>git commit -m "Commit message"</code><br />
-            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+            변경내된 파일이 <b>HEAD</b>에 반영되었습니다. 하지만, 원격 저장소에는 아직 반영되어 있지 않습니다.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>pushing changes</h2>
+        <h2>변경내용 푸시(전송)하기</h2>
         <p>
-            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
+            로컬 저장소의 <b>HEAD</b>안에 현재의 변경내용이 저장되어 있습니다.이 변경내용을 원격저장소로 전송하기 위해서 다음명령을 실행합니다.<br />
             <code>git push origin master</code><br />
-            Change <i>master</i> to whatever branch you want to push your changes to.
+            <i>master</i> 부분에는 변경내용을 푸시하고 싶은 브랜치명으로 바꿔 줍니다.
             <br /><br />
-            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
+            만약 기존 저장소를 클론하지 않고 사용하는 경우, 원격서버의 접속을 위해 다음 명령을 실행해야 합니다.<br />
             <code>git remote add origin &lt;server&gt;</code><br />
-            Now you are able to push your changes to the selected remote server<br />
-
+            이제 변경내용을 해당 원격 서버로 푸시(전송)할 수 있습니다.<br />
         </p>
     </div>
     <a name="branching"></a>
