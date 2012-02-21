@@ -78,7 +78,7 @@
         <p>
             로컬 저장소는 git 에서 관리하는 세그루의 나무로 구성됩니다. 
             첫번째 나무인 <code>Working Directory</code> 는 실제 파일들로 이루어집니다.
-            두번째 나무인 <code>Index</code> 는 준비단계의 역할을 하고,
+            두번째 나무인 <code>Index</code> 는 스테이징 영역(준비단계)의 역할을 하고,
             마지막 나무인 <code>HEAD</code> 는 최종 커밋을 나타냅니다.
         </p>
         <img src="img/trees.png" alt="" />
@@ -87,7 +87,7 @@
     <div class="scrollblock block-add">
         <h2>추가 &amp; 커밋</h2>
         <p>
-            다음 명령을 실행하여, 변경된 파일을 추가합니다.(<b>Index</b> 안에 추가됩니다)<br />
+            다음 명령을 실행하여, 변경된 파일을 추가합니다.(<b>Index</b>에 추가됩니다)<br />
             <code>git add &lt;filename&gt;</code><br />
             <code>git add *</code><br />
             이것은 git 의 기본 작업흐름 첫번째 단계입니다. 실제로 변경내용을 커밋하기 위해서 다음 명령을 실행합니다.<br />
@@ -110,7 +110,7 @@
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>브랜치 하기</h2>
+        <h2>브랜치하기</h2>
         <p>
             브랜치는 각기 다른 독립적인 기능을 개발할 때 사용됩니다. 저장소를 만들 때 기본 브랜치는 <i>master</i> 브랜치입니다. 다른 브랜치를 사용해서 개발한 후에는 master 브랜치로 돌아와 머지합니다.
         </p>
@@ -122,70 +122,69 @@
             <code>git checkout master</code><br />
             브랜치를 삭제합니다.<br />
             <code>git branch -d feature_x</code><br />
-            브랜치는 원격저장소에 푸시하기 전까지는 <i>다른사람들이 접근할 수 없게</i> 되어 있습니다.            
+            브랜치는 원격저장소에 푸시하기 전까지는 <i>다른사람들이 접근할 수 없게</i> 되어 있습니다.<br />           
             <code>git push origin &lt;branch&gt;</code>
         </p>
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>업데이드 &amp; 머지</h2>
+        <h2>업데이트 &amp; 머지</h2>
         <p>
             자신의 로컬 저장소를 최신 업데이트 상태로 만들기 위해 다음 명령을 실행합니다.<br />
             <code>git pull</code><br />
-            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
-            to merge another branch into your active branch (e.g. master), use<br />
-            <code>git merge &lt;branch&gt;</code><br />
-            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
-            You are responsible to merge those <i>conflicts</i>
-            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
+            원격 저장소의 변경내용이 로컬 작업 디렉토리에 <i>가져오고(fetch)</i> & <i>머지(merge)</i> 하게 됩니다.<br />
+            다른 브랜치에 있는 변경내용을 현재 브랜치(예-master)에 머지하기 위해서는 다음 명령을 실행합니다.<br />
+			<code>git merge &lt;branch&gt;</code><br />
+			git 은 두 곳 모두 변경내용을 자동머지하게 끔 되어있습니다. 그러나 항상 성공하기만 하는 건 아니고, <i>충돌(conflicts)</i>이 일어날 수도 있습니다.
+            수동으로 파일을 수정하고 <i>충돌</i>이 발생하는 부분을 해결하고 머지를 해야 합니다. 수정이 완료된 후, 아래 명령을 통해 머지되었음을 확인하는 마킹을 합니다.<br />
             <code>git add &lt;filename&gt;</code><br />
-            before merging changes, you can also preview them by using<br />
+            변경내용을 머지하기전에, 비교해 볼 수도 있습니다.<br />
             <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
         </p>
     </div>
     <a name="tagging"></a>
     <div class="scrollblock block-tagging">
-        <h2>tagging</h2>
+        <h2>태그하기</h2>
         <p>
-            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
+            소프트웨어를 릴리즈할 때마다 태그로 만들기를 추천합니다. 태그는 이미 SVN에 존재했던 기능입니다. 새로운 태그 <i>1.0.0</i> 을 만들기 위해 다음 명령을 실행합니다.<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id with <br />
+            위의 <i>1b2e1d63ff</i> 는 태그가 참조하게 되는 10자리로 구성된 커밋ID 입니다. 다음 명령을 통해 커밋ID 를 얻을 수 있습니다.<br />
             <code>git log</code><br />
-            you can also use fewer characters of the commit id, it just has to be unique.
+            커밋ID 는 앞글자 일부만 입력해도 가능은 하지만, 반드시 유일한 값이어야 합니다.
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
+        <h2>로컬 변경내용 되돌리기</h2>
         <p>
-            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
+            실수로 뭔가 잘못한 경우 (절대 일어나선 안될 일 같은 ;) 다음 명령을 통해 로컬 변경내용을 되돌릴 수 있습니다.<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+            HEAD 의 정보를 통해 로컬에서 수정하기 전의 마지막 상태로 되돌려 줍니다. 단, 이미 인덱스(index)에 추가된 변경내용은 유지되고, 새로 만든 파일도 사라지지 않습니다.
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            만약 모든 로컬 변경 및 커밋 작업을 그만두기를 원하는 경우, 서버에서 최신 이력을 가져와서(fetch), 로컬 master 브랜치를 그쪽으로 가리키도록 할 수도 있습니다.<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>useful hints</h2>
+        <h2>유용한 힌트</h2>
         <p>
-            built-in git GUI<br />
+            git의 내장GUI<br />
             <code>gitk</code><br />
-            use colorful git output<br />
+            콘솔에서 git output을 컬러로 출력하기<br />
             <code>git config color.ui true</code><br />
-            show log on just one line per commit<br />
+            로그에서 커밋 1개당 1라인만 표시하기<br />
             <code>git config format.pretty oneline</code><br />
-            use interactive adding<br />
+            인터렉티브 방식으로 파일 추가하기<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
-        <h2>links & resources</h2>
-        <h3>graphical clients</h3>
+        <h2>링크 & 자료</h2>
+        <h3>그래픽 클라이언트</h3>
         <p>
             <ul>
                 <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
@@ -194,7 +193,7 @@
                 <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
             </ul>
         </p>
-        <h3>guides</h3>
+        <h3>가이드</h3>
         <p>
             <ul>
                 <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
@@ -207,7 +206,7 @@
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
-        <h2>comments</h2>
+        <h2>댓글</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
