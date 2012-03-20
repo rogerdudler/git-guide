@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - 간편가이드 - 어렵지 않아요!</title>
+	<title>git - 간편 가이드 - 어렵지 않아요!</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
@@ -26,25 +26,25 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git - 간편가이드</h1>
-        <p>git 을 시작하기 위한 간편 가이드. 어렵지 않아요 ;)</p>
+        <h1>git - 간편 안내서</h1>
+        <p>git을 시작하기 위한 간편 안내서. 어렵지 않아요 ;)</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
-            만든이 <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
-            <br />도와준 이들<a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> 와 <a href="http://www.namics.com">Namics</a><br />
-            다른 언어로 보기 <a href="index.html">english</a>, <a href="index.de.html">deutsch</a>, <a href="index.es.html">español</a>, <a href="index.fr.html">français</a>, <a href="index.it.html">italiano</a>, <a href="index.nl.html">nederlands</a>, <a href="index.pt_BR.html">português</a>, <a href="index.ru.html">русский</a>, <br/>
-            <a href="index.ja.html">日本語</a>, <a href="index.zh.html">中文</a> <br/>
-            이슈 리포트는 이쪽으로 <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+            만든이: <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a><br />
+            도와준 이들: <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a>와 <a href="http://www.namics.com">Namics</a><br />
+            다른 언어로도 있어요: <a href="index.html">english</a>, <a href="index.de.html">deutsch</a>, <a href="index.es.html">español</a>, <a href="index.fr.html">français</a>, <a href="index.it.html">italiano</a>, <a href="index.nl.html">nederlands</a>,<br />
+            <a href="index.pt_BR.html">português</a>, <a href="index.ru.html">русский</a>, <a href="index.ja.html">日本語</a>, <a href="index.zh.html">中文</a><br/>
+            문제 보고는 <a href="https://github.com/rogerdudler/git-guide/issues">여기(github)</a>로!
         </p>
-        <img src="img/arrow.png" alt="" />
+        <img src="img/arrow.png" alt="자, 갑시다!" />
     </div>
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
         <h2>설치</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">OSX용 git 다운로드</a>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">OS X용 git 다운로드</a>
         </p>
         <p>
             <a href="http://code.google.com/p/msysgit/downloads/list?can=3">Windows용 git 다운로드</a>
@@ -57,112 +57,139 @@
     <div class="scrollblock block-create">
         <h2>새로운 저장소 만들기</h2>
         <p>
-            새로운 저장소를 만들기 위해, 다음 명령을 실행합니다.<br />
+            폴더를 하나 만들고, 그 안에서 아래 명령을 실행하세요.<br />
             <code>git init</code><br />
-            새로운 git 저장소가 만들어 집니다.
+            새로운 git 저장소가 만들어집니다.
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>저장소 체크아웃하기</h2>
+        <h2>저장소 받아오기</h2>
         <p>
-            로컬 저장소를 클론(복사)하기 위해, 다음 명령을 실행합니다.<br />
-            <code>git clone /path/to/repository</code><br />
-            원격 서버의 저장소를 클론(복사)하기 위해서는, 다음 명령을 실행합니다.<br />
-            <code>git clone username@host:/path/to/repository</code>
+            로컬 저장소를 복제(clone)하려면 아래 명령을 실행하세요.<br />
+            <code>git clone /로컬/저장소/경로</code><br />
+            원격 서버의 저장소를 복제하려면 아래 명령을 실행하세요.<br />
+            <code>git clone 사용자명@호스트:/원격/저장소/경로</code>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>작업 흐름</h2>
+        <h2>작업의 흐름</h2>
         <p>
-            로컬 저장소는 git 에서 관리하는 세그루의 나무로 구성됩니다. 
-            첫번째 나무인 <code>Working Directory</code> 는 실제 파일들로 이루어집니다.
-            두번째 나무인 <code>Index</code> 는 스테이징 영역(준비단계)의 역할을 하고,
-            마지막 나무인 <code>HEAD</code> 는 최종 커밋을 나타냅니다.
+            로컬 저장소는 git에서 관리하는 세 그루의 나무로 구성돼있어요.<br />
+            첫번째 나무인 <code>작업 디렉토리(Working directory)</code>는<br />
+            실제 파일들로 이루어져있고, 두번째 나무인 <code>인덱스(Index)</code>는<br />
+            준비 영역(staging area)의 역할을 하며, 마지막 나무인 <code>HEAD</code>는<br />
+            최종 확정본(commit)을 나타내요.
         </p>
-        <img src="img/trees.png" alt="" />
+        <img src="img/trees.png" alt="로컬 저장소는 이렇게 생겼어요." />
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>추가 &amp; 커밋</h2>
+        <h2>추가와 확정(commit)</h2>
         <p>
-            다음 명령을 실행하여, 변경된 파일을 추가합니다.(<b>Index</b>에 추가됩니다)<br />
-            <code>git add &lt;filename&gt;</code><br />
+            변경된 파일은 아래 명령어로 (<b>인덱스</b>에) 추가할 수 있어요.<br />
+            <code>git add &lt;파일명&gt;</code><br />
             <code>git add *</code><br />
-            이것은 git 의 기본 작업흐름 첫번째 단계입니다. 실제로 변경내용을 커밋하기 위해서 다음 명령을 실행합니다.<br />
-            <code>git commit -m "Commit message"</code><br />
-            변경내된 파일이 <b>HEAD</b>에 반영되었습니다. 하지만, 원격 저장소에는 아직 반영되어 있지 않습니다.
+            이것이 바로 git의 기본 작업 흐름에서 첫 단계에 해당돼요.<br />
+            하지만 실제로 변경 내용을 확정하려면 아래 명령을 내려야 한답니다.<br />
+            <code>git commit -m "이번 확정본에 대한 설명"</code><br />
+            자, 이제 변경된 파일이 <b>HEAD</b>에 반영됐어요.<br />
+            하지만, 원격 저장소에는 아직 반영이 안 됐답니다.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>변경내용 푸시(전송)하기</h2>
+        <h2>변경 내용 발행(push)하기</h2>
         <p>
-            로컬 저장소의 <b>HEAD</b>안에 현재의 변경내용이 저장되어 있습니다.이 변경내용을 원격저장소로 전송하기 위해서 다음명령을 실행합니다.<br />
+            현재의 변경 내용은 아직 로컬 저장소의 <b>HEAD</b> 안에 머물고 있어요.<br />
+            이제 이 변경 내용을 원격 서버로 올려봅시다. 아래 명령을 실행하세요.<br />
             <code>git push origin master</code><br />
-            <i>master</i> 부분에는 변경내용을 푸시하고 싶은 브랜치명으로 바꿔 줍니다.
+            (다른 가지를 발행하려면 <i>master</i>를 원하는 가지 이름으로 바꿔주세요.)
             <br /><br />
-            만약 기존 저장소를 클론하지 않고 사용하는 경우, 원격서버의 접속을 위해 다음 명령을 실행해야 합니다.<br />
-            <code>git remote add origin &lt;server&gt;</code><br />
-            이제 변경내용을 해당 원격 서버로 푸시(전송)할 수 있습니다.<br />
+            만약 기존에 있던 원격 저장소를 복제한 것이 아니라면,<br />
+            원격 서버의 주소를 git에게 알려줘야 해요.<br />
+            <code>git remote add origin &lt;원격 서버 주소&gt;</code><br />
+            이제 변경 내용을 원격 서버로 발행할 수 있어요.
         </p>
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>브랜치하기</h2>
+        <h2>가지(branch)치기</h2>
         <p>
-            브랜치는 각기 다른 독립적인 기능을 개발할 때 사용됩니다. 저장소를 만들 때 기본 브랜치는 <i>master</i> 브랜치입니다. 다른 브랜치를 사용해서 개발한 후에는 master 브랜치로 돌아와 머지합니다.
+            가지는 안전하게 격리된 상태에서 무언가를 만들 때 사용해요.<br />
+            여러분이 저장소를 새로 만들면 기본으로 <i>master 가지</i>가 만들어집니다.<br />
+            이제 다른 가지를 이용해서 개발을 진행하고, 나중에 개발이 완료되면<br />
+            master 가지로 돌아와 병합하면 돼요.
         </p>
-        <img src="img/branches.png" alt="" />
+        <img src="img/branches.png" alt="가지치기 예제를 보여드리죠." />
         <p>
-            "feature_x" 라는 이름의 브랜치를 만들어서 스위칭합니다.<br />
+            아래 명령으로 "feature_x"라는 이름의 가지를 만들고 갈아탑니다.<br />
             <code>git checkout -b feature_x</code><br />
-            master 브랜치로 돌아옵니다.<br />
+            아래 명령으로 master 가지로 돌아올 수 있어요.<br />
             <code>git checkout master</code><br />
-            브랜치를 삭제합니다.<br />
+            아래 명령으로는 가지를 삭제할 수 있어요.<br />
             <code>git branch -d feature_x</code><br />
-            브랜치는 원격저장소에 푸시하기 전까지는 <i>다른사람들이 접근할 수 없게</i> 되어 있습니다.<br />           
-            <code>git push origin &lt;branch&gt;</code>
+            여러분이 새로 만든 가지를 원격 저장소로 전송하기 전까지는<br />
+            <i>다른 사람들이 접근할 수 없어요</i>.<br />
+            <code>git push origin &lt;가지 이름&gt;</code>
         </p>
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>업데이트 &amp; 머지</h2>
+        <h2>갱신과 병합(merge)</h2>
         <p>
-            자신의 로컬 저장소를 최신 업데이트 상태로 만들기 위해 다음 명령을 실행합니다.<br />
+            여러분의 로컬 저장소를 원격 저장소에 맞춰 갱신하려면<br />
+            아래 명령을 실행하세요.<br />
             <code>git pull</code><br />
-            원격 저장소의 변경내용이 로컬 작업 디렉토리에 <i>가져오고(fetch)</i> & <i>머지(merge)</i> 하게 됩니다.<br />
-            다른 브랜치에 있는 변경내용을 현재 브랜치(예-master)에 머지하기 위해서는 다음 명령을 실행합니다.<br />
-			<code>git merge &lt;branch&gt;</code><br />
-			git 은 두 곳 모두 변경내용을 자동머지하게 끔 되어있습니다. 그러나 항상 성공하기만 하는 건 아니고, <i>충돌(conflicts)</i>이 일어날 수도 있습니다.
-            수동으로 파일을 수정하고 <i>충돌</i>이 발생하는 부분을 해결하고 머지를 해야 합니다. 수정이 완료된 후, 아래 명령을 통해 머지되었음을 확인하는 마킹을 합니다.<br />
-            <code>git add &lt;filename&gt;</code><br />
-            변경내용을 머지하기전에, 비교해 볼 수도 있습니다.<br />
-            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+            이렇게 하면 원격 저장소의 변경 내용이 로컬 작업 디렉토리에<br />
+            <i>받아지고(fetch)</i>, <i>병합(merge)</i>된답니다.<br />
+            다른 가지에 있는 변경 내용을 현재 가지(예를 들면, master 가지)에<br />
+            병합하려면 아래 명령을 실행하세요.<br />
+			<code>git merge &lt;가지 이름&gt;</code><br />
+			첫번째 명령이든 두번째 명령이든, git은<br />
+			자동으로 변경 내용을 병합하려고 시도해요.<br />
+			문제는, 항상 성공하는 게 아니라 가끔<br />
+			<i>충돌(conflicts)</i>이 일어나기도 한다는 거예요.<br />
+			이렇게 충돌이 발생하면, git이 알려주는 파일의 충돌 부분을<br />
+			여러분이 직접 수정해서 병합이 가능하도록 해야 하죠.<br />
+			충돌을 해결했다면, 아래 명령으로 git에게<br />
+			아까의 파일을 병합하라고 알려주세요.<br />
+            <code>git add &lt;파일명&gt;</code><br />
+            변경 내용을 병합하기 전에, 어떻게 바뀌었는지 비교해볼 수도 있어요.<br />
+            <code>git diff &lt;원래 가지&gt; &lt;비교 대상 가지&gt;</code>
         </p>
     </div>
     <a name="tagging"></a>
     <div class="scrollblock block-tagging">
-        <h2>태그하기</h2>
+        <h2>꼬리표(tag) 달기</h2>
         <p>
-            소프트웨어를 릴리즈할 때마다 태그로 만들기를 추천합니다. 태그는 이미 SVN에 존재했던 기능입니다. 새로운 태그 <i>1.0.0</i> 을 만들기 위해 다음 명령을 실행합니다.<br />
+            소프트웨어의 새 버전을 발표할 때마다 꼬리표를 달아놓으면 좋아요.<br />
+            (물론 꼬리표는 SVN 등에 이미 존재하는 기능이지요.)<br />
+            아래 명령을 실행하면 새로운 꼬리표인 <i>1.0.0</i>을 달 수 있어요.<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            위의 <i>1b2e1d63ff</i> 는 태그가 참조하게 되는 10자리로 구성된 커밋ID 입니다. 다음 명령을 통해 커밋ID 를 얻을 수 있습니다.<br />
+            위 명령에서 <i>1b2e1d63ff</i> 부분은 꼬리표가 가리킬 확정본 식별자입니다.<br />
+            아래 명령으로 확정본 식별자를 얻을 수 있어요.<br />
             <code>git log</code><br />
-            커밋ID 는 앞글자 일부만 입력해도 가능은 하지만, 반드시 유일한 값이어야 합니다.
+            확정본 식별자의 앞부분 일부만 입력해도 꼬리표를 붙일 수 있지만,<br />
+            그 일부분이 반드시 고유하다는 조건이 필요해요.
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>로컬 변경내용 되돌리기</h2>
+        <h2>로컬 변경 내용 되돌리기</h2>
         <p>
-            실수로 뭔가 잘못한 경우 (절대 일어나선 안될 일 같은 ;) 다음 명령을 통해 로컬 변경내용을 되돌릴 수 있습니다.<br />
-            <code>git checkout -- &lt;filename&gt;</code><br />
-            HEAD 의 정보를 통해 로컬에서 수정하기 전의 마지막 상태로 되돌려 줍니다. 단, 이미 인덱스(index)에 추가된 변경내용은 유지되고, 새로 만든 파일도 사라지지 않습니다.
+            만약 여러분이 (물론 일어나진 않겠지만 ;) 실수로 무언가 잘못한 경우,<br />
+            아래 명령으로 로컬의 변경 내용을 되돌릴 수 있어요.<br />
+            <code>git checkout -- &lt;파일명&gt;</code><br />
+            위 명령은 로컬의 변경 내용을 변경 전 상태(HEAD)로 되돌려줘요.<br />
+            다만, 이미 인덱스에 추가된 변경 내용과<br />
+            새로 생성한 파일은 그대로 남는답니다.
         </p>
         <p>
-            만약 모든 로컬 변경 및 커밋 작업을 그만두기를 원하는 경우, 서버에서 최신 이력을 가져와서(fetch), 로컬 master 브랜치를 그쪽으로 가리키도록 할 수도 있습니다.<br />
+            만약, 로컬에 있는 모든 변경 내용과 확정본을 포기하려면,<br />
+            아래 명령으로 원격 저장소의 최신 이력을 가져오고,<br />
+            로컬 master 가지가 저 이력을 가리키도록 할 수 있어요.<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
@@ -171,13 +198,13 @@
     <div class="scrollblock block-hints">
         <h2>유용한 힌트</h2>
         <p>
-            git의 내장GUI<br />
+            git의 내장 GUI<br />
             <code>gitk</code><br />
             콘솔에서 git output을 컬러로 출력하기<br />
             <code>git config color.ui true</code><br />
-            로그에서 커밋 1개당 1라인만 표시하기<br />
+            이력(log)에서 확정본 1개를 딱 한 줄로만 표시하기<br />
             <code>git config format.pretty oneline</code><br />
-            인터렉티브 방식으로 파일 추가하기<br />
+            파일을 추가할 때 대화식으로 추가하기<br />
             <code>git add -i</code>
         </p>
     </div>
@@ -187,13 +214,13 @@
         <h3>그래픽 클라이언트</h3>
         <p>
             <ul>
-                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
-                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
-                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, free)</a></li>
-                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OS X용, 오픈 소스 소프트웨어)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OS X용)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OS X용, 무료)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OS X용, 무료)</a></li>
             </ul>
         </p>
-        <h3>가이드</h3>
+        <h3>안내서 (영문!)</h3>
         <p>
             <ul>
                 <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
