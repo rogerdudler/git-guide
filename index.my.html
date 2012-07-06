@@ -9,8 +9,14 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link relf="stylesheet" href="http://mmwebfonts.comquas.com/fonts/?font=Yunghkio" type="text/css">
 	<style>
+	/*
+		fixed for myanmar font
+	*/
 	body {
-	font-family:"Masterpiece Uni Sans","Yunghkio";
+		font-family:Georgia,"Masterpiece Uni Sans","Yunghkio",sans-serif;
+	}
+	h2 {
+		font-family:'Chelsea Market',"Masterpiece Uni Sans","Yunghkio",Georgia, serif;
 	}
 	</style>
     <script type="text/javascript">
@@ -37,9 +43,12 @@
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
-            by <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
-            <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
-            this guide in 
+            ရေးသားသူ <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
+            
+            (ဘာသာပြန်သူ <a href="http://www.twitter.com/saturngod">saturngod</a>)
+            
+            <br /> ကျေးဇူးတင်ခြင်း <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+            ဒီလမ်းညွှန်ကို 
             <a href="index.de.html">deutsch</a>, 
             <a href="index.es.html">español</a>, 
             <a href="index.fr.html">français</a>, 
@@ -52,7 +61,10 @@
             <a href="index.ja.html">日本語</a>, 
             <a href="index.zh.html">中文</a>, 
             <a href="index.ko.html">한국어</a>
+                        တို့ဖြင့် ဖတ်နိုင်သည်။
             <br />
+
+
             ဆွေးနွေးခြင်းနှင့် ပြင်ဆင်ရန် အချက်များ ကို <a href="https://github.com/rogerdudler/git-guide/issues">github</a> တွင် တင်ပေးပါ။
         </p>
         <img src="img/arrow.png" alt="" />
@@ -93,7 +105,7 @@
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>workflow</h2>
+        <h2>အလုပ်လုပ်ပုံ</h2>
         <p>
         သင့် local repository မှာ git က ထိန်းသိမ်းဆောက်ရွက်တဲ့ ဆင့်ပွား ၃ ခု ရှိပါတယ်။ 
         ပထမ တစ်ခုကတော့ <code>Working Directory</code> ပါ။
@@ -108,27 +120,30 @@
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>add &amp; commit</h2>
+        <h2>add နှင့် commit</h2>
         <p>
-            You can propose changes (add it to the <b>Index</b>) using<br />
+        ပြင်ဆင်ထားတာများကို ထည့်သွင်းလိုလည်း အောက်ပါ အတိုင်း အသုံးပြုနိုင်သည်။ <br/>
             <code>git add &lt;filename&gt;</code><br />
             <code>git add *</code><br />
-            This is the first step in the basic git workflow. To actually commit these changes use<br />
+            ဒီ အဆင့်က ပထမ အဆင့်ပါ။ ပြောင်းလဲထားသည်များကို commit လုပ်လိုလျှင် <br/>
             <code>git commit -m "Commit message"</code><br />
-            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+            ပြင်ဆင်ထားသည်များကို <b>HEAD</b> တွင် မှတ်ထားပြီးသားဖြစ်သည်။ သို့သော် remote repository ပေါ်သို့ မရောက်သေးပါ။
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
         <h2>pushing changes</h2>
         <p>
-            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
+        	သင်ပြင်ဆင်ထားတာတွေက အခု သင့်ရဲ့ local working copy နေရာက <b>HEAD></b> မှာ ရောက်နေပါပြီ။ <br/>
+        	ပြောင်းလဲထားတဲ့ code တွေကို remote repository ဆီပို့ဖို့ အတွက်
+        	<br/>
             <code>git push origin master</code><br />
-            Change <i>master</i> to whatever branch you want to push your changes to.
+            <i>master</i> ကို သင့်ရဲ့ စိတ်ကြိုက် branch ပြောင်းနိုင်ပါတယ်။ သင် ပို့ချင်တဲ့ branch တစ်ခုခုကိုပေါ့။
             <br /><br />
-            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
+            တကယ်လို့ သင်က cloned မလုပ်ချင်ဘူး။ လက်ရှိ ရှိထားတဲ့ code ကို remote server နဲ့ ချိတ်ဆက်ချင်တယ်ဆိုရင်တော့ <br/>
             <code>git remote add origin &lt;server&gt;</code><br />
-            Now you are able to push your changes to the selected remote server<br />
+            
+            အခု သင်ရဲ့ code ကို သင်ရွေးချယ်ထားတဲ့  remote server ပေါ်တင်လို့ရပါပြီ။ <br/>
 
         </p>
     </div>
@@ -136,34 +151,47 @@
     <div class="scrollblock block-branching">
         <h2>branching</h2>
         <p>
-            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+        Branches တွေကို develop အဆင့်တွေမှာ အသုံးပြုပါတယ်။ 
+        <i>master</i> branch ကတော့ repository အသစ်ဖန်တီးတဲ့အခါမှာ ပုံသေပါလာပါတယ်။
+        တကယ်လို့ development အတွက် အြခား branches တွေခွဲထွက်ပြီး အကုန်ပြီးစီးမှသာ master branch နဲ့ ပြန်ပေါင်းပါတယ်။
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            create a new branch named "feature_x" and switch to it using<br />
+        	"feature_x" ဆိုတဲ့ branch အသစ်ဆောက်ပြီး ထို branch ကို ပြောင်းလဲ အသုံးပြုပုံ<br/>
             <code>git checkout -b feature_x</code><br />
-            switch back to master<br />
+            
+            master branch ကို ပြန်ပြောင်းပုံ <br/>
             <code>git checkout master</code><br />
-            and delete the branch again<br />
+            branch ကို ဖျက်ခြင်း<br />
             <code>git branch -d feature_x</code><br />
-            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
+            
+				branch ကို remote repository ကို push လုပ်လိုလျှင် <br/>
+
             <code>git push origin &lt;branch&gt;</code>
         </p>
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>update &amp; merge</h2>
+        <h2>အသစ်ဆွဲချခြင်း နှင့် ပေါင်းစည်းခြင်း</h2>
         <p>
-            to update your local repository to the newest commit, execute <br />
+        
+        		 local repository ကို remote repository တွင် အသစ် commit လုပ်ထားသည်များကို ဆွဲချလိုလျှင်<br/>
             <code>git pull</code><br />
-            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
-            to merge another branch into your active branch (e.g. master), use<br />
+            <i>pull</i> လို့ ခေါ်တဲ့အခါမှာ working directory ထဲသို့ နောက်ဆုံး ပြောင်းထားသည်များကို <i>fetch</i> နှင့် <i>merge</i> လုပ်သွားပါမယ်။<br/>
+            
+            လက်ရှိ အလုပ်လုပ်နေသော branch (ဥပမာ။။ master) ထဲကို အခြား branch မှ လာပေါင်းလိုလျှင် <br/>
+
             <code>git merge &lt;branch&gt;</code><br />
-            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
-            You are responsible to merge those <i>conflicts</i>
-            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
+            
+            ထိုအခါ git က အလိုအလျှောက် ပြင်ထားသည်များကို ပေါင်းပေးပါလိမ့်မယ်။ 
+            သို့သော်လည်း အမြဲတန်း အဆင်မပြေပါ။ တစ်ခါတစ်လေ <i>conflicts</i> ဖြစ်တာလေးတွေ ရှိတတ်ပါတယ်။
+
+					ထို အခါ <i>conflicts</i> ဖြစ်တာကို ကိုယ့်ဘာသာကိုယ် ပေါင်းဖို့ လုပ်ဆောင်ရပါတော့တယ်။
+					
+            <i>conflicts</i> ဖြစ်နေတဲ့ file များကို git တွင်ဖော်ထားပါတယ်။ ထို file များကို ကိုယ့်ဘာသာကိုယ် ပြင်ဆင်ပြီးရင် ပြန်ပြီးတော့ ထည့်ပေးဖို့ လိုပါတယ်။<br/>
             <code>git add &lt;filename&gt;</code><br />
-            before merging changes, you can also preview them by using<br />
+            
+            မပေါင်းခင်မှာ အရင်ဆုံး ပြောင်းထားတဲ့ code တွေကို ယှဉ်ကြည့်နိုင်ပါတယ်။<br/>
             <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
         </p>
     </div>
@@ -171,32 +199,35 @@
     <div class="scrollblock block-tagging">
         <h2>tagging</h2>
         <p>
-            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
+    			software version တစ်ခုကို ထုတ်လိုက်တိုင်းမှာ tag ကို အသုံးပြု အကြံပြုပါတယ်။ 
+    			ဒါသုံးခြင်းက SVN မှာ ပါပြီးသား အယူအဆ တစ်ခုပါ။  
+    			သင့်အနေနဲ့ tag နာမည် အသစ် <i>1.0.0<i> ဆိုပြီး ပေးနိုင်ပါတယ်။ <br/>
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id with <br />
+             <i>1b2e1d63ff</i> ကတော့ သင် tag လုပ်ချင်တဲ့ commit id ရဲ့ ပထမ စာလုံး ၁၀ လုံး ပါ။
+             သင့် အနေနဲ့ commit id ကို အောက်ကလို ရိုက်ပြီး ရယူနိုင်ပါတယ်။<br />
             <code>git log</code><br />
-            you can also use fewer characters of the commit id, it just has to be unique.
+            သင့်အနေနဲ့ commit id ရဲ့ အခြားစာလုံး အနည်းငယ်ကို အသုံးပြုနိုင်ပါတယ်။ သို့ပေမယ့် အဲဒီ id ဟာ ဘယ်သူမှ အသုံးမပြုထားပဲ ကင်းရှင်းဖို့ သို့မဟုတ် unique ဖြစ်ဖို့ လိုပါတယ်။
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
+        <h2>local ပြောင်းလဲခြင်းများကို အစားထိုးခြင်း</h2>
         <p>
-            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
+        တကယ်လို့ တခုခုမှားသွားပြီး local ထဲက file နဲ့ ပြန် အစားထိုးချင်ရင် <br/>
             <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+            အခု ပြောင်းလဲလိုက်တာက သင့်ရဲ့ working tree ထဲက HEAD ထဲ က နောက်ဆုံး content မှာ သွားပြီးတော့ အစားထိုးသွားမှာပါ။ ပြောင်းထားတာတွေကိုတော့ index အနေနဲ့ ထည့်ပြီး files အသစ်တွေကိုလည်း သိမ်းထားပါလိမ့်မယ်။
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            အကယ်၍ သင့်အနေနဲ့ local changes နှင့် commits တွေကို ဖျက်ချပြီး နောက်ဆုံး server နှင့် master branch က အကုန် ဆွဲယူပြီး အစားထိုးချင်ရင်<br/>
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>အသုံးဝင်သော အရိပ်အမြွက်</h2>
+        <h2>အသုံးဝင်သော အရာများ</h2>
         <p>
-            ပါဝင်ပြီးသား git GUI<br />
+            GUI ပါဝင်သော git <br />
             <code>gitk</code><br />
             အရောင်များဖြင့် git output<br />
             <code>git config color.ui true</code><br />
@@ -231,7 +262,7 @@
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
-        <h2>comments</h2>
+        <h2>မှတ်ချက်များ</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
