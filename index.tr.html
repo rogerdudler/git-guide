@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -26,26 +26,26 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git - the simple guide</h1>
-        <p>just a simple guide for getting started with git. no deep shit ;)</p>
+        <h1>git - basit rehber</h1>
+        <p>git'e başlamak için basit bir rehber. atla deve değil ;)</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
             by <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
             <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
-            this guide in 
-            <a href="index.de.html">deutsch</a>, 
-            <a href="index.es.html">español</a>, 
-            <a href="index.fr.html">français</a>, 
-            <a href="index.it.html">italiano</a>, 
-            <a href="index.nl.html">nederlands</a>, 
-            <a href="index.pt_BR.html">português</a>, 
+            this guide in
+            <a href="index.html">english</a>,
+            <a href="index.de.html">deutsch</a>,
+            <a href="index.es.html">español</a>,
+            <a href="index.fr.html">français</a>,
+            <a href="index.it.html">italiano</a>,
+            <a href="index.nl.html">nederlands</a>,
+            <a href="index.pt_BR.html">português</a>,
             <a href="index.ru.html">русский</a>,
-            <a href="index.tr.html">türkçe</a>,
             <br/>
             <a href="index.my.html">မြန်မာ</a>,
-            <a href="index.ja.html">日本語</a>, 
-            <a href="index.zh.html">中文</a>, 
+            <a href="index.ja.html">日本語</a>,
+            <a href="index.zh.html">中文</a>,
             <a href="index.ko.html">한국어</a>
             <br />
             please report issues on <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
@@ -55,160 +55,162 @@
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
-        <h2>setup</h2>
+        <h2>kurulum</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Download git for OSX</a>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">OSX için git'i İndir</a>
         </p>
         <p>
-            <a href="http://code.google.com/p/msysgit/downloads/list?can=3">Download git for Windows</a>
+            <a href="http://code.google.com/p/msysgit/downloads/list?can=3">Windows için git'i İndir</a>
         </p>
         <p>
-            <a href="http://book.git-scm.com/2_installing_git.html">Download git for Linux</a>
+            <a href="http://book.git-scm.com/2_installing_git.html">Linux için git'i İndir</a>
         </p>
     </div>
     <a name="create"></a>
     <div class="scrollblock block-create">
-        <h2>create a new repository</h2>
+        <h2>yeni bir depo oluşturmak</h2>
         <p>
-            create a new directory, open it and perform a <br />
+            yeni bir depo oluşturmak için, bir klasör oluşturup içerisinde<br />
             <code>git init</code><br />
-            to create a new git repository.
+            komutunu çalıştırın.
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>checkout a repository</h2>
+        <h2>bir depoyu klonlamak</h2>
         <p>
-            create a working copy of a local repository by running the command<br />
-            <code>git clone /path/to/repository</code><br />
-            when using a remote server, your command will be<br />
-            <code>git clone username@host:/path/to/repository</code>
+            lokal deponuzun çalışan bir kopyasını oluşturmak için<br />
+            <code>git clone /yol/depo</code><br />
+            uzak sunucu kullandığımız durumda<br />
+            <code>git clone kullaniciadi@sunucu:/yol/depo</code>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>workflow</h2>
+        <h2>iş akışı</h2>
         <p>
-            your local repository consists of three "trees" maintained by git.
-            the first one is your <code>Working Directory</code> which holds the actual files.
-            the second one is the <code>Index</code> which acts as a staging area and
-            finally the <code>HEAD</code> which points to the last commit you've made.
+            lokal deponuz git tarafından yönetilen üç "ağaçtan" oluşur.
+            birincisi gerçek dosyaları tutan <code>Çalışma Dizini</code>.
+            ikincisi evreleme alanı gibi davranan <code>Index</code> ve
+            sonuncusu yaptığınız son commit'i gösteren <code>HEAD</code>.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>add &amp; commit</h2>
+        <h2>ekleme &amp; teslim</h2>
         <p>
-            You can propose changes (add it to the <b>Index</b>) using<br />
-            <code>git add &lt;filename&gt;</code><br />
+            Değişiklikleri belirtmek (<b>Index</b>'e eklemek) için<br />
+            <code>git add &lt;dosyaadı&gt;</code><br />
             <code>git add *</code><br />
-            This is the first step in the basic git workflow. To actually commit these changes use<br />
-            <code>git commit -m "Commit message"</code><br />
-            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+            Bu temel git iş akışında ilk adımdır. Gerçekten değişiklikleri teslim etmek için<br />
+            <code>git commit -m "Teslim mesajı"</code><br />
+            Şimdi dosyalar <b>HEAD</b>'e teslim edildi, fakat henüz uzak deponuza değil.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>pushing changes</h2>
+        <h2>değişiklikleri göndermek</h2>
         <p>
-            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
+            Şimdi değişiklikleriniz lokal kopyanızın <b>HEAD</b>'i içerisinde.<br /> Bu değişiklikleri uzak deponuza göndermek için,<br />
             <code>git push origin master</code><br />
-            Change <i>master</i> to whatever branch you want to push your changes to.
+            Değişiklikleri hangi dal'a (branch) göndermek isterseniz <i>master</i> ile değiştirin.
             <br /><br />
-            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
-            <code>git remote add origin &lt;server&gt;</code><br />
-            Now you are able to push your changes to the selected remote server<br />
+            Eğer var olan bir depoyu klonlamadıysanız ve deponuzu uzak sunucuya bağlamak istiyorsanız,<br />
+            <code>git remote add origin &lt;sunucu&gt;</code><br />
+            Şimdi değişikliklerinizi uzak sunucuya gönderebilirsiniz<br />
 
         </p>
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>branching</h2>
+        <h2>dallanma</h2>
         <p>
-            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+            Dallar birbirinden izole özelliklerin geliştirilmesi için kullanılır. Bir depo oluşturduğunuzda <i>master</i> "varsayılan" daldır. Diğer dalları geliştirme ve bitiminde geri birleştirmek için kullanın.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            create a new branch named "feature_x" and switch to it using<br />
+            "feature_x" adıyla yeni bir dal oluşturup o dala geçmek için <br />
             <code>git checkout -b feature_x</code><br />
-            switch back to master<br />
+            master'a geri geçmek için<br />
             <code>git checkout master</code><br />
-            and delete the branch again<br />
+            ve oluşturduğumuz dalı silmek için<br />
             <code>git branch -d feature_x</code><br />
-            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
-            <code>git push origin &lt;branch&gt;</code>
+            bir dalı uzak deponuza göndermedikçe<br /><i>başkaları tarafından kullanılabilir olmaz</i><br />
+            <code>git push origin &lt;dal&gt;</code>
         </p>
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>update &amp; merge</h2>
+        <h2>güncelleme &amp; birleştirme</h2>
         <p>
-            to update your local repository to the newest commit, execute <br />
+            lokal deponuzu en güncel teslime (commit) güncellemek için<br />
             <code>git pull</code><br />
-            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
-            to merge another branch into your active branch (e.g. master), use<br />
-            <code>git merge &lt;branch&gt;</code><br />
-            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
-            You are responsible to merge those <i>conflicts</i>
-            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
-            <code>git add &lt;filename&gt;</code><br />
-            before merging changes, you can also preview them by using<br />
-            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+            komutunu çalıştırarak değişiklikleri <i>al (fetch)</i> ve <i> birleştir (merge)</i> yapın.
+            aktif dala (örn. master) başka bir dalı birleştirmek için <br />
+            <code>git merge &lt;dal&gt;</code><br />
+            her iki durumda da git değişiklikleri otomatik birleştirmeyi (auto-merge) dener.
+            Maalesef, bu her zaman mümkün olmaz ve <i>çakışmalarla (conflict)</i> sonuçlanır.
+            Git tarafından gösterilen dosyaları elle düzenleyerek bu <i>çakışmaları</i> birleştirmek size düşer.
+            Değişikliklerden sonra, dosyaları eklemek için<br />
+            <code>git add &lt;dosyaadı&gt;</code><br />
+
+            değişiklikleri birleştirmeden önce, önizleme yapmak için<br />
+            <code>git diff &lt;kaynak_dal&gt; &lt;hedef_dal&gt;</code>
         </p>
     </div>
     <a name="tagging"></a>
     <div class="scrollblock block-tagging">
-        <h2>tagging</h2>
+        <h2>imlemek</h2>
         <p>
-            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
+            yazılım sürümleri için im oluşturma tavsiye edilir. bu SVN'de de mevcut olan bilindik bir kavramdır. <i>1.0.0</i> adıyla bir im oluşturmak için<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id with <br />
+            buradaki <i>1b2e1d63ff</i> imlemek istediğimiz teslim ID'sinin ilk 10 karakteridir. Teslim ID'leri görmek için<br />
             <code>git log</code><br />
-            you can also use fewer characters of the commit id, it just has to be unique.
+            tekil olduğu sürece daha az teslim ID karakteri de kullanabilirsiniz.
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
+        <h2>lokal değişiklikleri geri almak</h2>
         <p>
-            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
-            <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+            Yanlış birşey yapmanız durumunda (tabi ki böyle şeyler hiç olmaz ;) lokal değişiklikleri geri almak için<br />
+            <code>git checkout -- &lt;dosyaadı&gt;</code><br />
+            bu değişikliklerinizi HEAD içerisindeki son içerik ile değiştirir. Index'e önceden eklenmiş değişiklikler ve yeni dosyalar korunacaktır.
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            Eğer tüm lokal değişiklik ve teslimlerinizi iptal etmek istiyorsanız, sunucudan en son kayıtları getirin ve lokal master dalınıza gösterin<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>useful hints</h2>
+        <h2>faydalı ipuçları</h2>
         <p>
-            built-in git GUI<br />
+            dahili git GUI (Grafiksel Kullanıcı Arayüzü)<br />
             <code>gitk</code><br />
-            use colorful git output<br />
+            renkli git çıktısı kullanın<br />
             <code>git config color.ui true</code><br />
-            show log on just one line per commit<br />
+            commit başına sadece tek satır log gösterin<br />
             <code>git config format.pretty oneline</code><br />
-            use interactive adding<br />
+            interaktif ekleme kullanın<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
-        <h2>links & resources</h2>
-        <h3>graphical clients</h3>
+        <h2>linkler & kaynaklar</h2>
+        <h3>grafiksel istemciler</h3>
         <p>
             <ul>
-                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, açık kaynak)</a></li>
                 <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
-                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, free)</a></li>
-                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, ücretsiz)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, ücretsiz)</a></li>
             </ul>
         </p>
-        <h3>guides</h3>
+        <h3>rehberler</h3>
         <p>
             <ul>
                 <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
@@ -221,7 +223,7 @@
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
-        <h2>comments</h2>
+        <h2>yorumlar</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
