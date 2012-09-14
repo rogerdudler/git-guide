@@ -92,7 +92,7 @@
             seus reposit&oacute;rio local consiste em tr&ecirc;s "&aacute;rvores" mantidas pelo git.
             a primeira delas &eacute; sua <code>Working Directory</code> que cont&eacute;m os arquivos vigentes.
             a segunda <code>Index</code> que funciona como uma &aacute;rea tempor&aacute;ria e
-            finalmente a <code>HEAD</code> que aponta para a &uacute;ltima confirma&ccedil;&atilde;o que voc&ecirc; fez.
+            finalmente a <code>HEAD</code> que aponta para o &uacute;ltimo <i>commit</i> (confirma&ccedil;&atilde;o) que voc&ecirc; fez.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
@@ -103,7 +103,7 @@
             Voc&ecirc; pode propor mudan&ccedil;as (adicion&aacute;-las ao <b>Index</b>) usando<br />
             <code>git add &lt;arquivo&gt;</code><br />
             <code>git add *</code><br />
-            Este &eacute; o primeiro passo no fluxo de trabalho b&aacute;sico do git. Para realmente confirmar estas mudan&ccedil;as use<br />
+            Este &eacute; o primeiro passo no fluxo de trabalho b&aacute;sico do git. Para realmente confirmar estas mudan&ccedil;as (isto é, fazer um <i>commit</i>), use<br />
             <code>git commit -m "coment&aacute;rios das altera&ccedil;&otilde;es"</code><br />
             Agora o arquivo &eacute; enviado para o <b>HEAD</b>, mas ainda n&atilde;o para o reposit&oacute;rio remoto.
         </p>
@@ -163,9 +163,9 @@
         <p>
             &eacute; recomendado criar r&oacute;tulos para releases de software. Este &eacute; um conhecido conceito, que tamb&eacute;m existe no SVN. Voc&ecirc; pode criar um novo r&oacute;tulo chamado <i>1.0.0</i> executando o comando<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            o <i>1b2e1d63ff</i> representa os 10 primeiros caracteres do id de confirma&ccedil;&atilde;o que voc&ecirc; quer referenciar com seu r&oacute;tulo. Voc&ecirc; pode obter o id de confirma&ccedil;&atilde;o com <br />
+            o <i>1b2e1d63ff</i> representa os 10 primeiros caracteres do id de commit que voc&ecirc; quer referenciar com seu r&oacute;tulo. Voc&ecirc; pode obter o id de commit com <br />
             <code>git log</code><br />
-            voc&ecirc; pode tamb&eacute;m usar menos caracteres do id de confirma&ccedil;&atilde;o, ele somente precisa ser &uacute;nico.
+            voc&ecirc; pode tamb&eacute;m usar menos caracteres do id de commit, ele somente precisa ser &uacute;nico.
         </p>
     </div>
     <a name="checkout-replace"></a>
@@ -177,7 +177,7 @@
             isto substitui as altera&ccedil;&otilde;es na sua &aacute;rvore de trabalho com o conte&uacute;do mais recente no HEAD. Altera&ccedil;&otilde;es j&aacute; adicionadas ao index, bem como novos arquivos ser&atilde;o mantidos.
         </p>
         <p>
-            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e confirma&ccedil;&otilde;es locais, recupere o hist&oacute;rico mais recente do servidor e aponte para seu branch master local desta forma<br />
+            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e commits locais, recupere o hist&oacute;rico mais recente do servidor e aponte para seu branch master local desta forma<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
@@ -190,7 +190,7 @@
             <code>gitk</code><br />
             usar sa&iacute;das do git coloridas<br />
             <code>git config color.ui true</code><br />
-            exibir log em apenas uma linha por confirma&ccedil;&atilde;o<br />
+            exibir log em apenas uma linha por commit<br />
             <code>git config format.pretty oneline</code><br />
             fazer inclus&otilde;es interativas<br />
             <code>git add -i</code>
