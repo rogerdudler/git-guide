@@ -114,7 +114,7 @@
         <p>
             Suas altera&ccedil;&otilde;es agora est&atilde;o no <b>HEAD</b> da sua c&oacute;pia de trabalho local. Para enviar estas altera&ccedil;&otilde;es ao seu reposit&oacute;rio remoto, execute <br />
             <code>git push origin master</code><br />
-            Altere <i>master</i> para qualquer ramifica&ccedil;&atilde;o desejada, enviando suas altera&ccedil;&otilde;es para ela.
+            Altere <i>master</i> para qualquer ramifica&ccedil;&atilde;o (<i>branch</i>) desejada, enviando suas altera&ccedil;&otilde;es para ela.
             <br /><br />
             Se voc&ecirc; n&atilde;o clonou um reposit&oacute;rio existente e quer conectar seu reposit&oacute;rio a um servidor remoto, voc&ecirc; deve adicion&aacute;-lo com<br />
             <code>git remote add origin &lt;servidor&gt;</code><br />
@@ -126,18 +126,18 @@
     <div class="scrollblock block-branching">
         <h2>ramificando</h2>
         <p>
-            Ramos s&atilde;o utilizados para desenvolver funcionalidades isoladas umas das outras. O ramo <i>master</i> &eacute; o ramo "padr&atilde;o" quando voc&ecirc; cria um reposit&oacute;rio. Use outros ramos para desenvolver e mescle-os ao ramo master ap&oacute;s a conclus&atilde;o.
+            <i>Branches</i> ("ramos") s&atilde;o utilizados para desenvolver funcionalidades isoladas umas das outras. O branch <i>master</i> &eacute; o branch "padr&atilde;o" quando voc&ecirc; cria um reposit&oacute;rio. Use outros branches para desenvolver e mescle-os (<i>merge</i>) ao branch master ap&oacute;s a conclus&atilde;o.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            crie um novo ramo chamado "funcionalidade_x" e selecione-o usando<br />
+            crie um novo branch chamado "funcionalidade_x" e selecione-o usando<br />
             <code>git checkout -b funcionalidade_x</code><br />
             retorne para o master usando<br />
             <code>git checkout master</code><br />
-            e remova o ramo da seguinte forma<br />
+            e remova o branch da seguinte forma<br />
             <code>git branch -d funcionalidade_x</code><br />
-            um ramo <i> n&atilde;o est&aacute; dispon&iacute;vel a outros</i> a menos que voc&ecirc; envie o ramo para seu reposit&oacute;rio remoto<br />
-            <code>git push origin &lt;ramo&gt;</code>
+            um branch <i> n&atilde;o est&aacute; dispon&iacute;vel a outros</i> a menos que voc&ecirc; envie o branch para seu reposit&oacute;rio remoto<br />
+            <code>git push origin &lt;funcionalidade_x&gt;</code>
         </p>
     </div>
     <a name="update"></a>
@@ -177,7 +177,7 @@
             isto substitui as altera&ccedil;&otilde;es na sua &aacute;rvore de trabalho com o conte&uacute;do mais recente no HEAD. Altera&ccedil;&otilde;es j&aacute; adicionadas ao index, bem como novos arquivos ser&atilde;o mantidos.
         </p>
         <p>
-            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e confirma&ccedil;&otilde;es locais, recupere o hist&oacute;rico mais recente do servidor e aponte para seu ramo master local desta forma<br />
+            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e confirma&ccedil;&otilde;es locais, recupere o hist&oacute;rico mais recente do servidor e aponte para seu branch master local desta forma<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
