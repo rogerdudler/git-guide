@@ -92,7 +92,7 @@
             seus reposit&oacute;rio local consiste em tr&ecirc;s "&aacute;rvores" mantidas pelo git.
             a primeira delas &eacute; sua <code>Working Directory</code> que cont&eacute;m os arquivos vigentes.
             a segunda <code>Index</code> que funciona como uma &aacute;rea tempor&aacute;ria e
-            finalmente a <code>HEAD</code> que aponta para a &uacute;ltima confirma&ccedil;&atilde;o que voc&ecirc; fez.
+            finalmente a <code>HEAD</code> que aponta para o &uacute;ltimo <i>commit</i> (confirma&ccedil;&atilde;o) que voc&ecirc; fez.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
@@ -103,7 +103,7 @@
             Voc&ecirc; pode propor mudan&ccedil;as (adicion&aacute;-las ao <b>Index</b>) usando<br />
             <code>git add &lt;arquivo&gt;</code><br />
             <code>git add *</code><br />
-            Este &eacute; o primeiro passo no fluxo de trabalho b&aacute;sico do git. Para realmente confirmar estas mudan&ccedil;as use<br />
+            Este &eacute; o primeiro passo no fluxo de trabalho b&aacute;sico do git. Para realmente confirmar estas mudan&ccedil;as (isto é, fazer um <i>commit</i>), use<br />
             <code>git commit -m "coment&aacute;rios das altera&ccedil;&otilde;es"</code><br />
             Agora o arquivo &eacute; enviado para o <b>HEAD</b>, mas ainda n&atilde;o para o reposit&oacute;rio remoto.
         </p>
@@ -114,7 +114,7 @@
         <p>
             Suas altera&ccedil;&otilde;es agora est&atilde;o no <b>HEAD</b> da sua c&oacute;pia de trabalho local. Para enviar estas altera&ccedil;&otilde;es ao seu reposit&oacute;rio remoto, execute <br />
             <code>git push origin master</code><br />
-            Altere <i>master</i> para qualquer ramifica&ccedil;&atilde;o desejada, enviando suas altera&ccedil;&otilde;es para ela.
+            Altere <i>master</i> para qualquer ramo (<i>branch</i>) desejado, enviando suas altera&ccedil;&otilde;es para ele.
             <br /><br />
             Se voc&ecirc; n&atilde;o clonou um reposit&oacute;rio existente e quer conectar seu reposit&oacute;rio a um servidor remoto, voc&ecirc; deve adicion&aacute;-lo com<br />
             <code>git remote add origin &lt;servidor&gt;</code><br />
@@ -126,18 +126,18 @@
     <div class="scrollblock block-branching">
         <h2>ramificando</h2>
         <p>
-            Ramos s&atilde;o utilizados para desenvolver funcionalidades isoladas umas das outras. O ramo <i>master</i> &eacute; o ramo "padr&atilde;o" quando voc&ecirc; cria um reposit&oacute;rio. Use outros ramos para desenvolver e mescle-os ao ramo master ap&oacute;s a conclus&atilde;o.
+            <i>Branches</i> ("ramos") s&atilde;o utilizados para desenvolver funcionalidades isoladas umas das outras. O branch <i>master</i> &eacute; o branch "padr&atilde;o" quando voc&ecirc; cria um reposit&oacute;rio. Use outros branches para desenvolver e mescle-os (<i>merge</i>) ao branch master ap&oacute;s a conclus&atilde;o.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            crie um novo ramo chamado "funcionalidade_x" e selecione-o usando<br />
+            crie um novo branch chamado "funcionalidade_x" e selecione-o usando<br />
             <code>git checkout -b funcionalidade_x</code><br />
             retorne para o master usando<br />
             <code>git checkout master</code><br />
-            e remova o ramo da seguinte forma<br />
+            e remova o branch da seguinte forma<br />
             <code>git branch -d funcionalidade_x</code><br />
-            um ramo <i> n&atilde;o est&aacute; dispon&iacute;vel a outros</i> a menos que voc&ecirc; envie o ramo para seu reposit&oacute;rio remoto<br />
-            <code>git push origin &lt;ramo&gt;</code>
+            um branch <i> n&atilde;o est&aacute; dispon&iacute;vel a outros</i> a menos que voc&ecirc; envie o branch para seu reposit&oacute;rio remoto<br />
+            <code>git push origin &lt;funcionalidade_x&gt;</code>
         </p>
     </div>
     <a name="update"></a>
@@ -146,15 +146,15 @@
         <p>
             para atualizar seu reposit&oacute;rio local com a mais nova vers&atilde;o, execute <br />
             <code>git pull</code><br />
-            na sua pasta de trabalho para <i>obter</i> e <i>mesclar</i> altera&ccedil;&otilde;es remotas.<br />
-            para mesclar um outro ramo ao seu ramo ativo (ex. master), use<br />
-            <code>git merge &lt;ramo&gt;</code><br />
-            em ambos os casos o git tenta auto-mesclar as altera&ccedil;&otilde;es. Infelizmente, isto nem sempre &eacute; poss&iacute;vel e resulta em <i>conflitos</i>.
-            Voc&ecirc; &eacute; respons&aacute;vel por mesclar estes <i>conflitos</i>
-            manualmente editando os arquivos exibidos pelo git. Depois de alterar, voc&ecirc; precisa marc&aacute;-los como mesclados com<br />
+            na sua pasta de trabalho para <i>obter</i> e <i>fazer merge</i> (mesclar) altera&ccedil;&otilde;es remotas.<br />
+            para fazer merge de um outro branch ao seu branch ativo (ex. master), use<br />
+            <code>git merge &lt;branch&gt;</code><br />
+            em ambos os casos o git tenta fazer o merge das altera&ccedil;&otilde;es automaticamente. Infelizmente, isto nem sempre &eacute; poss&iacute;vel e resulta em <i>conflitos</i>.
+            Voc&ecirc; &eacute; respons&aacute;vel por fazer o merge estes <i>conflitos</i>
+            manualmente editando os arquivos exibidos pelo git. Depois de alterar, voc&ecirc; precisa marc&aacute;-los como merged com<br />
             <code>git add &lt;arquivo&gt;</code><br />
-            antes de mesclar as altera&ccedil;&otilde;es, voc&ecirc; pode tamb&eacute;m pr&eacute;-visualiz&aacute;-as usando<br />
-            <code>git diff &lt;ramo origem&gt; &lt;ramo destino&gt;</code>
+            antes de fazer o merge das altera&ccedil;&otilde;es, voc&ecirc; pode tamb&eacute;m pr&eacute;-visualiz&aacute;-as usando<br />
+            <code>git diff &lt;branch origem&gt; &lt;branch destino&gt;</code>
         </p>
     </div>
     <a name="tagging"></a>
@@ -163,9 +163,9 @@
         <p>
             &eacute; recomendado criar r&oacute;tulos para releases de software. Este &eacute; um conhecido conceito, que tamb&eacute;m existe no SVN. Voc&ecirc; pode criar um novo r&oacute;tulo chamado <i>1.0.0</i> executando o comando<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            o <i>1b2e1d63ff</i> representa os 10 primeiros caracteres do id de confirma&ccedil;&atilde;o que voc&ecirc; quer referenciar com seu r&oacute;tulo. Voc&ecirc; pode obter o id de confirma&ccedil;&atilde;o com <br />
+            o <i>1b2e1d63ff</i> representa os 10 primeiros caracteres do id de commit que voc&ecirc; quer referenciar com seu r&oacute;tulo. Voc&ecirc; pode obter o id de commit com <br />
             <code>git log</code><br />
-            voc&ecirc; pode tamb&eacute;m usar menos caracteres do id de confirma&ccedil;&atilde;o, ele somente precisa ser &uacute;nico.
+            voc&ecirc; pode tamb&eacute;m usar menos caracteres do id de commit, ele somente precisa ser &uacute;nico.
         </p>
     </div>
     <a name="checkout-replace"></a>
@@ -177,7 +177,7 @@
             isto substitui as altera&ccedil;&otilde;es na sua &aacute;rvore de trabalho com o conte&uacute;do mais recente no HEAD. Altera&ccedil;&otilde;es j&aacute; adicionadas ao index, bem como novos arquivos ser&atilde;o mantidos.
         </p>
         <p>
-            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e confirma&ccedil;&otilde;es locais, recupere o hist&oacute;rico mais recente do servidor e aponte para seu ramo master local desta forma<br />
+            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e commits locais, recupere o hist&oacute;rico mais recente do servidor e aponte para seu branch master local desta forma<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
@@ -190,7 +190,7 @@
             <code>gitk</code><br />
             usar sa&iacute;das do git coloridas<br />
             <code>git config color.ui true</code><br />
-            exibir log em apenas uma linha por confirma&ccedil;&atilde;o<br />
+            exibir log em apenas uma linha por commit<br />
             <code>git config format.pretty oneline</code><br />
             fazer inclus&otilde;es interativas<br />
             <code>git add -i</code>
