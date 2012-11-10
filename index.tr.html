@@ -77,9 +77,9 @@
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>bir depoyu klonlamak</h2>
+        <h2>bir depoyu kopyalamak</h2>
         <p>
-            lokal deponuzun çalışan bir kopyasını oluşturmak için<br />
+            yerel deponuzun çalışan bir kopyasını oluşturmak için<br />
             <code>git clone /yol/depo</code><br />
             uzak sunucu kullandığımız durumda<br />
             <code>git clone kullaniciadi@sunucu:/yol/depo</code>
@@ -89,9 +89,9 @@
     <div class="scrollblock block-trees">
         <h2>iş akışı</h2>
         <p>
-            lokal deponuz git tarafından yönetilen üç "ağaçtan" oluşur.
+            yerel deponuz git tarafından yönetilen üç "ağaçtan" oluşur.
             birincisi gerçek dosyaları tutan <code>Çalışma Dizini</code>.
-            ikincisi evreleme alanı gibi davranan <code>Index</code> ve
+            ikinci etap <code>Stage</code> ve
             sonuncusu yaptığınız son commit'i gösteren <code>HEAD</code>.
         </p>
         <img src="img/trees.png" alt="" />
@@ -103,20 +103,20 @@
             Değişiklikleri belirtmek (<b>Index</b>'e eklemek) için<br />
             <code>git add &lt;dosyaadı&gt;</code><br />
             <code>git add *</code><br />
-            Bu temel git iş akışında ilk adımdır. Gerçekten değişiklikleri teslim etmek için<br />
+            Temel git iş akışında bu ilk adımdır. Değişiklikleri depoya eklemek için<br />
             <code>git commit -m "Teslim mesajı"</code><br />
-            Şimdi dosyalar <b>HEAD</b>'e teslim edildi, fakat henüz uzak deponuza değil.
+            Şimdi dosyalar <b>HEAD</b>'e eklendi, fakat henüz uzak deponuza değil.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
         <h2>değişiklikleri göndermek</h2>
         <p>
-            Şimdi değişiklikleriniz lokal kopyanızın <b>HEAD</b>'i içerisinde.<br /> Bu değişiklikleri uzak deponuza göndermek için,<br />
+            Şimdi değişiklikleriniz yerel deponuzun <b>HEAD</b>'i içerisinde.<br /> Bu değişiklikleri uzak deponuza göndermek için,<br />
             <code>git push origin master</code><br />
-            Değişiklikleri hangi dal'a (branch) göndermek isterseniz <i>master</i> ile değiştirin.
+            Değişiklikleri uzak deponuzdaki göndermek istediğiniz dal'ı <i>master</i> ile değiştirin.
             <br /><br />
-            Eğer var olan bir depoyu klonlamadıysanız ve deponuzu uzak sunucuya bağlamak istiyorsanız,<br />
+            Henüz uzak bir deponuz yoksa ve uzak depo eklemek istiyorsanız,<br />
             <code>git remote add origin &lt;sunucu&gt;</code><br />
             Şimdi değişikliklerinizi uzak sunucuya gönderebilirsiniz<br />
 
@@ -124,9 +124,9 @@
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>dallanma</h2>
+        <h2>dallar ile çalışmak</h2>
         <p>
-            Dallar birbirinden izole özelliklerin geliştirilmesi için kullanılır. Bir depo oluşturduğunuzda <i>master</i> "varsayılan" daldır. Diğer dalları geliştirme ve bitiminde geri birleştirmek için kullanın.
+            Dallar farklı özellikleri ayrı ayrı geliştirmek için kullanılır. Yeni bir depo oluşturduğunuzda <i>master</i> "varsayılan" daldır. Diğer dallar geliştirildikten sonra <i>master</i>'a birleştirilir.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
@@ -144,10 +144,10 @@
     <div class="scrollblock block-merging">
         <h2>güncelleme &amp; birleştirme</h2>
         <p>
-            lokal deponuzu en güncel teslime (commit) güncellemek için<br />
+            en son değişiklikleri (commit) yerel deponuza almak için<br />
             <code>git pull</code><br />
-            komutunu çalıştırarak değişiklikleri <i>al (fetch)</i> ve <i> birleştir (merge)</i> yapın.
-            aktif dala (örn. master) başka bir dalı birleştirmek için <br />
+            komutunu çalıştırın. Bu değişiklikleri al <i>(fetch)</i> ve  birleştir <i>(merge)</i> yapacaktır.
+            Aktif dala (örn. master) başka bir dalı birleştirmek için <br />
             <code>git merge &lt;dal&gt;</code><br />
             her iki durumda da git değişiklikleri otomatik birleştirmeyi (auto-merge) dener.
             Maalesef, bu her zaman mümkün olmaz ve <i>çakışmalarla (conflict)</i> sonuçlanır.
@@ -161,25 +161,25 @@
     </div>
     <a name="tagging"></a>
     <div class="scrollblock block-tagging">
-        <h2>imlemek</h2>
+        <h2>sürümlemek</h2>
         <p>
-            yazılım sürümleri için im oluşturma tavsiye edilir. bu SVN'de de mevcut olan bilindik bir kavramdır. <i>1.0.0</i> adıyla bir im oluşturmak için<br />
+            yazılım sürümleriniz için sürüm adı (tag) oluşturmanız tavsiye edilir. bu SVN'de de mevcut olan bilindik bir kavramdır. <i>1.0.0</i> adıyla bir sürüm numarası (tag) oluşturmak için<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            buradaki <i>1b2e1d63ff</i> imlemek istediğimiz teslim ID'sinin ilk 10 karakteridir. Teslim ID'leri görmek için<br />
+            buradaki <i>1b2e1d63ff</i> yayımlanacak yazılım sürümünüzün işlem numarasının ilk 10 karakteridir. İşlem kimlik numaralarını görmek için<br />
             <code>git log</code><br />
-            tekil olduğu sürece daha az teslim ID karakteri de kullanabilirsiniz.
+            tekil olduğu sürece daha az işlem numarası da kullanabilirsiniz.
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>lokal değişiklikleri geri almak</h2>
+        <h2>yerel değişiklikleri geri almak</h2>
         <p>
-            Yanlış birşey yapmanız durumunda (tabi ki böyle şeyler hiç olmaz ;) lokal değişiklikleri geri almak için<br />
+            Yanlış birşey yapmanız durumunda (tabi ki böyle şeyler hiç olmaz ;) yerel değişiklikleri geri almak için<br />
             <code>git checkout -- &lt;dosyaadı&gt;</code><br />
             bu değişikliklerinizi HEAD içerisindeki son içerik ile değiştirir. Index'e önceden eklenmiş değişiklikler ve yeni dosyalar korunacaktır.
         </p>
         <p>
-            Eğer tüm lokal değişiklik ve teslimlerinizi iptal etmek istiyorsanız, sunucudan en son kayıtları getirin ve lokal master dalınıza gösterin<br />
+            Eğer tüm yerel değişiklik ve teslimlerinizi iptal etmek istiyorsanız, sunucudan en son kayıtları getirin ve yerel master dalınıza gösterin<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
