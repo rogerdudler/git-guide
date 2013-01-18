@@ -87,7 +87,7 @@
             tu repositorio local esta compuesto por tres "árboles" administrados por git.
             el primero es tu <code>Directorio de trabajo</code> el cual contiene los archivos.
             el segundo es el <code>Index</code> el cual actua como un área intermedia y finalmente el
-	    <code>HEAD</code> el cual apunta a el último commit realizado.
+	    <code>HEAD</code> el cual apunta al último commit realizado.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
@@ -95,7 +95,7 @@
     <div class="scrollblock block-add">
         <h2>add &amp; commit</h2>
         <p>
-            Puedes proponer cambios (agregarlos a el <b>Index</b>) usando<br />
+            Puedes proponer cambios (agregarlos al <b>Index</b>) usando<br />
             <code>git add &lt;filename&gt;</code><br />
             <code>git add *</code><br />
             Este es el primer paso en el flujo de trabajo básico. Para en realidad hacer commit a estos cambios usa<br />
@@ -141,14 +141,14 @@
         <p>
             para actualizar tu repositorio local al commit más nuevo, ejecuta <br />
             <code>git pull</code><br />
-            en tu directorio de trabajo <i>fetch</i> y <i>merge</i> cambios remotos.<br />
+            en tu directorio de trabajo <i>bajar</i> y <i>fusionar</i> cambios remotos.<br />
             para fusionar otra rama a tu rama activa (por ejemplo master), utiliza<br />
             <code>git merge &lt;branch&gt;</code><br />
-            en ambos casos git intenta auto fusionar cambios. Desafortunadamente, esto no es posible todo el tiempo y resulta en <i>conflictos</i>.
+            en ambos casos git intenta auto fusionar cambios. Desafortunadamente, esto no siempre es posible y se pueden producir <i>conflictos</i>.
             Tú eres responsable de fusionar esos <i>conflictos</i>
-            manualmente al editar los archivos mostrados por git. Luego de modificarlos, necesitas marcarlos como fusionados con<br />
+            manualmente al editar los archivos mostrados por git. Después de modificarlos, necesitas marcarlos como fusionados con<br />
             <code>git add &lt;filename&gt;</code><br />
-            antes de fusionar cambios, también puedes dar un vistazo previo usando<br />
+            antes de fusionar cambios, también puedes revisarlos usando<br />
             <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
         </p>
     </div>
@@ -159,7 +159,7 @@
             es recomendado crear etiquetas para cada versión publicada de un software. esto es un concepto conocido, el cual tambien existe en SVN. Puedes crear
 	    una nueva etiqueta llamada <i>1.0.0</i> ejecutando<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            el <i>1b2e1d63ff</i> se refiere a los 10 caracteres de el commit id al cual quieres referirte con tu etiqueta. Puedes obtener el commit id con <br />
+            el <i>1b2e1d63ff</i> se refiere a los 10 caracteres del commit id al cual quieres referirte con tu etiqueta. Puedes obtener el commit id con <br />
             <code>git log</code><br />
             también puedes usar menos caracteres que el commit id, pero debe ser un valor único.
         </p>
@@ -168,9 +168,9 @@
     <div class="scrollblock block-checkout-replace">
         <h2>reemplaza cambios locales</h2>
         <p>
-            En caso de que hagas algo malo (que de seguro nunca pasa ;)  puedes reemplazar cambios locales usando el comando<br />
+            En caso de que hagas algo mal (lo que seguramente nunca sucede ;)  puedes reemplazar cambios locales usando el comando<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
-            esto reemplaza los cambios en tu árbol de trabajo con el último contenido de HEAD. Los cambios que ya han sido agregados al índice, así como también
+            esto reemplaza los cambios en tu directorio de trabajo con el último contenido de HEAD. Los cambios que ya han sido agregados al índice, así como también
 	    nuevos archivos, se mantendrán sin cambio.
         </p>
         <p>
