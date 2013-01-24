@@ -166,3 +166,11 @@ code {
     left: 0;
     background: #FFF url(../img/cheatsheet.png) no-repeat;
 }
+
+.announcement {
+    margin-top: 40px;
+}
+
+.announcement img {
+    border-radius: 4px;
+}
