@@ -26,8 +26,8 @@
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
-            by <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a> (translation by <a href="http://www.twitter.com/lfbarragan">@lfbarragan</a>)
-            <br />créditos a <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+            por <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a> (traducido por <a href="http://www.twitter.com/lfbarragan">@lfbarragan</a>)
+            <br />créditos a <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> y <a href="http://www.namics.com">Namics</a><br />
             esta guía en 
             <a href="index.html">english</a>,
             <a href="index.de.html">deutsch</a>, 
@@ -43,7 +43,7 @@
             <a href="index.zh.html">中文</a>, 
             <a href="index.ko.html">한국어</a>
             <br />
-            por favor reporta cualquier problema en <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+            por favor, reporta cualquier problema en <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
         </p>
         <img src="img/arrow.png" alt="" />
     </div>
@@ -67,7 +67,7 @@
         <p>
             crea un directorio nuevo, ábrelo y ejecuta<br />
             <code>git init</code><br />
-            para crear un repositorio de git nuevo.
+            para crear un nuevo repositorio de git.
         </p>
     </div>
     <a name="checkout"></a>
@@ -76,7 +76,7 @@
         <p>
             crea una copia local del repositorio ejecutando<br />
             <code>git clone /path/to/repository</code><br />
-            al utilizar un servidor remoto, el comando será<br />
+            si utilizas un servidor remoto, ejecuta<br />
             <code>git clone username@host:/path/to/repository</code>
         </p>
     </div>
@@ -85,9 +85,9 @@
         <h2>flujo de trabajo</h2>
         <p>
             tu repositorio local esta compuesto por tres "árboles" administrados por git.
-            el primero es tu <code>Directorio de trabajo</code> el cual contiene los archivos.
-            el segundo es el <code>Index</code> el cual actua como un área intermedia y finalmente el
-	    <code>HEAD</code> el cual apunta al último commit realizado.
+            El primero es tu <code>Directorio de trabajo</code> que contiene los archivos,
+            el segundo es el <code>Index</code> que actua como un área intermedia, y finalmente el
+	        <code>HEAD</code> que apunta al último commit realizado.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
@@ -98,7 +98,7 @@
             Puedes proponer cambios (agregarlos al <b>Index</b>) usando<br />
             <code>git add &lt;filename&gt;</code><br />
             <code>git add *</code><br />
-            Este es el primer paso en el flujo de trabajo básico. Para en realidad hacer commit a estos cambios usa<br />
+            Este es el primer paso en el flujo de trabajo básico. Para hacer commit a estos cambios usa<br />
             <code>git commit -m "Commit message"</code><br />
             Ahora el archivo esta incluído en el <b>HEAD</b>, pero aún no en tu repositorio remoto.
         </p>
@@ -113,7 +113,7 @@
             <br /><br />
             Si no has clonado un repositorio existente y quieres conectar tu repositorio a un repositorio remoto, necesitas agregarlo con<br />
             <code>git remote add origin &lt;server&gt;</code><br />
-            Ahora puede subir tus cambios al repositorio remoto selecionado<br />
+            Ahora puede subir tus cambios al repositorio remoto seleccionado<br />
 
         </p>
     </div>
@@ -121,13 +121,13 @@
     <div class="scrollblock block-branching">
         <h2>ramas</h2>
         <p>
-            Las ramas son utilizadas para desarrollar funcionalidades aisladas unas de otras. La rama <i>master</i> es la rama por "defecto" cuando creas un repositorio. Usa otras ramas para el desarrollo y fusionalas de regreso a la rama principal al terminar.
+            Las ramas son utilizadas para desarrollar funcionalidades aisladas unas de otras. La rama <i>master</i> es la rama "por defecto" cuando creas un repositorio. Usa otras ramas para el desarrollo y fusiónalas a la rama principal cuando termines.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            crea una nueva rama llamada "feature_x" y cambiate a ella usando<br />
+            crea una nueva rama llamada "feature_x" y cámbiate a ella usando<br />
             <code>git checkout -b feature_x</code><br />
-            regresa a la rama principal<br />
+            vuelve a la rama principal<br />
             <code>git checkout master</code><br />
             y borra la rama<br />
             <code>git branch -d feature_x</code><br />
@@ -141,10 +141,10 @@
         <p>
             para actualizar tu repositorio local al commit más nuevo, ejecuta <br />
             <code>git pull</code><br />
-            en tu directorio de trabajo <i>bajar</i> y <i>fusionar</i> cambios remotos.<br />
+            en tu directorio de trabajo para <i>bajar</i> y <i>fusionar</i> los cambios remotos.<br />
             para fusionar otra rama a tu rama activa (por ejemplo master), utiliza<br />
             <code>git merge &lt;branch&gt;</code><br />
-            en ambos casos git intenta auto fusionar cambios. Desafortunadamente, esto no siempre es posible y se pueden producir <i>conflictos</i>.
+            en ambos casos git intentará fusionar automáticamente los cambios. Desafortunadamente, esto no siempre es posible y se pueden producir <i>conflictos</i>.
             Tú eres responsable de fusionar esos <i>conflictos</i>
             manualmente al editar los archivos mostrados por git. Después de modificarlos, necesitas marcarlos como fusionados con<br />
             <code>git add &lt;filename&gt;</code><br />
@@ -156,7 +156,7 @@
     <div class="scrollblock block-tagging">
         <h2>etiquetas</h2>
         <p>
-            es recomendado crear etiquetas para cada versión publicada de un software. esto es un concepto conocido, el cual tambien existe en SVN. Puedes crear
+            se recomienda crear etiquetas para cada versión publicada de un software. Este concepto ya conocido, el cual tambien existe en SVN. Puedes crear
 	    una nueva etiqueta llamada <i>1.0.0</i> ejecutando<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
             el <i>1b2e1d63ff</i> se refiere a los 10 caracteres del commit id al cual quieres referirte con tu etiqueta. Puedes obtener el commit id con <br />
@@ -168,10 +168,10 @@
     <div class="scrollblock block-checkout-replace">
         <h2>reemplaza cambios locales</h2>
         <p>
-            En caso de que hagas algo mal (lo que seguramente nunca sucede ;)  puedes reemplazar cambios locales usando el comando<br />
+            En caso de que hagas algo mal (lo que seguramente nunca suceda ;)  puedes reemplazar cambios locales usando el comando<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
-            esto reemplaza los cambios en tu directorio de trabajo con el último contenido de HEAD. Los cambios que ya han sido agregados al índice, así como también
-	    nuevos archivos, se mantendrán sin cambio.
+            esto reemplaza los cambios en tu directorio de trabajo con el último contenido de HEAD. Los cambios que ya han sido agregados al Index, así como también
+	    los nuevos archivos, se mantendrán sin cambio.
         </p>
         <p>
             Si por otro lado quieres deshacerte de todos los cambios locales y commits, puedes traer la última versión del servidor y apuntar a tu copia local principal de esta forma<br />
@@ -185,11 +185,11 @@
         <p>
             Interfaz gráfica por defecto<br />
             <code>gitk</code><br />
-            colores especiales para la consola<br />
+            Colores especiales para la consola<br />
             <code>git config color.ui true</code><br />
-            mostrar sólo una línea por cada commit en la traza<br />
+            Mostrar sólo una línea por cada commit en la traza<br />
             <code>git config format.pretty oneline</code><br />
-            agregar archivos de forma interactiva<br />
+            Agregar archivos de forma interactiva<br />
             <code>git add -i</code>
         </p>
     </div>
