@@ -16,17 +16,17 @@
 			body {
 				font-family:
 					Georgia, "Times New Roman", Times, /* English on all platforms */
-					"Apple SD Gothic Neo", /* Korean on OS X 10.8 Mountain Lion and above */
-					"Nanum Myeongjo", /* Korean on OS X 10.7 Lion */
-					AppleGothic, /* Korean on OS X 10.6 Snow Leopard and below */
-					"Malgun Gothic", /* Korean on Windows Vista and above */
-					Dotum, /* Korean on Windows XP and below */
-					sans-serif !important; /* Final fallback */
+					"Nanum Myeongjo", /* Korean on OS X 10.7 Lion and above */
+					AppleMyungjo, /* Korean on Mac OS X 10.6 Snow Leopard and below */
+					"Malgun Gothic", /* Sans-serif: Korean on Windows Vista and above */
+					Batang, /* Korean on Windows XP and below */
+					serif !important; /* Final fallback */
 			}
 			
 			code {
 				font-family:
-					Menlo, /* English on all platforms */
+					Menlo, /* English on OS X all versions */
+					Consolas, /* English on Windows all versions */
 					NanumGothicCoding, /* Korean on all platforms (might not exist!) */
 					monospace !important; /* Final fallback */
 			}
@@ -35,27 +35,26 @@
 				font-family:
 					"Chelsea Market", /* English: Google WebFont */
 					Georgia, /* English on all platforms */
-					"Apple SD Gothic Neo", /* Korean on OS X 10.8 Mountain Lion and above */
-					"Nanum Myeongjo", /* Korean on OS X 10.7 Lion */
-					AppleGothic, /* Korean on OS X 10.6 Snow Leopard and below */
-					"Malgun Gothic", /* Korean on Windows Vista and above */
-					Dotum, /* Korean on Windows XP and below */
-					sans-serif !important; /* Final fallback */
+					"Nanum Myeongjo", /* Korean on OS X 10.7 Lion and above */
+					AppleMyungjo, /* Korean on Mac OS X 10.6 Snow Leopard and below */
+					"Malgun Gothic", /* Sans-serif: Korean on Windows Vista and above */
+					Batang, /* Korean on Windows XP and below */
+					serif !important; /* Final fallback */
 			}
 		</style>
 		<script type="text/javascript">
 		//<![CDATA[
 			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-652147-13']);
-			_gaq.push(['_trackPageview']);
+			_gaq.push(["_setAccount", "UA-652147-13"]);
+			_gaq.push(["_trackPageview"]);
 			
 			(function() {
-				var ga = document.createElement('script');
+				var ga = document.createElement("script");
 				ga.async = true;
 				ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
 				ga.type = "text/javascript";
 				
-				var s = document.getElementsByTagName('script')[0];
+				var s = document.getElementsByTagName("script")[0];
 				s.parentNode.insertBefore(ga, s);
 			})();
 			
@@ -70,7 +69,7 @@
 		<div class="scrollblock block-title">
 			<h1>git - 간편 안내서</h1>
 			<p>git을 시작하기 위한 간편 안내서. 어렵지 않아요 ;)</p>
-			<a class="twitter-share-button" data-hashtags="git" data-lang="ko" data-related="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide/index.ko.html" data-via="rogerdudler" href="https://twitter.com/share">트윗</a>
+			<a class="twitter-share-button" data-hashtags="git" data-lang="ko" data-related="rogerdudler" data-size="large" data-url="http://rogerdudler.github.io/git-guide/index.ko.html" data-via="rogerdudler" href="https://twitter.com/share">트윗</a>
 			<script type="text/javascript">
 			//<![CDATA[
 				(function(d, s, id) {
@@ -85,9 +84,9 @@
 			//]]>
 			</script>
 			<p class="meta">
-				<a href="https://www.twitter.com/rogerdudler">Roger Dudler</a>가 만들었어요.<br />
-				(<a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a>와 <a href="http://www.namics.com">Namics</a>의 도움을 받았지요.)<br />
-				번역은 <a href="https://twitter.com/rkjun">Juntai Park</a>과 <a href="https://alpha.app.net/ArdieFox">Ardie Hwang</a>이 담당했습니다.<br />
+				<a href="https://twitter.com/rogerdudler">Roger Dudler</a>가 만들었어요.<br />
+				(<a href="https://twitter.com/tfnico">@tfnico</a>, <a href="https://twitter.com/fhd">@fhd</a>와 <a href="http://www.namics.com">Namics</a>의 도움을 받았지요.)<br />
+				번역은 <a href="https://twitter.com/rkjun">Juntai Park</a>과 <a href="http://ardiefox.me">Ardie Hwang</a>이 담당했습니다.<br />
 				문제 보고는 <a href="https://github.com/rogerdudler/git-guide/issues">여기(github)</a>로 해주세요!<br />
 				<br />
 				다른 언어판도 읽어보세요!<br />
@@ -105,10 +104,8 @@
 				<a href="index.zh.html">中文</a><br />
 			</p>
 			<div class="announcement">
-	            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
-	                <img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
-	            </a>
-	        </div>
+				<a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify"><img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" /></a>
+			</div>
 			<img src="img/arrow.png" alt="자, 갑시다!" />
 		</div>
 		<a name="setup"></a>
@@ -296,9 +293,6 @@
 					<li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
 				</ul>
 			</p>
-		</div>
-		<div class="announcement">
-			<a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder"><img src="http://d13bhd1byokz0o.cloudfront.net/ad/clarify-announcement-git@2x.png" width="960" height="100" alt="Clarify" /></a>
 		</div>
 		<a name="comments"></a>
 		<div class="scrollblock block-comments">
