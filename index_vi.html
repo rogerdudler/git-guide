@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - the simple guide - no deep shit!</title>
+	<title>git - hướng dẫn đơn giản</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
@@ -49,7 +49,7 @@
             <a href="index.ko.html">한국어</a>
             <a href="index.vi.html">Vietnamese</a>
             <br />
-            please report issues on <a href="https://github.com/hnq90/git-guide/issues">github</a>
+            vui lòng báo cáo vấn đề trên <a href="https://github.com/hnq90/git-guide/issues">github</a>
         </p>
         <div class="announcement">
             <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
@@ -92,46 +92,46 @@
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>workflow</h2>
+        <h2>quy trình làm việc</h2>
         <p>
-            your local repository consists of three "trees" maintained by git.
-            the first one is your <code>Working Directory</code> which holds the actual files.
-            the second one is the <code>Index</code> which acts as a staging area and
-            finally the <code>HEAD</code> which points to the last commit you've made.
+            thư mục cục bộ của bạn bao gồm ba "trees" được duy trì bởi git.
+            cái đầu tiên là <code>Thư Mục Đang Làm Việc (Working Directory)</code> có chứa các tập tin hiện tại.
+            cái thứ hai là <code>Chỉ Mục (Index)</code> đóng vai trò như staging area và
+            cuối cùng là <code>HEAD</code> trỏ đến commit gần đây nhất của bạn.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>add &amp; commit</h2>
+        <h2>thêm &amp; commit</h2>
         <p>
-            You can propose changes (add it to the <b>Index</b>) using<br />
-            <code>git add &lt;filename&gt;</code><br />
+            Bạn có thể đề xuất thay đổi (thêm nó vào chi mục <b>Index</b>) bằng cách<br />
+            <code>git add &lt;tên-tập-tin&gt;</code><br />
             <code>git add *</code><br />
-            This is the first step in the basic git workflow. To actually commit these changes use<br />
-            <code>git commit -m "Commit message"</code><br />
-            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+            Đây là bước đầu tiên trong quy trình git cơ bản. Để thật sự commit những thay đổi, bạn sử dụng<br />
+            <code>git commit -m "Ghi chú Commit"</code><br />
+            Bây giờ thì tập tin đả được commit đến <b>HEAD</b>, nhưng chưa phải trên thư mục remote.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>pushing changes</h2>
+        <h2>đẩy các thay đổi</h2>
         <p>
-            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
+            Thay đổi của bạn hiện đang nằm tại <b>HEAD</b> của bản sao cục bộ đang làm việc. Để gửi những thay đổi đó đến repository remote, bạn thực thi<br />
             <code>git push origin master</code><br />
-            Change <i>master</i> to whatever branch you want to push your changes to.
+            Thay đổi <i>master</i> bằng bất cứ nhánh nào mà bạn muốn đầy những thay đổi đến.
             <br /><br />
-            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
+            Nếu bạn chưa clone một repository hiện có và muốn kết nối repository của bạn đến máy chủ remote, bạn phải thêm nó với<br />
             <code>git remote add origin &lt;server&gt;</code><br />
-            Now you are able to push your changes to the selected remote server<br />
+            Bây giờ bạn đã có thể đẩy các thay đổi của mình vào máy chủ đã chọn<br />
 
         </p>
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>branching</h2>
+        <h2>nhánh</h2>
         <p>
-            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+            Các nhánh (branches)được dùng để phát triển tính năng tách riêng ra từ những nhánh khác. Nhánh <i>master</i> là nhánh "mặc định" khi bạn tạo một repository. Sử dụng các nhánh khác tri đang trong giai đoạn phát triển và merge trở lại nhánh master một khi đã hoàn tất.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
@@ -214,7 +214,7 @@
                 <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
             </ul>
         </p>
-        <h3>guides</h3>
+        <h3>hướng dẫn</h3>
         <p>
             <ul>
                 <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
@@ -227,7 +227,7 @@
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
-        <h2>comments</h2>
+        <h2>bình luận</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
