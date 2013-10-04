@@ -61,7 +61,7 @@
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
-        <h2>setup</h2>
+        <h2>cài đặt</h2>
         <p>
             <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Tải git về cho OSX</a>
         </p>
@@ -77,7 +77,7 @@
         <h2>Tạo một repository mới</h2>
         <p>
             Để tạo 1 repository mới, bạn hãy mở cửa sổ lẹnh và gõ dòng lệnh sau <br />
-            <code>git init</code><br />.
+            <code>git init</code><br />
         </p>
     </div>
     <a name="checkout"></a>
@@ -122,7 +122,7 @@
             Thay đổi <i>master</i> bằng bất cứ nhánh nào mà bạn muốn đầy những thay đổi đến.
             <br /><br />
             Nếu bạn chưa clone một repository hiện có và muốn kết nối repository của bạn đến máy chủ remote, bạn phải thêm nó với<br />
-            <code>git remote add origin &lt;server&gt;</code><br />
+            <code>git remote add origin &lt;máy-chủ&gt;</code><br />
             Bây giờ bạn đã có thể đẩy các thay đổi của mình vào máy chủ đã chọn<br />
 
         </p>
@@ -131,80 +131,85 @@
     <div class="scrollblock block-branching">
         <h2>nhánh</h2>
         <p>
-            Các nhánh (branches)được dùng để phát triển tính năng tách riêng ra từ những nhánh khác. Nhánh <i>master</i> là nhánh "mặc định" khi bạn tạo một repository. Sử dụng các nhánh khác tri đang trong giai đoạn phát triển và merge trở lại nhánh master một khi đã hoàn tất.
+            Các nhánh (branches) được dùng để phát triển tính năng tách riêng ra từ những nhánh khác. Nhánh <i>master</i> là nhánh "mặc định" khi bạn tạo một repository. Sử dụng các nhánh khác tri đang trong giai đoạn phát triển và merge trở lại nhánh master một khi đã hoàn tất.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            create a new branch named "feature_x" and switch to it using<br />
+            tạo một nhánh mới và đặt tên là "feature_x" và chuyển qua nhánh đó (từ master) bằng cách<br />
             <code>git checkout -b feature_x</code><br />
-            switch back to master<br />
+            trở lại nhánh master<br />
             <code>git checkout master</code><br />
-            and delete the branch again<br />
+            và xóa nhánh feature_x đó lần nửa<br />
             <code>git branch -d feature_x</code><br />
-            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
-            <code>git push origin &lt;branch&gt;</code>
+            một nhánh <i>không có giá trị với các nhánh khác</i> trừ khi bạn đẩy nhánh đó đến remote repository<br />
+            <code>git push origin &lt;nhánh&gt;</code>
         </p>
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>update &amp; merge</h2>
+        <h2>cập nhật &amp; trộn (update &amp; merge)</h2>
         <p>
-            to update your local repository to the newest commit, execute <br />
+            để cập nhật repository cục bộ của bạn và commit mới nhất, thực thi<br />
             <code>git pull</code><br />
-            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
-            to merge another branch into your active branch (e.g. master), use<br />
-            <code>git merge &lt;branch&gt;</code><br />
-            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
-            You are responsible to merge those <i>conflicts</i>
-            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
-            <code>git add &lt;filename&gt;</code><br />
-            before merging changes, you can also preview them by using<br />
-            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+            trong thự mục đang làm việc để <i>lấy về (fetch)</i> và <i>trộn (merge)</i> các thay đổi ở remote.<br />
+            để trộn một nhánh khác vào nhánh đang hoạt động (vd: master), sử dụng<br />
+            <code>git merge &lt;nhánh&gt;</code><br />
+            trong cả hai trường hợp, git cố gắng trộn tự động (auto-merge) các thay đổi. Không may, điều này không phải lúc nào cũng làm được và thường dẫn đến <i>xung đột</i>.
+            Trách nhiệm của bạn là trộn <i>các xung đột</i> đó
+            thủ công bằng cách chỉnh sửa các tập tin được hiển thị bởi git. Sau khi thay đổi, bạn phải đánh dấu chúng là đã được trộn (merged) với lệnh<br />
+            <code>git add &lt;tên-tập-tin&gt;</code><br />
+            trước khi trộn các thay đổi, bạn có thể xem trước chúng bằng các<br />
+            <code>git diff &lt;nhánh_nguồn&gt; &lt;nhánh_mục_tiêu&gt;</code>
         </p>
     </div>
     <a name="tagging"></a>
     <div class="scrollblock block-tagging">
-        <h2>tagging</h2>
+        <h2>gắn nhãn (tagging)</h2>
         <p>
-            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
+            người ta khuyên nên tạo nhãn (tags) khi phát hành phần mềm. đây là khái niệm được biết đền, đã từng có trên SVN. Bạn tạo tag mới tên là <i>1.0.0</i> bằng cách<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id with <br />
+            chuỗi <i>1b2e1d63ff</i> là 10 ký tự đầu tiên của mã commit (commit id) mà bạn muốn tham chiếu đến bằng nhãn của bạn. Bạn có thể lấy mã commit với lệnh <br />
             <code>git log</code><br />
-            you can also use fewer characters of the commit id, it just has to be unique.
+            bạn cũng có thể sử dụng ít ký tự hơn từ mã commit, nó chỉ cần phải là duy nhất.
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
+        <h2>thay thế các thay đổi cục bộ</h2>
         <p>
-            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
-            <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+            Trong trường hợp bạn làm sai điểu gì đó, bạn có thể thay thế các thay đổi cục bộ bằng lệnh<br />
+            <code>git checkout -- &lt;tên-tập-tin&gt;</code><br />
+            lệnh này thay thế những thay đổi trong "tree" đang làm việc với nội dung mới nhất của HEAD. Các thay đổi đã được thêm vào chỉ mục, kể cả các tập tin mới, điều này sẽ được giữ lại.
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            Nếu bạn muốn hủy tất cả thay đổi và commit cục bộ, lấy về (fetch) lịch sử gần đây nhất từ máy chỉ và trỏ nhánh master cục bộ vào nó như sau<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>useful hints</h2>
+        <h2>các gợi ý hữu ích</h2>
         <p>
-            built-in git GUI<br />
+            git GUI tích hợp sẵn<br />
             <code>gitk</code><br />
-            use colorful git output<br />
+            sử dụng kết quả git với nhiều màu<br />
             <code>git config color.ui true</code><br />
-            show log on just one line per commit<br />
+            hiện log trên chỉ một dùng mỗi commit<br />
             <code>git config format.pretty oneline</code><br />
-            use interactive adding<br />
+            sử dụng thêm tập tin tương tác<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
-        <h2>links & resources</h2>
-        <h3>graphical clients</h3>
+        <h2>các liên kết và tài nguyên</h2>
+        <p>
+            <ul>
+            	<li><a href="https://github.com/FredrikNoren/ungit">ungit - The easiest way to use git. On any platform. Anywhere.</a></li>
+            </ul>
+        </p>
+        <h3>trình sử dụng có đồ họa</h3>
         <p>
             <ul>
                 <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
@@ -222,6 +227,9 @@
                 <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
                 <li><a href="http://help.github.com/">GitHub Help</a></li>
                 <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+                <li><a href="http://pcottle.github.io/learnGitBranching/">Learn Git Branching</a></li>
+                <li><a href="http://zachholman.com/talk/more-git-and-github-secrets/">More Git and GitHub Secrets</a></li>
+                <li><a href="http://www.sbf5.com/~cduan/technical/git/">Understanding Git Conceptually</a></li>
             </ul>
         </p>
     </div>
