@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>git - hướng dẫn đơn giản</title>
+    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-652147-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function recordOutboundLink(link, category, action) {
+         _gat._getTrackerByName()._trackEvent(category, action);
+         setTimeout('document.location = "' + link.href + '"', 100);
+      }
+    </script>
+</head>
+<body>
+    <div class="scrollblock block-title">
+        <h1>Sổ tay Git</h1>
+        <p>Đây là một hướng dẫn đơn giản cho người mới học ;)</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="meta">
+            by <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
+            <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+            this guide in 
+            <a href="index.de.html">deutsch</a>, 
+            <a href="index.es.html">español</a>, 
+            <a href="index.fr.html">français</a>, 
+            <a href="index.it.html">italiano</a>, 
+            <a href="index.nl.html">nederlands</a>, 
+            <a href="index.pt_BR.html">português</a>, 
+            <a href="index.ru.html">русский</a>,
+            <a href="index.tr.html">türkçe</a>,
+            <br/>
+            <a href="index.my.html">မြန်မာ</a>,
+            <a href="index.ja.html">日本語</a>, 
+            <a href="index.zh.html">中文</a>, 
+            <a href="index.ko.html">한국어</a>
+            <a href="index.vi.html">Vietnamese</a>
+            <br />
+            vui lòng báo cáo vấn đề trên <a href="https://github.com/hnq90/git-guide/issues">github</a>
+        </p>
+        <div class="announcement">
+            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
+                <img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
+            </a>
+        </div>
+        <img src="img/arrow.png" alt="" />
+    </div>
+    <!-- setup -->
+    <a name="setup"></a>
+    <div class="scrollblock block-setup">
+        <h2>cài đặt</h2>
+        <p>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Tải git về cho OSX</a>
+        </p>
+        <p>
+            <a href="http://code.google.com/p/msysgit/downloads/list?can=3">Tải git về cho Windows</a>
+        </p>
+        <p>
+            <a href="http://book.git-scm.com/2_installing_git.html">Tải git về cho Linux</a>
+        </p>
+    </div>
+    <a name="create"></a>
+    <div class="scrollblock block-create">
+        <h2>Tạo một repository mới</h2>
+        <p>
+            Để tạo 1 repository mới, bạn hãy mở cửa sổ lẹnh và gõ dòng lệnh sau <br />
+            <code>git init</code><br />
+        </p>
+    </div>
+    <a name="checkout"></a>
+    <div class="scrollblock block-checkout">
+        <h2>Sao chép một repository</h2>
+        <p>
+            Để sao chép 1 repository có sẵn ở trên máy cục bộ, bạn hãy sử dụng dòng lệnh sau:<br />
+            <code>git clone /đường-dẫn-đến/repository/</code><br />
+            Nếu repository đó ở máy chủ khác thì bạn hãy gõ dòng lệnh sau:<br />
+            <code>git clone tênusername@địachỉmáychủ:/đường-dẫn-đến/repository</code>
+        </p>
+    </div>
+    <a name="trees"></a>
+    <div class="scrollblock block-trees">
+        <h2>quy trình làm việc</h2>
+        <p>
+            thư mục cục bộ của bạn bao gồm ba "trees" được duy trì bởi git.
+            cái đầu tiên là <code>Thư Mục Đang Làm Việc (Working Directory)</code> có chứa các tập tin hiện tại.
+            cái thứ hai là <code>Chỉ Mục (Index)</code> đóng vai trò như staging area và
+            cuối cùng là <code>HEAD</code> trỏ đến commit gần đây nhất của bạn.
+        </p>
+        <img src="img/trees.png" alt="" />
+    </div>
+    <a name="add"></a>
+    <div class="scrollblock block-add">
+        <h2>thêm &amp; commit</h2>
+        <p>
+            Bạn có thể đề xuất thay đổi (thêm nó vào chỉ mục <b>Index</b>) bằng cách<br />
+            <code>git add &lt;tên-tập-tin&gt;</code><br />
+            <code>git add *</code><br />
+            Đây là bước đầu tiên trong quy trình git cơ bản. Để thật sự commit những thay đổi, bạn sử dụng<br />
+            <code>git commit -m "Ghi chú Commit"</code><br />
+            Bây giờ thì tập tin đã được commit đến <b>HEAD</b>, nhưng chưa phải trên thư mục remote.
+        </p>
+    </div>
+    <a name="push"></a>
+    <div class="scrollblock block-remote">
+        <h2>đẩy các thay đổi</h2>
+        <p>
+            Thay đổi của bạn hiện đang nằm tại <b>HEAD</b> của bản sao cục bộ đang làm việc. Để gửi những thay đổi đó đến repository remote, bạn thực thi<br />
+            <code>git push origin master</code><br />
+            Thay đổi <i>master</i> bằng bất cứ nhánh nào mà bạn muốn đầy những thay đổi đến.
+            <br /><br />
+            Nếu bạn chưa clone một repository hiện có và muốn kết nối repository của bạn đến máy chủ remote, bạn phải thêm nó với<br />
+            <code>git remote add origin &lt;máy-chủ&gt;</code><br />
+            Bây giờ bạn đã có thể đẩy các thay đổi của mình vào máy chủ đã chọn<br />
+
+        </p>
+    </div>
+    <a name="branching"></a>
+    <div class="scrollblock block-branching">
+        <h2>nhánh</h2>
+        <p>
+            Các nhánh (branches) được dùng để phát triển tính năng tách riêng ra từ những nhánh khác. Nhánh <i>master</i> là nhánh "mặc định" khi bạn tạo một repository. Sử dụng các nhánh khác tri đang trong giai đoạn phát triển và merge trở lại nhánh master một khi đã hoàn tất.
+        </p>
+        <img src="img/branches.png" alt="" />
+        <p>
+            tạo một nhánh mới và đặt tên là "feature_x" và chuyển qua nhánh đó (từ master) bằng cách<br />
+            <code>git checkout -b feature_x</code><br />
+            trở lại nhánh master<br />
+            <code>git checkout master</code><br />
+            và xóa nhánh feature_x đó lần nửa<br />
+            <code>git branch -d feature_x</code><br />
+            một nhánh <i>không có giá trị với các nhánh khác</i> trừ khi bạn đẩy nhánh đó đến remote repository<br />
+            <code>git push origin &lt;nhánh&gt;</code>
+        </p>
+    </div>
+    <a name="update"></a>
+    <div class="scrollblock block-merging">
+        <h2>cập nhật &amp; trộn (update &amp; merge)</h2>
+        <p>
+            để cập nhật repository cục bộ của bạn và commit mới nhất, thực thi<br />
+            <code>git pull</code><br />
+            trong thự mục đang làm việc để <i>lấy về (fetch)</i> và <i>trộn (merge)</i> các thay đổi ở remote.<br />
+            để trộn một nhánh khác vào nhánh đang hoạt động (vd: master), sử dụng<br />
+            <code>git merge &lt;nhánh&gt;</code><br />
+            trong cả hai trường hợp, git cố gắng trộn tự động (auto-merge) các thay đổi. Không may, điều này không phải lúc nào cũng làm được và thường dẫn đến <i>xung đột</i>.
+            Trách nhiệm của bạn là trộn <i>các xung đột</i> đó
+            thủ công bằng cách chỉnh sửa các tập tin được hiển thị bởi git. Sau khi thay đổi, bạn phải đánh dấu chúng là đã được trộn (merged) với lệnh<br />
+            <code>git add &lt;tên-tập-tin&gt;</code><br />
+            trước khi trộn các thay đổi, bạn có thể xem trước chúng bằng các<br />
+            <code>git diff &lt;nhánh_nguồn&gt; &lt;nhánh_mục_tiêu&gt;</code>
+        </p>
+    </div>
+    <a name="tagging"></a>
+    <div class="scrollblock block-tagging">
+        <h2>gắn nhãn (tagging)</h2>
+        <p>
+            người ta khuyên nên tạo nhãn (tags) khi phát hành phần mềm. đây là khái niệm được biết đền, đã từng có trên SVN. Bạn tạo tag mới tên là <i>1.0.0</i> bằng cách<br />
+            <code>git tag 1.0.0 1b2e1d63ff</code><br />
+            chuỗi <i>1b2e1d63ff</i> là 10 ký tự đầu tiên của mã commit (commit id) mà bạn muốn tham chiếu đến bằng nhãn của bạn. Bạn có thể lấy mã commit với lệnh <br />
+            <code>git log</code><br />
+            bạn cũng có thể sử dụng ít ký tự hơn từ mã commit, nó chỉ cần phải là duy nhất.
+        </p>
+    </div>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>thay thế các thay đổi cục bộ</h2>
+        <p>
+            Trong trường hợp bạn làm sai điểu gì đó, bạn có thể thay thế các thay đổi cục bộ bằng lệnh<br />
+            <code>git checkout -- &lt;tên-tập-tin&gt;</code><br />
+            lệnh này thay thế những thay đổi trong "tree" đang làm việc với nội dung mới nhất của HEAD. Các thay đổi đã được thêm vào chỉ mục, kể cả các tập tin mới, điều này sẽ được giữ lại.
+        </p>
+        <p>
+            Nếu bạn muốn hủy tất cả thay đổi và commit cục bộ, lấy về (fetch) lịch sử gần đây nhất từ máy chỉ và trỏ nhánh master cục bộ vào nó như sau<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+    </div>
+    <a name="hints"></a>
+    <div class="scrollblock block-hints">
+        <h2>các gợi ý hữu ích</h2>
+        <p>
+            git GUI tích hợp sẵn<br />
+            <code>gitk</code><br />
+            sử dụng kết quả git với nhiều màu<br />
+            <code>git config color.ui true</code><br />
+            hiện log trên chỉ một dùng mỗi commit<br />
+            <code>git config format.pretty oneline</code><br />
+            sử dụng thêm tập tin tương tác<br />
+            <code>git add -i</code>
+        </p>
+    </div>
+    <a name="resources"></a>
+    <div class="scrollblock block-resources">
+        <h2>các liên kết và tài nguyên</h2>
+        <h3>trình sử dụng có đồ họa</h3>
+        <p>
+            <ul>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, free)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
+            </ul>
+        </p>
+        <h3>hướng dẫn</h3>
+        <p>
+            <ul>
+                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+                <li><a href="http://progit.org/book/">Pro Git</a></li>
+                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
+                <li><a href="http://help.github.com/">GitHub Help</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+                <li><a href="http://pcottle.github.io/learnGitBranching/">Learn Git Branching</a></li>
+                <li><a href="http://zachholman.com/talk/more-git-and-github-secrets/">More Git and GitHub Secrets</a></li>
+                <li><a href="http://www.sbf5.com/~cduan/technical/git/">Understanding Git Conceptually</a></li>
+            </ul>
+        </p>
+        <h3>misc</h3>
+        <p>
+        <ul>
+        	<li><a href="https://github.com/FredrikNoren/ungit">ungit - The easiest way to use git. On any platform. Anywhere.</a></li>
+        </ul>	
+        </p>
+    </div>
+    <a name="comments"></a>
+    <div class="scrollblock block-comments">
+        <h2>bình luận</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+</body>
+</html>
