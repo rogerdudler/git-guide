@@ -76,15 +76,15 @@
     <div class="scrollblock block-create">
         <h2>Tạo một repository mới</h2>
         <p>
-            Để tạo 1 repository mới, bạn hãy mở cửa sổ lẹnh và gõ dòng lệnh sau <br />
+            Để tạo 1 repository mới, bạn hãy mở cửa sổ lệnh và gõ dòng lệnh sau <br />
             <code>git init</code><br />
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>Sao chép một repository</h2>
+        <h2>sao chép (clone) một repository</h2>
         <p>
-            Để sao chép 1 repository có sẵn ở trên máy cục bộ, bạn hãy sử dụng dòng lệnh sau:<br />
+            để clone 1 repository có sẵn ở trên máy cục bộ, bạn hãy sử dụng dòng lệnh sau:<br />
             <code>git clone /đường-dẫn-đến/repository/</code><br />
             Nếu repository đó ở máy chủ khác thì bạn hãy gõ dòng lệnh sau:<br />
             <code>git clone tênusername@địachỉmáychủ:/đường-dẫn-đến/repository</code>
@@ -95,7 +95,7 @@
         <h2>quy trình làm việc</h2>
         <p>
             thư mục cục bộ của bạn bao gồm ba "trees" được duy trì bởi git.
-            cái đầu tiên là <code>Thư Mục Đang Làm Việc (Working Directory)</code> có chứa các tập tin hiện tại.
+            đầu tiên là <code>Thư Mục Đang Làm Việc (Working Directory)</code> có chứa các tập tin hiện tại.
             cái thứ hai là <code>Chỉ Mục (Index)</code> đóng vai trò như staging area và
             cuối cùng là <code>HEAD</code> trỏ đến commit gần đây nhất của bạn.
         </p>
@@ -103,7 +103,7 @@
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>thêm &amp; commit</h2>
+        <h2>thêm (add) &amp; commit</h2>
         <p>
             Bạn có thể đề xuất thay đổi (thêm nó vào chỉ mục <b>Index</b>) bằng cách<br />
             <code>git add &lt;tên-tập-tin&gt;</code><br />
@@ -115,7 +115,7 @@
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>đẩy các thay đổi</h2>
+        <h2>đẩy (push) các thay đổi</h2>
         <p>
             Thay đổi của bạn hiện đang nằm tại <b>HEAD</b> của bản sao cục bộ đang làm việc. Để gửi những thay đổi đó đến repository remote, bạn thực thi<br />
             <code>git push origin master</code><br />
@@ -166,7 +166,7 @@
     <div class="scrollblock block-tagging">
         <h2>gắn nhãn (tagging)</h2>
         <p>
-            người ta khuyên nên tạo nhãn (tags) khi phát hành phần mềm. đây là khái niệm được biết đền, đã từng có trên SVN. Bạn tạo tag mới tên là <i>1.0.0</i> bằng cách<br />
+            người ta khuyên nên tạo nhãn (tags) khi phát hành phần mềm. đây là khái niệm được biết đến, đã từng có trên SVN. Bạn tạo tag mới tên là <i>1.0.0</i> bằng cách<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
             chuỗi <i>1b2e1d63ff</i> là 10 ký tự đầu tiên của mã commit (commit id) mà bạn muốn tham chiếu đến bằng nhãn của bạn. Bạn có thể lấy mã commit với lệnh <br />
             <code>git log</code><br />
@@ -177,12 +177,12 @@
     <div class="scrollblock block-checkout-replace">
         <h2>thay thế các thay đổi cục bộ</h2>
         <p>
-            Trong trường hợp bạn làm sai điểu gì đó, bạn có thể thay thế các thay đổi cục bộ bằng lệnh<br />
+            Trong trường hợp bạn làm sai điều gì đó, bạn có thể thay thế các thay đổi cục bộ bằng lệnh<br />
             <code>git checkout -- &lt;tên-tập-tin&gt;</code><br />
             lệnh này thay thế những thay đổi trong "tree" đang làm việc với nội dung mới nhất của HEAD. Các thay đổi đã được thêm vào chỉ mục, kể cả các tập tin mới, điều này sẽ được giữ lại.
         </p>
         <p>
-            Nếu bạn muốn hủy tất cả thay đổi và commit cục bộ, lấy về (fetch) lịch sử gần đây nhất từ máy chỉ và trỏ nhánh master cục bộ vào nó như sau<br />
+            Nếu bạn muốn hủy tất cả thay đổi và commit cục bộ, lấy về (fetch) lịch sử gần đây nhất từ máy chủ và trỏ nhánh master cục bộ vào nó như sau<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
