@@ -67,8 +67,8 @@
         <h2>ambiente di lavoro</h2>
         <p>
             la tua copia locale del repository &egrave; composta da tre "alberi" mantenuti da git.
-            Il primo &egrave; la tua <code>Directory di lavoro</code> che contiene i files attuali.
-            Il secondo &egrave; l'<code>Index</code> che fa da spazio di transito per i files 
+            Il primo &egrave; la tua <code>Directory di lavoro</code> che contiene i file attuali.
+            Il secondo &egrave; l'<code>Index</code> che fa da spazio di transito per i file 
             e per finire l'<code>HEAD</code> che punta all'ultimo commit fatto.
         </p>
         <img src="img/trees.png" alt="" />
@@ -128,7 +128,7 @@
             <code>git merge &lt;branch&gt;</code><br />
             in entrambi i casi git prova ad auto-incorporare le modifiche. Sfortunatamente, a volte questa procedura automatizzata non &egrave; possibile, ed in questo caso ci saranno dei <i>conflitti</i>.
             Sei tu il responsabile che sistemer&agrave; questi <i>conflitti</i>
-            manualmente modificando i file che git mostrer&agrave;. Dopo aver cambiato questi files, dovrai marcarli come 'correttamente incorporati' tramite<br />
+            manualmente modificando i file che git mostrer&agrave;. Dopo aver cambiato questi file, dovrai marcarli come 'correttamente incorporati' tramite<br />
             <code>git add &lt;nomedelfile&gt;</code><br />
             prima di immettere le modifiche, potrai anche visualizzarne un'anteprima eseguendo<br />
             <code>git diff &lt;branch_sorgente&gt; &lt;branch_target&gt;</code>
@@ -151,7 +151,7 @@
         <p>
             Nel caso tu abbia fatto qualcosa di sbagliato (ma non capita mai, sicuro ;) puoi sostituire i cambiamenti fatti in locale con il comando<br />
             <code>git checkout -- &lt;nomedelfile&gt;</code><br />
-            questo rimpiazza le modifiche nell'albero di lavoro con l'ultimo contenuto presente in HEAD. I cambiamenti fatti ed aggiunti all'index, cos&igrave; come i nuovi files, verranno mantenuti.
+            questo rimpiazza le modifiche nell'albero di lavoro con l'ultimo contenuto presente in HEAD. I cambiamenti fatti ed aggiunti all'index, cos&igrave; come i nuovi file, verranno mantenuti.
         </p>
         <p>
             Se vuoi in alternativa eliminare tutti i cambiamenti e commits fatti in locale, recupera l'ultima versione dal server e fai puntare il tuo master branch a quella versione in questo modo<br />
