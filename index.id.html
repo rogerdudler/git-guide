@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>git - the simple guide - no deep shit!</title>
+    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-652147-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function recordOutboundLink(link, category, action) {
+         _gat._getTrackerByName()._trackEvent(category, action);
+         setTimeout('document.location = "' + link.href + '"', 100);
+      }
+    </script>
+</head>
+<body>
+    <div class="scrollblock block-title">
+        <h1>git - the simple guide</h1>
+        <p>just a simple guide for getting started with git. no deep shit ;)</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="meta">
+            by <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
+            <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+            this guide in 
+            <a href="index.de.html">deutsch</a>, 
+            <a href="index.es.html">español</a>, 
+            <a href="index.fr.html">français</a>, 
+            <a href="index.it.html">italiano</a>, 
+            <a href="index.nl.html">nederlands</a>, 
+            <a href="index.pt_BR.html">português</a>, 
+            <a href="index.ru.html">русский</a>,
+            <a href="index.tr.html">türkçe</a>,
+            <br/>
+            <a href="index.my.html">မြန်မာ</a>,
+            <a href="index.ja.html">日本語</a>, 
+            <a href="index.zh.html">中文</a>, 
+            <a href="index.ko.html">한국어</a>
+            <a href="index.vi.html">Vietnamese</a>
+            <br />
+            please report issues on <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+        </p>
+        <div class="announcement">
+            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
+                <img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
+            </a>
+        </div>
+        <img src="img/arrow.png" alt="" />
+    </div>
+    <!-- setup -->
+    <a name="setup"></a>
+    <div class="scrollblock block-setup">
+        <h2>setup</h2>
+        <p>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Download git for OSX</a>
+        </p>
+        <p>
+            <a href="http://msysgit.github.io/">Download git for Windows</a>
+        </p>
+        <p>
+            <a href="http://book.git-scm.com/2_installing_git.html">Download git for Linux</a>
+        </p>
+    </div>
+    <a name="create"></a>
+    <div class="scrollblock block-create">
+        <h2>create a new repository</h2>
+        <p>
+            create a new directory, open it and perform a <br />
+            <code>git init</code><br />
+            to create a new git repository.
+        </p>
+    </div>
+    <a name="checkout"></a>
+    <div class="scrollblock block-checkout">
+        <h2>checkout a repository</h2>
+        <p>
+            create a working copy of a local repository by running the command<br />
+            <code>git clone /path/to/repository</code><br />
+            when using a remote server, your command will be<br />
+            <code>git clone username@host:/path/to/repository</code>
+        </p>
+    </div>
+    <a name="trees"></a>
+    <div class="scrollblock block-trees">
+        <h2>workflow</h2>
+        <p>
+            your local repository consists of three "trees" maintained by git.
+            the first one is your <code>Working Directory</code> which holds the actual files.
+            the second one is the <code>Index</code> which acts as a staging area and
+            finally the <code>HEAD</code> which points to the last commit you've made.
+        </p>
+        <img src="img/trees.png" alt="" />
+    </div>
+    <a name="add"></a>
+    <div class="scrollblock block-add">
+        <h2>add &amp; commit</h2>
+        <p>
+            You can propose changes (add it to the <b>Index</b>) using<br />
+            <code>git add &lt;filename&gt;</code><br />
+            <code>git add *</code><br />
+            This is the first step in the basic git workflow. To actually commit these changes use<br />
+            <code>git commit -m "Commit message"</code><br />
+            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+        </p>
+    </div>
+    <a name="push"></a>
+    <div class="scrollblock block-remote">
+        <h2>pushing changes</h2>
+        <p>
+            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
+            <code>git push origin master</code><br />
+            Change <i>master</i> to whatever branch you want to push your changes to.
+            <br /><br />
+            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
+            <code>git remote add origin &lt;server&gt;</code><br />
+            Now you are able to push your changes to the selected remote server<br />
+
+        </p>
+    </div>
+    <a name="branching"></a>
+    <div class="scrollblock block-branching">
+        <h2>branching</h2>
+        <p>
+            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+        </p>
+        <img src="img/branches.png" alt="" />
+        <p>
+            create a new branch named "feature_x" and switch to it using<br />
+            <code>git checkout -b feature_x</code><br />
+            switch back to master<br />
+            <code>git checkout master</code><br />
+            and delete the branch again<br />
+            <code>git branch -d feature_x</code><br />
+            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
+            <code>git push origin &lt;branch&gt;</code>
+        </p>
+    </div>
+    <a name="update"></a>
+    <div class="scrollblock block-merging">
+        <h2>update &amp; merge</h2>
+        <p>
+            to update your local repository to the newest commit, execute <br />
+            <code>git pull</code><br />
+            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
+            to merge another branch into your active branch (e.g. master), use<br />
+            <code>git merge &lt;branch&gt;</code><br />
+            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
+            You are responsible to merge those <i>conflicts</i>
+            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
+            <code>git add &lt;filename&gt;</code><br />
+            before merging changes, you can also preview them by using<br />
+            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+        </p>
+    </div>
+    <a name="tagging"></a>
+    <div class="scrollblock block-tagging">
+        <h2>tagging</h2>
+        <p>
+            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
+            <code>git tag 1.0.0 1b2e1d63ff</code><br />
+            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id by looking at the... <br />
+        </p>
+    </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>log</h2>
+        <p>
+            in its simplest form, you can study repository history using..
+            <code>git log</code><br />
+            You can add a lot of parameters to make the log look like what you want. To see only the commits of a certain author:<br />
+            <code>git log --author=bob</code><br />
+            To see a very compressed log where each commit is one line:<br />
+            <code>git log --pretty=oneline</code><br />
+            Or mabe you want to see an ASCII art tree of all the branches, decorated with the names of tags and branches: <br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            See only which files have changed: <br />
+            <code>git log --name-status</code><br />
+            These are just a few of the possible parameters you can use. For more, see 
+            <code>git log --help</code><br />
+        </p>
+    </div>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>replace local changes</h2>
+        <p>
+            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
+            <code>git checkout -- &lt;filename&gt;</code><br />
+            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+        </p>
+        <p>
+            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+    </div>
+    <a name="hints"></a>
+    <div class="scrollblock block-hints">
+        <h2>useful hints</h2>
+        <p>
+            built-in git GUI<br />
+            <code>gitk</code><br />
+            use colorful git output<br />
+            <code>git config color.ui true</code><br />
+            show log on just one line per commit<br />
+            <code>git config format.pretty oneline</code><br />
+            use interactive adding<br />
+            <code>git add -i</code>
+        </p>
+    </div>
+    <a name="resources"></a>
+    <div class="scrollblock block-resources">
+        <h2>links & resources</h2>
+        <h3>graphical clients</h3>
+        <p>
+            <ul>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, free)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
+            </ul>
+        </p>
+        <h3>guides</h3>
+        <p>
+            <ul>
+                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+                <li><a href="http://progit.org/book/">Pro Git</a></li>
+                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
+                <li><a href="http://help.github.com/">GitHub Help</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+            </ul>
+        </p>
+        <h3>get help</h3>
+        <p>
+            <ul>
+                <li><a href="http://groups.google.com/group/git-users/">Git User Mailing List</a></li>
+                <li><a href="http://jk.gs/git/">#git on irc.freenode.net</a></li>
+            </ul>
+        </p>
+    </div>
+    <a name="comments"></a>
+    <div class="scrollblock block-comments">
+        <h2>comments</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+</body>
+</html>
