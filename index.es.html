@@ -100,10 +100,10 @@
     <div class="scrollblock block-add">
         <h2>add &amp; commit</h2>
         <p>
-            Puedes registrar cambios (añadirlos al <b>Index</b>) usando<br />
+            Puedes añadir cambios (añadirlos al <b>Index</b>) usando<br />
             <code>git add &lt;filename&gt;</code><br />
             <code>git add .</code><br />
-            Este es el primer paso en el flujo de trabajo básico. Para hacer commit a estos cambios usa<br />
+            Este es el primer paso en el flujo de trabajo básico. Para consignar estos cambios usa<br />
             <code>git commit -m "Commit message"</code><br />
             Ahora el archivo esta incluído en el <b>HEAD</b>, pero aún no en tu repositorio remoto.
         </p>
@@ -144,9 +144,9 @@
     <div class="scrollblock block-merging">
         <h2>actualiza &amp; fusiona</h2>
         <p>
-            Para actualizar tu repositorio local al commit más nuevo, ejecuta <br />
+            Para actualizar tu repositorio local a la última versión, ejecuta <br />
             <code>git pull</code><br />
-            en tu directorio de trabajo para <i>bajar</i> y <i>fusionar</i> los cambios remotos.<br />
+            en tu directorio de trabajo para <i>descargar</i> y <i>fusionar</i> los cambios remotos.<br />
             Para fusionar otra rama a tu rama activa (por ejemplo master), utiliza<br />
             <code>git merge &lt;branch&gt;</code><br />
             en ambos casos git intentará fusionar automáticamente los cambios. Desafortunadamente, no siempre será posible y se podrán producir <i>conflictos</i>.
@@ -168,6 +168,24 @@
             también puedes usar menos caracteres que el commit id, pero debe ser un valor único.
         </p>
     </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>log</h2>
+        <p>
+            La manera más fácil de ver el log de un repositorio..
+            <code>git log</code><br />
+            Puedes hacer uso de varios parámetros para mostrar la información que deseas en el log. Para ver los cambios de un determinado autor:<br />
+            <code>git log --author=bob</code><br />
+            Para mostrar un log comprimido donde cada cambio se muestra en una línea:<br />
+            <code>git log --pretty=oneline</code><br />
+            O quizás quieras ver un árbol con todas las ramas mostrando el nombre de las etiquetas y ramas: <br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            Ver solo los ficheros que han cambiado: <br />
+            <code>git log --name-status</code><br />
+            Estos son algunos de los muchos parámetros posibles que se pueden usar. Para más información, mira <br />
+            <code>git log --help</code><br />
+        </p>
+    </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
         <h2>reemplaza cambios locales</h2>
@@ -185,7 +203,7 @@
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>datos útiles</h2>
+        <h2>información útil</h2>
         <p>
             Interfaz gráfica por defecto<br />
             <code>gitk</code><br />
@@ -205,9 +223,9 @@
             <ul>
                 <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
                 <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
-                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, free)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, free)</a></li>
                 <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
-                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
             </ul>
         </p>
         <h3>guías</h3>
@@ -218,6 +236,13 @@
                 <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
                 <li><a href="http://help.github.com/">GitHub Help</a></li>
                 <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+            </ul>
+        </p>
+        <h3>ayuda</h3>
+        <p>
+            <ul>
+                <li><a href="http://groups.google.com/group/git-users/">Git User Mailing List</a></li>
+                <li><a href="http://jk.gs/git/">#git on irc.freenode.net</a></li>
             </ul>
         </p>
     </div>
