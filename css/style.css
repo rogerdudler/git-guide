@@ -110,6 +110,8 @@ code {
 .block-create code { background-color: #000; color: #FFF; }
 .block-copy { background-color: #FFF; }
 .block-copy h2 { color: #000; }
+.block-checkout { background-color: #FFF; } /* .block-checkout can be dropped in the future, */
+.block-checkout h2 { color: #000; }         /* once all new languages use .block-copy */
 .block-trees { background-color: #4c0d09; }
 .block-trees h2 { color: #d3b2af; }
 .block-trees p { color: #d3b2af; }
