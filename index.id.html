@@ -141,24 +141,24 @@
             <code>git checkout master</code><br />
             dan hapus cabang tsb<br />
             <code>git branch -d feature_x</code><br />
-            cabang <i>tak kan terakses umum</i> kecuali jika dikirim ke repositori publik remote dg perintah<br />
+            cabang <i>tak kan terakses umum</i> kecuali jika dikirim ke repositori publik remote dgn perintah<br />
             <code>git push origin &lt;branch&gt;</code>
         </p>
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>update &amp; merge</h2>
+        <h2>perbarui &amp; lebur</h2>
         <p>
-            to update your local repository to the newest commit, execute <br />
+            untuk memperbarui repositori lokal sesuai dengan commit terakhir dari repositori remote, jalankan <br />
             <code>git pull</code><br />
-            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
-            to merge another branch into your active branch (e.g. master), use<br />
+            di direktori kerja untuk <i>mengambil</i> dan <i>melebur</i> perubahannya.<br />
+            untuk melebur cabang lain ke cabang aktif (mis. master), gunakan<br />
             <code>git merge &lt;branch&gt;</code><br />
-            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
-            You are responsible to merge those <i>conflicts</i>
-            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
+            dalam kedua kasus tersebut, git berusaha melebur secara otomatis. Sayangya, ini tidak selalu berhasil yang akibatnya menimbulkan <i>konflik</i>.
+            Anda harus secara manual menyelesaikan terlebih dahulu <i>konflik</i> tsb
+            dgn mengedit berkas yg ditunjukkan git. Setelah dirubah, Anda harus menambahkannya dgn perintah<br />
             <code>git add &lt;filename&gt;</code><br />
-            before merging changes, you can also preview them by using<br />
+            sebelum melebur perubahannya, Anda juga bisa mem-preview perbedaannya dengan<br />
             <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
         </p>
     </div>
