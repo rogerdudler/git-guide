@@ -191,14 +191,14 @@
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
+        <h2>mengganti perubahan lokal</h2>
         <p>
-            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
+            Jika Anda melakukan suatu kesalahan dan ingin mengganti perubahan lokal tsb dgn<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+            hal ini akan mengganti perubahan di direktori kerja dgn isi terakhir di HEAD. Perubahan yang sudah ditambahkan ke Index, akan tetap terjaga.
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            Jika Anda ingin membuang semua "perubahan dan commit lokal", mengambil riwayat terakhir dari server remote dan merujukkan cabang master lokal kepadanya, maka jalankan<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
