@@ -123,25 +123,25 @@
             <br /><br />
             Jika sebelumnya Anda tidak mengclone repositori remote dan ingin menghubungkan repositori lokal ke server remote, jalankan perintah<br />
             <code>git remote add origin &lt;server&gt;</code><br />
-            Sekarang Anda sudah dapat mengirim perubaha ke server remote<br />
+            Sekarang Anda sudah dapat mengirim perubahan ke server remote<br />
 
         </p>
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>branching</h2>
+        <h2>Percabangan(branching)</h2>
         <p>
-            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+            Cabang digunakan untuk mengembangkan fitur suatu proyek perangkat lunak, dimana antar cabang terisolasi satu sama lain. Cabang <i>master</i> adalah cabang "default" saat membuat repositori baru. Gunakan cabang lain untuk pengembangan, kemudian leburkan ke cabang master setelah selesai.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            create a new branch named "feature_x" and switch to it using<br />
+            buat cabang baru bernama "feature_x" dan pindah ke sana dengan perintah<br />
             <code>git checkout -b feature_x</code><br />
-            switch back to master<br />
+            pindah kembali ke master<br />
             <code>git checkout master</code><br />
-            and delete the branch again<br />
+            dan hapus cabang tsb<br />
             <code>git branch -d feature_x</code><br />
-            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
+            cabang <i>tak kan terakses umum</i> kecuali jika dikirim ke repositori publik remote dg perintah<br />
             <code>git push origin &lt;branch&gt;</code>
         </p>
     </div>
