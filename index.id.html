@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>git - cara gampang - no deep shit!</title>
+    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-652147-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function recordOutboundLink(link, category, action) {
+         _gat._getTrackerByName()._trackEvent(category, action);
+         setTimeout('document.location = "' + link.href + '"', 100);
+      }
+    </script>
+</head>
+<body>
+    <div class="scrollblock block-title">
+        <h1>git - cara gampang</h1>
+        <p>cuma sekedar cara gampang menggunakan git. serius deh ;)</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="meta">
+            by <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
+            <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+            this guide in 
+            <a href="index.de.html">deutsch</a>, 
+            <a href="index.es.html">español</a>, 
+            <a href="index.fr.html">français</a>, 
+            <a href="index.it.html">italiano</a>, 
+            <a href="index.nl.html">nederlands</a>, 
+            <a href="index.pt_BR.html">português</a>, 
+            <a href="index.ru.html">русский</a>,
+            <a href="index.tr.html">türkçe</a>,
+            <br/>
+            <a href="index.my.html">မြန်မာ</a>,
+            <a href="index.ja.html">日本語</a>, 
+            <a href="index.zh.html">中文</a>, 
+            <a href="index.ko.html">한국어</a>
+            <a href="index.vi.html">Vietnamese</a>
+            <a href="index.id.html">Bahasa</a>
+            <br />
+            laporkan masalah di <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+        </p>
+        <div class="announcement">
+            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
+                <img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
+            </a>
+        </div>
+        <img src="img/arrow.png" alt="" />
+    </div>
+    <!-- setup -->
+    <a name="setup"></a>
+    <div class="scrollblock block-setup">
+        <h2>persiapan</h2>
+        <p>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Unduh git untuk OSX</a>
+        </p>
+        <p>
+            <a href="http://msysgit.github.io/">Unduh git untuk Windows</a>
+        </p>
+        <p>
+            <a href="http://book.git-scm.com/2_installing_git.html">Unduh git untuk Linux</a>
+        </p>
+    </div>
+    <a name="create"></a>
+    <div class="scrollblock block-create">
+        <h2>membuat sebuah tempat penyimpanan baru</h2>
+        <p>
+            buat sebuah direktori (folder) baru, buka dan ketikan <br />
+            <code>git init</code><br />
+            untuk membuat tempat penyimpanan baru.
+        </p>
+    </div>
+    <a name="checkout"></a>
+    <div class="scrollblock block-checkout">
+        <h2>melakukan checkout pada sebuah tempat penyimpanan</h2>
+        <p>
+            buat sebuah tempat penyimpanan lokal yang siap dipakai, dengan menjalankan perintah <br />
+            <code>git clone /path/to/repository</code><br />
+            jika file tersebut berada di server, perintahnya menjadi<br />
+            <code>git clone username@host:/path/to/repository</code>
+        </p>
+    </div>
+    <a name="trees"></a>
+    <div class="scrollblock block-trees">
+        <h2>alur kerja</h2>
+        <p>
+            tempat penyimpanan lokal anda terdiri dari tiga "pohon" yang dipelihara oleh git.
+            yang pertama adalah <code>direktori yang sedang anda kerjakan</code> yang menyimpan berkas-berkas asli.
+            yang kedua adalah <code>indeks</code> yang yang bertindak sebagai tempat untuk staging dan
+            akhirnya <code>kepala</code> yang menunjukan commit yang terakhir anda lakukan.
+        </p>
+        <img src="img/trees.png" alt="" />
+    </div>
+    <a name="add"></a>
+    <div class="scrollblock block-add">
+        <h2>menambahkan &amp; commit</h2>
+        <p>
+            Anda bisa mengusulkan perubahan-perubahan (menambahkannya ke <b>indeks</b>) dengan <br />
+            <code>git add &lt;nama berkas&gt;</code><br />
+            <code>git add *</code><br />
+            Ini adalah langkah dasar pertama pada alur kerja git. untuk melakukan commit yang sebenar-benarnya pada perubahan-perubahan berkas ini dengan <br>
+            <code>git commit -m "Commit message"</code><br />
+            Sekarang berkas tersebut berhasil di commit ke <b>kepala</b>, tapi belum berada di tempat penyimpanan jauh anda.
+        </p>
+    </div>
+    <a name="push"></a>
+    <div class="scrollblock block-remote">
+        <h2>mendorong perubahan</h2>
+        <p>
+            Perubahan-perubahan yang anda lakukan sekarang sudah berada di <b>kepala</b>  salinan berkas yang sedang anda kerjakan. Untuk mengirimkan perubahan-perubahan tersebut ke penyimpanan jauh anda, jalankan <br />
+            <code>git push origin master</code><br />
+            Ganti <i>master</i> ke cabang yang ingin anda rubah.
+            <br /><br />
+            Jika kamu belum meng-kloning tempat penyimpanan yang sudah ada dan mau menghubungkan tempat penyimpanan anda dengan server, anda perlu menambahkan ini dengan <br />
+            <code>git remote add origin &lt;server&gt;</code><br />
+            Sekarang anda bisa mendorong perubahan-perubahan tersebut ke server yang anda pilih <br/>
+
+        </p>
+    </div>
+    <a name="branching"></a>
+    <div class="scrollblock block-branching">
+        <h2>percabangan</h2>
+        <p> 
+            Cabang - cabang digunakan untuk mengembangkan fitur - fitur yang dipisahkan dengan fitur yang lainnya. cabang <i>master</i>
+            adalah cabang dasar pada saat anda membuat tempat penyimpanan baru. gunakan cabang lainnya untuk pengembangan dan gabungkan mereka kembali ke cabang <i>master</i> jika sudah selesai.
+        </p>
+        <img src="img/branches.png" alt="" />
+        <p>
+            buat sebuah cabang baru dengan nama "feature_x" dan pindah ke cabang tersebut dengan menggunakan <br />
+            <code>git checkout -b feature_x</code><br />
+            pindah kembali ke cabang master<br />
+            <code>git checkout master</code><br />
+            dan hapus kembali cabang tersebut<br />
+            <code>git branch -d feature_x</code><br />
+            sebuah cabang <i>tidak tersedia untuk yang lainnya</i> kecuali anda mendorong cabang tersebut ke penyimpanan jauh anda <br />
+            <code>git push origin &lt;branch&gt;</code>
+        </p>
+    </div>
+    <a name="update"></a>
+    <div class="scrollblock block-merging">
+        <h2>memperbarui &amp; menggabungkan</h2>
+        <p>
+            untuk memperbarui tempat penyimpanan lokal anda ke commit yang paling baru, jalankan <br />
+            <code>git pull</code><br />
+            di direktori yang sedang anda kerjakan untuk <i>mengambil</i> dan <i>menggabungkan</i> perubahan tersebut. <br/>
+            untuk menggabungkan cabang lainnya menuju cabang yang sedang aktif (contoh: master), gunakan <br />
+            <code>git merge &lt;branch&gt;</code><br />
+            pada kasus tersebut git mencoba untuk menggabungkan secara otomatis perubahan-perubahan tersebut. sayangnya, ini tidak selalu memungkinkan dan menghasilkan <i>konflik</i>.
+            Anda lah yang bertanggung jawab untuk menggabungkan <i>konflik</i> itu.
+            secara manual dengan meneliti berkas yang ditunjukan oleh git. setelah melakukan perubahan, anda perlu menandai mereka dengan tanda sudah digabungkan dengan <br />
+            <code>git add &lt;filename&gt;</code><br />
+            sebelum menggabungkan perubahan-perubahan, anda selalu bisa melihat mereka kembali dengan  <br/>
+            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+        </p>
+    </div>
+    <a name="tagging"></a>
+    <div class="scrollblock block-tagging">
+        <h2>tagging</h2>
+        <p>
+            sangat disarankan untuk membuat penanda pada saat mengeluarkan perangkat lunak terbaru. ini adalah konsep yang sudah diketahui, dan juga tersedia di SVN. anda bisa membuat penanda yang dinamai <i>1.0.0</i> dengan menjalankan perintah <br />
+            <code>git tag 1.0.0 1b2e1d63ff</code><br />
+            <i>1b2e1d63ff</i> merupakan 10 karakter pertama dari komit id yang anda mau referensikan dengan penanda anda. anda bisa mendapatkan id komit dengan melihat pada ... <br />
+        </p>
+    </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>catatan</h2>
+        <p>
+            dengan cara yang mudah, anda dapat mempelajari sejarah media penyimpanan anda dengan menggunakan ...
+            <code>git log</code><br />
+            anda bisa menanmbahkan banyak parameter untuk membuat catatan yang ingin anda kehendaki. untuk melihat komit yang dilakukan oleh pembuat yang dituju: <br>
+            <code>git log --author=bob</code><br />
+            Untuk melihay catatan yang sudah sangat di sederhanakan dalam satu baris: <br>
+            <code>git log --pretty=oneline</code><br />
+            atau anda mungkin mau melihat sebuah pohon seni ASCII dari semua cabang-cabang, dihias dengan nama - nama dari penanda - penanda dan cabang - cabang. <br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            Untuk hanya melihat berkas yang dirubah: <br />
+            <code>git log --name-status</code><br />
+            ini adalah sebagian parameter yang mungkin anda gunakan. untuk lainnya, lihat
+            <code>git log --help</code><br />
+        </p>
+    </div>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>mengganti perubahan lokal</h2>
+        <p>
+            pada kasus anda melakukan kesalahan (yang tentu saja tidak mungkin ;) anda bisa mengganti perubahan lokal tersebut dengan perintah <br>
+            <code>git checkout -- &lt;filename&gt;</code><br />
+            ini akan mengganti perubahan pada "pohon" yang sedang anda kerjakan dengan konten terakhir yang terdapat di kepala. perubahan sudah ditambahkan ke indeks, sama dengan sebagai mana berkas baru, akan disimpan.
+        </p>
+        <p>
+            bahkan jika anda mau menghapus semua perubahan lokal dan komit yang anda telah lakukan, ambil sejarah terbaru dari server dan cabang master lokal ditujukan seperti ini <br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+    </div>
+    <a name="hints"></a>
+    <div class="scrollblock block-hints">
+        <h2>penunjuk yang berguna</h2>
+        <p>
+            GUI yang terdapat pada git<br />
+            <code>gitk</code><br />
+            menghasil keluaran hasil yang berwarna<br />
+            <code>git config color.ui true</code><br />
+            menampilkan sebaris catatan setiap commit<br />
+            <code>git config format.pretty oneline</code><br />
+            gunakan penambahan yang interaktif<br />
+            <code>git add -i</code>
+        </p>
+    </div>
+    <a name="resources"></a>
+    <div class="scrollblock block-resources">
+        <h2>tautan dan sumberdaya</h2>
+        <h3>klien grafis</h3>
+        <p>
+            <ul>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, free)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
+            </ul>
+        </p>
+        <h3>petunjuk</h3>
+        <p>
+            <ul>
+                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+                <li><a href="http://progit.org/book/">Pro Git</a></li>
+                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
+                <li><a href="http://help.github.com/">GitHub Help</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+            </ul>
+        </p>
+        <h3>bantuan</h3>
+        <p>
+            <ul>
+                <li><a href="http://groups.google.com/group/git-users/">Git User Mailing List</a></li>
+                <li><a href="http://jk.gs/git/">#git on irc.freenode.net</a></li>
+            </ul>
+        </p>
+    </div>
+    <a name="comments"></a>
+    <div class="scrollblock block-comments">
+        <h2>komentar</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+</body>
+</html>
