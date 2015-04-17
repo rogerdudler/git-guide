@@ -172,6 +172,24 @@
             你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。
         </p>
     </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>日志</h2>
+        <p>
+            以一种最简单的方式，你可以回顾仓库的提交历史，执行：
+            <code>git log</code><br />
+            你可以加入不同的参数来使得日志看上去如你希望的样子。只查看某个作者的提交：<br />
+            <code>git log --author=bob</code><br />
+            查看非常简洁的日志，日志中的每个提交历史显示一行：<br />
+            <code>git log --pretty=oneline</code><br />
+            或者你想显示所有分支的以ASCII字符串表示的树形，该树显示了标签和分支名：<br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            只查看被改动过的文件：<br />
+            <code>git log --name-status</code><br />
+            以上这只是一些你可以使用的参数。有关更多参数，请查看<br />
+            <code>git log --help</code><br />
+        </p>
+    </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
         <h2>替换本地改动</h2>
