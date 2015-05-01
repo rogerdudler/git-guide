@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - the simple guide - no deep shit!</title>
+	<title>git - คู่มือแบบง่ายๆ - ไม่ได้โม้นะ!</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
@@ -26,14 +26,14 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git - the simple guide</h1>
-        <p>just a simple guide for getting started with git. no deep shit ;)</p>
+        <h1>git - คู่มือแบบง่ายๆ</h1>
+        <p>นี่คือคู่มือการใช้ Git แบบง่ายๆ - ไม่ได้โม้ด้วย ;)</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
-            by <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
-            <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
-            this guide in 
+            โดยคุณ <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
+            <br />เครดิตแก่คุณ <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> และคุณ <a href="http://www.namics.com">Namics</a><br />
+            คู่มือนี้ในภาษา 
             <a href="index.de.html">deutsch</a>, 
             <a href="index.es.html">español</a>, 
             <a href="index.fr.html">français</a>, 
@@ -52,7 +52,7 @@
             <a href="index.vi.html">Vietnamese</a>
 	    <a href="index.th.html">ภาษาไทย</a>
             <br />
-            please report issues on <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+            ถ้ามีข้อบกพร่อง โปรดแจ้งที่ <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
         </p>
         <div class="announcement">
             <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
@@ -64,98 +64,98 @@
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
-        <h2>setup</h2>
+        <h2>การติดตั้ง</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Download git for OSX</a>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">ดาวน์โหลด git สำหรับ OSX</a>
         </p>
         <p>
-            <a href="http://msysgit.github.io/">Download git for Windows</a>
+            <a href="http://msysgit.github.io/">ดาวน์โหลด git สำหรับ วินโดว์</a>
         </p>
         <p>
-            <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Download git for Linux</a>
+            <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">ดาวน์โหลด git สำหรับ ลินุกซ์</a>
         </p>
     </div>
     <a name="create"></a>
     <div class="scrollblock block-create">
-        <h2>create a new repository</h2>
+        <h2>สร้างฐานข้อมูลใหม่</h2>
         <p>
-            create a new directory, open it and perform a <br />
+            สร้าง directory ใหม่ก่อน, เปิดเข้าไปแล้วพิมพ์ <br />
             <code>git init</code><br />
-            to create a new git repository.
+            เพื่อสร้างฐานข้อมูล git ตัวใหม่
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>checkout a repository</h2>
+        <h2>เช็คเอาท์ฐานข้อมูล</h2>
         <p>
-            create a working copy of a local repository by running the command<br />
+            สร้างสำเนาฐานข้อมูลใหม่ โดยพิมพ์คำสั่ง <br />
             <code>git clone /path/to/repository</code><br />
-            when using a remote server, your command will be<br />
+            ถ้าฐานข้อมูลอยู่บนเซิฟเวอร์ คุณต้องพิมพ์ <br />
             <code>git clone username@host:/path/to/repository</code>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>workflow</h2>
+        <h2>ขั้นตอนการทำงาน</h2>
         <p>
-            your local repository consists of three "trees" maintained by git.
-            the first one is your <code>Working Directory</code> which holds the actual files.
-            the second one is the <code>Index</code> which acts as a staging area and
-            finally the <code>HEAD</code> which points to the last commit you've made.
+            ฐานข้อมูลของคุณจะมี "tree" อยู่สามอันที่ถูกดูแลด้วย git
+            ตัวแรกคือ <code>Working Directory</code> ซึ่งเก็บไฟล์ทั้งหมดไว้
+            ตัวที่สองคือ <code>Index</code> ซึ่งเป็นพื้นที่สำหรับ staging (ลำดับการเปลี่ยนแปลงของข้อมูล) และ
+            สุดท้ายคือ <code>HEAD</code> ซึ่งจะชี้ไปยังการบันทึกข้อมูล (commit) ครั้งสุดท้ายของคุณ
         </p>
         <img src="img/trees.png" alt="" />
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>add &amp; commit</h2>
+        <h2>การเพิ่มเติม (add) &amp; บันทึก (commit)</h2>
         <p>
-            You can propose changes (add it to the <b>Index</b>) using<br />
+            คุณสามารถเสนอการเปลี่ยนข้อมูลหรือไฟล์ (โดยใส่ไว้ใน <b>Index</b>) ด้วยคำสั่ง<br />
             <code>git add &lt;filename&gt;</code><br />
             <code>git add *</code><br />
-            This is the first step in the basic git workflow. To actually commit these changes use<br />
+            นี่คือขั้นตอนแรกสำหรับขั้นตอนการทำงานของ git ถ้าจะบันทึก (commit) ข้อมูลเปลี่ยนใหม่ คุณจะต้องพิมพ์<br />
             <code>git commit -m "Commit message"</code><br />
-            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+            ไฟล์ก็จะถูกบันทึกลงบน <b>HEAD</b> แต่ยังไม่ได้บันทึกลงฐานข้อมูลบนเซิฟเวอร์
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>pushing changes</h2>
+        <h2>ส่งข้อมูลที่เปลี่ยนแปลงใหม่ (pushing changes)</h2>
         <p>
-            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
+            ข้อมูลใหม่ยังอยู่บน <b>HEAD</b> ของฐานข้อมูลส่วนตัว ถ้าคุณต้องการจะส่งข้อมูลที่เปลี่ยนใหม่ไปยังฐานข้อมูลบนเซิฟเวอร์ ทำตามคำสั่งนี้ <br />
             <code>git push origin master</code><br />
-            Change <i>master</i> to whatever branch you want to push your changes to.
+            เปลี่ยนคีย์เวิร์ด <i>master</i> เป็น branch ที่คุณต้องการจะส่งข้อมูลไป
             <br /><br />
-            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
+            ถ้าคุณยังไม่ได้ทำสำเนาของฐานข้อมูลแต่ว่าคุณต้องการจะเชื่อมฐานข้อมูลนี้กับเซิฟเวอร์ คุณต้องพิมพ์ตามนี้ <br />
             <code>git remote add origin &lt;server&gt;</code><br />
-            Now you are able to push your changes to the selected remote server<br />
+            คุณก็จะสามารถส่งข้อมูลที่เปลี่ยนใหม่ไปยังเซิฟเวอร์ที่คุณต้องการได้<br />
 
         </p>
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>branching</h2>
+        <h2>บร้านชิ่ง (branching)</h2>
         <p>
-            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+            Branches เป็นที่ใช้สำหรับพัฒนา features ตัวใหม่โดยไม่ต้องรบกวนตัวอื่น <i>master</i> branch เป็น "default" branch (บร้านที่ถูกเลือกโดยอัตโนมัติ) เมื่อคุณสร้างฐานข้อมูลครั้งแรก คุณต้องใช้ branches ตัวอื่นสำหรับการพัฒนาอย่างอื่นและ merge พวกมันกลับเข้ามาที่ master branch เมื่อพัฒนาเสร็จแล้ว
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            create a new branch named "feature_x" and switch to it using<br />
+            สร้าง branch ใหม่ชื่อ "feature_x" และเริ่มใช้มัน โดยต้องพิมพ์<br />
             <code>git checkout -b feature_x</code><br />
-            switch back to master<br />
+            เปลี่ยนกลับมาที่ตัวมาสเตอร์ (master)<br />
             <code>git checkout master</code><br />
-            and delete the branch again<br />
+            และลบ branch ทิ้ง<br />
             <code>git branch -d feature_x</code><br />
-            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
+            คนอื่นจะ <i>ไม่สามารถใช้ branch </i> ของคุณได้จนกว่าคุณจะส่งตัว branch ของคุณไปยังฐานข้อมูลบนเซิฟเวอร์<br />
             <code>git push origin &lt;branch&gt;</code>
         </p>
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>update &amp; merge</h2>
+        <h2>การอัพเดท &amp; การรวบรวมข้อมูล (merge)</h2>
         <p>
-            to update your local repository to the newest commit, execute <br />
+            จะอัพเดทฐานข้อมูลส่วนตัวให้มีข้อมูลใหม่จากเซิฟเวอร์ คุณต้องพิมพ์ <br />
             <code>git pull</code><br />
-            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
+            ใน directory ปัจจุบัน เพื่อจะได้<i>ดึงข้อมูล (fetch)</i> และ <i> รวบรวมข้อมูล (merge)</i> จากฐานข้อมูลบนเซิฟเวอร์<br />
             to merge another branch into your active branch (e.g. master), use<br />
             <code>git merge &lt;branch&gt;</code><br />
             in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
