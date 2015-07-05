@@ -26,7 +26,7 @@
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
-            por <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a> (traducido por <a href="http://www.twitter.com/lfbarragan">@lfbarragan</a> y <a href="https://twitter.com/adrimatellanes">@adrimatellanes</a>)
+            por <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a> (traducido por <a href="http://www.twitter.com/lfbarragan">@lfbarragan</a> y <a href="https://github.com/amatellanes">@amatellanes</a>)
             <br />créditos a <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> y <a href="http://www.namics.com">Namics</a><br />
             disponible en 
             <a href="index.html">english</a>,
@@ -44,6 +44,7 @@
             <a href="index.ja.html">日本語</a>, 
             <a href="index.zh.html">中文</a>, 
             <a href="index.ko.html">한국어</a>
+            <a href="index.vi.html">Vietnamese</a>
             <br />
             por favor, reporta cualquier problema en <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
         </p>
@@ -79,11 +80,11 @@
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>hacer checkout a un repositorio</h2>
+        <h2>clonar un repositorio</h2>
         <p>
             Crea una copia local del repositorio ejecutando<br />
             <code>git clone /path/to/repository</code><br />
-            Si utilizas un servidor remoto, ejecuta<br />
+            Si usas un repositorio remoto, ejecuta<br />
             <code>git clone username@host:/path/to/repository</code>
         </p>
     </div>
@@ -100,12 +101,12 @@
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>add &amp; commit</h2>
+        <h2>añadir &amp; consignar</h2>
         <p>
             Puedes añadir cambios (añadirlos al <b>Index</b>) usando<br />
             <code>git add &lt;filename&gt;</code><br />
-            <code>git add .</code><br />
-            Este es el primer paso en el flujo de trabajo básico. Para consignar estos cambios usa<br />
+            <code>git add *</code><br />
+            Este es el primer paso en el flujo de trabajo básico de git. Para consignar estos cambios usa<br />
             <code>git commit -m "Commit message"</code><br />
             Ahora el archivo esta incluído en el <b>HEAD</b>, pero aún no en tu repositorio remoto.
         </p>
@@ -165,9 +166,7 @@
         <p>
             Se recomienda crear etiquetas para cada nueva versión publicada de un software. Este concepto no es nuevo, ya que estaba disponible en SVN. Puedes crear una nueva etiqueta llamada <i>1.0.0</i> ejecutando<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            <i>1b2e1d63ff</i> se refiere a los 10 caracteres del commit id al cual quieres referirte con tu etiqueta. Puedes obtener el commit id con <br />
-            <code>git log</code><br />
-            también puedes usar menos caracteres que el commit id, pero debe ser un valor único.
+            <i>1b2e1d63ff</i> se refiere a los 10 caracteres del commit id al cual quieres referirte con tu etiqueta. Puedes obtener el commit id mirando el...
         </p>
     </div>
     <a name="log"></a>
