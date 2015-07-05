@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - the simple guide - no deep shit!</title>
+	<title>git - prosty przewodnik - nic skomplikowanego!</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
@@ -26,8 +26,8 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git - the simple guide</h1>
-        <p>just a simple guide for getting started with git. no deep shit ;)</p>
+        <h1>git - prosty przewodnik</h1>
+      <p>Prosty przewodnik dla początkujących. nic skomplikowanego ;)</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
@@ -37,10 +37,8 @@
             <a href="index.de.html">deutsch</a>, 
             <a href="index.es.html">español</a>, 
             <a href="index.fr.html">français</a>, 
-            <a href="index.id.html">indonesian</a>, 
             <a href="index.it.html">italiano</a>, 
             <a href="index.nl.html">nederlands</a>, 
-            <a href="index.pl.html">polski</a>,
             <a href="index.pt_BR.html">português</a>, 
             <a href="index.ru.html">русский</a>,
             <a href="index.tr.html">türkçe</a>,
@@ -55,7 +53,7 @@
         </p>
         <div class="announcement">
             <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
-                <img src="//frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
+                <img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
             </a>
         </div>
         <img src="img/arrow.png" alt="" />
@@ -63,44 +61,50 @@
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
-        <h2>setup</h2>
+        <h2>Instalacja</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Download git for OSX</a>
+            <a
+                href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Pobierz
+            git dla OSX</a>
         </p>
         <p>
-            <a href="http://msysgit.github.io/">Download git for Windows</a>
+            <a href="http://msysgit.github.io/">Pobierz git dla Windows</a>
         </p>
         <p>
-            <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Download git for Linux</a>
+            <a href="http://book.git-scm.com/2_installing_git.html">Pobierz git
+                dla Linux</a>
         </p>
     </div>
     <a name="create"></a>
     <div class="scrollblock block-create">
-        <h2>create a new repository</h2>
+        <h2>utwórz nowe repozytorium</h2>
         <p>
-            create a new directory, open it and perform a <br />
+            utwórz katalog, wejdź do niego i wykonaj<br />
             <code>git init</code><br />
-            to create a new git repository.
+            aby utworzyć nowe repozytorium git.
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>checkout a repository</h2>
+        <h2>pobierz repozytorium</h2>
         <p>
-            create a working copy of a local repository by running the command<br />
+            utwórz kopię roboczą lokalnego repozytorium poprzez polecenie<br />
             <code>git clone /path/to/repository</code><br />
-            when using a remote server, your command will be<br />
+            jeśli korzystasz ze zdalnego serwera, użyjesz polecenia<br />
             <code>git clone username@host:/path/to/repository</code>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>workflow</h2>
+        <h2>przepływ pracy</h2>
         <p>
-            your local repository consists of three "trees" maintained by git.
-            the first one is your <code>Working Directory</code> which holds the actual files.
-            the second one is the <code>Index</code> which acts as a staging area and
-            finally the <code>HEAD</code> which points to the last commit you've made.
+            twoje lokalne repozytorium składa się z trzech "drzew" zarządzanych
+            przez git.
+            przerwsze to <code>Katalog Roboczy</code>, który przechowuje
+            bieżące pliki.
+            drugie to <code>Index</code>, które działa jak poczekalnia i
+            ostatnie z nich
+            to <code>HEAD</code>, które wskazuje na ostatni utworzony commit.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
@@ -108,25 +112,30 @@
     <div class="scrollblock block-add">
         <h2>add &amp; commit</h2>
         <p>
-            You can propose changes (add it to the <b>Index</b>) using<br />
+            Możesz zaproponować zmiany (dodać je do <b>Index</b>) używając<br />
             <code>git add &lt;filename&gt;</code><br />
             <code>git add *</code><br />
-            This is the first step in the basic git workflow. To actually commit these changes use<br />
+            To pierwszy krok podczas pracy z gitem. <br />
+            Aby rzeczywiście
+            zatwierdzić te zmiany użyj<br />
             <code>git commit -m "Commit message"</code><br />
-            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+            Teraz plik jest zatwierdzony w <b>HEAD</b>, ale nie w
+            zdalnym repozytorium.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>pushing changes</h2>
+        <h2>wysyłanie zmian</h2>
         <p>
-            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
+            Twoje zmiany są obecnie w <b>HEAD</b> twojej kopii roboczej. Aby
+            wysłać te zmiany do zdalnego repozytorium, wykonaj <br />
             <code>git push origin master</code><br />
-            Change <i>master</i> to whatever branch you want to push your changes to.
+            Zmień <i>master</i> na dowolną gałąź, której zmiany wysyłasz.
             <br /><br />
-            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
+            Jeśli nie sklonowałeś istniejącego repozytorium i chcesz połączyć
+            je ze zdalnym serwerem, musisz go dodać poprzez <br />
             <code>git remote add origin &lt;server&gt;</code><br />
-            Now you are able to push your changes to the selected remote server<br />
+            Teraz masz możliwość wysyłania zmian na wskazany serwer.<br />
 
         </p>
     </div>
@@ -134,96 +143,120 @@
     <div class="scrollblock block-branching">
         <h2>branching</h2>
         <p>
-            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+            Gałęzie są używane do rozwijania funkcjonalności odizolowanych od
+            siebie. Gałąź <i>master</i> jest domyślną gałęzią kiedy
+            tworzysz repozytorium. <br />
+            Używaj innych gałęzi do rozwoju projektu, a
+            kiedy skończysz
+            scalaj je z powrotem z gałęzią główną.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            create a new branch named "feature_x" and switch to it using<br />
+            utwórz nową gałąź o nazwie "feature_x" i przełącz się na nią<br />
             <code>git checkout -b feature_x</code><br />
-            switch back to master<br />
+            przełącz się z powrotem na master<br />
             <code>git checkout master</code><br />
-            and delete the branch again<br />
+            i usuń gałąź<br />
             <code>git branch -d feature_x</code><br />
-            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
+            gałąź <i>nie jest dostępna dla innych</i> dopóki nie wyślesz jej do
+            zdalnego repozytorium<br />
             <code>git push origin &lt;branch&gt;</code>
         </p>
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>update &amp; merge</h2>
+        <h2>aktualizacja i scalanie</h2>
         <p>
-            to update your local repository to the newest commit, execute <br />
+            aby zaktualizować lokalne repozytorium do ostatniego commita,
+            wykonaj <br />
             <code>git pull</code><br />
-            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
-            to merge another branch into your active branch (e.g. master), use<br />
+            w swoim katalogu roboczym aby pobrać(<i>fetch</i>) i
+            scalić(<i>merge</i>) zdalne
+            zmiany.<br />
+            aby scalić inną gałąź z gałęzią aktywną (np. master), użyj<br />
             <code>git merge &lt;branch&gt;</code><br />
-            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
-            You are responsible to merge those <i>conflicts</i>
-            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
+            w obu przypadkach git próbuje scalić zmiany automatycznie. Niestety
+            nie zawsze jest to możliwe i powoduje <i>konflikty</i>.
+            Jesteś odpowiedzialny za ich scalenie.
+            Ręcznie poprzez edycję plików wskazanych przez git. Po zmianie
+            musisz oznaczyć je jako scalone poprzez<br />
             <code>git add &lt;filename&gt;</code><br />
-            before merging changes, you can also preview them by using<br />
+            przed scaleniem zmian, możesz je obejrzeć używając<br />
             <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
         </p>
     </div>
     <a name="tagging"></a>
     <div class="scrollblock block-tagging">
-        <h2>tagging</h2>
+        <h2>Tagowanie</h2>
         <p>
-            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
+            Zaleca się tworzenie tagów dla wersji oprogramowania. To znany
+            koncept, który istnieje również w SVN. Możesz utworzyć nowy tag
+            o nazwie <i>1.0.0</i> wykonując<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id by looking at the... <br />
+            <i>1b2e1d63ff</i> to pierwsze 10 znaków numeru commita do którego
+            odwołuje się ten tag. Możesz uzyskać ten numer patrząc na...<br />
         </p>
     </div>
     <a name="log"></a>
     <div class="scrollblock block-log">
         <h2>log</h2>
         <p>
-            in its simplest form, you can study repository history using..
+            Możesz przeglądać historię repozytorium w najprostszej formie
+            używając..
             <code>git log</code><br />
-            You can add a lot of parameters to make the log look like what you want. To see only the commits of a certain author:<br />
+            Możesz dodawać dużo parametrów aby uzyskać to czego potrzebujesz.
+            aby zobaczyć commity konkretnego autora:<br />
             <code>git log --author=bob</code><br />
-            To see a very compressed log where each commit is one line:<br />
+            aby zobaczyć bardziej zwarty rezultat, gdzie commit jest pojedynczą
+            linią:<br />
             <code>git log --pretty=oneline</code><br />
-            Or maybe you want to see an ASCII art tree of all the branches, decorated with the names of tags and branches: <br />
+            A może chcesz zobaczyć drzewo w ASCII art wszystkich gałęzi
+            opatrzone ich nazwami oraz nazwami tagów: <br />
             <code>git log --graph --oneline --decorate --all</code><br />
-            See only which files have changed: <br />
+            zobacz tylko te pliki które zostały zmienione: <br />
             <code>git log --name-status</code><br />
-            These are just a few of the possible parameters you can use. For more, see 
+            To tylko kilka z możliwych parametrów, których możesz użyć. Wiecej
+            zobaczysz w
             <code>git log --help</code><br />
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
+        <h2>wycofaj lokalne zmiany</h2>
         <p>
-            In case you did something wrong, which for sure never happens ;), you can replace local changes using the command<br />
+            Jeśli coś pójdzie nie tak (co oczywiście nigdy się nie zdarza ;)
+            możesz wycofać lokalne zmiany poprzez<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+            zastępując zmiany w katalogu roboczym ostatnią zawartością HEAD.
+            Zmiany, które zostały już dodane do index, tak jak nowe pliki
+            zostaną zachowane.
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            Jeśli zamiast tego chcesz porzucić wszystkie lokalne zmiany i
+            commity pobierz ostatnią historię z serwera i ustaw na nią swoją
+            gałąź lokalną<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>useful hints</h2>
+        <h2>Wskazówki</h2>
         <p>
-            built-in git GUI<br />
+            wbudowane GUI dla git<br />
             <code>gitk</code><br />
-            use colorful git output<br />
+            wyjście git z kolorami<br />
             <code>git config color.ui true</code><br />
-            show log on just one line per commit<br />
+            pokaż log jako pojedyncze linie<br />
             <code>git config format.pretty oneline</code><br />
-            use interactive adding<br />
+            użyj interaktywnego dodawania<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
-        <h2>links & resources</h2>
-        <h3>graphical clients</h3>
+        <h2>Linki i zasoby</h2>
+        <h3>GUI</h3>
         <p>
             <ul>
                 <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
@@ -233,7 +266,7 @@
                 <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
             </ul>
         </p>
-        <h3>guides</h3>
+        <h3>przewodniki</h3>
         <p>
             <ul>
                 <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
@@ -243,7 +276,7 @@
                 <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
             </ul>
         </p>
-        <h3>get help</h3>
+        <h3>pomoc</h3>
         <p>
             <ul>
                 <li><a href="http://groups.google.com/group/git-users/">Git User Mailing List</a></li>
@@ -253,7 +286,7 @@
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
-        <h2>comments</h2>
+        <h2>komentarze</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -262,7 +295,7 @@
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>
