@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>git - pikaopas - ilman turhuuksia!</title>
+    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-652147-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function recordOutboundLink(link, category, action) {
+         _gat._getTrackerByName()._trackEvent(category, action);
+         setTimeout('document.location = "' + link.href + '"', 100);
+      }
+    </script>
+</head>
+<body>
+    <div class="scrollblock block-title">
+        <h1>git - pikaopas</h1>
+        <p>yksinkertainen opas git-alkajalle, ilman turhuuksia ;)</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="meta">
+            tekijä <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a> (kääntäjä <a href="http://samikuhmonen.fi/">Sami Kuhmonen</a>)
+            <br />kiitokset <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> ja <a href="http://www.namics.com">Namics</a><br />
+            tämä opas muilla kielillä:
+            <a href="index.de.html">deutsch</a>,
+            <a href="index.es.html">español</a>,
+            <a href="index.fr.html">français</a>,
+            <a href="index.id.html">indonesian</a>,
+            <a href="index.it.html">italiano</a>,
+            <a href="index.nl.html">nederlands</a>,
+            <a href="index.pl.html">polski</a>,
+            <a href="index.pt_BR.html">português</a>,
+            <br />
+            <a href="index.ru.html">русский</a>,
+            <a href="index.fi.html">suomi</a>,
+            <a href="index.tr.html">türkçe</a>,
+            <a href="index.vi.html">Vietnamese</a>
+            <a href="index.my.html">မြန်မာ</a>,
+            <a href="index.ja.html">日本語</a>,
+            <a href="index.zh.html">中文</a>,
+            <a href="index.ko.html">한국어</a>
+            <br />
+            raportoi mahdollisista virheistä <a href="https://github.com/rogerdudler/git-guide/issues">github</a>iin
+        </p>
+        <div class="announcement">
+            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
+                <img src="//frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
+            </a>
+        </div>
+        <img src="img/arrow.png" alt="" />
+    </div>
+    <!-- setup -->
+    <a name="setup"></a>
+    <div class="scrollblock block-setup">
+        <h2>asennus</h2>
+        <p>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Lataa git OSX:lle</a>
+        </p>
+        <p>
+            <a href="http://msysgit.github.io/">Lataa git Windowsille</a>
+        </p>
+        <p>
+            <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Lataa git Linuxille</a>
+        </p>
+    </div>
+    <a name="create"></a>
+    <div class="scrollblock block-create">
+        <h2>lisää uusi säilö</h2>
+        <p>
+            Luodaksesi uuden säilön luo uusi hakemisto, avaa se ja aja komento <br />
+            <code>git init</code>
+        </p>
+    </div>
+    <a name="checkout"></a>
+    <div class="scrollblock block-checkout">
+        <h2>kloonaa säilö</h2>
+        <p>
+            Luo työkopio paikallisesta säilöstä komennolla<br />
+            <code>git clone /polku/säilöön</code><br />
+            Etäpalvelimen kanssa käytä komentoa<br />
+            <code>git clone käyttäjänimi@palvelin:/polku/säilöön</code>
+        </p>
+    </div>
+    <a name="trees"></a>
+    <div class="scrollblock block-trees">
+        <h2>työnkulku</h2>
+        <p>
+            Työkopio koostuu kolmesta gitin hallinnoimasta "puusta."
+            Ensimmäinen on <code>Työhakemisto</code>, jossa itse tiedostot ovat.
+            Toinen on pakkausalueena toimiva <code>Indeksi</code> ja viimeinen
+            on <code>HEAD</code>, joka osoittaa viimeksi tekemääsi muutokseen.
+        </p>
+        <img src="img/trees.png" alt="" />
+    </div>
+    <a name="add"></a>
+    <div class="scrollblock block-add">
+        <h2>lisää &amp; tallenna</h2>
+        <p>
+            Voit ehdottaa muutoksia (lisätä ne <b>Indeksiin</b>) komennolla<br />
+            <code>git add &lt;tiedosto&gt;</code><br />
+            <code>git add *</code><br />
+            Tämä on ensiaskel gitin työnkulussa. Tallentaaksesi muutokset komenna<br />
+            <code>git commit -m "Selitys muutoksista"</code><br />
+            Tämän jälkeen muutokset on tallennettu työkopiosi <b>HEAD</b>iin, mutta ei etäpalvelimelle.
+        </p>
+    </div>
+    <a name="push"></a>
+    <div class="scrollblock block-remote">
+        <h2>lähetä muutokset</h2>
+        <p>
+            Tekemäsi muutokset ovat nyt työsäilösi <b>HEAD</b>issa. Lähettääksesi muutokset etäpalvelimelle komenna<br />
+            <code>git push origin master</code><br />
+            <i>master</i> määrittää mihin haaraan muutokset lähetetään.
+            <br /><br />
+            Jos et ole kloonannut olemassaolevaa säilöä ja haluat kytkeä työkopiosi etäpalvelimeen, komenna<br />
+            <code>git remote add origin &lt;palvelin&gt;</code><br />
+            Tämän jälkeen voit lähettää muutokset valitulle etäpalvelimelle.<br />
+        </p>
+    </div>
+    <a name="branching"></a>
+    <div class="scrollblock block-branching">
+        <h2>haarautus</h2>
+        <p>
+            Haaroja käytetään eri ominaisuuksien yhtäaikaiseen kehittämiseen erillään toisistaan.
+            Vakiohaara säilöä luotaessa on <i>master</i>. Käytä toisia haaroja kehittämiseen ja kun ne ovat valmiit, yhdistä ne masteriin.
+        </p>
+        <img src="img/branches.png" alt="" />
+        <p>
+            Luo uusi haara nimeltään "ominaisuus_x" ja vaihda se käyttöön<br />
+            <code>git checkout -b ominaisuus_x</code><br />
+            Vaihda takaisin masteriin<br />
+            <code>git checkout master</code><br />
+            Tuhoa haara "ominaisuus_x"<br />
+            <code>git branch -d ominaisuus_x</code><br />
+            Haarat <i>eivät ole muiden käytettävissä</i> jos et lähetä haaraa etäpalvelimelle<br />
+            <code>git push origin &lt;haara&gt;</code>
+        </p>
+    </div>
+    <a name="update"></a>
+    <div class="scrollblock block-merging">
+        <h2>päivitä &amp; yhdistä</h2>
+        <p>
+            Päivitä kaikki uudet muutokset etäsäilöstä työkopioosi komennolla<br />
+            <code>git pull</code><br />
+            Yhdistääksesi toisen haaran aktiiviseen haaraan (esim. master) komenna<br />
+            <code>git merge &lt;haara&gt;</code><br />
+            git yrittää yhdistää kaikki muutokset automaattisesti molemmissa tapauksissa. Valitettavasti joskus tämä ei onnistu
+            <i>konfliktien</i> takia. Sinun pitää korjata konfliktit käsin editoimalla tiedostoja. Korjauksen jälkeen merkitse
+            ne yhdistetyiksi komennolla<br />
+            <code>git add &lt;tiedosto&gt;</code><br />
+            Ennen yhdistämistä voit myös tarkistellam muutoksia komennolla<br />
+            <code>git diff &lt;lähdehaara&gt; &lt;kohdehaara&gt;</code>
+        </p>
+    </div>
+    <a name="tagging"></a>
+    <div class="scrollblock block-tagging">
+        <h2>merkitseminen</h2>
+        <p>
+            Merkkien käyttöä suositellaan julkaisuversioille. Tämä on yleinen käytäntö myös SVN:ää käytettäessä. Voit luoda uuden merkin
+            <i>1.0.0</i> komennolla<br />
+            <code>git tag 1.0.0 1b2e1d63ff</code><br />
+            <i>1b2e1d63ff</i> on ensimmäiset 10 merkkiä haluamasi muutoksen tunnisteesta. Muutostunnisteen löydät katsomalla...<br />
+        </p>
+    </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>loki</h2>
+        <p>
+            Yksinkertaisimmillaan voit hakea säilön historiaa komennolla<br />
+            <code>git log</code><br />
+            Voit muokata lokin tulostusta monilla parametreilla. Nähdäksesi vain tietyn käyttäjän tekemät muutokset:<br />
+            <code>git log --author=bob</code><br />
+            Näytä loki yksi rivi per muutos:<br />
+            <code>git log --pretty=oneline</code><br />
+            Tai ehkä sittenkin ASCII-puu kaikista haaroista kaikkine merkkeineen:<br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            Näytä vain muuttuneet tiedostot:<br />
+            <code>git log --name-status</code><br />
+            Paljon muitakin vaihtoehtoja löytyy, lisätietoja komennolla<br />
+            <code>git log --help</code><br />
+        </p>
+    </div>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>poista paikalliset muutokset</h2>
+        <p>
+            Jos teit virheen (mitä ei koskaan tietenkään tapahdu...) voit poistaa paikalliset muutokset komennolla<br />
+            <code>git checkout -- &lt;tiedosto&gt;</code><br />
+            Tämä korvaa muuttuneet tiedostot uusimmilla versioilla HEADista. Kaikki Indeksiin laitetut muutokset säilytetään, samoin kuin uudet tiedostot.
+        </p>
+        <p>
+            Jos taas haluat poistaa kaikki paikalliset muutokset, lataa uusimmat historiatiedot palvelimelta ja määritä paikallinen master-haara osoittamaan palvelinversioon<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+    </div>
+    <a name="hints"></a>
+    <div class="scrollblock block-hints">
+        <h2>hyödyllisiä vinkkejä</h2>
+        <p>
+            sisäänrakennettu graafinen käyttöliittymä<br />
+            <code>gitk</code><br />
+            käytä värejä tulosteissa<br />
+            <code>git config color.ui true</code><br />
+            näytä yksirivinen lokituloste<br />
+            <code>git config format.pretty oneline</code><br />
+            käytä interaktiivista tiedostolisäystä<br />
+            <code>git add -i</code>
+        </p>
+    </div>
+    <a name="resources"></a>
+    <div class="scrollblock block-resources">
+        <h2>linkkejä &amp; resursseja</h2>
+        <h3>graafisia ohjelmia</h3>
+        <ul>
+            <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+            <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+            <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, free)</a></li>
+            <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+            <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
+        </ul>
+        <h3>oppaita</h3>
+        <ul>
+            <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+            <li><a href="http://progit.org/book/">Pro Git</a></li>
+            <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
+            <li><a href="http://help.github.com/">GitHub Help</a></li>
+            <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+        </ul>
+        <h3>lisäapuja</h3>
+        <ul>
+            <li><a href="http://groups.google.com/group/git-users/">Git Users</a> -postituslista</li>
+            <li><a href="http://jk.gs/git/">#git-kanava palvelimella irc.freenode.net</a></li>
+        </ul>
+    </div>
+    <a name="comments"></a>
+    <div class="scrollblock block-comments">
+        <h2>kommentit</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+</body>
+</html>
