@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>git - الدّليل البسيط بدون وجع الرأس!</title>
+  <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <style type="text/css">
+    @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+    @import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
+    body {
+      font-family: "Droid Arabic Kufi", Tahoma, serif;
+      direction: rtl;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h4,
+    h5,
+    h6 {
+      font-family: "Droid Arabic Naskh", Arial, serif;
+      font-weight: bold;
+    }
+    .sticky-button {
+      width: 100px;
+      height: 50px;
+      border: 1px solid #DFDFDF;
+      border-right: none;
+      border-radius: 5px;
+      position: fixed;
+      right: 0;
+      top: 7%;
+      margin-right: -5px;
+      background-color: #F03C2E;
+      color: white!important;
+    }
+    .sticky-button:hover {
+      text-decoration: none;
+    }
+  </style>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-652147-13']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+
+    function recordOutboundLink(link, category, action) {
+      _gat._getTrackerByName()._trackEvent(category, action);
+      setTimeout('document.location = "' + link.href + '"', 100);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="scrollblock block-title">
+    <h1>git - الدّليل البسيط</h1>
+    <p>مجرّد دليل بسيط لمباشرة العمل بـ Git بدون وجع الرأس ;)</p>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+    <script type="text/rocketscript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <p class="meta">
+      تأليف <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
+      <br/> ترجمه إلى العربية <a href="https://twitter.com/01walid">وليد زيوش</a>
+      </br>
+      <a href="index.de.html">deutsch</a>,
+      <a href="index.es.html">español</a>,
+      <a href="index.fr.html">français</a>,
+      <a href="index.id.html">indonesian</a>,
+      <a href="index.it.html">italiano</a>,
+      <a href="index.nl.html">nederlands</a>,
+      <a href="index.pl.html">polski</a>,
+      <a href="index.pt_BR.html">português</a>,
+      <a href="index.ru.html">русский</a>,
+      <a href="index.tr.html">türkçe</a>,
+      <br/>
+      <a href="index.my.html">မြန်မာ</a>,
+      <a href="index.ja.html">日本語</a>,
+      <a href="index.zh.html">中文</a>,
+      <a href="index.ko.html">한국어</a>
+      <a href="index.vi.html">Vietnamese</a>
+      <br/> يُرجى التبليغ عن الأخطاء على <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+    </p>
+    <img src="img/arrow.png" alt="" />
+  </div>
+
+  <a name="setup"></a>
+  <div class="scrollblock block-setup">
+    <h2>التّثبيت</h2>
+    <p>
+      <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">حمّل Git لنظام OSX</a>
+    </p>
+    <p>
+      <a href="http://code.google.com/p/msysgit/downloads/list?can=3">حمّل Git لنظام Windows</a>
+    </p>
+    <p>
+      <a href="http://book.git-scm.com/2_installing_git.html">حمّل Git لنظام لينكس</a>
+    </p>
+  </div>
+  <a name="create"></a>
+  <div class="scrollblock block-create">
+    <h2>أنشئ مستودعًا جديدًا</h2>
+    <p>
+      أنشئ مجلدًا جديدًا، ادخل إليه ثم قم بتنفيذ الأمر
+      <br/>
+      <code>git init</code>
+      <br/> لإنشاء مستودع Git جديد.
+    </p>
+  </div>
+  <a name="checkout"></a>
+  <div class="scrollblock block-checkout">
+    <h2>استنساخ مستودع موجود</h2>
+    <p>
+      أنشئ نسخة عمل من مستودع محلي عبر تنفيذ الأمر التالي
+      <br/>
+      <code dir="ltr">git clone /المسار/إلى/المستودع</code>
+      <br/> في حال تواجد المستودع على خادوم بعيد، فعدّل على الأمر ليُصبح على الشكل التالي:
+      <br/>
+      <code dir="ltr">git clone المسار/إلى/المستودع/:المضيف@اسم_المستخدم</code>
+    </p>
+  </div>
+  <a name="trees"></a>
+  <div class="scrollblock block-trees">
+    <h2>سير العمل</h2>
+    <p>
+      مُستودعك المحلّي عبارة عن ثلاث "شجرات" يعتني بها Git. الشجرة الأولى هي الـ <code>Working Directory</code> أي مجلّد العمل والتي تحتوي الملفات الحالية. أما الثانية فهي الـ <code>Index</code> أي الفهرس، والتي تلعب دور منطقة الإدراج (staging area) والأخيرة هي الـ
+      <code>HEAD</code> -أو الرأس- والتي يشير إلى آخر إيداع "commit" قمت به.
+    </p>
+    <img src="img/trees.png" alt="" />
+  </div>
+  <a name="add"></a>
+  <div class="scrollblock block-add">
+    <h2>الإضافة والإيداع</h2>
+    <p>
+      يُمكنك إقرار التغيّرات (إضافتها إلى الفهرس <b>Index</b>) بأحد الأمرين التاليين:
+      <br/>
+      <code>&lt;اسم_الملف&gt; git add </code>
+      <br/>
+      <code dir="ltr">git add *</code>
+      <br/> هذه أوّل خطوة قاعدية لدى استخدامك لـ Git. لإيداع هذه التغيّرات استعمل الأمر
+      <br/>
+      <code dir="ltr">git commit -m "وصف الإيداع"</code>
+      <br/> والذي يقوم بإيداع الملف إلى الـ <b>HEAD</b>، لكن دون أن يدفعه إلى الخادوم البعيد.
+    </p>
+  </div>
+  <a name="push"></a>
+  <div class="scrollblock block-remote">
+    <h2>دفع التغيّرات</h2>
+    <p>
+      التغيّرات التي أحدثتها متواجدة على مستوى الرأس <b>HEAD</b> الخاص بالنسخة المحلية للمستودع. لإرسال هذه التغيّرات إلى المستودع الموجود على الخادوم، نفذّ
+      <br/>
+      <code dir="ltr">git push origin master</code>
+      <br/> غيّر <i>master</i> إلى اسم الفرع الذي تريد دفع التغيّرات إليه.
+      <br/>
+      <br/> إذا لم تكن قد استنسخت مستودعًا موجودًا من قبل وتريد وَصْل مستودعك المحلي بخادوم بعيد فعليك إضافته بالأمر التالي:
+      <br/>
+      <code dir="ltr">git remote add origin &lt;الخادم&gt;</code>
+      <br/> يمكنك الآن دفع التغيّرات إلى الخادوم البعيد الذي عيّنته.
+      <br/>
+    </p>
+  </div>
+  <a name="branching"></a>
+  <div class="scrollblock block-branching">
+    <h2>التفريع</h2>
+    <p>
+      تُستعمَل الفروع لتطوير وظائف أو ميزات للمشروع في معزل عن بعضها البعض. الـ <i>master</i> -أو الرئيسي- هو الفرع "الافتراضي" الذي يتم تعيينه عند إنشائك للمستودع. استعمل فروعا أخرى لدى التطوير، ثم حين تفرغ من الأمر، قم بدمج التغيّرات الخاصة بها مع الفرع الرئيسي <i>master</i>.
+    </p>
+    <img src="img/branches.png" alt="" />
+    <p>
+      أنشئ فرعًا جديدا باسم "feature_x" ثم انتقل للعمل عليه بتنفيذ:
+      <br/>
+      <code dir="ltr">git checkout -b feature_x</code>
+      <br/> للرجوع إلى master
+      <br/>
+      <code dir="ltr">git checkout master</code>
+      <br/> لحذف الفرع (بعد دمجه مثلا) نفّذ:
+      <br/>
+      <code dir="ltr">git branch -d feature_x</code>
+      <br/> لا يمكن لغيرك الوصول إلى الفروع التي قمت بإنشائها ما لم تقم بدفعها إلى مستودع على الخادوم عبر:
+      <br/>
+      <code dir="ltr">git push origin &lt;اسم_الفرع&gt;</code>
+    </p>
+  </div>
+  <a name="update"></a>
+  <div class="scrollblock block-merging">
+    <h2>الدمج والتحديث</h2>
+    <p>
+      لتحديث مستودعك المحلي والحصول على آخر ما تم إيداعه، نفّذ
+      <br/>
+      <code>git pull</code>
+      <br/> في مجلد العمل لكي يتم <i>جلب</i> و<i>دمج</i> التغيرات من الخادوم البعيد.
+      <br/> أما لدمج فرع مع الفرع الذي تتواجد فيه حاليا (كالـ master مثلا)، نفّذ:
+      <br/>
+      <code dir="ltr">git merge &lt;اسم_الفرع&gt;</code>
+      <br/> في كلتا الحالتين، سيحاول git أن يدمج التغيّرات تلقائيا. للأسف لا ينجح الأمر دائما حيث يُحتمل أن تنتج عنه تضاربات أو
+      <i>conflicts</i>. وتقع مهمة دمج هذه التضاربات يدويا على عاتقك، وذلك عبر تحرير الملفات التي يشير عليها git. بعد حلِّ التضاربات، يتوجب عليك تعليما كـ "مُدمجة" أو <i>merged</i> وذلك بتنفيذ:
+      <br/>
+      <code dir="ltr">git add &lt;اسم_الملف&gt;</code>
+      <br/> بإمكانك معاينة التغيّرات قبل دمجها باستخدام الأمر:
+      <br/>
+      <code dir="ltr">git diff &lt;الفرع_المستهدف&gt; &lt;الفرع_المصدر&gt;</code>
+    </p>
+  </div>
+  <a name="tagging"></a>
+  <div class="scrollblock block-tagging">
+    <h2>(tagging) التوسيم</h2>
+    <p>
+      من المُحبذ ومن المتعارف عليه إنشاء أوسمة <i>tags</i> لتعليم إصدارات البرامج، وهو أمر مُتعارف عليه ومُستخدم أيضا مع نظام SVN. يمكنك إنشاء وسم جديد يحمل الاسم <i>1.0.0</i> عبر تنفيذ
+      <br/>
+      <code dir="ltr">git tag 1.0.0 1b2e1d63ff</code>
+      <br/> حيث تُمثل <i>1b2e1d63ff</i> أول عشرة محارف من رقم تعريف الإيداع الذي تريد توسيمه. يمكنك الحصول على هذا المُعرّف عبر تنفيذ
+      <br/>
+      <code dir="ltr">git log</code>
+      <br/> يمكنك استعمال عدد أقل من المحارف في المُعرف، لكن يجب عليه أن يكون فريدا.
+    </p>
+  </div>
+  <a name="checkout-replace"></a>
+  <div class="scrollblock block-checkout-replace">
+    <h2>استبدال التغيّرات المحلية</h2>
+    <p>
+      في حال ما إذا ارتكبت خطأ(طبعا هذا لن يحدث ;)) يمكنك استبدال التغيّرات المحلية بالأمر
+      <br/>
+      <code dir="ltr">git checkout -- &lt;اسم_الملف&gt;</code>
+      <br/> والذي يقوم باستبدال التغيّرات في شجرة العمل بأحدث محتوى في الـ HEAD. ستتم المحافظة على جميع التغيّرات التي تم إضافتها مسبقا إلى الفهرس Index، إضافة إلى الملفات الجديدة.
+    </p>
+    <p>
+      أما إذا كنت تريد التخلي عن جميع الإيداعات وتغييراتك المحلية، وترغب عوض ذلك في جلب أحدث تاريخ من الخادوم والتأشير على فرع الـ master فيه، فقم بتنفيذ
+      <br/>
+      <code dir="ltr">git fetch origin</code>
+      <br/>
+      <code dir="ltr">git reset --hard origin/master</code>
+    </p>
+  </div>
+  <a name="hints"></a>
+  <div class="scrollblock block-hints">
+    <h2>تلميحات مفيدة</h2>
+    <p>
+      واجهة رسومية مدمجة لـ git
+      <br/>
+      <code>gitk</code>
+      <br/> تلوين مخرجات git
+      <br/>
+      <code>git config color.ui true</code>
+      <br/> عرض كل إيداع في سطر واحد في السّجل (log)
+      <br/>
+      <code>git config format.pretty oneline</code>
+      <br/> جعل عملية الإضافة تفاعلية
+      <br/>
+      <code>git add -i</code>
+    </p>
+  </div>
+  <a name="resources"></a>
+  <div class="scrollblock block-resources">
+    <h2>روابط ومصادر</h2>
+    <h3>واجهات رسومية</h3>
+    <p>
+      <ul dir='ltr'>
+        <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, مفتوح المصدر)</a>
+        </li>
+        <li><a href="http://www.git-tower.com/">Tower (OSX)</a>
+        </li>
+        <li><a href="http://www.sourcetreeapp.com/">Source Tree (Windows, OSX, مجاني)</a>
+        </li>
+        <li><a href="http://windows.github.com/">GitHub for Windows (Windows, مجاني)</a>
+        </li>
+        <li><a href="http://mac.github.com/">GitHub for Mac (OSX, مجاني)</a>
+        </li>
+        <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, Apple متجر)</a>
+        </li>
+      </ul>
+    </p>
+    <h3>مراجع</h3>
+    <p>
+      <ul dir="ltr">
+        <li>
+          < <!DOCTYPE html>
+            <html lang="ar" dir="rtl">
+
+            <head>
+              <meta charset="utf-8">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+              <title>git - الدّليل البسيط بدون وجع الرأس!</title>
+              <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+              <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
+              <link rel="stylesheet" href="css/style.css" type="text/css">
+              <style type="text/css">
+                @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+                @import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
+                body {
+                  font-family: "Droid Arabic Kufi", Tahoma, serif;
+                  direction: rtl;
+                }
+                h1,
+                h2,
+                h3,
+                h4,
+                h4,
+                h5,
+                h6 {
+                  font-family: "Droid Arabic Naskh", Arial, serif;
+                  font-weight: bold;
+                }
+                .sticky-button {
+                  width: 100px;
+                  height: 50px;
+                  border: 1px solid #DFDFDF;
+                  border-right: none;
+                  border-radius: 5px;
+                  position: fixed;
+                  right: 0;
+                  top: 7%;
+                  margin-right: -5px;
+                  background-color: #F03C2E;
+                  color: white!important;
+                }
+                .sticky-button:hover {
+                  text-decoration: none;
+                }
+              </style>
+              <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-652147-13']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                  var ga = document.createElement('script');
+                  ga.type = 'text/javascript';
+                  ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(ga, s);
+                })();
+
+                function recordOutboundLink(link, category, action) {
+                  _gat._getTrackerByName()._trackEvent(category, action);
+                  setTimeout('document.location = "' + link.href + '"', 100);
+                }
+              </script>
+            </head>
+
+            <body>
+              <div class="scrollblock block-title">
+                <h1>git - الدّليل البسيط</h1>
+                <p>مجرّد دليل بسيط لمباشرة العمل بـ Git بدون وجع الرأس ;)</p>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+                <script type="text/rocketscript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <p class="meta">
+                  تأليف <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
+                  <br/> ترجمه إلى العربية <a href="https://twitter.com/01walid">وليد زيوش</a>
+                  </br>
+                  <a href="index.de.html">deutsch</a>,
+                  <a href="index.es.html">español</a>,
+                  <a href="index.fr.html">français</a>,
+                  <a href="index.id.html">indonesian</a>,
+                  <a href="index.it.html">italiano</a>,
+                  <a href="index.nl.html">nederlands</a>,
+                  <a href="index.pl.html">polski</a>,
+                  <a href="index.pt_BR.html">português</a>,
+                  <a href="index.ru.html">русский</a>,
+                  <a href="index.tr.html">türkçe</a>,
+                  <br/>
+                  <a href="index.my.html">မြန်မာ</a>,
+                  <a href="index.ja.html">日本語</a>,
+                  <a href="index.zh.html">中文</a>,
+                  <a href="index.ko.html">한국어</a>
+                  <a href="index.vi.html">Vietnamese</a>
+                  <br/> يُرجى التبليغ عن الأخطاء على <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+                </p>
+                <img src="img/arrow.png" alt="" />
+              </div>
+
+              <a name="setup"></a>
+              <div class="scrollblock block-setup">
+                <h2>التّثبيت</h2>
+                <p>
+                  <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">حمّل Git لنظام OSX</a>
+                </p>
+                <p>
+                  <a href="http://code.google.com/p/msysgit/downloads/list?can=3">حمّل Git لنظام Windows</a>
+                </p>
+                <p>
+                  <a href="http://book.git-scm.com/2_installing_git.html">حمّل Git لنظام لينكس</a>
+                </p>
+              </div>
+              <a name="create"></a>
+              <div class="scrollblock block-create">
+                <h2>أنشئ مستودعًا جديدًا</h2>
+                <p>
+                  أنشئ مجلدًا جديدًا، ادخل إليه ثم قم بتنفيذ الأمر
+                  <br/>
+                  <code>git init</code>
+                  <br/> لإنشاء مستودع Git جديد.
+                </p>
+              </div>
+              <a name="checkout"></a>
+              <div class="scrollblock block-checkout">
+                <h2>استنساخ مستودع موجود</h2>
+                <p>
+                  أنشئ نسخة عمل من مستودع محلي عبر تنفيذ الأمر التالي
+                  <br/>
+                  <code dir="ltr">git clone /المسار/إلى/المستودع</code>
+                  <br/> في حال تواجد المستودع على خادوم بعيد، فعدّل على الأمر ليُصبح على الشكل التالي:
+                  <br/>
+                  <code dir="ltr">git clone المسار/إلى/المستودع/:المضيف@اسم_المستخدم</code>
+                </p>
+              </div>
+              <a name="trees"></a>
+              <div class="scrollblock block-trees">
+                <h2>سير العمل</h2>
+                <p>
+                  مُستودعك المحلّي عبارة عن ثلاث "شجرات" يعتني بها Git. الشجرة الأولى هي الـ <code>Working Directory</code> أي مجلّد العمل والتي تحتوي الملفات الحالية. أما الثانية فهي الـ <code>Index</code> أي الفهرس، والتي تلعب دور منطقة الإدراج (staging area) والأخيرة هي الـ
+                  <code>HEAD</code> -أو الرأس- والتي يشير إلى آخر إيداع "commit" قمت به.
+                </p>
+                <img src="img/trees.png" alt="" />
+              </div>
+              <a name="add"></a>
+              <div class="scrollblock block-add">
+                <h2>الإضافة والإيداع</h2>
+                <p>
+                  يُمكنك إقرار التغيّرات (إضافتها إلى الفهرس <b>Index</b>) بأحد الأمرين التاليين:
+                  <br/>
+                  <code>&lt;اسم_الملف&gt; git add </code>
+                  <br/>
+                  <code dir="ltr">git add *</code>
+                  <br/> هذه أوّل خطوة قاعدية لدى استخدامك لـ Git. لإيداع هذه التغيّرات استعمل الأمر
+                  <br/>
+                  <code dir="ltr">git commit -m "وصف الإيداع"</code>
+                  <br/> والذي يقوم بإيداع الملف إلى الـ <b>HEAD</b>، لكن دون أن يدفعه إلى الخادوم البعيد.
+                </p>
+              </div>
+              <a name="push"></a>
+              <div class="scrollblock block-remote">
+                <h2>دفع التغيّرات</h2>
+                <p>
+                  التغيّرات التي أحدثتها متواجدة على مستوى الرأس <b>HEAD</b> الخاص بالنسخة المحلية للمستودع. لإرسال هذه التغيّرات إلى المستودع الموجود على الخادوم، نفذّ
+                  <br/>
+                  <code dir="ltr">git push origin master</code>
+                  <br/> غيّر <i>master</i> إلى اسم الفرع الذي تريد دفع التغيّرات إليه.
+                  <br/>
+                  <br/> إذا لم تكن قد استنسخت مستودعًا موجودًا من قبل وتريد وَصْل مستودعك المحلي بخادوم بعيد فعليك إضافته بالأمر التالي:
+                  <br/>
+                  <code dir="ltr">git remote add origin &lt;الخادم&gt;</code>
+                  <br/> يمكنك الآن دفع التغيّرات إلى الخادوم البعيد الذي عيّنته.
+                  <br/>
+                </p>
+              </div>
+              <a name="branching"></a>
+              <div class="scrollblock block-branching">
+                <h2>التفريع</h2>
+                <p>
+                  تُستعمَل الفروع لتطوير وظائف أو ميزات للمشروع في معزل عن بعضها البعض. الـ <i>master</i> -أو الرئيسي- هو الفرع "الافتراضي" الذي يتم تعيينه عند إنشائك للمستودع. استعمل فروعا أخرى لدى التطوير، ثم حين تفرغ من الأمر، قم بدمج التغيّرات الخاصة بها مع الفرع الرئيسي <i>master</i>.
+                </p>
+                <img src="img/branches.png" alt="" />
+                <p>
+                  أنشئ فرعًا جديدا باسم "feature_x" ثم انتقل للعمل عليه بتنفيذ:
+                  <br/>
+                  <code dir="ltr">git checkout -b feature_x</code>
+                  <br/> للرجوع إلى master
+                  <br/>
+                  <code dir="ltr">git checkout master</code>
+                  <br/> لحذف الفرع (بعد دمجه مثلا) نفّذ:
+                  <br/>
+                  <code dir="ltr">git branch -d feature_x</code>
+                  <br/> لا يمكن لغيرك الوصول إلى الفروع التي قمت بإنشائها ما لم تقم بدفعها إلى مستودع على الخادوم عبر:
+                  <br/>
+                  <code dir="ltr">git push origin &lt;اسم_الفرع&gt;</code>
+                </p>
+              </div>
+              <a name="update"></a>
+              <div class="scrollblock block-merging">
+                <h2>الدمج والتحديث</h2>
+                <p>
+                  لتحديث مستودعك المحلي والحصول على آخر ما تم إيداعه، نفّذ
+                  <br/>
+                  <code>git pull</code>
+                  <br/> في مجلد العمل لكي يتم <i>جلب</i> و<i>دمج</i> التغيرات من الخادوم البعيد.
+                  <br/> أما لدمج فرع مع الفرع الذي تتواجد فيه حاليا (كالـ master مثلا)، نفّذ:
+                  <br/>
+                  <code dir="ltr">git merge &lt;اسم_الفرع&gt;</code>
+                  <br/> في كلتا الحالتين، سيحاول git أن يدمج التغيّرات تلقائيا. للأسف لا ينجح الأمر دائما حيث يُحتمل أن تنتج عنه تضاربات أو
+                  <i>conflicts</i>. وتقع مهمة دمج هذه التضاربات يدويا على عاتقك، وذلك عبر تحرير الملفات التي يشير عليها git. بعد حلِّ التضاربات، يتوجب عليك تعليما كـ "مُدمجة" أو <i>merged</i> وذلك بتنفيذ:
+                  <br/>
+                  <code dir="ltr">git add &lt;اسم_الملف&gt;</code>
+                  <br/> بإمكانك معاينة التغيّرات قبل دمجها باستخدام الأمر:
+                  <br/>
+                  <code dir="ltr">git diff &lt;الفرع_المستهدف&gt; &lt;الفرع_المصدر&gt;</code>
+                </p>
+              </div>
+              <a name="tagging"></a>
+              <div class="scrollblock block-tagging">
+                <h2>(tagging) التوسيم</h2>
+                <p>
+                  من المُحبذ ومن المتعارف عليه إنشاء أوسمة <i>tags</i> لتعليم إصدارات البرامج، وهو أمر مُتعارف عليه ومُستخدم أيضا مع نظام SVN. يمكنك إنشاء وسم جديد يحمل الاسم <i>1.0.0</i> عبر تنفيذ
+                  <br/>
+                  <code dir="ltr">git tag 1.0.0 1b2e1d63ff</code>
+                  <br/> حيث تُمثل <i>1b2e1d63ff</i> أول عشرة محارف من رقم تعريف الإيداع الذي تريد توسيمه. يمكنك الحصول على هذا المُعرّف عبر تنفيذ
+                  <br/>
+                  <code dir="ltr">git log</code>
+                  <br/> يمكنك استعمال عدد أقل من المحارف في المُعرف، لكن يجب عليه أن يكون فريدا.
+                </p>
+              </div>
+              <a name="checkout-replace"></a>
+              <div class="scrollblock block-checkout-replace">
+                <h2>استبدال التغيّرات المحلية</h2>
+                <p>
+                  في حال ما إذا ارتكبت خطأ(طبعا هذا لن يحدث ;)) يمكنك استبدال التغيّرات المحلية بالأمر
+                  <br/>
+                  <code dir="ltr">git checkout -- &lt;اسم_الملف&gt;</code>
+                  <br/> والذي يقوم باستبدال التغيّرات في شجرة العمل بأحدث محتوى في الـ HEAD. ستتم المحافظة على جميع التغيّرات التي تم إضافتها مسبقا إلى الفهرس Index، إضافة إلى الملفات الجديدة.
+                </p>
+                <p>
+                  أما إذا كنت تريد التخلي عن جميع الإيداعات وتغييراتك المحلية، وترغب عوض ذلك في جلب أحدث تاريخ من الخادوم والتأشير على فرع الـ master فيه، فقم بتنفيذ
+                  <br/>
+                  <code dir="ltr">git fetch origin</code>
+                  <br/>
+                  <code dir="ltr">git reset --hard origin/master</code>
+                </p>
+              </div>
+              <a name="hints"></a>
+              <div class="scrollblock block-hints">
+                <h2>تلميحات مفيدة</h2>
+                <p>
+                  واجهة رسومية مدمجة لـ git
+                  <br/>
+                  <code>gitk</code>
+                  <br/> تلوين مخرجات git
+                  <br/>
+                  <code>git config color.ui true</code>
+                  <br/> عرض كل إيداع في سطر واحد في السّجل (log)
+                  <br/>
+                  <code>git config format.pretty oneline</code>
+                  <br/> جعل عملية الإضافة تفاعلية
+                  <br/>
+                  <code>git add -i</code>
+                </p>
+              </div>
+              <a name="resources"></a>
+              <div class="scrollblock block-resources">
+                <h2>روابط ومصادر</h2>
+                <h3>واجهات رسومية</h3>
+                <p>
+                  <ul dir='ltr'>
+                    <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, مفتوح المصدر)</a>
+                    </li>
+                    <li><a href="http://www.git-tower.com/">Tower (OSX)</a>
+                    </li>
+                    <li><a href="http://www.sourcetreeapp.com/">Source Tree (Windows, OSX, مجاني)</a>
+                    </li>
+                    <li><a href="http://windows.github.com/">GitHub for Windows (Windows, مجاني)</a>
+                    </li>
+                    <li><a href="http://mac.github.com/">GitHub for Mac (OSX, مجاني)</a>
+                    </li>
+                    <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, Apple متجر)</a>
+                    </li>
+                  </ul>
+                </p>
+                <h3>مراجع</h3>
+                <p>
+                  <ul dir="ltr">
+                    <li><a href="http://try.github.io">Try Git</a>
+                    </li>
+                    <li><a href="http://book.git-scm.com/">Pro Git</a>
+                    </li>
+                    <li><a href="http://think-like-a-git.net/">Think like a git</a>
+                    </li>
+                    <li dir="rtl"><a href="http://help.github.com/">مساعدة GitHub</a>
+                    </li>
+                    <li dir="rtl"><a href="http://marklodato.github.com/visual-git-guide/index-en.html">دليل git المرئي</a>
+                    </li>
+                  </ul>
+                </p>
+              </div>
+              <div class="announcement">
+              </div>
+              <a name="comments"></a>
+              <div class="scrollblock block-comments">
+                <h2>التعليقات</h2>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                  var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+                  /* * * DON'T EDIT BELOW THIS LINE * * */
+                  (function() {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                  })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+                </noscript>
+              </div>
+              <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+              <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+
+            </body>
+
+            </html>
+            a href="http://try.github.io">Try Git</a>
+        </li>
+        <li><a href="http://book.git-scm.com/">Pro Git</a>
+        </li>
+        <li><a href="http://think-like-a-git.net/">Think like a git</a>
+        </li>
+        <li dir="rtl"><a href="http://help.github.com/">مساعدة GitHub</a>
+        </li>
+        <li dir="rtl"><a href="http://marklodato.github.com/visual-git-guide/index-en.html">دليل git المرئي</a>
+        </li>
+      </ul>
+    </p>
+  </div>
+  <div class="announcement">
+  </div>
+  <a name="comments"></a>
+  <div class="scrollblock block-comments">
+    <h2>التعليقات</h2>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  </div>
+  <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+  <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+
+</body>
+
+</html>
