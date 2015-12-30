@@ -3,10 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - the simple guide - no deep shit!</title>
+	<title>دليل git المبسّط</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/style.ar.css" type="text/css">
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-652147-13']);
@@ -26,13 +27,17 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git - the simple guide</h1>
-        <p>just a simple guide for getting started with git. no deep shit ;)</p>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <h1>git - الدليل المبسّط</h1>
+        <p>الشرح الأبسط لنظام إدارة الإصدارات git</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="mukhtar.ss" data-size="large" data-url="https://github.com/MukhtarSayedSaleh/git-guide.git" data-related="mukhtar.ss" data-hashtags="git_بالعربي">غرّد عبر تويتر</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
-            by <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
-            <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+            حقوق الإصدار الأصلي محفوظة لـ: <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
+            
+            <br/>
+            حقوق الترجمة محفوظة لـ: <a href="http://www.mukhtar.me">مختار سيّد صالح</a>
+            
+            <br/>هذا الدليل متوفر أيضاً باللغات:
             this guide in 
             <a href="index.de.html">deutsch</a>, 
             <a href="index.es.html">español</a>, 
@@ -52,118 +57,113 @@
             <a href="index.vi.html">Vietnamese</a>
             <a href="index.ar.html">العربية</a>
             <br />
-            please report issues on <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+            يرجى الإبلاغ عن أي خطأ في الترجمة من خلال الرابط: <a href="https://github.com/MukhtarSayedSaleh/git-guide.git">github</a>
         </p>
-        <div class="announcement">
-            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
-                <img src="//frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
-            </a>
-        </div>
+        
         <img src="img/arrow.png" alt="" />
     </div>
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
-        <h2>setup</h2>
+        <h2>الإعداد</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Download git for OSX</a>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">الإعداد لحواسيب ماكنتوش</a>
         </p>
         <p>
-            <a href="http://msysgit.github.io/">Download git for Windows</a>
+            <a href="http://msysgit.github.io/">الإعداد لمختلف إصدارات ويندوز</a>
         </p>
         <p>
-            <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Download git for Linux</a>
+            <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">الإعداد لمختلف توزيعات لينكس</a>
         </p>
     </div>
     <a name="create"></a>
     <div class="scrollblock block-create">
-        <h2>create a new repository</h2>
+        <h2>إنشاء مستودع جديد</h2>
         <p>
-            create a new directory, open it and perform a <br />
+            عند بداية كل مشروع نقوم بتنفيذ الأمر التالي بعد الانتقال إلى مجلد المشروع <br />
             <code>git init</code><br />
-            to create a new git repository.
+            و ذلك لإنشاء مستودع جديد ضمن مجلد المشروع.
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>checkout a repository</h2>
+        <h2>العمل مع مستودع موجود مسبقاً</h2>
         <p>
-            create a working copy of a local repository by running the command<br />
+            للعمل مع مستودع موجود مسبقاً يجب أن تقوم بنسخه إلى الجهاز الحالي عن طريق الأمر التالي مع مراعاة تغيير المسار<br />
             <code>git clone /path/to/repository</code><br />
-            when using a remote server, your command will be<br />
+            و هذا في حال كون المستودع القديم موجوداً ضمن نفس الجهاز <br/> أمّا في حال كونه مستودعاً بعيداً عبر الانترنت فيتم نسخه باستخدام الأمر التالي مع مراعاة تغيير المسار و بيانات الوصول<br />
             <code>git clone username@host:/path/to/repository</code>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>workflow</h2>
+        <h2>كيف يعمل نظام git</h2>
         <p>
-            your local repository consists of three "trees" maintained by git.
-            the first one is your <code>Working Directory</code> which holds the actual files.
-            the second one is the <code>Index</code> which acts as a staging area and
-            finally the <code>HEAD</code> which points to the last commit you've made.
+            "الشجرة" بنية معطيات معروفة, و يتكون كل مستودع git من ثلاث "أشجار" تتم إدارتها آلياً.<br/>
+            تمثل الشجرة الأولى <code>مجلد العمل الحالي Working Directory</code> و هي ببساطة نسخة مطابقة تماماً في كل لحظة لمجلد العمل الحالي في تلك اللحظة.<br/>
+            أمّا الشجرة الثانية فهي شجرة <code>الفهرس Index</code> التي يتم استعمالها كمرحلة انتقالية تمر بها ملفات العمل الحالية قبل أخذ صورة عنها commit في لحظة زمنية ما.<br/>
+            و أمّا الشجرة الثالثة فهي<code>شجرة التاريخ</code> و تحوي مجموعة الصور الزمنيّة commits الخاصة بمشروعنا منذ بدايته و يشير المتغير الخاص <code>HEAD</code> إلى عنوان آخر صورة مضافة لشجرة التاريخ.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>add &amp; commit</h2>
+        <h2>أمرا add &amp; commit</h2>
         <p>
-            You can propose changes (add it to the <b>Index</b>) using<br />
-            <code>git add &lt;filename&gt;</code><br />
-            <code>git add *</code><br />
-            This is the first step in the basic git workflow. To actually commit these changes use<br />
-            <code>git commit -m "Commit message"</code><br />
-            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+            يستخدم الأمر add لإضافة التغييرات التي طرأت على ملف ما أو مجموعة من الملفات إلى شجرة المرحلة الانتقالية تمهيداً لأخذ صورة زمنية عنه كمايلي:<br />
+            <code>git add filename</code><br />
+            <code> * git add</code><br />
+            و يتم أخذ الصورة الزمنية بشكل فعلي من خلال الأمر<br />
+            <code>"git commit -m "Commit message</code><br />
+            حيث يتم إرفاق الرسالة الخاصة بالصورة لعرضها لاحقاً كتسمية تدل على هذه الصورة و بالتالي يصبح الـ <b>HEAD</b>الآن مشيراً إلى الصورة الأخيرة التي أخذت للتوّ.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>pushing changes</h2>
+        <h2>إرسال الصور الزمنية للمستودع البعيد</h2>
         <p>
-            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
+            لإرسال الصور الزمنية commits المأخوذة إلى المستودع البعيد نقوم بتنفيذ الأمر التالي: <br />
             <code>git push origin master</code><br />
-            Change <i>master</i> to whatever branch you want to push your changes to.
+            ملحوظة: يمكنك تغيير <i>master</i> لأي فرع ترغب بإرسال الصور الزمنية إليه.
             <br /><br />
-            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
-            <code>git remote add origin &lt;server&gt;</code><br />
-            Now you are able to push your changes to the selected remote server<br />
+            إذا كان مستودع git الذي تعمل عليه حالياً مستودعاً خاصاً بك و لم تقم باستنساخه من مكان آخر, و كنت ما تزال ترغب بإرساله لمخدم بعيد يمكنك عندها إضافة هذه المخدم كـ origin باستخدام الأمر<br />
+            <code>&lt;git remote add origin &lt;server</code><br />
+            و الآن أصبح بمقدورك إرسال الصور الزمنية إلى المستودع البعيد<br />
 
         </p>
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>branching</h2>
+        <h2>الفروع</h2>
         <p>
-            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+            تستخدم الفروع Branches لتطوير ميزات برمجية مستقلة عن بعضها البعض و ذلك بغية منع عملية التطوير من التأثير على سير التطبيق الأصلي.<br/> في العادة يعتمد الفرع <i>master</i> كفرع افتراضي لأي مستودع git و يتم التفريع منه من أجل كل ميزة جديدة ثم و عند تجربة الميزة و استقرارها يتم دمج فرعها مرة أخرى بالفرع master و هكذا.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            create a new branch named "feature_x" and switch to it using<br />
+            لإنشاء فرع جديد اسمه "feature_x" و الانتقال إليه ننفذ الأمر<br />
             <code>git checkout -b feature_x</code><br />
-            switch back to master<br />
+            للعودة إلى الفرع master<br />
             <code>git checkout master</code><br />
-            and delete the branch again<br />
+            لحذف الفرع feature_x<br />
             <code>git branch -d feature_x</code><br />
-            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
-            <code>git push origin &lt;branch&gt;</code>
+            ملحوظة: لا تكون الفروع التي تنشؤها متوفرة للآخرين إلا في حال قمت بإرسالها إلى المستودع البعيد بشكل صريح بأمر يشبه مايلي<br />
+            <code>&lt;git push origin &lt;branch</code>
         </p>
     </div>
     <a name="update"></a>
     <div class="scrollblock block-merging">
-        <h2>update &amp; merge</h2>
+        <h2>تحديث المستودع و دمج الفروع</h2>
         <p>
-            to update your local repository to the newest commit, execute <br />
+            لتحديث المستودع المحلي بحيث يطابق آخر التحديثات المرسلة إلى المستودع البعيد من قبل زملاء العمل ننفذ الأمر <br />
             <code>git pull</code><br />
-            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
-            to merge another branch into your active branch (e.g. master), use<br />
-            <code>git merge &lt;branch&gt;</code><br />
-            in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
-            You are responsible to merge those <i>conflicts</i>
-            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
-            <code>git add &lt;filename&gt;</code><br />
-            before merging changes, you can also preview them by using<br />
-            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+            حيث يقوم الأمر السابق بجلب <i>fetch</i> التغييرات و دمجها <i>merge</i> مع المحتوى المحلي.<br />
+            لدمج فرع آخر مع الفرع النشط حالياً (دمج الفرع branch مع الفرع master النشط حالياً على سبيل المثال) نستخدم الأمر<br />
+            <code>git merge branch</code><br />
+            git يحاول دائماً أن يقوم بدمج التعديلات المحلية بالتعديلات البعيدة ضمن الملفات البرمجية بشكل آلي, و العملية تسير بسهولة و يسر في الغالب إلّا أننا أحياناً نصادف تعارضات  <i>conflicts</i> عندما يقوم مطوران بتعديل نفس الأسطر في نفس الملف ضمن نفس الفترة.<br/>
+            عند حصول أي تعارضات <i>conflicts</i> فإنّ git ينبهك إليها و يترك عملية الدمج على عاتقك حيث تقوم بإصلاح التعارض و من ثم تنفذ الأمر. <br/>
+            <code>&lt;git add &lt;filename</code><br />
+            ملحوظة: يمكنك دائماً استعمال الأمر التالي لملاحظة التغيرات بين فرعين<br />
+            <code>&lt;git diff &lt;source_branch&gt; &lt;target_branch</code>
         </p>
     </div>
     <a name="tagging"></a>
