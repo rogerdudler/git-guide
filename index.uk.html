@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git - the simple guide - no deep shit!</title>
+    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-652147-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function recordOutboundLink(link, category, action) {
+         _gat._getTrackerByName()._trackEvent(category, action);
+         setTimeout('document.location = "' + link.href + '"', 100);
+      }
+    </script>
+</head>
+<body>
+    <div class="scrollblock block-title">
+        <h1>git - the simple guide</h1>
+        <p>простий посібник з git для початківців. нічого складного ;)</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="meta">
+            <a href="http://www.twitter.com/rogerdudler">Роджер Дублер</a> (переклав <a href="https://github.com/nomicos">Андрій Біда</a>)
+            <br />подяка <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+            цей посібник іншими мовами
+            <a href="index.html">english</a>,
+            <a href="index.de.html">deutsch</a>, 
+            <a href="index.es.html">español</a>, 
+            <a href="index.fr.html">français</a>, 
+            <a href="index.id.html">indonesian</a>, 
+            <a href="index.it.html">italiano</a>, 
+            <a href="index.nl.html">nederlands</a>, 
+            <a href="index.pl.html">polski</a>,
+            <a href="index.pt_BR.html">português</a>,
+            <a href="index.tr.html">türkçe</a>,
+            <br/>
+            <a href="index.my.html">မြန်မာ</a>,
+            <a href="index.ja.html">日本語</a>, 
+            <a href="index.zh.html">中文</a>, 
+            <a href="index.ko.html">한국어</a>
+            <br />
+            про помилки сповіщайте на <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+        </p>
+        <div class="announcement">
+            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
+                <img src="//frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
+            </a>
+        </div>
+        <img src="img/arrow.png" alt="" />
+    </div>
+    <!-- setup -->
+    <a name="setup"></a>
+    <div class="scrollblock block-setup">
+        <h2>встановлення</h2>
+        <p>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Завантажити git для OSX</a>
+        </p>
+        <p>
+            <a href="http://msysgit.github.io/">Завантажити git для Windows</a>
+        </p>
+        <p>
+            <a href="http://book.git-scm.com/2_installing_git.html">Завантажити git для Linux</a>
+        </p>
+    </div>
+    <a name="create"></a>
+    <div class="scrollblock block-create">
+        <h2>створення нового репозиторію</h2>
+        <p>
+            Аби створити новий репозиторій git, слід відкрити<br />
+            папку, де ви хочете його розмістити, і виконати команду<br />
+            <code>git init</code><br />
+            
+        </p>
+    </div>
+    <a name="checkout"></a>
+    <div class="scrollblock block-checkout">
+        <h2>отримання репозиторію</h2>
+        <p>
+            Створіть робочу копію локального репозиторію командою<br />
+            <code>git clone /місцезнаходження/репозиторію</code><br />
+            або ж, при використанні віддаленного сервера,<br />
+            <code>git clone юзер@хост:/місцезнаходження/репозиторію</code>
+        </p>
+    </div>
+    <a name="trees"></a>
+    <div class="scrollblock block-trees">
+		<h2>робочий процес</h2>
+        <p>
+            Локальний git-репозиторій складається з трьох "дерев". <br />
+            <code>Робоча директорія</code> (Working Directory) містить власне файли.
+            <code>Індекс</code> (Index), або область підготовленних файлів (Staging Area)</code>, 
+			містить інформацію щодо змін, які мають увійти до наступного комміту.
+			<code>HEAD</code> вказує на останній зробленний комміт.
+        </p>
+        <img src="img/trees.png" alt="" />
+    </div>
+    <a name="add"></a>
+    <div class="scrollblock block-add">
+        <h2>додання і комміт</h2>
+        <p>
+            Щоб підготувати зміни (додати їх до <b>Індексу</b>), виконайте<br />
+            <code>git add &lt;ім'я_файла&gt;</code><br />
+            <code>git add *</code><br />
+            Це перший крок в базовому робочому процесі. Щоб зробити комміт підготовленних змін (затвердити зміни), слід виконати<br />
+            <code>git commit -m "Опис комміту"</code><br />
+            Тепер зміни затверджено в локальному репозиторії, на них вказує <b>HEAD</b>; але ці зміни ще не торкнулися віддаленного репозиторію.
+        </p>
+    </div>
+    <a name="push"></a>
+    <div class="scrollblock block-remote">
+        <h2>надсилання змін</h2>
+        <p>
+            Щоб надіслати зміни до віддаленного репозиторію, виконайте<br />
+            <code>git push origin master</code><br />
+            Можна замінити <i>master</i> будь-якою іншою гілкою,<br />до якої ви хочете надіслати зміни.
+            <br /><br />
+            Якщо репозиторій не було клоновано, і ви бажаєте підключити свій репозиторій до віддаленного, виконайте:<br />
+            <code>git remote add origin &lt;адреса_сервера&gt;</code><br />
+            Тепер ви маєте можливість надсилати ваші зміни <br />до віддаленного репозиторію.<br />
+
+        </p>
+    </div>
+    <a name="branching"></a>
+    <div class="scrollblock block-branching">
+        <h2>розгалуження</h2>
+        <p>
+            Гілки використовують для розробки функціоналу відокремленно від решти. Гілка <i>master</i> використовується за промовчанням щойно ви створили репозиторій. Інші гілки використовуються для розробки, а після завершення зливаються у <i>master</i>.
+        </p>
+        <img src="img/branches.png" alt="" />
+        <p>
+            Щоб створити нову гілку з назвою "feature_x" <br />і перемкнутися на неї, виконайте команду<br />
+            <code>git checkout -b feature_x</code><br />
+            перемкнутися назад на <i>master</i>:<br />
+            <code>git checkout master</code><br />
+            усунути гілку:<br />
+            <code>git branch -d feature_x</code><br />
+            Гілка не доступна іншим, допоки ви <br />не надішлете її до віддаленного сервера командою<br />
+            <code>git push origin &lt;ім'я_гілки&gt;</code>
+        </p>
+    </div>
+    <a name="update"></a>
+    <div class="scrollblock block-merging">
+   	<h2>оновлення і злиття</h2>
+        <p>
+            Щоб оновити локальний репозиторій, виконайте команду: <br />
+            <code>git pull</code><br />
+            котра отримає зміни у віддаленному репозиторії <br />і виконає злиття з поточною гілкою.<br />
+            Щоб злити іншу гілку з поточною (наприклад, <i>master</i>),<br /> виконайте команду<br />
+            <code>git merge &lt;ім'я_гілки&gt;</code><br />
+            У будь-якому з двох випадків, git намагатиметься автоматично злити зміни. На жаль, це не завжди можливо, і в такому повстає <i>конфлікт</i>. 
+            Ви маєте усунути виниклі <i>конфлікти</i>, власноруч відредагував файли, що позначив git. Після редагування, треба помітити їх як злиті:<br />
+            <code>git add &lt;ім'я_файла&gt;</code><br />
+            Перед злиттям можна попередньо оглянути зміни:<br />
+            <code>git diff &lt;ім'я_гілки&gt; &lt;ім'я_іншої_гілки&gt;</code>
+        </p>
+    </div>
+    <a name="tagging"></a>
+    <div class="scrollblock block-tagging">
+		<h2>теги</h2>
+        <p>
+            Теги слід використовувати для позначення моменту випуску версії. Це популярна практика, що також використовується в SVN. 
+            Створити новий тег с іменем <i>1.0.0</i> можна командою<br />
+            <code>git tag 1.0.0 1b2e1d63ff</code><br />
+            <i>1b2e1d63ff</i> &mdash; це перші десять символів унікального ідентифікатора комміту, з яким будет пов'язаний тег.
+            Аби проглянути ідентифікатори коммітів, виконайте<br />
+            <code>git log</code><br />
+            В якості ідентифікатора можна використовувати меншу кількість символів, але з умовою, що такий ідентифікатор лишиться унікальним.
+        </p>
+    </div>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+		<h2>заміщення локальних змін</h2>
+        <p>
+            Якщо ви зробили щось не те <br />&mdash; чого, звісно, ніколи не трапляється ;) &mdash; <br /> можна замінити локальні зміни командою<br />
+            <code>git checkout -- &lt;ім'я_файла&gt;</code><br />
+            Це замінить зміни в робочій директорії на поточний зміст вказівника HEAD. 
+            Зміни, попередньо додані до Індексу, разом з новими файлами, залишаться недоторканими.
+        </p>
+        <p>
+            Якщо ж ви бажаєте скасувати всі локальні зміни та комміти, отримайте останні зміни з сервера 
+            і вкажіть на них локальну гілку таким чином:<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+    </div>
+    <a name="hints"></a>
+    <div class="scrollblock block-hints">
+		<h2>корисні речі</h2>
+        <p>
+            вбудований в git графічний інтерфейс:<br />
+            <code>gitk</code><br />
+            використовувати кольорове виведення в терміналі:<br />
+            <code>git config color.ui true</code><br />
+            виводити лог однорядковими коммітами:<br />
+            <code>git config format.pretty oneline</code><br />
+            інтерактивне додання до індексу:<br />
+            <code>git add -i</code>
+        </p>
+    </div>
+    <a name="resources"></a>
+    <div class="scrollblock block-resources">
+        <h2>корисні лінки</h2>
+        <h3>графічні інтерфейси</h3>
+        <p>
+            <ul>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, відкритий джерельний код)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, безкоштовний)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, безкоштовний)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX)</a></li>
+            </ul>
+        </p>
+        <h3>посібники</h3>
+        <p>
+            <ul>
+                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+                <li><a href="http://progit.org/book/">Pro Git</a></li>
+                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
+                <li><a href="http://help.github.com/">GitHub Help</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+            </ul>
+        </p>
+    </div>
+    <div class="announcement">
+        <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder">
+            <img src="http://d13bhd1byokz0o.cloudfront.net/ad/clarify-announcement-git@2x.png" width="960" height="100" alt="Clarify" />
+        </a>
+    </div>
+    <a name="comments"></a>
+    <div class="scrollblock block-comments">
+        <h2>коментарі</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+</body>
+</html>
