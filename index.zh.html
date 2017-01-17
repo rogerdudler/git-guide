@@ -172,6 +172,24 @@
             你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。
         </p>
     </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>log</h2>
+        <p>
+            如果你想了解本地仓库的历史记录，最简单的命令就是使用: <br />
+            <code>git log</code><br />
+            你可以添加一些参数来修改他的输出，从而得到自己想要的结果。 只看某一个人的提交记录:<br />
+            <code>git log --author=bob</code><br />
+            一个压缩后的每一条提交记录只占一行的输出:<br />
+            <code>git log --pretty=oneline</code><br />
+            或者你想通过 ASCII 艺术的树形结构来展示所有的分支, 每个分支都标示了他的名字和标签: <br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            看看哪些文件改变了: <br />
+            <code>git log --name-status</code><br />
+            这些只是你可以使用的参数中很小的一部分。更多的信息，参考：<br />
+            <code>git log --help</code><br />
+        </p>
+    </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
         <h2>替换本地改动</h2>
