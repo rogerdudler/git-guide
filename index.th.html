@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>git - ก้าวแรกสู่สังเวียน</title>
+    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-652147-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function recordOutboundLink(link, category, action) {
+         _gat._getTrackerByName()._trackEvent(category, action);
+         setTimeout('document.location = "' + link.href + '"', 100);
+      }
+    </script>
+</head>
+<body>
+    <div class="scrollblock block-title">
+        <h1>git - ก้าวแรกสู่สังเวียน</h1>
+        <p>เริ่มต้นการใช้งาน git อย่างง่ายๆ เหมือนการนับ 1 2 3 ;)</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="meta">
+            โดย <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
+            <br />ร่วมด้วย <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> และ <a href="http://www.namics.com">Namics</a><br />
+            ภาษาอื่นๆ 
+            <a href="index.de.html">deutsch</a>, 
+            <a href="index.es.html">español</a>, 
+            <a href="index.fr.html">français</a>, 
+            <a href="index.it.html">italiano</a>, 
+            <a href="index.nl.html">nederlands</a>, 
+            <a href="index.pt_BR.html">português</a>, 
+            <a href="index.ru.html">русский</a>,
+            <a href="index.tr.html">türkçe</a>,
+            <br/>
+            <a href="index.my.html">မြန်မာ</a>,
+            <a href="index.ja.html">日本語</a>, 
+            <a href="index.zh.html">中文</a>, 
+            <a href="index.ko.html">한국어</a>
+            <a href="index.vi.html">Vietnamese</a>
+            <a href="index.th.html">ภาษาไทย</a>
+            <br />
+            กรุณาแจ้งปัญหาต่างๆ ได้ที่ <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+        </p>
+        <div class="announcement">
+            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
+                <img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
+            </a>
+        </div>
+        <img src="img/arrow.png" alt="" />
+    </div>
+    <!-- setup -->
+    <a name="setup"></a>
+    <div class="scrollblock block-setup">
+        <h2>การติดตั้ง</h2>
+        <p>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Download git for OSX</a>
+        </p>
+        <p>
+            <a href="http://msysgit.github.io/">Download git for Windows</a>
+        </p>
+        <p>
+            <a href="http://book.git-scm.com/2_installing_git.html">Download git for Linux</a>
+        </p>
+    </div>
+    <a name="create"></a>
+    <div class="scrollblock block-create">
+        <h2>สร้าง repository ใหม่</h2>
+        <p>
+            ให้ทำการสร้าง directory ใหม่ขึ้นมา จากนั้นย้ายเข้าไป เพื่อสร้าง repository ด้วยคำสั่ง
+            <br />
+            <code>git init</code><br />
+        </p>
+    </div>
+    <a name="checkout"></a>
+    <div class="scrollblock block-checkout">
+        <h2>checkout a repository</h2>
+        <p>
+            ทำการดึงข้อมูลจาก repository ที่อยู่บนเครื่องของเรา ด้วยคำสั่ง
+            <br />
+            <code>git clone /path/to/repository</code><br />
+            
+            แต่ถ้าต้องการดึงข้อมูลจาก repository จากเครื่องอื่น ด้วยคำสั่ง<br />
+            <code>git clone username@host:/path/to/repository</code>
+        </p>
+    </div>
+    <a name="trees"></a>
+    <div class="scrollblock block-trees">
+        <h2>workflow</h2>
+        <p>
+            ใน git repository มีโครงสร้างในรูปแบบ tree ประกอบไปด้วย 3 ส่วน คือ <br/>
+            1.  <code>Working Directory</code>  คือ ที่จัดเก็บไฟล์จริงๆ<br/>
+            2.  <code>Index</code> คือ ตัวบอกสถานะของพื้นที่การทำงาน<br/>
+            3. <code>HEAD</code> คือ ตัวบอกว่า จุดที่ทำการ commit ล่าสุด อยู่ที่ไหน
+        </p>
+        <img src="img/trees.png" alt="" />
+    </div>
+    <a name="add"></a>
+    <div class="scrollblock block-add">
+        <h2>add &amp; commit</h2>
+        <p>
+            คุณสามารถเสนอการเปลี่ยนแปลง เข้าไป <b>Index</b> ด้วยการใช้คำสั่ง<br />
+            <code>git add &lt;ชื่อไฟล์&gt;</code><br />
+            <code>git add *</code><br />
+            ซึ่งเป็นขั้นตอนแรกสำหรับการใช้งาน git พื้นฐาน<br />
+            และยอมรับการเปลี่ยนแปลง ด้วยคำสั่ง<br />
+            <code>git commit -m "ข้อความอธิบายการเปลี่ยนแปลง"</code><br />
+            ในตอนนี้ เราได้ทำการบันทึกการเปลี่ยนแปลงไปที่ <b>HEAD</b> แล้ว  แต่ยังอยู่ที่ local repository เท่านั้น ยังไม่เก็บใน remote repository
+        </p>
+    </div>
+    <a name="push"></a>
+    <div class="scrollblock block-remote">
+        <h2>pushing changes</h2>
+        <p>
+            ตอนนี้การเปลี่ยนแปลงล่าสุดอยู่ที่ <b>HEAD</b> ของ local repository แล้ว  <br />
+            ต่อไปจะทำการส่งการเปลี่ยนแปลงเหล่านี้ ไปยัง remote repository ด้วยคำสั่ง <br />
+            <code>git push origin master</code><br />
+            สามารถทำการเปลี่ยน  <i>master</i> เป็นชื่อ branch ที่คุณต้องการได้
+            <br /><br />
+            แต่ถ้าคุณไม่ได้ทำการ clone หรือเชื่อมต่อไปยัง remote repository<br />
+            สามารถทำการเพิ่ม remote ด้วยคำสั่งดังนี้<br />
+            <code>git remote add origin &lt;server&gt;</code><br />
+            เพียงเท่านี้ คุณก็สามารถส่งการเปลี่ยนแปลงไปยัง remote repository ได้แล้ว<br />
+
+        </p>
+    </div>
+    <a name="branching"></a>
+    <div class="scrollblock block-branching">
+        <h2>branching</h2>
+        <p>
+            Branch นั้นถูกใช้เพื่อแยกการพัฒนาความสามารถใหม่ๆ ออกมาจากส่วนหลัก โดยที่ git มี <i>master</i> branch มาให้อยู่แล้ว หลังจากทำการสร้าง git repository ขึ้นมา<br /><br />
+            ในการใช้ branch เพื่อแยกการพัฒนานั้น จะต้องทำการ merge การเปลี่ยนแปลงเข้ามายัง master branch หลังจากที่พัฒนาเสร็จแล้วเสมอ
+        </p>
+        <img src="img/branches.png" alt="" />
+        <p>
+            คำสั่งสร้าง branch ชื่อว่า "feature_x" และเปลี่ยนไปยัง branch ที่สร้างทันที<br />
+            <code>git checkout -b feature_x</code><br />
+            คำสั่งย้ายกลับมายัง master branch<br />
+            <code>git checkout master</code><br />
+            คำสั่งลบ branch<br />
+            <code>git branch -d feature_x</code><br />
+            ตอนนี้ branch ชื่อว่า "feature_x" ถูกลบไปแล้ว
+            <br /><br />
+            คำสั่งเพื่อส่งการเปลี่ยนแปลงของ branch ที่ต้องการไปยัง remote repository<br />
+            <code>git push origin &lt;branch&gt;</code>
+        </p>
+    </div>
+    <a name="update"></a>
+    <div class="scrollblock block-merging">
+        <h2>update &amp; merge</h2>
+        <p>
+            คุณสามารถดึงการเปลี่ยนแปลงล่าสุดจาก remote repository มายัง local repository ด้วยคำสั่ง <br />
+            <code>git pull</code><br />
+            โดย git จะทำการ <i>ดึงข้อมูล</i> และ <i>รวมข้อมูล</i> การเปลี่ยนแปลงจาก remote repository ในเครื่องของคุณ
+            <br /><br />
+            ถ้าต้องการ merge การเปลี่ยนแปลงจาก branch อื่น<br /> มายัง branch ปัจจุบัน  (เช่น master) ด้วยคำสั่ง<br />
+            <code>git merge &lt;branch&gt;</code><br />
+            ซึ่งทั้งสองคำสั่ง ทำการ merge อย่างอัตโนมัติ<br /><br />
+            แต่ถ้าโชคร้าย อาจจะเกิด conflict หรือข้อขัดแย้งของการเปลี่ยนแปลง
+            ดังนั้น คุณจะต้องทำการแก้ไขข้อขัดแย้งเหล่านั้นด้วยตัวเอง<br />
+            ต่อจากนั้นให้ทำการบันทึกการเปลี่ยนแปลงด้วยคำสั่ง<br />
+            <code>git add &lt;filename&gt;</code><br />
+            แต่ก่อนที่จะ merge การเปลี่ยนแปลง สามารถตรวจสอบความแตกต่างของสิ่งที่แก้ไข ด้วยคำสั่ง<br />
+            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+        </p>
+    </div>
+    <a name="tagging"></a>
+    <div class="scrollblock block-tagging">
+        <h2>tagging</h2>
+        <p>
+            ก่อนที่จะทำการ release ระบบออกไปนั้น แนะนำให้ทำการสร้าง tag หรือ ป้ายชื่อ เพื่อบอกให้รู้ว่าเรากำลังทำอะไร อยู่ตรงไหน<br />
+            ทำการสร้าง tag ชื่อว่า <i>1.0.0</i> ด้วยคำสั่ง<br />
+            <code>git tag 1.0.0 1b2e1d63ff</code><br /><br />
+             <i>1b2e1d63ff</i>  คือ รหัสย่อ 10 หลักของการเปลี่ยนแปลง<br />เพื่อใช้อ้างอิงถึงจุดที่เราต้องการสร้าง tag <br />โดยสามารถดูข้อมูลของประวัติการเปลี่ยนแปลงได้ในส่วนต่อไป<br />
+        </p>
+    </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>log</h2>
+        <p>
+            สามารถดูประวัติการเปลี่ยนแปลงใน git repository ด้วยคำสั่ง<br />
+            <code>git log</code><br />
+            โดยที่คุณสามารถใส่ parameter ต่างๆ เพื่อดูประวัติในรูปแบบที่ต้องการ <br />เช่น<br /><br />
+            แสดงข้อมูลการเปลี่ยนแปลงตามชื่อผู้ใช้งาน<br />
+            <code>git log --author=bob</code><br />
+            แสดงข้อมูลแต่ละการเปลี่ยนแปลงใน 1 บรรทัด<br />
+            <code>git log --pretty=oneline</code><br />
+            แสดงข้อมูลการเปลี่ยนแปลงในรูปแบบของ tree จาก branch และ tag ทั้งหมด<br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            แสดงข้อมูลเฉพาะไฟล์ที่ทำการเปลี่ยนแปลงเท่านั้น<br />
+            <code>git log --name-status</code><br />
+            สามารถดูข้อมูลเพิ่มเติม สำหรับ parameter ต่างๆ ด้วยคำสั่ง<br />
+            <code>git log --help</code><br />
+        </p>
+    </div>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>replace local changes</h2>
+        <p>
+            ในกรณีที่คุณทำบางสิ่งผิดพลาดไป สามารถแก้ไขที่ local repository ด้วยคำสั่ง<br />
+            <code>git checkout -- &lt;filename&gt;</code><br />
+            git จะทำการแทนที่ข้อมูล ด้วยการเปลี่ยนแปลงล่าสุดใน HEAD และการเปลี่ยนแปลงนี้จะถูกเพิ่มเข้าไปใน index เรียบร้อย<br />
+            แต่ถ้าเป็นไฟล์ใหม่ จะไม่ถูกลบทิ้ง
+        </p>
+        <p>
+            ถ้าคุณต้องการยกเลิกการเปลี่ยนแปลงทั้งหมดใน local repository แล้ว<br />
+            ให้ทำการดึงข้อมูลล่าสุดมาจาก remote repository และ ทำการ reset สถานะของ master branch ใน local repository ด้วยคำสั่ง<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+    </div>
+    <a name="hints"></a>
+    <div class="scrollblock block-hints">
+        <h2>ข้อมูลดีๆ มีประโยชน์</h2>
+        <p>
+            git มีเครื่องมือที่เป็น GUI มาให้<br />
+            <code>gitk</code><br />
+            เพิ่มสีสันให้การแสดงผล<br />
+            <code>git config color.ui true</code><br />
+            กำหนดให้แต่ละประวัติการเปลี่ยนแปลงแสดงเพียง 1 บรรทัด<br />
+            <code>git config format.pretty oneline</code><br />
+            ทำการบันทึกการเปลี่ยนแปลงในรูปแบบ interative ผ่าน command line<br />
+            <code>git add -i</code>
+        </p>
+    </div>
+    <a name="resources"></a>
+    <div class="scrollblock block-resources">
+        <h2>แหล่งข้อมูลเพิ่มเติม</h2>
+        <h3>Git client ดีๆ สำหรับคนที่ต้องการ GUI</h3>
+        <p>
+            <ul>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, free)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
+            </ul>
+        </p>
+        <h3>แหล่งความรู้ดีๆ</h3>
+        <p>
+            <ul>
+                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+                <li><a href="http://progit.org/book/">Pro Git</a></li>
+                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
+                <li><a href="http://help.github.com/">GitHub Help</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+            </ul>
+        </p>
+        <h3>ถ้าต้องการความช่วยเหลือ</h3>
+        <p>
+            <ul>
+                <li><a href="http://groups.google.com/group/git-users/">Git User Mailing List</a></li>
+                <li><a href="http://jk.gs/git/">#git on irc.freenode.net</a></li>
+            </ul>
+        </p>
+    </div>
+    <a name="comments"></a>
+    <div class="scrollblock block-comments">
+        <h2>คำแนะนำและความคิดเห็น</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+</body>
+</html>
