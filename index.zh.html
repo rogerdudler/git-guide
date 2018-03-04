@@ -33,32 +33,27 @@
         <p class="meta">
             作者：<a href="http://www.twitter.com/rogerdudler">罗杰·杜德勒</a>
             <br />感谢：<a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> 和 <a href="http://www.namics.com">Namics</a><br />
-            其他语言 
+            其他语言
             <a href="index.html">english</a>,
-            <a href="index.de.html">deutsch</a>, 
-            <a href="index.es.html">español</a>, 
-            <a href="index.fr.html">français</a>, 
-            <a href="index.id.html">indonesian</a>, 
-            <a href="index.it.html">italiano</a>, 
-            <a href="index.nl.html">nederlands</a>, 
+            <a href="index.de.html">deutsch</a>,
+            <a href="index.es.html">español</a>,
+            <a href="index.fr.html">français</a>,
+            <a href="index.id.html">indonesian</a>,
+            <a href="index.it.html">italiano</a>,
+            <a href="index.nl.html">nederlands</a>,
             <a href="index.pl.html">polski</a>,
-            <a href="index.pt_BR.html">português</a>, 
+            <a href="index.pt_BR.html">português</a>,
             <a href="index.ru.html">русский</a>,
             <a href="index.tr.html">türkçe</a>,
             <br/>
             <a href="index.uk.html">українська</a>,
             <a href="index.my.html">မြန်မာ</a>,
-            <a href="index.ja.html">日本語</a>, 
+            <a href="index.ja.html">日本語</a>,
             <a href="index.ko.html">한국어</a>
             <a href="index.vi.html">Vietnamese</a>
             <br />
             如有纰漏，请在 <a href="https://github.com/rogerdudler/git-guide/issues">github</a> 提报问题
         </p>
-        <div class="announcement">
-            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
-                <img src="//frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
-            </a>
-        </div>
         <img src="img/arrow.png" alt="" />
     </div>
     <!-- setup -->
@@ -66,10 +61,10 @@
     <div class="scrollblock block-setup">
         <h2>安装</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">下载 git OSX 版</a>
+            <a href="http://git-scm.com/download/mac">下载 git OSX 版</a>
         </p>
         <p>
-            <a href="http://msysgit.github.io/">下载 git Windows 版</a>
+            <a href="http://git-for-windows.github.io/">下载 git Windows 版</a>
         </p>
         <p>
             <a href="http://book.git-scm.com/2_installing_git.html">下载 git Linux 版</a>
@@ -171,6 +166,24 @@
             <i>1b2e1d63ff</i> 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：<br />
             <code>git log</code><br />
             你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。
+        </p>
+    </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>log</h2>
+        <p>
+            如果你想了解本地仓库的历史记录，最简单的命令就是使用: <br />
+            <code>git log</code><br />
+            你可以添加一些参数来修改他的输出，从而得到自己想要的结果。 只看某一个人的提交记录:<br />
+            <code>git log --author=bob</code><br />
+            一个压缩后的每一条提交记录只占一行的输出:<br />
+            <code>git log --pretty=oneline</code><br />
+            或者你想通过 ASCII 艺术的树形结构来展示所有的分支, 每个分支都标示了他的名字和标签: <br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            看看哪些文件改变了: <br />
+            <code>git log --name-status</code><br />
+            这些只是你可以使用的参数中很小的一部分。更多的信息，参考：<br />
+            <code>git log --help</code><br />
         </p>
     </div>
     <a name="checkout-replace"></a>

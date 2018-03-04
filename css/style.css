@@ -174,3 +174,54 @@ code {
 .announcement img {
     border-radius: 4px;
 }
+
+#carbonads {
+  display: block;
+  overflow: hidden;
+  padding: 10px;
+  background-color: #dfdfdf;
+	border-radius: 3px;
+  max-width: 300px;
+  margin: 0 auto;
+  font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: #606060;
+}
+
+#carbonads a:hover {
+  color: hsl(0, 0%, 20%);
+  text-decoration: none;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  float: left;
+  margin-right: 1em;
+}
+
+.carbon-img img { display: block; }
+
+.carbon-text {
+  display: block;
+  float: left;
+  max-width: calc(100% - 130px - 1em);
+  text-align: left;
+}
+
+.carbon-poweredby {
+  position: absolute;
+  left: 144px;
+  bottom: 0;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 9px;
+}

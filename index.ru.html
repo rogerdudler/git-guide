@@ -27,37 +27,32 @@
 <body>
     <div class="scrollblock block-title">
         <h1>git - the simple guide</h1>
-        <p>простое руководство по работе с git. ничего сложного ;)</p>
+        <p>простое руководство по работе с git. Ничего сложного ;)</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
-            <a href="http://www.twitter.com/rogerdudler">Роджер Дублер</a> (перевел <a href="http://dmitrywolf.com">Дмитрий Вольф</a>)
+            <a href="http://www.twitter.com/rogerdudler">Роджер Дадлер</a> (перевел <a href="http://dmitrywolf.com">Дмитрий Вольф</a>)
             <br />спасибо <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
-            это руководство на 
+            это руководство на
             <a href="index.html">english</a>,
-            <a href="index.de.html">deutsch</a>, 
-            <a href="index.es.html">español</a>, 
-            <a href="index.fr.html">français</a>, 
-            <a href="index.id.html">indonesian</a>, 
-            <a href="index.it.html">italiano</a>, 
-            <a href="index.nl.html">nederlands</a>, 
+            <a href="index.de.html">deutsch</a>,
+            <a href="index.es.html">español</a>,
+            <a href="index.fr.html">français</a>,
+            <a href="index.id.html">indonesian</a>,
+            <a href="index.it.html">italiano</a>,
+            <a href="index.nl.html">nederlands</a>,
             <a href="index.pl.html">polski</a>,
             <a href="index.pt_BR.html">português</a>,
             <a href="index.tr.html">türkçe</a>,
             <br/>
             <a href="index.uk.html">українська</a>,
             <a href="index.my.html">မြန်မာ</a>,
-            <a href="index.ja.html">日本語</a>, 
-            <a href="index.zh.html">中文</a>, 
+            <a href="index.ja.html">日本語</a>,
+            <a href="index.zh.html">中文</a>,
             <a href="index.ko.html">한국어</a>
             <br />
             об ошибках сообщайте на <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
         </p>
-        <div class="announcement">
-            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
-                <img src="//frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
-            </a>
-        </div>
         <img src="img/arrow.png" alt="" />
     </div>
     <!-- setup -->
@@ -65,7 +60,7 @@
     <div class="scrollblock block-setup">
         <h2>установка</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Скачать git для OSX</a>
+            <a href="http://git-scm.com/download/mac">Скачать git для OSX</a>
         </p>
         <p>
             <a href="http://msysgit.github.io/">Скачать git для Windows</a>
@@ -78,10 +73,10 @@
     <div class="scrollblock block-create">
         <h2>создание нового репозитория</h2>
         <p>
-            Для того чтобы создать новый репозиторий git необходимо
+            Для того чтобы создать новый репозиторий git, необходимо
 			открыть папку где вы хотите его разместить и выполнить команду<br />
             <code>git init</code><br />
-            
+
         </p>
     </div>
     <a name="checkout"></a>
@@ -98,10 +93,10 @@
     <div class="scrollblock block-trees">
 		<h2>рабочий процесс</h2>
         <p>
-            Ваш локальный git репозиторий состоит из трех "сущностей". 
+            Ваш локальный git репозиторий состоит из трех "сущностей".
             <code>Рабочий каталог</code> (Working Directory) содержит файлы.
-            <code>Индекс</code> (Index) или область подготовленных файлов (Staging Area)</code>, 
-			содержит информацию о том, что должно войти в следующий коммит и 
+            <code>Индекс</code> (Index) или область подготовленных файлов (Staging Area)</code>,
+			содержит информацию о том, что должно войти в следующий коммит и
 			<code>HEAD</code> указывает на последний коммит что вы сделали.
         </p>
         <img src="img/trees.png" alt="" />
@@ -110,12 +105,12 @@
     <div class="scrollblock block-add">
         <h2>Подготовка и коммит</h2>
         <p>
-            Чтобы подготовить изменения (добавить их в <b>Индекс</b>) используйте<br />
+            Чтобы подготовить изменения (добавить их в <b>Индекс</b>), используйте<br />
             <code>git add &lt;имя_файла&gt;</code><br />
             <code>git add *</code><br />
             Это первый шаг в основном рабочем процессе. Сделать коммит подготовленных изменений можно командой<br />
             <code>git commit -m "Описание коммита"</code><br />
-            Теперь изменения закреплены в  локальном репозитории и на них указывает <b>HEAD</b>, но еще не в удаленном репозитории.
+            Теперь изменения закреплены в  локальном репозитории, и на них указывает <b>HEAD</b>, но еще не в удаленном репозитории.
         </p>
     </div>
     <a name="push"></a>
@@ -124,7 +119,7 @@
         <p>
             Чтобы отправить эти изменения в ваш удаленный репозиторий, выполните <br />
             <code>git push origin master</code><br />
-            Можно изменить <i>master</i> на любую другую ветвь чтобы отправить изменения на неё.
+            Можно изменить <i>master</i> на любую другую ветвь, чтобы отправить изменения на неё.
             <br /><br />
             Если вы еще не клонировали существующий репозиторий и хотите подключить ваш к удаленному, вам нужно добавить его, выполнив<br />
             <code>git remote add origin &lt;адрес_сервера&gt;</code><br />
@@ -136,8 +131,8 @@
     <div class="scrollblock block-branching">
         <h2>ветвление</h2>
         <p>
-            Ветки используются для разработки функционала изолированного от остального. Ветка <i>master</i> используется по умолчанию когда вы создаете репозиторий. 
-			Используйте другие ветки для разработки и слияние в <i>master</i> когда разработка завершена.
+            Ветки используются для разработки функциональности, изолированной от остальной. Ветка <i>master</i> используется по умолчанию, когда вы создаете репозиторий.
+			Используйте другие ветки для разработки и слияние в <i>master</i>, когда разработка завершена.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
@@ -147,7 +142,7 @@
             <code>git checkout master</code><br />
             удалить ветку<br />
             <code>git branch -d feature_x</code><br />
-            ветка не будет доступна тем, кто пользуется с вами удаленным репозиторием пока вы не отправите её туда<br />
+            ветка не будет доступна тем, кто пользуется с вами удаленным репозиторием, пока вы не отправите её туда<br />
             <code>git push origin &lt;имя_ветки&gt;</code>
         </p>
     </div>
@@ -155,14 +150,14 @@
     <div class="scrollblock block-merging">
    	<h2>обновление и слияние</h2>
         <p>
-            Обновить ваш локальный репозиторий, можно командой<br />
+            Обновить ваш локальный репозиторий можно командой<br />
             <code>git pull</code><br />
             которая заберет изменения из удаленного репозитория и проведет слияние с активной веткой.<br />
             Для того чтобы слить другую ветку с активной (например master), используйте команду<br />
             <code>git merge &lt;имя_ветки&gt;</code><br />
             В обоих случаях git пытается автоматически слить изменения. К сожалению, это не всегда возможно и результатом станет <i>конфликт</i>.
-            Вы ответственны за разрешение возникших <i>конфликтов</i>,  
-            путем ручного редактирования файлов указанных git. После изменений вам надо пометить их как слитые<br />
+            Вы ответственны за разрешение возникших <i>конфликтов</i>,
+            путем ручного редактирования файлов, указанных git. После изменений вам надо пометить их как слитые<br />
             <code>git add &lt;имя_файла&gt;</code><br />
             перед слиянием вы можете предварительно посмотреть на изменения<br />
             <code>git diff &lt;имя_ветки&gt; &lt;имя_другой_ветки&gt;</code>
@@ -172,20 +167,20 @@
     <div class="scrollblock block-tagging">
 		<h2>метки</h2>
         <p>
-            Рекомендуется использовать метки для закрепления момента выпуска версий. Это популярная практика, которая так же используется в SVN. Создать новую метку с именем <i>1.0.0</i> можно выполнив<br />
+            Рекомендуется использовать метки для закрепления момента выпуска версий. Это популярная практика, которая также используется в SVN. Создать новую метку с именем <i>1.0.0</i> можно, выполнив<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            <i>1b2e1d63ff</i> это первые десять цифр уникального идентификатора (id) с которым будет связана метка. Чтобы посмотреть идентификаторы коммитов, выполните <br />
+            <i>1b2e1d63ff</i> это первые десять цифр уникального идентификатора (id), с которым будет связана метка. Чтобы посмотреть идентификаторы коммитов, выполните <br />
             <code>git log</code><br />
-            Можно использовать меньшее количество символов в качестве идентификатора с учетом того что он является уникальным.
+            Можно использовать меньшее количество символов в качестве идентификатора, с учетом того, что он является уникальным.
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
 		<h2>замена локальных изменений</h2>
         <p>
-            В случае если вы сделали что-то не то, вы можете заменить локальные изменения, используя команду<br />
+            В случае, если вы сделали что-то не то, вы можете заменить локальные изменения, используя команду<br />
             <code>git checkout -- &lt;имя_файла&gt;</code><br />
-            произойдет замена изменений в вашем рабочем каталоге, на то что сейчас находится в HEAD. Изменения уже внесенные в индекс, так же как новые файлы будут сохранены.
+            произойдет замена изменений в вашем рабочем каталоге, на то, что сейчас находится в HEAD. Изменения, уже внесенные в индекс, также как и новые файлы, будут сохранены.
         </p>
         <p>
             Если же вы хотите удалить все ваши локальные изменения и коммиты, получите (fetch) последние изменения с сервера и укажите локальной ветке master на них вот так<br />
