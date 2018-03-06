@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - Der einfache Einstieg - kein Schnick-schnack!</title>
-    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/normalize.css" type="text/css">
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-    <script type="text/javascript">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git - Der einfache Einstieg - kein Schnick-schnack!</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Chelsea+Market">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-652147-13']);
       _gaq.push(['_trackPageview']);
@@ -26,46 +26,43 @@
 <body>
     <div class="scrollblock block-title">
         <h1>git - Der einfache Einstieg</h1>
-        <p>eine einfache Anleitung um git zu lernen. Kein Schnick-schnack ;)</p>
+        <p>eine einfache Anleitung, um git zu lernen. Kein Schnick-Schnack ;)</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-url="http://rogerdudler.github.com/git-guide" data-size="large" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
-            von <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
-            <br />Dank an <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> und <a href="http://www.namics.com">Namics</a><br />
-            diese Anleitung in 
+            von <a href="http://twitter.com/rogerdudler">Roger Dudler</a>
+            <br>Dank an <a href="http://twitter.com/tfnico">@tfnico</a>, <a href="http://twitter.com/fhd">@fhd</a> und <a href="http://namics.com">Namics</a><br>
+            diese Anleitung in
             <a href="index.html">english</a>,
-            <a href="index.es.html">español</a>, 
-            <a href="index.fr.html">français</a>, 
-            <a href="index.it.html">italiano</a>, 
-            <a href="index.nl.html">nederlands</a>, 
-            <a href="index.pt_BR.html">português</a>, 
+            <a href="index.es.html">español</a>,
+            <a href="index.fr.html">français</a>,
+            <a href="index.id.html">indonesian</a>,
+            <a href="index.it.html">italiano</a>,
+            <a href="index.nl.html">nederlands</a>,
+            <a href="index.pl.html">polski</a>,
+            <a href="index.pt_BR.html">português</a>,
             <a href="index.ru.html">русский</a>,
             <a href="index.tr.html">türkçe</a>,
-            <br/>
+            <br>
             <a href="index.my.html">မြန်မာ</a>,
-            <a href="index.ja.html">日本語</a>, 
-            <a href="index.zh.html">中文</a>, 
+            <a href="index.ja.html">日本語</a>,
+            <a href="index.zh.html">中文</a>,
             <a href="index.ko.html">한국어</a>
-            <br />
-            <a href="index.ja.html">日本語</a>, <a href="index.zh.html">中文</a>, <a href="index.ko.html">한국어</a><br />
+            <br>
+            <a href="index.ja.html">日本語</a>, <a href="index.zh.html">中文</a>, <a href="index.ko.html">한국어</a><br>
             Feedback auf <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
         </p>
-        <div class="announcement">
-            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
-                <img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
-            </a>
-        </div>
-        <img src="img/arrow.png" alt="" />
+        <img src="img/arrow.png" alt="">
     </div>
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
         <h2>Installation</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">git für OSX herunterladen</a>
+            <a href="http://git-scm.com/download/mac">git für OS X herunterladen</a>
         </p>
         <p>
-            <a href="http://code.google.com/p/msysgit/downloads/list?can=3">git für Windows herunterladen</a>
+            <a href="http://msysgit.github.io/">git für Windows herunterladen</a>
         </p>
         <p>
             <a href="http://book.git-scm.com/2_installing_git.html">git für Linux herunterladen</a>
@@ -75,8 +72,8 @@
     <div class="scrollblock block-create">
         <h2>Neues Repository erstellen</h2>
         <p>
-            erstelle ein neues Verzeichnis, öffne es und führe <br />
-            <code>git init</code><br />
+            erstelle ein neues Verzeichnis, öffne es und führe <br>
+            <code>git init</code><br>
             aus, um ein neues git-Repository anzulegen.
         </p>
     </div>
@@ -84,9 +81,9 @@
     <div class="scrollblock block-checkout">
         <h2>Ein Repository auschecken</h2>
         <p>
-            erstelle eine Arbeitskopie, indem du folgenden Befehl ausführst:<br />
-            <code>git clone /pfad/zum/repository</code><br />
-            Falls du ein entferntes Repository verwendest, benutze:<br />
+            erstelle eine Arbeitskopie, indem du folgenden Befehl ausführst:<br>
+            <code>git clone /pfad/zum/repository</code><br>
+            Falls du ein entferntes Repository verwendest, benutze:<br>
             <code>git clone benutzername@host:/pfad/zum/repository</code>
         </p>
     </div>
@@ -99,17 +96,17 @@
             Die zweite ist der <code>Index</code>, welcher als Zwischenstufe agiert und
             zu guter Letzt noch der <code>HEAD</code>, der auf deinen letzten Commit zeigt.
         </p>
-        <img src="img/trees.png" alt="" />
+        <img src="img/trees.png" alt="">
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
         <h2>add &amp; commit</h2>
         <p>
-            Du kannst Änderungen vorschlagen (zum <b>Index</b> hinzufügen) mit<br />
-            <code>git add &lt;dateiname&gt;</code><br />
-            <code>git add *</code><br />
-            Das ist der erste schritt im git workflow, du bestätigst deine Änderungen mit:<br />
-            <code>git commit -m "Commit-Nachricht"</code><br />
+            Du kannst Änderungen vorschlagen (zum <b>Index</b> hinzufügen) mit<br>
+            <code>git add &lt;dateiname&gt;</code><br>
+            <code>git add *</code><br>
+            Das ist der erste Schritt im git workflow, du bestätigst deine Änderungen mit:<br>
+            <code>git commit -m "Commit-Nachricht"</code><br>
             Jetzt befindet sich die Änderung im <b>HEAD</b>, aber noch nicht im entfernten Repository.
         </p>
     </div>
@@ -117,31 +114,30 @@
     <div class="scrollblock block-remote">
         <h2>Änderungen hochladen</h2>
         <p>
-            Die Änderungen sind jetzt im <b>HEAD</b> deines lokalen Repositories. Um die Änderungen an dein entferntes Repository zu senden, führe:<br />
-            <code>git push origin master</code><br />
+            Die Änderungen sind jetzt im <b>HEAD</b> deines lokalen Repositories. Um die Änderungen an dein entferntes Repository zu senden, führe:<br>
+            <code>git push origin master</code><br>
             aus. Du kannst <i>master</i> auch mit einem beliebigen anderen Branch ersetzen, mehr über Branches erfährst du später.
-            <br /><br />
-            Wenn du dein lokales Repository nicht von einem entfernten geklont hast und du diese aber mit einem anderen Repository verbinden möchtest, musst du dieses mit <br />
-            <code>git remote add origin &lt;server&gt;</code><br />
-            hinzufügen. Jetzt bist du bereit deine Änderungen hochzuladen<br />
-
+            <br><br>
+            Wenn du dein lokales Repository nicht von einem entfernten geklont hast und du diese aber mit einem anderen Repository verbinden möchtest, musst du dieses mit <br>
+            <code>git remote add origin &lt;server&gt;</code><br>
+            hinzufügen. Jetzt bist du bereit, deine Änderungen hochzuladen<br>
         </p>
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
         <h2>Branching</h2>
         <p>
-            Branches werden benutzt um verschiedene Funktionen isoliert voneinander zu entwickeln. Der <i>master</i>-Branch ist der "Standard"-Branch, wenn du ein neues Repository erstellst. Du solltest aber für die Entwicklung andere Branches verwenden und diese dann in den Master-Branch zusammenführen (mergen). Auch das lernst du später.
+            Branches werden benutzt, um verschiedene Funktionen isoliert voneinander zu entwickeln. Der <i>master</i>-Branch ist der "Standard"-Branch, wenn du ein neues Repository erstellst. Du solltest aber für die Entwicklung andere Branches verwenden und diese dann in den Master-Branch zusammenführen (mergen). Auch das lernst du später.
         </p>
-        <img src="img/branches.png" alt="" />
+        <img src="img/branches.png" alt="">
         <p>
-            Erstelle einen neuen Branch mit dem Namen "feature_x" und wechsle zu diesem:<br />
-            <code>git checkout -b feature_x</code><br />
-            Um zum Master zurück zu wechseln:<br />
-            <code>git checkout master</code><br />
-            Und um den eben erstellten Branch wieder zu löschen:<br />
-            <code>git branch -d feature_x</code><br />
-            Ein Branch ist <i>nicht für andere verfügbar</i> bis du diesen in dein entferntes Repository hochlädst:<br />
+            Erstelle einen neuen Branch mit dem Namen "feature_x" und wechsle zu diesem:<br>
+            <code>git checkout -b feature_x</code><br>
+            Um zum Master zurück zu wechseln:<br>
+            <code>git checkout master</code><br>
+            Und um den eben erstellten Branch wieder zu löschen:<br>
+            <code>git branch -d feature_x</code><br>
+            Ein Branch ist <i>nicht für andere verfügbar</i>, bis du diesen in dein entferntes Repository hochlädst:<br>
             <code>git push origin &lt;branch&gt;</code>
         </p>
     </div>
@@ -149,16 +145,16 @@
     <div class="scrollblock block-merging">
         <h2>update &amp; merge</h2>
         <p>
-            Um dein lokales Repository mit den neuesten Änderungen zu aktualisieren, verwende:<br />
-            <code>git pull</code><br />
-            in deiner Arbeitskopie um die Änderungen erst <i>herunterzuladen (fetch)</i> und dann mit deinem Stand <i>zusammenzuführen (merge)</i>.<br />
-            Wenn du einen anderen Branch mit deinem aktuellen (z.B. master) zusammenführen willst, benutze:<br />
-            <code>git merge &lt;branch&gt;</code><br />
-            In beiden Fällen versucht git die Änderungen automatisch zusammenzuführen. Unglücklicherweise ist dies nicht immer möglich und endet in <i>Konflikten</i>,
-            du bist verantwortlich diese <i>Konflikte</i> durch manuelles editieren der betroffenen Dateien zu lösen.
-            Bist du damit fertig, musst du das git mit folgendem Befehl mitteilen:<br />
-            <code>git add &lt;dateiname&gt;</code><br />
-            Bevor du Änderungen zusammenführst, kannst du dir die Differenzen auch anschauen:<br />
+            Um dein lokales Repository mit den neuesten Änderungen zu aktualisieren, verwende:<br>
+            <code>git pull</code><br>
+            in deiner Arbeitskopie, um die Änderungen erst <i>herunterzuladen (fetch)</i> und dann mit deinem Stand <i>zusammenzuführen (merge)</i>.<br>
+            Wenn du einen anderen Branch mit deinem aktuellen (z.B. master) zusammenführen willst, benutze:<br>
+            <code>git merge &lt;branch&gt;</code><br>
+            In beiden Fällen versucht git die Änderungen automatisch zusammenzuführen. Unglücklicherweise ist dies nicht immer möglich und endet in <i>Konflikten</i>.
+            Du bist verantwortlich, diese <i>Konflikte</i> durch manuelles Editieren der betroffenen Dateien zu lösen.
+            Bist du damit fertig, musst du das git mit folgendem Befehl mitteilen:<br>
+            <code>git add &lt;dateiname&gt;</code><br>
+            Bevor du Änderungen zusammenführst, kannst du dir die Differenzen auch anschauen:<br>
             <code>git diff &lt;quell_branch&gt; &lt;ziel_branch&gt;</code>
         </p>
     </div>
@@ -166,10 +162,10 @@
     <div class="scrollblock block-tagging">
         <h2>Tagging</h2>
         <p>
-            Es wird empfohlen für Software Releasestags zu verwenden. Dies ist ein bekanntes Konzept, das es schon mit SVN gab. Du kannst einen neuen Tag namens <i>1.0.0</i> mit folgendem Befehl erstellen:<br />
-            <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            <i>1b2e1d63ff</i> steht für die ersten 10 Zeichen der Commit-Id, die du mit deinem Tag referenzieren möchtest. Du erhältst die liste der Commit-Ids mit: <br />
-            <code>git log</code><br />
+            Es wird empfohlen, für Software Releasestags zu verwenden. Dies ist ein bekanntes Konzept, das es schon mit SVN gab. Du kannst einen neuen Tag namens <i>1.0.0</i> mit folgendem Befehl erstellen:<br>
+            <code>git tag 1.0.0 1b2e1d63ff</code><br>
+            <i>1b2e1d63ff</i> steht für die ersten 10 Zeichen der Commit-Id, die du mit deinem Tag referenzieren möchtest. Du erhältst die Liste der Commit-IDs mit: <br>
+            <code>git log</code><br>
             Du kannst auch weniger Zeichen verwenden, es muss einfach eindeutig sein.
         </p>
     </div>
@@ -177,13 +173,13 @@
     <div class="scrollblock block-checkout-replace">
         <h2>Änderungen rückgängig machen</h2>
         <p>
-            Falls du mal etwas falsch machst (was natürlich nie passiert ;) ) kannst du die lokalen Änderungen mit:<br />
-            <code>git checkout -- &lt;filename&gt;</code><br />
-            auf den letzten stand im HEAD zurücksetzen. Änderungen die du bereits zum Index hinzugefügt hast, bleiben bestehen.
+            Falls du mal etwas falsch machst (was natürlich nie passiert ;) ) kannst du die lokalen Änderungen mit:<br>
+            <code>git checkout -- &lt;filename&gt;</code><br>
+            auf den letzten Stand im HEAD zurücksetzen. Änderungen, die du bereits zum Index hinzugefügt hast, bleiben bestehen.
         </p>
         <p>
-            Wenn du aber deine lokalen Änderungen komplett entfernen möchtest, holst du dir den letzten Stand vom entfernten Repository mit folgenden Befehlen:<br />
-            <code>git fetch origin</code><br />
+            Wenn du aber deine lokalen Änderungen komplett entfernen möchtest, holst du dir den letzten Stand vom entfernten Repository mit folgenden Befehlen:<br>
+            <code>git fetch origin</code><br>
             <code>git reset --hard origin/master</code>
         </p>
     </div>
@@ -191,13 +187,13 @@
     <div class="scrollblock block-hints">
         <h2>Nützliche Tricks</h2>
         <p>
-            Eingebaute git-GUI:<br />
-            <code>gitk</code><br />
-            Farbige konsolenausgabe:<br />
-            <code>git config color.ui true</code><br />
-            Eine Zeile pro Commit in der Logausgabe:<br />
-            <code>git config format.pretty oneline</code><br />
-            Interaktives hinzufügen von Änderungen:<br />
+            Eingebaute git-GUI:<br>
+            <code>gitk</code><br>
+            Farbige Konsolenausgabe:<br>
+            <code>git config color.ui true</code><br>
+            Eine Zeile pro Commit in der Logausgabe:<br>
+            <code>git config format.pretty oneline</code><br>
+            Interaktives Hinzufügen von Änderungen:<br>
             <code>git add -i</code>
         </p>
     </div>
@@ -207,11 +203,11 @@
         <h3>Grafische Clients</h3>
         <p>
             <ul>
-                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, Open Source)</a></li>
-                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
-                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, kostenlos)</a></li>
-                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, kostenlos)</a></li>
-                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX)</a></li>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OS X, Open Source)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OS X)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OS X, kostenlos)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OS X, kostenlos)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OS X)</a></li>
             </ul>
         </p>
         <h3>Anleitungen</h3>
@@ -227,7 +223,7 @@
     </div>
     <div class="announcement">
         <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder">
-            <img src="http://d13bhd1byokz0o.cloudfront.net/ad/clarify-announcement-git@2x.png" width="960" height="100" alt="Clarify" />
+            <img src="http://d13bhd1byokz0o.cloudfront.net/ad/clarify-announcement-git@2x.png" width="960" height="100" alt="Clarify">
         </a>
     </div>
     <a name="comments"></a>
@@ -235,13 +231,11 @@
         <h2>Kommentare</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
-
+            var disqus_shortname = 'git-the-simple-guide';
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>

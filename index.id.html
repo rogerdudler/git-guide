@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>git - panduan ringkas - gak pake ribet!</title>
+    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-652147-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function recordOutboundLink(link, category, action) {
+         _gat._getTrackerByName()._trackEvent(category, action);
+         setTimeout('document.location = "' + link.href + '"', 100);
+      }
+    </script>
+</head>
+<body>
+    <div class="scrollblock block-title">
+        <h1>git - panduan ringkas</h1>
+        <p>sekedar panduan ringkas penggunaan git. gak pake ribet ;)</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="meta">
+            oleh <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a> (alih bahasa <a href="//twitter.com/ItangSanjana">Itang Sanjana</a>)
+            <br />kredit <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> dan <a href="http://www.namics.com">Namics</a><br />
+            juga dalam bahasa
+            <a href="index.html">english</a>,
+            <a href="index.de.html">deutsch</a>,
+            <a href="index.es.html">español</a>,
+            <a href="index.fr.html">français</a>,
+            <a href="index.it.html">italiano</a>,
+            <a href="index.nl.html">nederlands</a>,
+            <a href="index.pt_BR.html">português</a>,
+            <a href="index.ru.html">русский</a>,
+            <a href="index.tr.html">türkçe</a>,
+            <br/>
+            <a href="index.my.html">မြန်မာ</a>,
+            <a href="index.ja.html">日本語</a>,
+            <a href="index.zh.html">中文</a>,
+            <a href="index.ko.html">한국어</a>
+            <a href="index.vi.html">Vietnamese</a>
+            <br />
+            silahkan laporkan permasalan ke <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+        </p>
+        <img src="img/arrow.png" alt="" />
+    </div>
+    <!-- setup -->
+    <a name="setup"></a>
+    <div class="scrollblock block-setup">
+        <h2>persiapan</h2>
+        <p>
+            <a href="http://git-scm.com/download/mac">Unduh git untuk OSX</a>
+        </p>
+        <p>
+            <a href="http://msysgit.github.io/">Unduh git untuk Windows</a>
+        </p>
+        <p>
+            <a href="http://book.git-scm.com/2_installing_git.html">Unduh git untuk Linux</a>
+        </p>
+    </div>
+    <a name="create"></a>
+    <div class="scrollblock block-create">
+        <h2>buat repositori baru</h2>
+        <p>
+            buat lah direktori baru, buka dan jalankan <br />
+            <code>git init</code><br />
+            untuk membuat repositori git baru.
+        </p>
+    </div>
+    <a name="checkout"></a>
+    <div class="scrollblock block-checkout">
+        <h2>periksa repositori</h2>
+        <p>
+            buat lah salinan kerja dari repositori lokal dengan menjalankan perintah<br />
+            <code>git clone /jalur/ke/repositori</code><br />
+            saat menggunakan server jarak-jauh, perintahnya menjadi<br />
+            <code>git clone namapengguna@host:/jalur/ke/repositori</code>
+        </p>
+    </div>
+    <a name="trees"></a>
+    <div class="scrollblock block-trees">
+        <h2>alur-kerja</h2>
+        <p>
+            repositori lokal kamu terdiri dari tiga bagian pokok yang disebut "trees" dikelola oleh git.
+            yang pertama adalah <code>Direktori Kerja</code> yang menyimpan berkas aktual.
+            kedua adalah <code>Indeks</code> yang berperan sebagai pengolah data dan
+            terakhir <code>HEAD</code> yang mengarah pada komit terakhir.
+        </p>
+        <img src="img/trees.png" alt="" />
+    </div>
+    <a name="add"></a>
+    <div class="scrollblock block-add">
+        <h2>tambah &amp; komit</h2>
+        <p>
+            kamu bisa melakukan perubahan (penambahan ke <b>Indeks</b>) menggunakan<br />
+            <code>git add &lt;namaberkas&gt;</code><br />
+            <code>git add *</code><br />
+            Ini merupakan langkah awal alur-kerja dasar git. Untuk komit sepenuhnya gunakan<br />
+            <code>git commit -m "Pesan komit"</code><br />
+            Sekarang berkas telah berkomit di <b>HEAD</b>, tapi belum di repositori jarak-jauh.
+        </p>
+    </div>
+    <a name="push"></a>
+    <div class="scrollblock block-remote">
+        <h2>mengirim perubahan</h2>
+        <p>
+            Saat ini perubahan telah tersimpan di <b>HEAD</b> salinan kerja lokal kamu. Untuk mengirimkannya ke repositori jarak-jauh, lakukan <br />
+            <code>git push origin master</code><br />
+            Ubah <i>master</i> sesuai cabang yang kamu inginkan.
+            <br /><br />
+            Jika repositori yang ada belum dikloning dan ingin dihubungkan ke server jarak-jauh, kamu perlu menambahkan<br />
+            <code>git remote add origin &lt;server&gt;</code><br />
+            Sekarang kamu bisa mengirimkan perubahan ke server jarak-jauh yang dituju<br />
+
+        </p>
+    </div>
+    <a name="branching"></a>
+    <div class="scrollblock block-branching">
+        <h2>percabangan</h2>
+        <p>
+            percabangan atau <i>branching</i> digunakan untuk mengembangkan fitur-fitur secara terisolasi. Cabang utama atau <i>master</i> merupakan cabang bawaan ketika kamu membuat repositori. Gunakan cabang lain untuk pengembangan, setelah selesai, gabungkan kembali ke cabang utama.
+        </p>
+        <img src="img/branches.png" alt="" />
+        <p>
+            buat cabang baru dengan nama "fitur_x" dan beralih kedalamnya menggunakan<br />
+            <code>git checkout -b fitur_x</code><br />
+            beralih kembali ke <i>master</i><br />
+            <code>git checkout master</code><br />
+            dan hapus cabang yang tadi dibuat<br />
+            <code>git branch -d fitur_x</code><br />
+            suatu cabang <em>tidak terbuka untuk yang lainnya</em> kecuali jika kamu mengirimkannya ke repositori jarak-jauh.<br />
+            <code>git push origin &lt;cabang&gt;</code>
+        </p>
+    </div>
+    <a name="update"></a>
+    <div class="scrollblock block-merging">
+        <h2>perbaru &amp; gabung</h2>
+        <p>
+            untuk memperbarui repositori lokal ke komit terkini, lakukan <br />
+            <code>git pull</code><br />
+            dari direktori kerja kamu untuk <em>mengambil</em> dan <em>menggabungkan</em> perubahan jarak-jauh.<br />
+            untuk menggabungkan cabang lain ke cabang aktif (misal <i>master</i>), gunakan<br />
+            <code>git merge &lt;cabang&gt;</code><br />
+            pada kasus diatas, git mencoba menggabungkan perubahan secara otomatis. Sayangnya hal ini tak selalu berjalan mulus dan bisa menyebabkan <em>konflik</em>.
+            Kamu lah yang bertanggung jawab menggabungkan <em>konflik</em> tersebut
+            secara manual dengan menyunting berkas yang ditunjukkan git. Setelah itu, kamu perlu memarkahinya dengan<br />
+            <code>git add &lt;namaberkas&gt;</code><br />
+            sebelum penggabungan berlaku, kamu bisa melakukan pratinjau menggunakan<br />
+            <code>git diff &lt;cabang_asal&gt; &lt;cabang_tujuan&gt;</code>
+        </p>
+    </div>
+    <a name="tagging"></a>
+    <div class="scrollblock block-tagging">
+        <h2>menandai</h2>
+        <p>
+            sangat dianjurkan membuat penanda atau <em>tags</em> untuk perangkat lunak yang dirilis. Hal ini amat lah lazim, yang juga terjadi di SVN. Kamu bisa membuat penanda baru dengan nama <em>1.0.0</em> dengan menjalankan<br />
+            <code>git tag 1.0.0 1b2e1d63ff</code><br />
+            <em>1b2e1d63ff</em> adalah 10 karakter pertama dari identitas komit yang ingin kamu referensikan ke penanda. Kamu bisa mendapatkan identitas komit dengan melihat... <br />
+        </p>
+    </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>log</h2>
+        <p>
+            dalam bentuknya yang paling sederhana, kamu bisa mempelajari riwayat repositori menggunakan..
+            <code>git log</code><br />
+            kamu bisa menambahkan banyak parameter untuk menampilkan log sesuai keinginan. Untuk melihat komit penulis tertentu:<br />
+            <code>git log --author=bob</code><br />
+            Untuk melihat log yang dimampatkan, satu baris per komit:<br />
+            <code>git log --pretty=oneline</code><br />
+            Atau mungkin kamu ingin melihat pohon <i>ASCII art</i> seluruh percabangan disertai nama dan penandanya: <br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            Sekedar melihat berkas yang berubah: <br />
+            <code>git log --name-status</code><br />
+            Ini baru sedikit saja dari sekian banyak parameter yang bisa kamu gunakan. Lebih jauh lagi, lihat
+            <code>git log --help</code><br />
+        </p>
+    </div>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>mengembalikan perubahan lokal</h2>
+        <p>
+            Seandainya kamu melakukan kesalahan (yang tentunya tak pernah terjadi ;) kamu bisa mengembalikannya menggunakan perintah<br />
+            <code>git checkout -- &lt;namaberkas&gt;</code><br />
+            perintah di atas mengembalikan perubahan di dalam pokok kerja kamu dengan konten terakhir dari <i>HEAD</i>. Perubahan dan berkas baru yang telah ditambahkan ke indeks akan tetap tersimpan.
+        </p>
+        <p>
+            Jika kamu ingin menggugurkan perubahan dan komit lokal seutuhnya, ambil riwayat terakhir dari server dan arahkan ke cabang <i>master</i> lokal seperti ini<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+    </div>
+    <a name="hints"></a>
+    <div class="scrollblock block-hints">
+        <h2>petunjuk berguna</h2>
+        <p>
+            GUI git bawaan<br />
+            <code>gitk</code><br />
+            menggunakan output git penuh warna<br />
+            <code>git config color.ui true</code><br />
+            menunjukkan log satu baris per komit<br />
+            <code>git config format.pretty oneline</code><br />
+            menggunakan penambahan interaktif<br />
+            <code>git add -i</code>
+        </p>
+    </div>
+    <a name="resources"></a>
+    <div class="scrollblock block-resources">
+        <h2>tautan & sumber</h2>
+        <h3>klien grafis</h3>
+        <p>
+            <ul>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, sumber terbuka)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, bebas)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, bebas)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
+            </ul>
+        </p>
+        <h3>panduan</h3>
+        <p>
+            <ul>
+                <li><a href="http://git-scm.com/book/id">Buku Komunitas Git</a></li>
+                <li><a href="http://progit.org/book/">Git Pro</a></li>
+                <li><a href="http://think-like-a-git.net/">Berfikir seperti git</a></li>
+                <li><a href="http://help.github.com/">Bantuan GitHub</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">Panduan Git Visual</a></li>
+            </ul>
+        </p>
+        <h3>bantuan</h3>
+        <p>
+            <ul>
+                <li><a href="http://groups.google.com/group/git-users/">Milis Pengguna Git</a></li>
+                <li><a href="http://jk.gs/git/">#git di irc.freenode.net</a></li>
+            </ul>
+        </p>
+    </div>
+    <a name="comments"></a>
+    <div class="scrollblock block-comments">
+        <h2>Komentar</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+</body>
+</html>

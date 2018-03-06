@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>git - petit guide - no deep shit!</title>
         <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/normalize.css" type="text/css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <script type="text/javascript">
             var _gaq = _gaq || [];
@@ -43,27 +43,24 @@
             <p class="meta">
                 par <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a> (translation by <a href="https://github.com/KokaKiwi">KokaKiwi</a>)
                 <br />Remerciements &agrave; <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a>, <a href="http://www.namics.com">Namics</a><br />
-                this guide in 
+                this guide in
                 <a href="index.html">english</a>,
-                <a href="index.de.html">deutsch</a>, 
-                <a href="index.es.html">español</a>, 
-                <a href="index.it.html">italiano</a>, 
-                <a href="index.nl.html">nederlands</a>, 
-                <a href="index.pt_BR.html">português</a>, 
+                <a href="index.de.html">deutsch</a>,
+                <a href="index.es.html">español</a>,
+                <a href="index.id.html">indonesian</a>,
+                <a href="index.it.html">italiano</a>,
+                <a href="index.nl.html">nederlands</a>,
+                <a href="index.pl.html">polski</a>,
+                <a href="index.pt_BR.html">português</a>,
                 <a href="index.ru.html">русский</a>,
                 <a href="index.tr.html">türkçe</a>,
                 <br/>
                 <a href="index.my.html">မြန်မာ</a>,
-                <a href="index.ja.html">日本語</a>, 
-                <a href="index.zh.html">中文</a>, 
+                <a href="index.ja.html">日本語</a>,
+                <a href="index.zh.html">中文</a>,
                 <a href="index.ko.html">한국어</a>
                 <br />
             </p>
-            <div class="announcement">
-                <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
-                    <img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
-                </a>
-            </div>
             <img src="img/arrow.png" alt="" />
         </div>
         <!-- setup -->
@@ -71,10 +68,10 @@
         <div class="scrollblock block-setup">
             <h2>installation</h2>
             <p>
-                <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">T&eacute;l&eacute;charger git pour Mac OSX</a>
+                <a href="http://git-scm.com/download/mac">T&eacute;l&eacute;charger git pour Mac OSX</a>
             </p>
             <p>
-                <a href="http://code.google.com/p/msysgit/downloads/list?can=3">T&eacute;l&eacute;charger git pour Windows</a>
+                <a href="http://msysgit.github.io/">T&eacute;l&eacute;charger git pour Windows</a>
             </p>
             <p>
                 <a href="http://book.git-scm.com/2_installing_git.html">T&eacute;l&eacute;charger git pour Linux</a>
@@ -106,7 +103,7 @@
                 votre d&eacute;p&ocirc;t local est compos&eacute; de trois &quot;arbres&quot; g&eacute;r&eacute;s par git.
                 le premier est votre <code>espace de travail</code> qui contient réellement vos fichiers.
                 le second est un <code>Index</code> qui joue un r&ocirc;le d'espace de transit pour vos fichiers et
-                enfin <code>HEAD</code> qui pointe vers la derni&egrave;re validation que vous ayez fait.
+                enfin <code>HEAD</code> qui pointe vers la derni&egrave;re validation que vous ayez faite.
             </p>
             <img src="img/trees.png" alt="" />
         </div>
@@ -255,7 +252,7 @@
             var dsq = document.createElement('script');
             dsq.type = 'text/javascript';
             dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>

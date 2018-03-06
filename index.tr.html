@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>git - basit rehber - atla deve değil!</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -38,8 +38,10 @@
             <a href="index.de.html">deutsch</a>,
             <a href="index.es.html">español</a>,
             <a href="index.fr.html">français</a>,
+            <a href="index.id.html">indonesian</a>,
             <a href="index.it.html">italiano</a>,
             <a href="index.nl.html">nederlands</a>,
+            <a href="index.pl.html">polski</a>,
             <a href="index.pt_BR.html">português</a>,
             <a href="index.ru.html">русский</a>,
             <br/>
@@ -50,11 +52,6 @@
             <br />
             please report issues on <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
         </p>
-        <div class="announcement">
-            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
-                <img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
-            </a>
-        </div>
         <img src="img/arrow.png" alt="" />
     </div>
     <!-- setup -->
@@ -62,10 +59,10 @@
     <div class="scrollblock block-setup">
         <h2>kurulum</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">OSX için git'i İndir</a>
+            <a href="http://git-scm.com/download/mac">OSX için git'i İndir</a>
         </p>
         <p>
-            <a href="http://code.google.com/p/msysgit/downloads/list?can=3">Windows için git'i İndir</a>
+            <a href="http://msysgit.github.io/">Windows için git'i İndir</a>
         </p>
         <p>
             <a href="http://book.git-scm.com/2_installing_git.html">Linux için git'i İndir</a>
@@ -179,7 +176,7 @@
     <div class="scrollblock block-checkout-replace">
         <h2>yerel değişiklikleri geri almak</h2>
         <p>
-            Yanlış birşey yapmanız durumunda (tabi ki böyle şeyler hiç olmaz ;) yerel değişiklikleri geri almak için<br />
+            Yanlış birşey yapmanız durumunda (tabi ki böyle şeyler hiç olmaz ;)) yerel değişiklikleri geri almak için<br />
             <code>git checkout -- &lt;dosyaadı&gt;</code><br />
             bu değişikliklerinizi HEAD içerisindeki son içerik ile değiştirir. Index'e önceden eklenmiş değişiklikler ve yeni dosyalar korunacaktır.
         </p>
@@ -243,7 +240,7 @@
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>

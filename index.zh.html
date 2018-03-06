@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>git - the simple guide - no deep shit!</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -26,35 +26,33 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git - 简易指南</h1>
-        <p>助你开始使用 git 的简易指南，木有高深内容，;)。</p>
+        <h1>git - 简明指南</h1>
+        <p>助你入门 git 的简明指南，木有高深内容 ;)</p>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
             作者：<a href="http://www.twitter.com/rogerdudler">罗杰·杜德勒</a>
-            <br />感谢：<a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
-            其他语言 
+            <br />感谢：<a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> 和 <a href="http://www.namics.com">Namics</a><br />
+            其他语言
             <a href="index.html">english</a>,
-            <a href="index.de.html">deutsch</a>, 
-            <a href="index.es.html">español</a>, 
-            <a href="index.fr.html">français</a>, 
-            <a href="index.it.html">italiano</a>, 
-            <a href="index.nl.html">nederlands</a>, 
-            <a href="index.pt_BR.html">português</a>, 
+            <a href="index.de.html">deutsch</a>,
+            <a href="index.es.html">español</a>,
+            <a href="index.fr.html">français</a>,
+            <a href="index.id.html">indonesian</a>,
+            <a href="index.it.html">italiano</a>,
+            <a href="index.nl.html">nederlands</a>,
+            <a href="index.pl.html">polski</a>,
+            <a href="index.pt_BR.html">português</a>,
             <a href="index.ru.html">русский</a>,
             <a href="index.tr.html">türkçe</a>,
             <br/>
             <a href="index.my.html">မြန်မာ</a>,
-            <a href="index.ja.html">日本語</a>, 
+            <a href="index.ja.html">日本語</a>,
             <a href="index.ko.html">한국어</a>
+            <a href="index.vi.html">Vietnamese</a>
             <br />
-            如有纰漏，请到 <a href="https://github.com/rogerdudler/git-guide/issues">github</a> 填报
+            如有纰漏，请在 <a href="https://github.com/rogerdudler/git-guide/issues">github</a> 提报问题
         </p>
-        <div class="announcement">
-            <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder_frontify">
-                <img src="http://frontify.com/assets/img/frontify-announcement-git.png" width="960" height="100" alt="Frontify - Collaboration for Web Designers &amp; Front-End Developers" />
-            </a>
-        </div>
         <img src="img/arrow.png" alt="" />
     </div>
     <!-- setup -->
@@ -62,10 +60,10 @@
     <div class="scrollblock block-setup">
         <h2>安装</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">下载 git OSX 版</a>
+            <a href="http://git-scm.com/download/mac">下载 git OSX 版</a>
         </p>
         <p>
-            <a href="http://code.google.com/p/msysgit/downloads/list?can=3">下载 git Windows 版</a>
+            <a href="http://git-for-windows.github.io/">下载 git Windows 版</a>
         </p>
         <p>
             <a href="http://book.git-scm.com/2_installing_git.html">下载 git Linux 版</a>
@@ -94,15 +92,15 @@
     <div class="scrollblock block-trees">
         <h2>工作流</h2>
         <p>
-            你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 <code>工作目录</code>，它持有实际文件；第二个是 <code>缓存区（Index）</code>，它像个缓存区域，临时保存你的改动；最后是 <code>HEAD</code>，指向你最近一次提交后的结果。
+            你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 <code>工作目录</code>，它持有实际文件；第二个是 <code>暂存区（Index）</code>，它像个缓存区域，临时保存你的改动；最后是 <code>HEAD</code>，它指向你最后一次提交的结果。
         </p>
         <img src="img/trees.png" alt="" />
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>添加与提交</h2>
+        <h2>添加和提交</h2>
         <p>
-		    你可以计划改动（把它们添加到缓存区），使用如下命令：<br />
+		    你可以提出更改（把它们添加到暂存区），使用如下命令：<br />
             <code>git add &lt;filename&gt;</code><br />
             <code>git add *</code><br />
             这是 git 基本工作流程的第一步；使用如下命令以实际提交改动：<br />
@@ -128,7 +126,7 @@
     <div class="scrollblock block-branching">
         <h2>分支</h2>
         <p>
-    		分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<i>master</i> 是“默认的”。在其他分支上进行开发，完成后再将它们合并到主分支上。
+    		分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<i>master</i> 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。
 		</p>
         <img src="img/branches.png" alt="" />
         <p>
@@ -151,10 +149,10 @@
             以在你的工作目录中 <i>获取（fetch）</i> 并 <i>合并（merge）</i> 远端的改动。<br />
             要合并其他分支到你的当前分支（例如 master），执行：<br />
             <code>git merge &lt;branch&gt;</code><br />
-            两种情况下，git 都会尝试去自动合并改动。不幸的是，自动合并并非次次都能成功，并可能导致 <i>冲突（conflicts）</i>。
-            这时候就需要你修改这些文件来人肉合并这些 <i>冲突（conflicts）</i> 了。改完之后，你需要执行如下命令以将它们标记为合并成功：<br />
+            在这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现<i>冲突（conflicts）</i>。
+            这时候就需要你修改这些文件来手动合并这些<i>冲突（conflicts）</i>。改完之后，你需要执行如下命令以将它们标记为合并成功：<br />
             <code>git add &lt;filename&gt;</code><br />
-            在合并改动之前，也可以使用如下命令查看：<br />
+            在合并改动之前，你可以使用如下命令预览差异：<br />
             <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
         </p>
     </div>
@@ -162,69 +160,82 @@
     <div class="scrollblock block-tagging">
         <h2>标签</h2>
         <p>
-            在软件发布时创建标签，是被推荐的。这是个旧有概念，在 SVN 中也有。可以执行如下命令以创建一个叫做 <i>1.0.0</i> 的标签：<br />
+            为软件发布创建标签是推荐的。这个概念早已存在，在 SVN 中也有。你可以执行如下命令创建一个叫做 <i>1.0.0</i> 的标签：<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            <i>1b2e1d63ff</i> 是你想要标记的提交 ID 的前 10 位字符。使用如下命令获取提交 ID：<br />
+            <i>1b2e1d63ff</i> 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：<br />
             <code>git log</code><br />
-            你也可以用该提交 ID 的少一些的前几位，只要它是唯一的。
+            你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。
+        </p>
+    </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>log</h2>
+        <p>
+            如果你想了解本地仓库的历史记录，最简单的命令就是使用: <br />
+            <code>git log</code><br />
+            你可以添加一些参数来修改他的输出，从而得到自己想要的结果。 只看某一个人的提交记录:<br />
+            <code>git log --author=bob</code><br />
+            一个压缩后的每一条提交记录只占一行的输出:<br />
+            <code>git log --pretty=oneline</code><br />
+            或者你想通过 ASCII 艺术的树形结构来展示所有的分支, 每个分支都标示了他的名字和标签: <br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            看看哪些文件改变了: <br />
+            <code>git log --name-status</code><br />
+            这些只是你可以使用的参数中很小的一部分。更多的信息，参考：<br />
+            <code>git log --help</code><br />
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
         <h2>替换本地改动</h2>
         <p>
-            假如你做错事（自然，这是不可能的），你可以使用如下命令替换掉本地改动：<br />
+            假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
-			此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到缓存区的改动，以及新文件，都不受影响。
+			此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到暂存区的改动以及新文件都不会受到影响。
 		</p>
         <p>
-            假如你想要丢弃你所有的本地改动与提交，可以到服务器上获取最新的版本并将你本地主分支指向到它：<br />
+            假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>有用的贴士</h2>
+        <h2>实用小贴士</h2>
         <p>
 			内建的图形化 git：<br />
             <code>gitk</code><br />
             彩色的 git 输出：<br />
             <code>git config color.ui true</code><br />
-            显示历史记录时，只显示一行注释信息：<br />
+            显示历史记录时，每个提交的信息只显示一行：<br />
             <code>git config format.pretty oneline</code><br />
-            交互地添加文件至缓存区：<br />
+            交互式添加文件到暂存区：<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
         <h2>链接与资源</h2>
-        <h3>图形化界面</h3>
+        <h3>图形化客户端</h3>
         <p>
             <ul>
-                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, 开源软件)</a></li>
                 <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
-                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, free)</a></li>
-                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
-                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, 免费)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, 免费)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
             </ul>
         </p>
-        <h3>指南与手册</h3>
+        <h3>指南和手册</h3>
         <p>
             <ul>
                 <li><a href="http://book.git-scm.com/">Git 社区参考书</a></li>
                 <li><a href="http://progit.org/book/">专业 Git</a></li>
-                <li><a href="http://think-like-a-git.net/">如 git 思考</a></li>
+                <li><a href="http://think-like-a-git.net/">像 git 那样思考</a></li>
                 <li><a href="http://help.github.com/">GitHub 帮助</a></li>
-                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">图形化的 Git 指南一则</a></li>
+                <li><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解 Git</a></li>
             </ul>
         </p>
-    </div>
-    <div class="announcement">
-        <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder">
-            <img src="http://d13bhd1byokz0o.cloudfront.net/ad/clarify-announcement-git@2x.png" width="960" height="100" alt="Clarify" />
-        </a>
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
@@ -237,11 +248,11 @@
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>启用 JavaScript 才能查看 <a href="http://disqus.com/?ref_noscript">Disqus 提供的评论。</a></noscript>
     </div>
     <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
     <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
