@@ -177,25 +177,25 @@
     <div class="scrollblock block-log">
         <h2>log</h2>
         <p>
-            in its simplest form, you can study repository history using..
+            usant-lo, pots veure l'historial del repositori executant:
             <code>git log</code><br />
-            You can add a lot of parameters to make the log look like what you want. To see only the commits of a certain author:<br />
-            <code>git log --author=bob</code><br />
-            To see a very compressed log where each commit is one line:<br />
+            pots afegir diversos paràmetres per a canviar la informació que es visualitza. Per a veure els commits realitzats per un usuari, executa:<br />
+            <code>git log --author=Jordi</code><br />
+            Per a una visió reduïda a una línia per commit:<br />
             <code>git log --pretty=oneline</code><br />
-            Or maybe you want to see an ASCII art tree of all the branches, decorated with the names of tags and branches: <br />
+            O si ho vols veure en format d'arbre format per codis ASCII amb els noms i etiquetes de cada branca: <br />
             <code>git log --graph --oneline --decorate --all</code><br />
-            See only which files have changed: <br />
+            Per a veure només els arxius que han canviat: <br />
             <code>git log --name-status</code><br />
-            These are just a few of the possible parameters you can use. For more, see
+            Aquests només son un tast de tots els possibles paràmetres. Per a més, consultar
             <code>git log --help</code><br />
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
+        <h2>Substitueix canvis locals</h2>
         <p>
-            In case you did something wrong, which for sure never happens ;), you can replace local changes using the command<br />
+            En cas que cometis un error,  ;), you can replace local changes using the command<br />
             <code>git checkout -- &lt;filename&gt;</code><br />
             this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
         </p>
