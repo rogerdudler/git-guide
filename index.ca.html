@@ -96,7 +96,7 @@
         <p>
             el teu repositori local és format per tres "arbres" gestionats per git.
             El primer és el teu <code>Directori de Treball</code> que guarda els arxius amb els que s'està treballant.
-            El segon és l' <code>Índex</code> que actua com a zona espai de trànsit.
+            El segon és l' <code>Índex</code> que actua com a zona o espai de trànsit.
             I per últim el <code>HEAD</code> que apunta a l'últim commit que has fet.
         </p>
         <img src="img/trees.png" alt="" />
@@ -115,13 +115,13 @@
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>afegiment els canvis</h2>
+        <h2>enviament de canvis</h2>
         <p>
             Per ara els teus canvis es troben al <b>HEAD</b> del teu repositori local. Per a enviar aquests canvis al teu repositori remot, executa<br />
             <code>git push origin master</code><br />
-            Canvia <i>master</i> al nom de la branca a la qual vols enviar els canvis.
+            Canviant <i>master</i> pel nom de la branca a la qual vols enviar els canvis.
             <br /><br />
-            Si no has clonta cap repositori existent i vols connectar el teu repositori local a un servidor remot, necessites afegir-lo amb <br />
+            Si no has clonat cap repositori existent i vols connectar el teu repositori local a un servidor remot, necessites afegir-lo amb <br />
             <code>git remote add origin &lt;server&gt;</code><br />
             Ara ja ets capaç d'afegir els canvis al servidor escollit.<br />
 
@@ -136,7 +136,7 @@
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            Crea una nova branca anomenada "funcio_x" i canvia't a ella executant<br />
+            Crea una nova branca anomenada "funcio_x" i mou-te a ella executant<br />
             <code>git checkout -b funcio_x</code><br />
             Torna a master  <br />
             <code>git checkout master</code><br />
@@ -155,11 +155,11 @@
             al teu repositori local per a <i>demanar</i> i <i>ajuntar</i> els canvis remots.<br />
             Per a ajuntar una altra branca a la teva branca activa (per exemple master), executa<br />
             <code>git merge &lt;branca&gt;</code><br />
-            En ambdos casos git intenta ajuntar els canvis. Per desgràcia, no sempre ho pot aconseguir i aiò genera <i>conflictes</i>.
+            En ambdos casos git intenta ajuntar els canvis. Per desgràcia, no sempre ho pot aconseguir i això genera <i>conflictes</i>.
             És la teva obligació solucionar aquests <i>conflictes</i>
-            manualment editant els arxius que t'indica git. Un cop fets els canvis necessaris, els has de marcar com a ajuntats amb<br />
+            manualment editant els arxius que t'indica git. Un cop fets els canvis necessaris, els has de marcar per a ajuntar amb<br />
             <code>git add &lt;nom-del-fitxer&gt;</code><br />
-            abans d'ajuntar els canvis, també els pots previsualitzar usant la comanda<br />
+            abans d'unir els canvis, també els pots previsualitzar usant la comanda<br />
             <code>git diff &lt;branca_origen&gt; &lt;branca_objectiu&gt;</code>
         </p>
     </div>
@@ -195,44 +195,44 @@
     <div class="scrollblock block-checkout-replace">
         <h2>Substitueix canvis locals</h2>
         <p>
-            En cas que cometis un error,  ;), you can replace local changes using the command<br />
-            <code>git checkout -- &lt;filename&gt;</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+            En cas que cometis un error, que segun que mai passa;), pots revertir els canvis locals amb la comanda:<br />
+            <code>git checkout -- &lt;nom-del-fitxer&gt;</code><br />
+            això reverteix els canvis del teu arbre al contingut del HEAD. Els canvis afegits a l'índex, juntament amb els nous arxius, es conserven.
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            Si, en canvi, vols revertir tots els teus canvis i commits locals, demana l'última versió del servidor i apunta-la des del teu repositori local de la següent manera<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
     </div>
     <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>useful hints</h2>
+        <h2>consells útils</h2>
         <p>
-            built-in git GUI<br />
+            interfície gràfica ja instal·lada<br />
             <code>gitk</code><br />
-            use colorful git output<br />
+            usa la sortida de git amb colors<br />
             <code>git config color.ui true</code><br />
-            show log on just one line per commit<br />
+            mostra el log amb una única línia per commit<br />
             <code>git config format.pretty oneline</code><br />
-            use interactive adding<br />
+            usa afegiment d'arxius interactiu<br />
             <code>git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
-        <h2>links & resources</h2>
-        <h3>graphical clients</h3>
+        <h2>links & recursos</h2>
+        <h3>clients gràfics</h3>
         <p>
             <ul>
-                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, programari lliure)</a></li>
                 <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
-                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, free)</a></li>
-                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, gratuït)</a></li>
+                <li><a href="http://mac.github.com/">GitHub per a Mac (OSX, gratuït)</a></li>
                 <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
             </ul>
         </p>
-        <h3>guides</h3>
+        <h3>guies</h3>
         <p>
             <ul>
                 <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
@@ -242,7 +242,7 @@
                 <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
             </ul>
         </p>
-        <h3>get help</h3>
+        <h3>demana ajuda</h3>
         <p>
             <ul>
                 <li><a href="http://groups.google.com/group/git-users/">Git User Mailing List</a></li>
@@ -252,7 +252,7 @@
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
-        <h2>comments</h2>
+        <h2>comentaris</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
