@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git - guia senzilla - sense complicacions!</title>
+    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-652147-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function recordOutboundLink(link, category, action) {
+         _gat._getTrackerByName()._trackEvent(category, action);
+         setTimeout('document.location = "' + link.href + '"', 100);
+      }
+    </script>
+</head>
+<body>
+    <div class="scrollblock block-title">
+        <h1>git - guia senzilla</h1>
+        <p>Una guia senzilla per a iniciar-se en git. Sense complicacions ;)</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="meta">
+            Per <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a> (traduït per <a href="http://www.twitter.com/TTinan">Martí Rubio</a>)
+            <br />Crèdit per a <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> i <a href="http://www.namics.com">Namics</a><br />
+            la mateixa guia en
+            <a href="index.html">english</a>,
+            <a href="index.de.html">deutsch</a>,
+            <a href="index.es.html">español</a>,
+            <a href="index.fr.html">français</a>,
+            <a href="index.id.html">indonesian</a>,
+            <a href="index.it.html">italiano</a>,
+            <a href="index.nl.html">nederlands</a>,
+            <a href="index.pl.html">polski</a>,
+            <a href="index.pt_BR.html">português</a>,
+            <a href="index.ru.html">русский</a>,
+            <a href="index.tr.html">türkçe</a>,
+            <br/>
+            <a href="index.my.html">မြန်မာ</a>,
+            <a href="index.ja.html">日本語</a>,
+            <a href="index.zh.html">中文</a>,
+            <a href="index.ko.html">한국어</a>
+            <a href="index.vi.html">Vietnamese</a>
+            <br />
+            si us plau, informeu de qualsevol problema a <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+        </p>
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=gitguide" id="_carbonads_js"></script>
+        <img src="img/arrow.png" alt="" />
+    </div>
+    <!-- setup -->
+    <a name="configuració"></a>
+    <div class="scrollblock block-setup">
+        <h2>configuració</h2>
+        <p>
+            
+            <a href="http://git-scm.com/download/mac">Descarrega git per a OSX</a>
+        </p>
+        <p>
+            <a href="http://msysgit.github.io/">Descarrega git per a Windows</a>
+        </p>
+        <p>
+            <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Descarrega git per a Linux</a>
+        </p>
+    </div>
+    <a name="create"></a>
+    <div class="scrollblock block-create">
+        <h2>crea un nou repositori</h2>
+        <p>
+            Crea una nova carpeta, obre-la i executa <br />
+            <code>git init</code><br />
+            per a crear un nou repositori de git.
+        </p>
+    </div>
+    <a name="checkout"></a>
+    <div class="scrollblock block-checkout">
+        <h2>fer checkout a un repositori</h2>
+        <p>
+            crea una copia funcional d'un repositori local executant la comanda <br />
+            <code>git clone /ruta/al/repositori</code><br />
+            si uses un servidor remot, executa<br />
+            <code>git clone usuari@host:/ruta/al/repositori</code>
+        </p>
+    </div>
+    <a name="trees"></a>
+    <div class="scrollblock block-trees">
+        <h2>flux de feina</h2>
+        <p>
+            el teu repositori local és format per tres "arbres" gestionats per git.
+            El primer és el teu <code>Directori de Treball</code> que guarda els arxius amb els que s'està treballant.
+            El segon és l' <code>Índex</code> que actua com a zona o espai de trànsit.
+            I per últim el <code>HEAD</code> que apunta a l'últim commit que has fet.
+        </p>
+        <img src="img/trees.png" alt="" />
+    </div>
+    <a name="add"></a>
+    <div class="scrollblock block-add">
+        <h2>afegir &amp; cometre</h2>
+        <p>
+            Pots registrar canvis (afegeix-los a l' <b>Índex</b>) executant<br />
+            <code>git add &lt;nom-del-fitxer&gt;</code><br />
+            <code>git add *</code><br />
+            Aquest és el primer pas en un flux de treball bàsic. Per a cometre els canvis executa<br />
+            <code>git commit -m "Missatge del commit"</code><br />
+            Ara l'arxiu ja s'ha afegit al <b>HEAD</b>, però no encara al repositori remot. 
+        </p>
+    </div>
+    <a name="push"></a>
+    <div class="scrollblock block-remote">
+        <h2>enviament de canvis</h2>
+        <p>
+            Per ara els teus canvis es troben al <b>HEAD</b> del teu repositori local. Per a enviar aquests canvis al teu repositori remot, executa<br />
+            <code>git push origin master</code><br />
+            Canviant <i>master</i> pel nom de la branca a la qual vols enviar els canvis.
+            <br /><br />
+            Si no has clonat cap repositori existent i vols connectar el teu repositori local a un servidor remot, necessites afegir-lo amb <br />
+            <code>git remote add origin &lt;server&gt;</code><br />
+            Ara ja ets capaç d'afegir els canvis al servidor escollit.<br />
+
+        </p>
+    </div>
+    <a name="branching"></a>
+    <div class="scrollblock block-branching">
+        <h2>branques</h2>
+        <p>
+            Les branques s'usen per a desenvolupar funcions aïllades les unes de les altres. La branca <i>master</i> és la branca per defecte quan crees un repositori.
+            S'usen altres branques per a desenvolupar i finalment s'ajunten un altre cop a master quan es completen.
+        </p>
+        <img src="img/branches.png" alt="" />
+        <p>
+            Crea una nova branca anomenada "funcio_x" i mou-te a ella executant<br />
+            <code>git checkout -b funcio_x</code><br />
+            Torna a master  <br />
+            <code>git checkout master</code><br />
+            i borra la branca funcio_x executant<br />
+            <code>git branch -d funcio_x</code><br />
+            La branca <i>no és accessible per als demés</i> excepte si afegeixes els canvis al repositori remot<br />
+            <code>git push origin &lt;branca&gt;</code>
+        </p>
+    </div>
+    <a name="update"></a>
+    <div class="scrollblock block-merging">
+        <h2>actualitza &amp; ajunta</h2>
+        <p>
+            Per a actualitzar el teu repositori local a l'últim commit, executa<br />
+            <code>git pull</code><br />
+            al teu repositori local per a <i>demanar</i> i <i>ajuntar</i> els canvis remots.<br />
+            Per a ajuntar una altra branca a la teva branca activa (per exemple master), executa<br />
+            <code>git merge &lt;branca&gt;</code><br />
+            En ambdos casos git intenta ajuntar els canvis. Per desgràcia, no sempre ho pot aconseguir i això genera <i>conflictes</i>.
+            És la teva obligació solucionar aquests <i>conflictes</i>
+            manualment editant els arxius que t'indica git. Un cop fets els canvis necessaris, els has de marcar per a ajuntar amb<br />
+            <code>git add &lt;nom-del-fitxer&gt;</code><br />
+            abans d'unir els canvis, també els pots previsualitzar usant la comanda<br />
+            <code>git diff &lt;branca_origen&gt; &lt;branca_objectiu&gt;</code>
+        </p>
+    </div>
+    <a name="tagging"></a>
+    <div class="scrollblock block-tagging">
+        <h2>etiquetatge</h2>
+        <p>
+            És recomanable crear etiquetes per a versions de software. És un concepte reconegut, que també existeix a SVN. Pots crear una nova etiqueta anomenada <i>1.0.0</i> executant<br />
+            <code>git tag 1.0.0 1b2e1d63ff</code><br />
+            on <i>1b2e1d63ff</i>fa referència als 10 primers caràcters del commit al qual es vol afegir l'etiqueta.
+            Pots obtenir l'ID del commit mirant el... <br />
+        </p>
+    </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>log</h2>
+        <p>
+            usant-lo, pots veure l'historial del repositori executant:
+            <code>git log</code><br />
+            pots afegir diversos paràmetres per a canviar la informació que es visualitza. Per a veure els commits realitzats per un usuari, executa:<br />
+            <code>git log --author=Jordi</code><br />
+            Per a una visió reduïda a una línia per commit:<br />
+            <code>git log --pretty=oneline</code><br />
+            O si ho vols veure en format d'arbre format per codis ASCII amb els noms i etiquetes de cada branca: <br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            Per a veure només els arxius que han canviat: <br />
+            <code>git log --name-status</code><br />
+            Aquests només son un tast de tots els possibles paràmetres. Per a més, consultar
+            <code>git log --help</code><br />
+        </p>
+    </div>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>Substitueix canvis locals</h2>
+        <p>
+            En cas que cometis un error, que segun que mai passa;), pots revertir els canvis locals amb la comanda:<br />
+            <code>git checkout -- &lt;nom-del-fitxer&gt;</code><br />
+            això reverteix els canvis del teu arbre al contingut del HEAD. Els canvis afegits a l'índex, juntament amb els nous arxius, es conserven.
+        </p>
+        <p>
+            Si, en canvi, vols revertir tots els teus canvis i commits locals, demana l'última versió del servidor i apunta-la des del teu repositori local de la següent manera<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+    </div>
+    <a name="hints"></a>
+    <div class="scrollblock block-hints">
+        <h2>consells útils</h2>
+        <p>
+            interfície gràfica ja instal·lada<br />
+            <code>gitk</code><br />
+            usa la sortida de git amb colors<br />
+            <code>git config color.ui true</code><br />
+            mostra el log amb una única línia per commit<br />
+            <code>git config format.pretty oneline</code><br />
+            usa afegiment d'arxius interactiu<br />
+            <code>git add -i</code>
+        </p>
+    </div>
+    <a name="resources"></a>
+    <div class="scrollblock block-resources">
+        <h2>links & recursos</h2>
+        <h3>clients gràfics</h3>
+        <p>
+            <ul>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, programari lliure)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, gratuït)</a></li>
+                <li><a href="http://mac.github.com/">GitHub per a Mac (OSX, gratuït)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
+            </ul>
+        </p>
+        <h3>guies</h3>
+        <p>
+            <ul>
+                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+                <li><a href="http://progit.org/book/">Pro Git</a></li>
+                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
+                <li><a href="http://help.github.com/">GitHub Help</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+            </ul>
+        </p>
+        <h3>demana ajuda</h3>
+        <p>
+            <ul>
+                <li><a href="http://groups.google.com/group/git-users/">Git User Mailing List</a></li>
+                <li><a href="http://jk.gs/git/">#git on irc.freenode.net</a></li>
+            </ul>
+        </p>
+    </div>
+    <a name="comments"></a>
+    <div class="scrollblock block-comments">
+        <h2>comentaris</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+</body>
+</html>
+
