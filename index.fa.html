@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - راهنمای ساده - بدون مزخرفات عمیق!</title>
+	<title>راهنمای سادۀ گیت (git)</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -37,17 +37,17 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git -  راهنمای ساده</h1>
-        <p>یک راهنمای ساده برای شروع کار با گیت. بدون مزخرفات عمیق ;)</p>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <h1>راهنمای سادۀ گیت (git)</h1>
+        <p>مقدمه‌ای برای شروع کار با گیت</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">توییت</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
             توسط <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
             <br />با تشکر از <a href="http://www.twitter.com/tfnico"><span dir="ltr">@tfnico</span></a>، <a href="http://www.twitter.com/fhd" ><span dir="ltr">@fhd</span></a> و <a href="http://www.namics.com">Namics</a><br />
             ترجمه فارسی توسط <a href="http://www.twitter.com/hamed"><span dir="ltr">@hamed</span></a>
-            <br />با تشکر از <a href="http://www.twitter.com/rastikerdar"><span dir="ltr">@rastikerdar</span></a> برای فونت زیبای <a href="http://rastikerdar.github.io/vazir-font/">وزیر</a><br />
+            <br />سپاس از آقای راستی کردار <a href="http://www.twitter.com/rastikerdar"><span dir="ltr">@rastikerdar</span></a> بابتِ فونت زیبای <a href="http://rastikerdar.github.io/vazir-font/">وزیر</a><br />
             
-            این راهنما به زبان
+            نمایش این راهنما به زبانِ
             <a href="index.html">english</a>،
             <a href="index.de.html">deutsch</a>،
             <a href="index.es.html">español</a>،
@@ -67,7 +67,7 @@
             <a href="index.vi.html">Vietnamese</a>،
             <a href="index.fa.html">فارسی</a>
             <br />
-            لطفاً مشکلات ترجمه فارسی را در <a href="https://github.com/hameds/git-guide/issues">گیت‌هاب</a> گزارش کنید
+            لطفاً مشکلات ترجمه فارسی را در <a href="https://github.com/hameds/git-guide/issues">گیت‌هاب</a> گزارش دهید
         </p>
 				<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=gitguide" id="_carbonads_js"></script>
         <img src="img/arrow.png" alt="" />
@@ -90,29 +90,29 @@
     <div class="scrollblock block-create">
         <h2>ساخت مخزن جدید</h2>
         <p>
-            یک پوشه جدید بسازید، واردش شوید و دستور <br />
+            پوشۀ جدیدی بسازید؛ واردش شوید و دستور <br />
             <code dir="ltr">git init</code><br />
-            را اجرا کنید تا یک مخزن جدید گیت بسازید.
+            را اجرا کنید تا یک مخزن جدید (Git Repository) ساخته شود.
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>تحویل گرفتن یک مخزن</h2>
+        <h2>دریافت مخزن (Checkout) </h2>
         <p>
-            با اجرای دستور زیر یک کپی از مخزن محلی ایجاد کنید<br />
-            <code dir="ltr">git clone /path/to/repository</code><br />
-            وقتی به یک سرور دیگر وصل می‌شوید، دستور شما اینطور خواهد بود<br />
+            با اجرای دستور زیر می‌توانید یک نسخۀ کپی از مخزن محلی ایجاد کنید<br />
+            کپی یا کلون <code dir="ltr">git clone /path/to/repository</code><br />
+            برای کپی کردن مخزنی که در سرور قرار گرفته از دستور پایین استفاده کنید<br />
             <code dir="ltr">git clone username@host:/path/to/repository</code>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>گردش کار</h2>
+        <h2>گردش کار (Workflow) </h2>
         <p>
-            مخزن محلی شما از سه «درخت» که توسط git نگهداری می‌شود تشکیل شده است.
-            اولی <code dir="ltr">Working Directory</code> شماست که فایل‌های واقعی را نگه می‌دارد.
-            دومی <code dir="ltr">Index</code>  است که نقش منطقه شروع عملیات را دارد
-            در نهایت <code dir="ltr">HEAD</code> را داریم که به آخرین ارسال (commit) شما اشاره می‌کند.
+            مخزن محلی شامل سه «درخت» است که توسط git نگهداری می‌شود:
+            اولی <code dir="ltr">Working Directory</code> است که فایل‌های واقعی پروژه را نگه‌داری می‌کند؛
+            دومی ایندکس <code dir="ltr">(Index)</code> بوده که نقش منطقه شروع عملیات (Staging area) را بازی می‌کند؛
+            و آخری هِد <code dir="ltr">(HEAD)</code> است که به آخرین کامیتِ ارسالی (commit) اشاره می‌کند.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
@@ -120,43 +120,43 @@
     <div class="scrollblock block-add">
         <h2>اضافه کردن و کامیت</h2>
         <p>
-            می‌توانید با دستور زیر تغییرات  (افزودن فایل‌ها به <b>index</b>) را مطرح کنید <br />
+            می‌توانید با دستور زیر فایل‌ها را به ایندکس اضافه کنید:<br />
             <code dir="ltr">git add &lt;filename&gt;</code><br />
             <code dir="ltr">git add *</code><br />
-            این اولین قدم در گردش کار ساده git است. برای ارسال واقعی این تغییرات از دستور زیر استفاده کنید<br />
+            این اولین قدمِ یک گردش کار ساده در گیت محسوب می‌شود. برای ارسال واقعی تغییرات از دستور پایین استفاده کنید<br />
             <code dir="ltr">git commit -m "Commit message"</code><br />
-            حالا فایل برای <b>HEAD</b>، ارسال شده اما هنوز به سرور ریموت شما فرستاده نشده است.
+            اکنون فایل‌های مورد نظر در هِد قرار گرفته ولی هنوز به سرور ارسال نشده‌اند.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>ارسال تغییرات</h2>
+        <h2>ارسال تغییرات (Push)</h2>
         <p>
-            تغییرات شما الان در <b>HEAD</b> مخزن محلی شما هستند. برای ارسال آن‌ها به سرور ریموت دستور زیر را اجرا کنید <br />
+            برای ارسال تغییرات به سرورِ ریموت دستور زیر را اجرا کنید <br />
             <code dir="ltr">git push origin master</code><br />
-            عبارت <i>master</i> را با اسم هر شاخه (branch) که می‌خواهید تغییراتش را ارسال کنید عوض کنید.
+            به جای مَستر <i>(master)</i>، اسم شاخه‌ای (branch) را وارد کنید که می‌خواهید تغییراتش را ارسال کنید.
             <br /><br />
-            اگر یک مخزن محلی را کپی (clone) نکردید و می‌خواهید مخزن محلی را خود را به سرور ریموت متصل کنید، باید از دستور زیر استفاده کنید<br />
+            اگر هیچ مخزن محلی‌ای را کلون نکرده بودید می‌توانید با دستور پایین مخزن محلی‌تان را به مخزن ریموت متصل کنید<br />
             <code dir="ltr">git remote add origin &lt;server&gt;</code><br />
-            حالا قادر هستید تغییرات را به سرور ریموت انتخاب شده ارسال کنید.<br />
+            حالا می‌توانید تغییرات را به کمک ریموت ساخته شده به سرور ارسال نمایید.<br />
 
         </p>
     </div>
     <a name="branching"></a>
     <div class="scrollblock block-branching">
-        <h2>شاخه‌بندی</h2>
+        <h2>شاخه‌بندی  (Branching)</h2>
         <p>
-            شاخه‌ها برای توسعه‌دادن نرم‌افزار و افزودن امکانات به صورت مجزا و ایزوله شده از هم، به کار می‌روند. وقتی یک مخزن می‌سازید، شاخه «پیش فرض» (default) آن مخزن، <i>master</i> است. شاخه‌های دیگر را برای توسعه و کدنویسی استفاده کنید و بعد از تکمیل شدن، آن‌ها را با  master ادغام کنید.
+            شاخه‌ها برای افزودن فیچرهای جدید در مسیری مجزا به کار می‌روند. هنگام ساخت یک مخزن جدید، شاخۀ مستر به عنوان شاخۀ پیش‌فرض در نظر گرفته می‌شود. هر شاخه به صورت مجزا توسعه می‌یابد و بعد از اتمام کار با شاخۀ مستر ترکیب می‌شود.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            با استفاده از دستور زیر یک شاخه به نام "feature_x" بسازید به آن سوئیچ کنید<br />
+            با دستور زیر شاخه‌ای به نام "feature_x" ساخته شده و به آن سوئیچ می‌شود<br />
             <code dir="ltr">git checkout -b feature_x</code><br />
             بازگشت به شاخه master<br />
             <code dir="ltr">git checkout master</code><br />
-            و حذف شاخه<br />
+           حذف شاخه<br />
             <code dir="ltr">git branch -d feature_x</code><br />
-           تا زمانی که یک شاخه را به سرور ارسال (push) نکنید <i>برای دیگران در دسترس نیست</i> <br />
+           تا زمانی که شاخه‌ای را به سرور پوش نکنید، سایر افراد به آن دسترسی ندارند.
             <code dir="ltr">git push origin &lt;branch&gt;</code>
         </p>
     </div>
@@ -166,16 +166,12 @@
         <p>
             برای اینکه مخزن محلی خود را با آخرین کامیت بروز کنید، دستور <br />
             <code dir="ltr">git pull</code><br />
-            را در پوشه محلی اجرا کنید تا تغییرات سرور ریموت، <br><i>دریافت (fetch)</i> و <i>ادغام (merge)</i> شوند.<br />
-            برای ادغام یک شاخه (branch) دیگر بر روی شاخه فعال
-            <br>
-            (مثلاً master)، از دستور زیر استفاده کنید<br />
+            را در پوشه محلی (فولدر پروژه روی سیستم‌تان) اجرا کنید تا تغییرات مخزن ریموت (واقع روی سرور)، <br><i>دریافت (fetch)</i> و <i>ادغام (merge)</i> شوند. برای ادغام یک شاخۀ دیگر با شاخۀ کنونی  (مثلاً master)، از دستور زیر استفاده کنید:<br />
             <code dir="ltr">git merge &lt;branch&gt;</code><br />
-            در هر دو حالت، گیت تلاش می‌کند تا تغییرات را به صورت اتوماتیک ادغام کند. متاسفانه، ادغام اتوماتیک همیشه ممکن نیست و منجر به  <i>تداخل (conflict)</i> می‌شود.
-            شما مسئول ادغام دستی <i>تداخل‌ها</i> 
-            با ویرایش فایل‌های تداخل‌دار که توسط گیت نشان داده می‌شوند هستید. بعد از ویرایش، لازم است آن‌ها را با دستور زیر به عنوان «ادغام شده» علامت بزنید<br />
+            گیت در هر دو حالت تلاش می‌کند تغییرات را به صورت خودکار ادغام کند ولی این کار همیشه میسر نیست چون ممکن است منجر به  <i>تداخل (conflict)</i> شود.
+            تداخل‌ها را باید خودتان به صورتی دستی برطرف نمایید و سپس عمل ادغام را انجام دهید. پس از ویرایش باید با دستور زیر، آن‌ها را به عنوان «ادغام شده» علامت بزنید<br />
             <code dir="ltr">git add &lt;filename&gt;</code><br />
-            قبل از ادغام تغییرات می‌توانید پیش‌نمایشی از آن‌ها را با دستور زیر ببینید<br />
+            قبل از ادغام تغییرات، پیش‌نمایش آن را می‌توانید با دستور زیر ببینید<br />
             <code dir="ltr">git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
         </p>
     </div>
@@ -183,41 +179,41 @@
     <div class="scrollblock block-tagging">
         <h2>برچسب‌گذاری</h2>
         <p>
-            ایجاد برچسب، برای عرضه نرم‌افزار توصیه می‌شود.<br> این روالی شناخته شده است که در SVN هم وجود دارد.
+            معمولاً به هر نسخه از برنامه، شماره‌ای اختصاص می‌دهند که در گیت به آن تگ گفته می‌شود. این موضوع در سایر سیستم‌های کنترل نسخه مانند ساب‌ورژن (SVN) نیز وجود دارد.
             <br>
-            می‌توانید برچسبی به نام <i>1.0.0</i> را با اجرای دستور زیر بسازید<br />
+            می‌توانید  با دستور زیر برچسبی به نام <i>1.0.0</i>  بسازید<br />
             <code dir="ltr">git tag 1.0.0 1b2e1d63ff</code><br />
-            عبارت <i>1b2e1d63ff</i> اولین ده کاراکتر شناسه کامیتی است که می‌خواهید برچسب‌گذاری کنید. می‌توانید شناسه کامیت را با گشتن در لاگ‌ها پیدا کنید... <br />
+            عبارت <i>1b2e1d63ff</i>، اولین ده کاراکتر شناسۀ (ID) کامیتی است که می‌خواهید برچسب‌گذاری کنید. می‌توانید شناسه کامیت را با جستجو در لاگ پیدا کنید... <br />
         </p>
     </div>
     <a name="log"></a>
     <div class="scrollblock block-log">
         <h2>لاگ</h2>
         <p>
-            در ساده‌ترین حالت، تاریخچه مخزن را با دستور زیر می‌توانید مطالعه کنید:<br/>
+            در ساده‌ترین حالت، تاریخچه مخزن با دستور زیر نمایش داده می‌شود:<br/>
             <code dir="ltr">git log</code><br />
-            می‌توانید کلی پارامتر به این دستور اضافه کنید تا شبیه آن چیزی که می‌خواهید بشود. برای دیدن کامیت‌های یک شخص خاص:<br />
+            می‌توانید کلی پارامتر دیگر هم به این دستور اضافه کنید تا شبیه آن چیزی شود که می‌خواهید. دیدن کامیت‌های یک شخص خاص:<br />
             <code dir="ltr">git log --author=bob</code><br />
-            برای دیدن نسخه فشرده کامیت‌ها که هر کامیت تنها یک خط دارد:<br />
+            دیدن کامیت‌ها به صورت مختصر؛ هر کدام در یک خط:<br />
             <code dir="ltr">git log --pretty=oneline</code><br />
-            یا شاید بخواهید درخت اسکی (ASCII) همه شاخه‌ها را که با نام شاخه و برچسب تزئین شده را ببینید: <br />
+            یا شاید بخواهید درخت اسکی (ASCII) همه شاخه‌ها را که با نام شاخه و برچسب‌ها تزئین شده ببینید: <br />
             <code dir="ltr">git log --graph --oneline --decorate --all</code><br />
-            فقط دیدن اینکه چه فایل‌هایی تغییر کرده: <br />
+            فقط مشاهدۀ فایل‌های تغییر یافته: <br />
             <code dir="ltr">git log --name-status</code><br />
-            این‌ها فقط بعضی از پارامترهایی هستند که می‌توانید استفاده کنید، برای اطلاعات بیشتر این دستور را ببینید<br/>
+            موارد بالا فقط گوشه‌ای از پارامترها بودند. برای اطلاعات بیشتر، دستور پایین را وارد کنید: <br/>
             <code dir="ltr">git log --help</code><br />
         </p>
     </div>
     <a name="checkout-replace"></a>
     <div class="scrollblock block-checkout-replace">
-        <h2>جایگزینی تغییرات محلی</h2>
+        <h2>جایگزین کردن تغییرات محلی</h2>
         <p>
-            اگر کار اشتباهی انجام دادید، که عمراً برای شما اتفاق نمی‌افتد ;)، می‌توانید تغییرات محلی را با دستور زیر جایگزین کنید<br />
+            در صورتی که مرتکب اشتباهی شدید، تغییرات محلی را می‌توانید با دستور پایین جایگزین کنید<br />
             <code dir="ltr">git checkout -- &lt;filename&gt;</code><br />
-            این دستور، تغییرات را با آخرین محتوای HEAD جایگزین می‌کند. تغییراتی که به index فرستاده شدند به همراه فایل‌های جدید نگه داشته می‌شوند.
+            این دستور، تغییرات working directory (فولدر پروژه روی سیستم) را با آخرین محتوایی که هِد به آن اشاره می‌کند جایگزین می‌کند. البته فایل‌های جدید و تغییراتی که از قبل به ایندکس اضافه شده، دست نخورده باقی می‌مانند.
         </p>
         <p>
-            اگر می‌خواهید همه تغییرات محلی را دور بریزید و بعد کامیت کنید، آخرین تاریخچه را از سرور بگیرید و با دستورات زیر کاری کنید که شاخه master شما به آخرین تغییرات دریافتی از سرور اشاره کند
+            اگر می‌خواهید همه تغییرات محلی را حذف و بعد کامیت کنید، آخرین تاریخچه را از سرور دریافت و با دستور ریست (با پرچم hard--) شاخه مسترِ را به آخرین تغییرات دریافتی از سرور اشاره دهید.
             <br />
             <code dir="ltr">git fetch origin</code><br />
             <code dir="ltr">git reset --hard origin/master</code>
@@ -227,20 +223,20 @@
     <div class="scrollblock block-hints">
         <h2>نکات مفید</h2>
         <p>
-            رابط کاربری توکار git<br />
+            رابط گرافیکی گیت git<br />
             <code dir="ltr">gitk</code><br />
-            خروجی رنگ git<br />
+            نمایش خروجی دستورات به صورت رنگی <br />
             <code dir="ltr">git config color.ui true</code><br />
-            نمایش لاگ در یک خط برای هر کامیت<br />
+            نمایش مختصر لاگ، تنها یک کامیت در هر سطر<br />
             <code dir="ltr">git config format.pretty oneline</code><br />
-            افزودن تعاملی<br />
+            افزودن فایل‌ها به صورت تعاملی<br />
             <code dir="ltr">git add -i</code>
         </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
         <h2>منابع و پیوندها</h2>
-        <h3>کلاینت‌های با رابط کاربری</h3>
+        <h3>کلاینت‌های گرافیکی گیت</h3>
         <p>
             <ul>
                 <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
@@ -250,20 +246,20 @@
                 <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
             </ul>
         </p>
-        <h3>راهنماها</h3>
+        <h3>آموزشِ گیت</h3>
         <p>
             <ul>
-                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
-                <li><a href="http://progit.org/book/">Pro Git</a></li>
-                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
-                <li><a href="http://help.github.com/">GitHub Help</a></li>
-                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+                <li><a href="http://book.git-scm.com/">Git Community Book  (کتابِ «جامعۀ گیت»)</a></li>
+                <li><a href="http://progit.org/book/">Pro Git (گیت پیشرفته)</a></li> 
+                <li><a href="http://think-like-a-git.net/">Think like a git (مثل گیت فکر کنید)</a></li> 
+                <li><a href="http://help.github.com/">GitHub Help  (راهنمای گیت‌هاب)</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide (راهنمای تصویری گیت)</a></li> 
             </ul>
         </p>
-        <h3>دریافت کمک</h3>
+        <h3>درخواست کمک</h3>
         <p>
             <ul>
-                <li><a href="http://groups.google.com/group/git-users/">Git User Mailing List</a></li>
+                <li><a href="http://groups.google.com/group/git-users/">Git User Mailing List (لیست ایمیلی گیت)</a></li> 
                 <li><a href="http://jk.gs/git/">#git on irc.freenode.net</a></li>
             </ul>
         </p>
