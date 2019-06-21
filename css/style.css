@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=El+Messiri&display=swap');
+
 body {
 	background: #FFF;
 	font-family: Georgia, Times New Roman, Times, serif;
@@ -11,7 +13,7 @@ h1 {
 	font-size: 60px;
 	font-weight: normal;
 	margin: 0;
-    font-family: 'Chelsea Market', Georgia, serif;
+    font-family: 'Chelsea Market', 'El Messiri', Georgia, serif;
     color: #000;
 	line-height: 1;
 }
@@ -21,7 +23,7 @@ h2 {
 	font-weight: normal;
 	margin: 0;
 	color: #FFB000;
-    font-family: 'Chelsea Market', Georgia, serif;
+    font-family: 'Chelsea Market', 'El Messiri', Georgia, serif;
 	text-transform: lowercase;
 }
 
