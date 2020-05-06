@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - panduan ringkas - gak pake ribet!</title>
-    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git - panduan ringkas - gak pake ribet!</title>
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-652147-13']);
-      _gaq.push(['_trackPageview']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-652147-13']);
+        _gaq.push(['_trackPageview']);
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
 
-      function recordOutboundLink(link, category, action) {
-         _gat._getTrackerByName()._trackEvent(category, action);
-         setTimeout('document.location = "' + link.href + '"', 100);
-      }
+        function recordOutboundLink(link, category, action) {
+            _gat._getTrackerByName()._trackEvent(category, action);
+            setTimeout('document.location = "' + link.href + '"', 100);
+        }
     </script>
 </head>
+
 <body>
     <div class="scrollblock block-title">
         <h1>git - panduan ringkas</h1>
         <p>sekedar panduan ringkas penggunaan git. gak pake ribet ;)</p>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large"
+            data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>
+            ! function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, "script", "twitter-wjs");
+        </script>
         <p class="meta">
-            oleh <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a> (alih bahasa <a href="//twitter.com/ItangSanjana">Itang Sanjana</a>)
-            <br />kredit <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> dan <a href="http://www.namics.com">Namics</a><br />
+            oleh <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a> (alih bahasa <a
+                href="//twitter.com/ItangSanjana">Itang Sanjana</a>)
+            <br />kredit <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a
+                href="http://www.twitter.com/fhd">@fhd</a> dan <a href="http://www.namics.com">Namics</a><br />
             juga dalam bahasa
             <a href="index.html">english</a>,
             <a href="index.de.html">deutsch</a>,
@@ -43,7 +61,7 @@
             <a href="index.pt_BR.html">português</a>,
             <a href="index.ru.html">русский</a>,
             <a href="index.tr.html">türkçe</a>,
-            <br/>
+            <br />
             <a href="index.my.html">မြန်မာ</a>,
             <a href="index.ja.html">日本語</a>,
             <a href="index.zh.html">中文</a>,
@@ -114,11 +132,13 @@
     <div class="scrollblock block-remote">
         <h2>mengirim perubahan</h2>
         <p>
-            Saat ini perubahan telah tersimpan di <b>HEAD</b> salinan kerja lokal kamu. Untuk mengirimkannya ke repositori jarak-jauh, lakukan <br />
+            Saat ini perubahan telah tersimpan di <b>HEAD</b> salinan kerja lokal kamu. Untuk mengirimkannya ke
+            repositori jarak-jauh, lakukan <br />
             <code>git push origin master</code><br />
             Ubah <i>master</i> sesuai cabang yang kamu inginkan.
             <br /><br />
-            Jika repositori yang ada belum dikloning dan ingin dihubungkan ke server jarak-jauh, kamu perlu menambahkan<br />
+            Jika repositori yang ada belum dikloning dan ingin dihubungkan ke server jarak-jauh, kamu perlu
+            menambahkan<br />
             <code>git remote add origin &lt;server&gt;</code><br />
             Sekarang kamu bisa mengirimkan perubahan ke server jarak-jauh yang dituju<br />
 
@@ -128,7 +148,9 @@
     <div class="scrollblock block-branching">
         <h2>percabangan</h2>
         <p>
-            percabangan atau <i>branching</i> digunakan untuk mengembangkan fitur-fitur secara terisolasi. Cabang utama atau <i>master</i> merupakan cabang bawaan ketika kamu membuat repositori. Gunakan cabang lain untuk pengembangan, setelah selesai, gabungkan kembali ke cabang utama.
+            percabangan atau <i>branching</i> digunakan untuk mengembangkan fitur-fitur secara terisolasi. Cabang utama
+            atau <i>master</i> merupakan cabang bawaan ketika kamu membuat repositori. Gunakan cabang lain untuk
+            pengembangan, setelah selesai, gabungkan kembali ke cabang utama.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
@@ -138,7 +160,8 @@
             <code>git checkout master</code><br />
             dan hapus cabang yang tadi dibuat<br />
             <code>git branch -d fitur_x</code><br />
-            suatu cabang <em>tidak terbuka untuk yang lainnya</em> kecuali jika kamu mengirimkannya ke repositori jarak-jauh.<br />
+            suatu cabang <em>tidak terbuka untuk yang lainnya</em> kecuali jika kamu mengirimkannya ke repositori
+            jarak-jauh.<br />
             <code>git push origin &lt;cabang&gt;</code>
         </p>
     </div>
@@ -151,9 +174,11 @@
             dari direktori kerja kamu untuk <em>mengambil</em> dan <em>menggabungkan</em> perubahan jarak-jauh.<br />
             untuk menggabungkan cabang lain ke cabang aktif (misal <i>master</i>), gunakan<br />
             <code>git merge &lt;cabang&gt;</code><br />
-            pada kasus diatas, git mencoba menggabungkan perubahan secara otomatis. Sayangnya hal ini tak selalu berjalan mulus dan bisa menyebabkan <em>konflik</em>.
+            pada kasus diatas, git mencoba menggabungkan perubahan secara otomatis. Sayangnya hal ini tak selalu
+            berjalan mulus dan bisa menyebabkan <em>konflik</em>.
             Kamu lah yang bertanggung jawab menggabungkan <em>konflik</em> tersebut
-            secara manual dengan menyunting berkas yang ditunjukkan git. Setelah itu, kamu perlu memarkahinya dengan<br />
+            secara manual dengan menyunting berkas yang ditunjukkan git. Setelah itu, kamu perlu memarkahinya
+            dengan<br />
             <code>git add &lt;namaberkas&gt;</code><br />
             sebelum penggabungan berlaku, kamu bisa melakukan pratinjau menggunakan<br />
             <code>git diff &lt;cabang_asal&gt; &lt;cabang_tujuan&gt;</code>
@@ -163,9 +188,12 @@
     <div class="scrollblock block-tagging">
         <h2>menandai</h2>
         <p>
-            sangat dianjurkan membuat penanda atau <em>tags</em> untuk perangkat lunak yang dirilis. Hal ini amat lah lazim, yang juga terjadi di SVN. Kamu bisa membuat penanda baru dengan nama <em>1.0.0</em> dengan menjalankan<br />
+            sangat dianjurkan membuat penanda atau <em>tags</em> untuk perangkat lunak yang dirilis. Hal ini amat lah
+            lazim, yang juga terjadi di SVN. Kamu bisa membuat penanda baru dengan nama <em>1.0.0</em> dengan
+            menjalankan<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            <em>1b2e1d63ff</em> adalah 10 karakter pertama dari identitas komit yang ingin kamu referensikan ke penanda. Kamu bisa mendapatkan identitas komit dengan melihat... <br />
+            <em>1b2e1d63ff</em> adalah 10 karakter pertama dari identitas komit yang ingin kamu referensikan ke penanda.
+            Kamu bisa mendapatkan identitas komit dengan melihat... <br />
         </p>
     </div>
     <a name="log"></a>
@@ -174,11 +202,13 @@
         <p>
             dalam bentuknya yang paling sederhana, kamu bisa mempelajari riwayat repositori menggunakan..
             <code>git log</code><br />
-            kamu bisa menambahkan banyak parameter untuk menampilkan log sesuai keinginan. Untuk melihat komit penulis tertentu:<br />
+            kamu bisa menambahkan banyak parameter untuk menampilkan log sesuai keinginan. Untuk melihat komit penulis
+            tertentu:<br />
             <code>git log --author=bob</code><br />
             Untuk melihat log yang dimampatkan, satu baris per komit:<br />
             <code>git log --pretty=oneline</code><br />
-            Atau mungkin kamu ingin melihat pohon <i>ASCII art</i> seluruh percabangan disertai nama dan penandanya: <br />
+            Atau mungkin kamu ingin melihat pohon <i>ASCII art</i> seluruh percabangan disertai nama dan penandanya:
+            <br />
             <code>git log --graph --oneline --decorate --all</code><br />
             Sekedar melihat berkas yang berubah: <br />
             <code>git log --name-status</code><br />
@@ -190,12 +220,15 @@
     <div class="scrollblock block-checkout-replace">
         <h2>mengembalikan perubahan lokal</h2>
         <p>
-            Seandainya kamu melakukan kesalahan (yang tentunya tak pernah terjadi ;) kamu bisa mengembalikannya menggunakan perintah<br />
+            Seandainya kamu melakukan kesalahan (yang tentunya tak pernah terjadi ;) kamu bisa mengembalikannya
+            menggunakan perintah<br />
             <code>git checkout -- &lt;namaberkas&gt;</code><br />
-            perintah di atas mengembalikan perubahan di dalam pokok kerja kamu dengan konten terakhir dari <i>HEAD</i>. Perubahan dan berkas baru yang telah ditambahkan ke indeks akan tetap tersimpan.
+            perintah di atas mengembalikan perubahan di dalam pokok kerja kamu dengan konten terakhir dari <i>HEAD</i>.
+            Perubahan dan berkas baru yang telah ditambahkan ke indeks akan tetap tersimpan.
         </p>
         <p>
-            Jika kamu ingin menggugurkan perubahan dan komit lokal seutuhnya, ambil riwayat terakhir dari server dan arahkan ke cabang <i>master</i> lokal seperti ini<br />
+            Jika kamu ingin menggugurkan perubahan dan komit lokal seutuhnya, ambil riwayat terakhir dari server dan
+            arahkan ke cabang <i>master</i> lokal seperti ini<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
@@ -254,15 +287,22 @@
             var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
                 dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                    dsq);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
     </div>
-    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
-    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+    <a href="http://www.git-tower.com/?source=rd"
+        onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;"
+        class="cheatsheet"></a>
 </body>
+
 </html>

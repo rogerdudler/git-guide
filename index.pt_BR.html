@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - guia pr&aacute;tico - sem complica&ccedil;&atilde;o!</title>
-    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git - guia pr&aacute;tico - sem complica&ccedil;&atilde;o!</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-652147-13']);
-      _gaq.push(['_trackPageview']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-652147-13']);
+        _gaq.push(['_trackPageview']);
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
 
-      function recordOutboundLink(link, category, action) {
-         _gat._getTrackerByName()._trackEvent(category, action);
-         setTimeout('document.location = "' + link.href + '"', 100);
-      }
+        function recordOutboundLink(link, category, action) {
+            _gat._getTrackerByName()._trackEvent(category, action);
+            setTimeout('document.location = "' + link.href + '"', 100);
+        }
     </script>
 </head>
+
 <body>
     <div class="scrollblock block-title">
         <h1>git - guia pr&aacute;tico</h1>
         <p>apenas um guia pr&aacute;tico para come&ccedil;ar com git. sem complica&ccedil;&atilde;o ;)</p>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large"
+            data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>
+            ! function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, "script", "twitter-wjs");
+        </script>
         <p class="meta">
             por <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
-            <br />cr&eacute;ditos para <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+            <br />cr&eacute;ditos para <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a
+                href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
             guia em
             <a href="index.html">english</a>,
             <a href="index.de.html">deutsch</a>,
@@ -44,7 +61,7 @@
             <a href="index.pl.html">polski</a>,
             <a href="index.ru.html">русский</a>,
             <a href="index.tr.html">türkçe</a>,
-            <br/>
+            <br />
             <a href="index.my.html">မြန်မာ</a>,
             <a href="index.ja.html">日本語</a>,
             <a href="index.zh.html">中文</a>,
@@ -94,7 +111,8 @@
             seus reposit&oacute;rios locais consistem em tr&ecirc;s "&aacute;rvores" mantidas pelo git.
             a primeira delas &eacute; sua <code>Working Directory</code> que cont&eacute;m os arquivos vigentes.
             a segunda <code>Index</code> que funciona como uma &aacute;rea tempor&aacute;ria e
-            finalmente a <code>HEAD</code> que aponta para o &uacute;ltimo <i>commit</i> (confirma&ccedil;&atilde;o) que voc&ecirc; fez.
+            finalmente a <code>HEAD</code> que aponta para o &uacute;ltimo <i>commit</i> (confirma&ccedil;&atilde;o) que
+            voc&ecirc; fez.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
@@ -105,7 +123,8 @@
             Voc&ecirc; pode propor mudan&ccedil;as (adicion&aacute;-las ao <b>Index</b>) usando<br />
             <code>git add &lt;arquivo&gt;</code><br />
             <code>git add *</code><br />
-            Este &eacute; o primeiro passo no fluxo de trabalho b&aacute;sico do git. Para realmente confirmar estas mudan&ccedil;as (isto é, fazer um <i>commit</i>), use<br />
+            Este &eacute; o primeiro passo no fluxo de trabalho b&aacute;sico do git. Para realmente confirmar estas
+            mudan&ccedil;as (isto é, fazer um <i>commit</i>), use<br />
             <code>git commit -m "coment&aacute;rios das altera&ccedil;&otilde;es"</code><br />
             Agora o arquivo &eacute; enviado para o <b>HEAD</b>, mas ainda n&atilde;o para o reposit&oacute;rio remoto.
         </p>
@@ -114,13 +133,17 @@
     <div class="scrollblock block-remote">
         <h2>enviando altera&ccedil;&otilde;es</h2>
         <p>
-            Suas altera&ccedil;&otilde;es agora est&atilde;o no <b>HEAD</b> da sua c&oacute;pia de trabalho local. Para enviar estas altera&ccedil;&otilde;es ao seu reposit&oacute;rio remoto, execute <br />
+            Suas altera&ccedil;&otilde;es agora est&atilde;o no <b>HEAD</b> da sua c&oacute;pia de trabalho local. Para
+            enviar estas altera&ccedil;&otilde;es ao seu reposit&oacute;rio remoto, execute <br />
             <code>git push origin master</code><br />
-            Altere <i>master</i> para qualquer ramo (<i>branch</i>) desejado, enviando suas altera&ccedil;&otilde;es para ele.
+            Altere <i>master</i> para qualquer ramo (<i>branch</i>) desejado, enviando suas altera&ccedil;&otilde;es
+            para ele.
             <br /><br />
-            Se voc&ecirc; n&atilde;o clonou um reposit&oacute;rio existente e quer conectar seu reposit&oacute;rio a um servidor remoto, voc&ecirc; deve adicion&aacute;-lo com<br />
+            Se voc&ecirc; n&atilde;o clonou um reposit&oacute;rio existente e quer conectar seu reposit&oacute;rio a um
+            servidor remoto, voc&ecirc; deve adicion&aacute;-lo com<br />
             <code>git remote add origin &lt;servidor&gt;</code><br />
-            Agora voc&ecirc; &eacute; capaz de enviar suas altera&ccedil;&otilde;es para o servidor remoto selecionado.<br />
+            Agora voc&ecirc; &eacute; capaz de enviar suas altera&ccedil;&otilde;es para o servidor remoto
+            selecionado.<br />
 
         </p>
     </div>
@@ -128,7 +151,9 @@
     <div class="scrollblock block-branching">
         <h2>ramificando</h2>
         <p>
-            <i>Branches</i> ("ramos") s&atilde;o utilizados para desenvolver funcionalidades isoladas umas das outras. O branch <i>master</i> &eacute; o branch "padr&atilde;o" quando voc&ecirc; cria um reposit&oacute;rio. Use outros branches para desenvolver e mescle-os (<i>merge</i>) ao branch master ap&oacute;s a conclus&atilde;o.
+            <i>Branches</i> ("ramos") s&atilde;o utilizados para desenvolver funcionalidades isoladas umas das outras. O
+            branch <i>master</i> &eacute; o branch "padr&atilde;o" quando voc&ecirc; cria um reposit&oacute;rio. Use
+            outros branches para desenvolver e mescle-os (<i>merge</i>) ao branch master ap&oacute;s a conclus&atilde;o.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
@@ -138,7 +163,8 @@
             <code>git checkout master</code><br />
             e remova o branch da seguinte forma<br />
             <code>git branch -d funcionalidade_x</code><br />
-            um branch <i> n&atilde;o est&aacute; dispon&iacute;vel a outros</i> a menos que voc&ecirc; envie o branch para seu reposit&oacute;rio remoto<br />
+            um branch <i> n&atilde;o est&aacute; dispon&iacute;vel a outros</i> a menos que voc&ecirc; envie o branch
+            para seu reposit&oacute;rio remoto<br />
             <code>git push origin &lt;funcionalidade_x&gt;</code>
         </p>
     </div>
@@ -148,14 +174,18 @@
         <p>
             para atualizar seu reposit&oacute;rio local com a mais nova vers&atilde;o, execute <br />
             <code>git pull</code><br />
-            na sua pasta de trabalho para <i>obter</i> e <i>fazer merge</i> (mesclar) altera&ccedil;&otilde;es remotas.<br />
+            na sua pasta de trabalho para <i>obter</i> e <i>fazer merge</i> (mesclar) altera&ccedil;&otilde;es
+            remotas.<br />
             para fazer merge de um outro branch ao seu branch ativo (ex. master), use<br />
             <code>git merge &lt;branch&gt;</code><br />
-            em ambos os casos o git tenta fazer o merge das altera&ccedil;&otilde;es automaticamente. Infelizmente, isto nem sempre &eacute; poss&iacute;vel e resulta em <i>conflitos</i>.
+            em ambos os casos o git tenta fazer o merge das altera&ccedil;&otilde;es automaticamente. Infelizmente, isto
+            nem sempre &eacute; poss&iacute;vel e resulta em <i>conflitos</i>.
             Voc&ecirc; &eacute; respons&aacute;vel por fazer o merge estes <i>conflitos</i>
-            manualmente editando os arquivos exibidos pelo git. Depois de alterar, voc&ecirc; precisa marc&aacute;-los como merged com<br />
+            manualmente editando os arquivos exibidos pelo git. Depois de alterar, voc&ecirc; precisa marc&aacute;-los
+            como merged com<br />
             <code>git add &lt;arquivo&gt;</code><br />
-            antes de fazer o merge das altera&ccedil;&otilde;es, voc&ecirc; pode tamb&eacute;m pr&eacute;-visualiz&aacute;-as usando<br />
+            antes de fazer o merge das altera&ccedil;&otilde;es, voc&ecirc; pode tamb&eacute;m
+            pr&eacute;-visualiz&aacute;-as usando<br />
             <code>git diff &lt;branch origem&gt; &lt;branch destino&gt;</code>
         </p>
     </div>
@@ -163,9 +193,12 @@
     <div class="scrollblock block-tagging">
         <h2>rotulando</h2>
         <p>
-            &eacute; recomendado criar r&oacute;tulos para releases de software. Este &eacute; um conhecido conceito, que tamb&eacute;m existe no SVN. Voc&ecirc; pode criar um novo r&oacute;tulo chamado <i>1.0.0</i> executando o comando<br />
+            &eacute; recomendado criar r&oacute;tulos para releases de software. Este &eacute; um conhecido conceito,
+            que tamb&eacute;m existe no SVN. Voc&ecirc; pode criar um novo r&oacute;tulo chamado <i>1.0.0</i> executando
+            o comando<br />
             <code>git tag 1.0.0 1b2e1d63ff</code><br />
-            o <i>1b2e1d63ff</i> representa os 10 primeiros caracteres do id de commit que voc&ecirc; quer referenciar com seu r&oacute;tulo. Voc&ecirc; pode obter o id de commit com <br />
+            o <i>1b2e1d63ff</i> representa os 10 primeiros caracteres do id de commit que voc&ecirc; quer referenciar
+            com seu r&oacute;tulo. Voc&ecirc; pode obter o id de commit com <br />
             <code>git log</code><br />
             voc&ecirc; pode tamb&eacute;m usar menos caracteres do id de commit, ele somente precisa ser &uacute;nico.
         </p>
@@ -174,12 +207,16 @@
     <div class="scrollblock block-checkout-replace">
         <h2>sobrescrever altera&ccedil;&otilde;es locais</h2>
         <p>
-            No caso de voc&ecirc; ter feito algo errado (que seguramente nunca acontece ;) ) voc&ecirc; pode sobrescrever as altera&ccedil;&otilde;es locais usando o commando<br />
+            No caso de voc&ecirc; ter feito algo errado (que seguramente nunca acontece ;) ) voc&ecirc; pode
+            sobrescrever as altera&ccedil;&otilde;es locais usando o commando<br />
             <code>git checkout -- &lt;arquivo&gt;</code><br />
-            isto substitui as altera&ccedil;&otilde;es na sua &aacute;rvore de trabalho com o conte&uacute;do mais recente no HEAD. Altera&ccedil;&otilde;es j&aacute; adicionadas ao index, bem como novos arquivos ser&atilde;o mantidos.
+            isto substitui as altera&ccedil;&otilde;es na sua &aacute;rvore de trabalho com o conte&uacute;do mais
+            recente no HEAD. Altera&ccedil;&otilde;es j&aacute; adicionadas ao index, bem como novos arquivos
+            ser&atilde;o mantidos.
         </p>
         <p>
-            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e commits locais, recupere o hist&oacute;rico mais recente do servidor e aponte para seu branch master local desta forma<br />
+            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e commits locais,
+            recupere o hist&oacute;rico mais recente do servidor e aponte para seu branch master local desta forma<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
         </p>
@@ -224,7 +261,8 @@
     </div>
     <div class="announcement">
         <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder">
-            <img src="http://d13bhd1byokz0o.cloudfront.net/ad/clarify-announcement-git@2x.png" width="960" height="100" alt="Clarify" />
+            <img src="http://d13bhd1byokz0o.cloudfront.net/ad/clarify-announcement-git@2x.png" width="960" height="100"
+                alt="Clarify" />
         </a>
     </div>
     <a name="comments"></a>
@@ -236,15 +274,22 @@
             var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
                 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                    dsq);
             })();
         </script>
-        <noscript>Por favor habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">coment&aacute;rios powered by Disqus.</a></noscript>
+        <noscript>Por favor habilite o JavaScript para ver os <a
+                href="http://disqus.com/?ref_noscript">coment&aacute;rios powered by Disqus.</a></noscript>
     </div>
-    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
-    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+    <a href="http://www.git-tower.com/?source=rd"
+        onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;"
+        class="cheatsheet"></a>
 </body>
+
 </html>
