@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>git - Der einfache Einstieg - kein Schnick-schnack!</title>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Chelsea+Market">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-652147-13']);
-      _gaq.push(['_trackPageview']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-652147-13']);
+        _gaq.push(['_trackPageview']);
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-      function recordOutboundLink(link, category, action) {
-       _gat._getTrackerByName()._trackEvent(category, action);
-       setTimeout('document.location = "' + link.href + '"', 100);
-      }
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+        function recordOutboundLink(link, category, action) {
+            _gat._getTrackerByName()._trackEvent(category, action);
+            setTimeout('document.location = "' + link.href + '"', 100);
+        }
     </script>
 </head>
+
 <body>
     <div class="scrollblock block-title">
         <h1>git - Der einfache Einstieg</h1>
         <p>eine einfache Anleitung, um git zu lernen. Kein Schnick-Schnack ;)</p>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-url="http://rogerdudler.github.com/git-guide" data-size="large" data-related="rogerdudler" data-hashtags="git">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler"
+            data-url="http://rogerdudler.github.com/git-guide" data-size="large" data-related="rogerdudler"
+            data-hashtags="git">Tweet</a>
+        <script>
+            ! function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, "script", "twitter-wjs");
+        </script>
         <p class="meta">
             von <a href="http://twitter.com/rogerdudler">Roger Dudler</a>
-            <br>Dank an <a href="http://twitter.com/tfnico">@tfnico</a>, <a href="http://twitter.com/fhd">@fhd</a> und <a href="http://namics.com">Namics</a><br>
+            <br>Dank an <a href="http://twitter.com/tfnico">@tfnico</a>, <a href="http://twitter.com/fhd">@fhd</a> und
+            <a href="http://namics.com">Namics</a><br>
             diese Anleitung in
             <a href="index.html">english</a>,
             <a href="index.es.html">español</a>,
@@ -114,11 +133,14 @@
     <div class="scrollblock block-remote">
         <h2>Änderungen hochladen</h2>
         <p>
-            Die Änderungen sind jetzt im <b>HEAD</b> deines lokalen Repositories. Um die Änderungen an dein entferntes Repository zu senden, führe:<br>
+            Die Änderungen sind jetzt im <b>HEAD</b> deines lokalen Repositories. Um die Änderungen an dein entferntes
+            Repository zu senden, führe:<br>
             <code>git push origin master</code><br>
-            aus. Du kannst <i>master</i> auch mit einem beliebigen anderen Branch ersetzen, mehr über Branches erfährst du später.
+            aus. Du kannst <i>master</i> auch mit einem beliebigen anderen Branch ersetzen, mehr über Branches erfährst
+            du später.
             <br><br>
-            Wenn du dein lokales Repository nicht von einem entfernten geklont hast und du diese aber mit einem anderen Repository verbinden möchtest, musst du dieses mit <br>
+            Wenn du dein lokales Repository nicht von einem entfernten geklont hast und du diese aber mit einem anderen
+            Repository verbinden möchtest, musst du dieses mit <br>
             <code>git remote add origin &lt;server&gt;</code><br>
             hinzufügen. Jetzt bist du bereit, deine Änderungen hochzuladen<br>
         </p>
@@ -127,7 +149,10 @@
     <div class="scrollblock block-branching">
         <h2>Branching</h2>
         <p>
-            Branches werden benutzt, um verschiedene Funktionen isoliert voneinander zu entwickeln. Der <i>master</i>-Branch ist der "Standard"-Branch, wenn du ein neues Repository erstellst. Du solltest aber für die Entwicklung andere Branches verwenden und diese dann in den Master-Branch zusammenführen (mergen). Auch das lernst du später.
+            Branches werden benutzt, um verschiedene Funktionen isoliert voneinander zu entwickeln. Der
+            <i>master</i>-Branch ist der "Standard"-Branch, wenn du ein neues Repository erstellst. Du solltest aber für
+            die Entwicklung andere Branches verwenden und diese dann in den Master-Branch zusammenführen (mergen). Auch
+            das lernst du später.
         </p>
         <img src="img/branches.png" alt="">
         <p>
@@ -147,10 +172,12 @@
         <p>
             Um dein lokales Repository mit den neuesten Änderungen zu aktualisieren, verwende:<br>
             <code>git pull</code><br>
-            in deiner Arbeitskopie, um die Änderungen erst <i>herunterzuladen (fetch)</i> und dann mit deinem Stand <i>zusammenzuführen (merge)</i>.<br>
+            in deiner Arbeitskopie, um die Änderungen erst <i>herunterzuladen (fetch)</i> und dann mit deinem Stand
+            <i>zusammenzuführen (merge)</i>.<br>
             Wenn du einen anderen Branch mit deinem aktuellen (z.B. master) zusammenführen willst, benutze:<br>
             <code>git merge &lt;branch&gt;</code><br>
-            In beiden Fällen versucht git die Änderungen automatisch zusammenzuführen. Unglücklicherweise ist dies nicht immer möglich und endet in <i>Konflikten</i>.
+            In beiden Fällen versucht git die Änderungen automatisch zusammenzuführen. Unglücklicherweise ist dies nicht
+            immer möglich und endet in <i>Konflikten</i>.
             Du bist verantwortlich, diese <i>Konflikte</i> durch manuelles Editieren der betroffenen Dateien zu lösen.
             Bist du damit fertig, musst du das git mit folgendem Befehl mitteilen:<br>
             <code>git add &lt;dateiname&gt;</code><br>
@@ -162,9 +189,11 @@
     <div class="scrollblock block-tagging">
         <h2>Tagging</h2>
         <p>
-            Es wird empfohlen, für Software Releasestags zu verwenden. Dies ist ein bekanntes Konzept, das es schon mit SVN gab. Du kannst einen neuen Tag namens <i>1.0.0</i> mit folgendem Befehl erstellen:<br>
+            Es wird empfohlen, für Software Releasestags zu verwenden. Dies ist ein bekanntes Konzept, das es schon mit
+            SVN gab. Du kannst einen neuen Tag namens <i>1.0.0</i> mit folgendem Befehl erstellen:<br>
             <code>git tag 1.0.0 1b2e1d63ff</code><br>
-            <i>1b2e1d63ff</i> steht für die ersten 10 Zeichen der Commit-Id, die du mit deinem Tag referenzieren möchtest. Du erhältst die Liste der Commit-IDs mit: <br>
+            <i>1b2e1d63ff</i> steht für die ersten 10 Zeichen der Commit-Id, die du mit deinem Tag referenzieren
+            möchtest. Du erhältst die Liste der Commit-IDs mit: <br>
             <code>git log</code><br>
             Du kannst auch weniger Zeichen verwenden, es muss einfach eindeutig sein.
         </p>
@@ -175,10 +204,12 @@
         <p>
             Falls du mal etwas falsch machst (was natürlich nie passiert ;) ) kannst du die lokalen Änderungen mit:<br>
             <code>git checkout -- &lt;filename&gt;</code><br>
-            auf den letzten Stand im HEAD zurücksetzen. Änderungen, die du bereits zum Index hinzugefügt hast, bleiben bestehen.
+            auf den letzten Stand im HEAD zurücksetzen. Änderungen, die du bereits zum Index hinzugefügt hast, bleiben
+            bestehen.
         </p>
         <p>
-            Wenn du aber deine lokalen Änderungen komplett entfernen möchtest, holst du dir den letzten Stand vom entfernten Repository mit folgenden Befehlen:<br>
+            Wenn du aber deine lokalen Änderungen komplett entfernen möchtest, holst du dir den letzten Stand vom
+            entfernten Repository mit folgenden Befehlen:<br>
             <code>git fetch origin</code><br>
             <code>git reset --hard origin/master</code>
         </p>
@@ -223,7 +254,8 @@
     </div>
     <div class="announcement">
         <a href="http://frontify.com/?utm_source=gitguide&amp;utm_campaign=founder">
-            <img src="http://d13bhd1byokz0o.cloudfront.net/ad/clarify-announcement-git@2x.png" width="960" height="100" alt="Clarify">
+            <img src="http://d13bhd1byokz0o.cloudfront.net/ad/clarify-announcement-git@2x.png" width="960" height="100"
+                alt="Clarify">
         </a>
     </div>
     <a name="comments"></a>
@@ -233,15 +265,22 @@
         <script type="text/javascript">
             var disqus_shortname = 'git-the-simple-guide';
             /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
                 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                    dsq);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
     </div>
-    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
-    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+    <a href="http://www.git-tower.com/?source=rd"
+        onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;"
+        class="cheatsheet"></a>
 </body>
+
 </html>
