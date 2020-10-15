@@ -13,10 +13,10 @@
 		fixed for myanmar font
 	*/
 	body {
-		font-family:Georgia,"Masterpiece Uni Sans","Yunghkio",sans-serif;
+		font-family:Georgia,"mainpiece Uni Sans","Yunghkio",sans-serif;
 	}
 	h2 {
-		font-family:'Chelsea Market',"Masterpiece Uni Sans","Yunghkio",Georgia, serif;
+		font-family:'Chelsea Market',"mainpiece Uni Sans","Yunghkio",Georgia, serif;
 	}
 	</style>
     <script type="text/javascript">
@@ -140,8 +140,8 @@
         	သင်ပြင်ဆင်ထားတာတွေက အခု သင့်ရဲ့ local working copy နေရာက <b>&lt;HEAD&gt;</b> မှာ ရောက်နေပါပြီ။ <br/>
         	ပြောင်းလဲထားတဲ့ code တွေကို remote repository ဆီပို့ဖို့ အတွက်
         	<br/>
-            <code>git push origin master</code><br />
-            <i>master</i> ကို သင့်ရဲ့ စိတ်ကြိုက် branch ပြောင်းနိုင်ပါတယ်။ သင် ပို့ချင်တဲ့ branch တစ်ခုခုကိုပေါ့။
+            <code>git push origin main</code><br />
+            <i>main</i> ကို သင့်ရဲ့ စိတ်ကြိုက် branch ပြောင်းနိုင်ပါတယ်။ သင် ပို့ချင်တဲ့ branch တစ်ခုခုကိုပေါ့။
             <br /><br />
             တကယ်လို့ သင်က cloned မလုပ်ချင်ဘူး။ လက်ရှိ ရှိထားတဲ့ code ကို remote server နဲ့ ချိတ်ဆက်ချင်တယ်ဆိုရင်တော့ <br/>
             <code>git remote add origin &lt;server&gt;</code><br />
@@ -155,16 +155,16 @@
         <h2>branching</h2>
         <p>
         Branches တွေကို develop အဆင့်တွေမှာ အသုံးပြုပါတယ်။
-        <i>master</i> branch ကတော့ repository အသစ်ဖန်တီးတဲ့အခါမှာ ပုံသေပါလာပါတယ်။
-        တကယ်လို့ development အတွက် အြခား branches တွေခွဲထွက်ပြီး အကုန်ပြီးစီးမှသာ master branch နဲ့ ပြန်ပေါင်းပါတယ်။
+        <i>main</i> branch ကတော့ repository အသစ်ဖန်တီးတဲ့အခါမှာ ပုံသေပါလာပါတယ်။
+        တကယ်လို့ development အတွက် အြခား branches တွေခွဲထွက်ပြီး အကုန်ပြီးစီးမှသာ main branch နဲ့ ပြန်ပေါင်းပါတယ်။
         </p>
         <img src="img/branches.png" alt="" />
         <p>
         	"feature_x" ဆိုတဲ့ branch အသစ်ဆောက်ပြီး ထို branch ကို ပြောင်းလဲ အသုံးပြုပုံ<br/>
             <code>git checkout -b feature_x</code><br />
 
-            master branch ကို ပြန်ပြောင်းပုံ <br/>
-            <code>git checkout master</code><br />
+            main branch ကို ပြန်ပြောင်းပုံ <br/>
+            <code>git checkout main</code><br />
             branch ကို ဖျက်ခြင်း<br />
             <code>git branch -d feature_x</code><br />
 
@@ -182,7 +182,7 @@
             <code>git pull</code><br />
             <i>pull</i> လို့ ခေါ်တဲ့အခါမှာ working directory ထဲသို့ နောက်ဆုံး ပြောင်းထားသည်များကို <i>fetch</i> နှင့် <i>merge</i> လုပ်သွားပါမယ်။<br/>
 
-            လက်ရှိ အလုပ်လုပ်နေသော branch (ဥပမာ။။ master) ထဲကို အခြား branch မှ လာပေါင်းလိုလျှင် <br/>
+            လက်ရှိ အလုပ်လုပ်နေသော branch (ဥပမာ။။ main) ထဲကို အခြား branch မှ လာပေါင်းလိုလျှင် <br/>
 
             <code>git merge &lt;branch&gt;</code><br />
 
@@ -221,9 +221,9 @@
             အခု ပြောင်းလဲလိုက်တာက သင့်ရဲ့ working tree ထဲက HEAD ထဲ က နောက်ဆုံး content မှာ သွားပြီးတော့ အစားထိုးသွားမှာပါ။ ပြောင်းထားတာတွေကိုတော့ index အနေနဲ့ ထည့်ပြီး files အသစ်တွေကိုလည်း သိမ်းထားပါလိမ့်မယ်။
         </p>
         <p>
-            အကယ်၍ သင့်အနေနဲ့ local changes နှင့် commits တွေကို ဖျက်ချပြီး နောက်ဆုံး server နှင့် master branch က အကုန် ဆွဲယူပြီး အစားထိုးချင်ရင်<br/>
+            အကယ်၍ သင့်အနေနဲ့ local changes နှင့် commits တွေကို ဖျက်ချပြီး နောက်ဆုံး server နှင့် main branch က အကုန် ဆွဲယူပြီး အစားထိုးချင်ရင်<br/>
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>

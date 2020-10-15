@@ -166,8 +166,8 @@
 			<p>
 				현재의 변경 내용은 아직 로컬 저장소의 <b>HEAD</b> 안에 머물고 있어요.<br />
 				이제 이 변경 내용을 원격 서버로 올려봅시다. 아래 명령을 실행하세요.<br />
-				<code>git push origin master</code><br />
-				(다른 가지를 발행하려면 <i>master</i>를 원하는 가지 이름으로 바꿔주세요.)
+				<code>git push origin main</code><br />
+				(다른 가지를 발행하려면 <i>main</i>를 원하는 가지 이름으로 바꿔주세요.)
 				<br /><br />
 				만약 기존에 있던 원격 저장소를 복제한 것이 아니라면,<br />
 				원격 서버의 주소를 git에게 알려줘야 해요.<br />
@@ -180,16 +180,16 @@
 			<h2>가지(branch)치기</h2>
 			<p>
 				가지는 안전하게 격리된 상태에서 무언가를 만들 때 사용해요.<br />
-				여러분이 저장소를 새로 만들면 기본으로 <i>master 가지</i>가 만들어집니다.<br />
+				여러분이 저장소를 새로 만들면 기본으로 <i>main 가지</i>가 만들어집니다.<br />
 				이제 다른 가지를 이용해서 개발을 진행하고, 나중에 개발이 완료되면<br />
-				master 가지로 돌아와 병합하면 돼요.
+				main 가지로 돌아와 병합하면 돼요.
 				</p>
 				<img src="img/branches.png" alt="가지치기 예제를 보여드리죠." />
 				<p>
 				아래 명령으로 "feature_x"라는 이름의 가지를 만들고 갈아탑니다.<br />
 				<code>git checkout -b feature_x</code><br />
-				아래 명령으로 master 가지로 돌아올 수 있어요.<br />
-				<code>git checkout master</code><br />
+				아래 명령으로 main 가지로 돌아올 수 있어요.<br />
+				<code>git checkout main</code><br />
 				아래 명령으로는 가지를 삭제할 수 있어요.<br />
 				<code>git branch -d feature_x</code><br />
 				여러분이 새로 만든 가지를 원격 저장소로 전송하기 전까지는<br />
@@ -206,7 +206,7 @@
 				<code>git pull</code><br />
 				이렇게 하면 원격 저장소의 변경 내용이 로컬 작업 디렉토리에<br />
 				<i>받아지고(fetch)</i>, <i>병합(merge)</i>된답니다.<br />
-				다른 가지에 있는 변경 내용을 현재 가지(예를 들면, master 가지)에<br />
+				다른 가지에 있는 변경 내용을 현재 가지(예를 들면, main 가지)에<br />
 				병합하려면 아래 명령을 실행하세요.<br />
 				<code>git merge &lt;가지 이름&gt;</code><br />
 				첫번째 명령이든 두번째 명령이든, git은<br />
@@ -251,9 +251,9 @@
 				<p>
 				만약, 로컬에 있는 모든 변경 내용과 확정본을 포기하려면,<br />
 				아래 명령으로 원격 저장소의 최신 이력을 가져오고,<br />
-				로컬 master 가지가 저 이력을 가리키도록 할 수 있어요.<br />
+				로컬 main 가지가 저 이력을 가리키도록 할 수 있어요.<br />
 				<code>git fetch origin</code><br />
-				<code>git reset --hard origin/master</code>
+				<code>git reset --hard origin/main</code>
 			</p>
 		</div>
 		<a name="hints"></a>

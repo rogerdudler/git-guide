@@ -120,8 +120,8 @@
         <p>
             Je aanpassingen zitten nu in de <b>HEAD</b> van je lokale werk-repository.<br />
             Om deze aanpassingen door te sturen naar je repository op een andere lokatie, voer dan volgend commando uit <br />
-            <code>git push origin master</code><br />
-            Verander <i>master</i> naar de branch-naam<br />
+            <code>git push origin main</code><br />
+            Verander <i>main</i> naar de branch-naam<br />
             waar je je aanpassingen naar wil sturen.
             <br /><br />
             Als je lokale werkbestanden niet gesynchroniseerd zijn <br />
@@ -136,16 +136,16 @@
         <h2>branching</h2>
         <p>
             Branches worden gebruikt om verschillende features te ontwikkelen in geïsoleerde omgevingen, los van elkaar. <br />
-            De <i>master</i> branch is de basis of standaard branch wanneer je een nieuwe repository aanmaakt. <br />
-            Maak nieuwe branches aan wanneer je nieuwe toevoegingen ontwikkelt en voeg ze samen (<i>merge</i>) met de <i>master</i> branch wanneer je klaar bent.
+            De <i>main</i> branch is de basis of standaard branch wanneer je een nieuwe repository aanmaakt. <br />
+            Maak nieuwe branches aan wanneer je nieuwe toevoegingen ontwikkelt en voeg ze samen (<i>merge</i>) met de <i>main</i> branch wanneer je klaar bent.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
             maak een nieuwe branch aan met de naam "feature_x"<br />
             en ga er onmiddellijk naartoe<br />
             <code>git checkout -b feature_x</code><br />
-            ga terug naar de master branch<br />
-            <code>git checkout master</code><br />
+            ga terug naar de main branch<br />
+            <code>git checkout main</code><br />
             verwijder de branch<br />
             <code>git branch -d feature_x</code><br />
             een branch is <i>niet beschikbaar voor anderen</i><br />
@@ -196,7 +196,7 @@
             Stel nu dat je alle lokale aanpassingen wil vervangen door de laatste versie van de repository die zich op de server bevindt <br />
             kan je volgende commando reeks gebruiken<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>
