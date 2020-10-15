@@ -115,8 +115,8 @@
         <h2>Änderungen hochladen</h2>
         <p>
             Die Änderungen sind jetzt im <b>HEAD</b> deines lokalen Repositories. Um die Änderungen an dein entferntes Repository zu senden, führe:<br>
-            <code>git push origin master</code><br>
-            aus. Du kannst <i>master</i> auch mit einem beliebigen anderen Branch ersetzen, mehr über Branches erfährst du später.
+            <code>git push origin main</code><br>
+            aus. Du kannst <i>main</i> auch mit einem beliebigen anderen Branch ersetzen, mehr über Branches erfährst du später.
             <br><br>
             Wenn du dein lokales Repository nicht von einem entfernten geklont hast und du diese aber mit einem anderen Repository verbinden möchtest, musst du dieses mit <br>
             <code>git remote add origin &lt;server&gt;</code><br>
@@ -127,14 +127,14 @@
     <div class="scrollblock block-branching">
         <h2>Branching</h2>
         <p>
-            Branches werden benutzt, um verschiedene Funktionen isoliert voneinander zu entwickeln. Der <i>master</i>-Branch ist der "Standard"-Branch, wenn du ein neues Repository erstellst. Du solltest aber für die Entwicklung andere Branches verwenden und diese dann in den Master-Branch zusammenführen (mergen). Auch das lernst du später.
+            Branches werden benutzt, um verschiedene Funktionen isoliert voneinander zu entwickeln. Der <i>main</i>-Branch ist der "Standard"-Branch, wenn du ein neues Repository erstellst. Du solltest aber für die Entwicklung andere Branches verwenden und diese dann in den main-Branch zusammenführen (mergen). Auch das lernst du später.
         </p>
         <img src="img/branches.png" alt="">
         <p>
             Erstelle einen neuen Branch mit dem Namen "feature_x" und wechsle zu diesem:<br>
             <code>git checkout -b feature_x</code><br>
-            Um zum Master zurück zu wechseln:<br>
-            <code>git checkout master</code><br>
+            Um zum main zurück zu wechseln:<br>
+            <code>git checkout main</code><br>
             Und um den eben erstellten Branch wieder zu löschen:<br>
             <code>git branch -d feature_x</code><br>
             Ein Branch ist <i>nicht für andere verfügbar</i>, bis du diesen in dein entferntes Repository hochlädst:<br>
@@ -148,7 +148,7 @@
             Um dein lokales Repository mit den neuesten Änderungen zu aktualisieren, verwende:<br>
             <code>git pull</code><br>
             in deiner Arbeitskopie, um die Änderungen erst <i>herunterzuladen (fetch)</i> und dann mit deinem Stand <i>zusammenzuführen (merge)</i>.<br>
-            Wenn du einen anderen Branch mit deinem aktuellen (z.B. master) zusammenführen willst, benutze:<br>
+            Wenn du einen anderen Branch mit deinem aktuellen (z.B. main) zusammenführen willst, benutze:<br>
             <code>git merge &lt;branch&gt;</code><br>
             In beiden Fällen versucht git die Änderungen automatisch zusammenzuführen. Unglücklicherweise ist dies nicht immer möglich und endet in <i>Konflikten</i>.
             Du bist verantwortlich, diese <i>Konflikte</i> durch manuelles Editieren der betroffenen Dateien zu lösen.
@@ -180,7 +180,7 @@
         <p>
             Wenn du aber deine lokalen Änderungen komplett entfernen möchtest, holst du dir den letzten Stand vom entfernten Repository mit folgenden Befehlen:<br>
             <code>git fetch origin</code><br>
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>

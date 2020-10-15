@@ -110,8 +110,8 @@
         <h2>envío de cambios</h2>
         <p>
             Tus cambios están ahora en el <b>HEAD</b> de tu copia local. Para enviar estos cambios a tu repositorio remoto ejecuta <br />
-            <code>git push origin master</code><br />
-            Reemplaza <i>master</i> por la rama a la que quieres enviar tus cambios.
+            <code>git push origin main</code><br />
+            Reemplaza <i>main</i> por la rama a la que quieres enviar tus cambios.
             <br /><br />
             Si no has clonado un repositorio ya existente y quieres conectar tu repositorio local a un repositorio remoto, usa<br />
             <code>git remote add origin &lt;server&gt;</code><br />
@@ -123,14 +123,14 @@
     <div class="scrollblock block-branching">
         <h2>ramas</h2>
         <p>
-            Las ramas son utilizadas para desarrollar funcionalidades aisladas unas de otras. La rama <i>master</i> es la rama "por defecto" cuando creas un repositorio. Crea nuevas ramas durante el desarrollo y fusiónalas a la rama principal cuando termines.
+            Las ramas son utilizadas para desarrollar funcionalidades aisladas unas de otras. La rama <i>main</i> es la rama "por defecto" cuando creas un repositorio. Crea nuevas ramas durante el desarrollo y fusiónalas a la rama principal cuando termines.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
             Crea una nueva rama llamada "feature_x" y cámbiate a ella usando<br />
             <code>git checkout -b feature_x</code><br />
             vuelve a la rama principal<br />
-            <code>git checkout master</code><br />
+            <code>git checkout main</code><br />
             y borra la rama<br />
             <code>git branch -d feature_x</code><br />
             Una rama nueva <i>no estará disponible para los demás</i> a menos que subas (push) la rama a tu repositorio remoto<br />
@@ -144,7 +144,7 @@
             Para actualizar tu repositorio local al commit más nuevo, ejecuta <br />
             <code>git pull</code><br />
             en tu directorio de trabajo para <i>bajar</i> y <i>fusionar</i> los cambios remotos.<br />
-            Para fusionar otra rama a tu rama activa (por ejemplo master), utiliza<br />
+            Para fusionar otra rama a tu rama activa (por ejemplo main), utiliza<br />
             <code>git merge &lt;branch&gt;</code><br />
             en ambos casos git intentará fusionar automáticamente los cambios. Desafortunadamente, no siempre será posible y se podrán producir <i>conflictos</i>.
             Tú eres responsable de fusionar esos <i>conflictos</i>
@@ -177,7 +177,7 @@
         <p>
             Por otro lado, si quieres deshacer todos los cambios locales y commits, puedes traer la última versión del servidor y apuntar a tu copia local principal de esta forma<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>

@@ -115,8 +115,8 @@
         <h2>mengirim perubahan</h2>
         <p>
             Saat ini perubahan telah tersimpan di <b>HEAD</b> salinan kerja lokal kamu. Untuk mengirimkannya ke repositori jarak-jauh, lakukan <br />
-            <code>git push origin master</code><br />
-            Ubah <i>master</i> sesuai cabang yang kamu inginkan.
+            <code>git push origin main</code><br />
+            Ubah <i>main</i> sesuai cabang yang kamu inginkan.
             <br /><br />
             Jika repositori yang ada belum dikloning dan ingin dihubungkan ke server jarak-jauh, kamu perlu menambahkan<br />
             <code>git remote add origin &lt;server&gt;</code><br />
@@ -128,14 +128,14 @@
     <div class="scrollblock block-branching">
         <h2>percabangan</h2>
         <p>
-            percabangan atau <i>branching</i> digunakan untuk mengembangkan fitur-fitur secara terisolasi. Cabang utama atau <i>master</i> merupakan cabang bawaan ketika kamu membuat repositori. Gunakan cabang lain untuk pengembangan, setelah selesai, gabungkan kembali ke cabang utama.
+            percabangan atau <i>branching</i> digunakan untuk mengembangkan fitur-fitur secara terisolasi. Cabang utama atau <i>main</i> merupakan cabang bawaan ketika kamu membuat repositori. Gunakan cabang lain untuk pengembangan, setelah selesai, gabungkan kembali ke cabang utama.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
             buat cabang baru dengan nama "fitur_x" dan beralih kedalamnya menggunakan<br />
             <code>git checkout -b fitur_x</code><br />
-            beralih kembali ke <i>master</i><br />
-            <code>git checkout master</code><br />
+            beralih kembali ke <i>main</i><br />
+            <code>git checkout main</code><br />
             dan hapus cabang yang tadi dibuat<br />
             <code>git branch -d fitur_x</code><br />
             suatu cabang <em>tidak terbuka untuk yang lainnya</em> kecuali jika kamu mengirimkannya ke repositori jarak-jauh.<br />
@@ -149,7 +149,7 @@
             untuk memperbarui repositori lokal ke komit terkini, lakukan <br />
             <code>git pull</code><br />
             dari direktori kerja kamu untuk <em>mengambil</em> dan <em>menggabungkan</em> perubahan jarak-jauh.<br />
-            untuk menggabungkan cabang lain ke cabang aktif (misal <i>master</i>), gunakan<br />
+            untuk menggabungkan cabang lain ke cabang aktif (misal <i>main</i>), gunakan<br />
             <code>git merge &lt;cabang&gt;</code><br />
             pada kasus diatas, git mencoba menggabungkan perubahan secara otomatis. Sayangnya hal ini tak selalu berjalan mulus dan bisa menyebabkan <em>konflik</em>.
             Kamu lah yang bertanggung jawab menggabungkan <em>konflik</em> tersebut
@@ -195,9 +195,9 @@
             perintah di atas mengembalikan perubahan di dalam pokok kerja kamu dengan konten terakhir dari <i>HEAD</i>. Perubahan dan berkas baru yang telah ditambahkan ke indeks akan tetap tersimpan.
         </p>
         <p>
-            Jika kamu ingin menggugurkan perubahan dan komit lokal seutuhnya, ambil riwayat terakhir dari server dan arahkan ke cabang <i>master</i> lokal seperti ini<br />
+            Jika kamu ingin menggugurkan perubahan dan komit lokal seutuhnya, ambil riwayat terakhir dari server dan arahkan ke cabang <i>main</i> lokal seperti ini<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>

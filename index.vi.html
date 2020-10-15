@@ -115,8 +115,8 @@
         <h2>đẩy (push) các thay đổi</h2>
         <p>
             Thay đổi của bạn hiện đang nằm tại <b>HEAD</b> của bản sao cục bộ đang làm việc. Để gửi những thay đổi đó đến repository remote, bạn thực thi<br />
-            <code>git push origin master</code><br />
-            Thay đổi <i>master</i> bằng bất cứ nhánh nào mà bạn muốn đầy những thay đổi đến.
+            <code>git push origin main</code><br />
+            Thay đổi <i>main</i> bằng bất cứ nhánh nào mà bạn muốn đầy những thay đổi đến.
             <br /><br />
             Nếu bạn chưa clone một repository hiện có và muốn kết nối repository của bạn đến máy chủ remote, bạn phải thêm nó với<br />
             <code>git remote add origin &lt;máy-chủ&gt;</code><br />
@@ -128,14 +128,14 @@
     <div class="scrollblock block-branching">
         <h2>nhánh</h2>
         <p>
-            Các nhánh (branches) được dùng để phát triển tính năng tách riêng ra từ những nhánh khác. Nhánh <i>master</i> là nhánh "mặc định" khi bạn tạo một repository. Sử dụng các nhánh khác tri đang trong giai đoạn phát triển và merge trở lại nhánh master một khi đã hoàn tất.
+            Các nhánh (branches) được dùng để phát triển tính năng tách riêng ra từ những nhánh khác. Nhánh <i>main</i> là nhánh "mặc định" khi bạn tạo một repository. Sử dụng các nhánh khác tri đang trong giai đoạn phát triển và merge trở lại nhánh main một khi đã hoàn tất.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
-            tạo một nhánh mới và đặt tên là "feature_x" và chuyển qua nhánh đó (từ master) bằng cách<br />
+            tạo một nhánh mới và đặt tên là "feature_x" và chuyển qua nhánh đó (từ main) bằng cách<br />
             <code>git checkout -b feature_x</code><br />
-            trở lại nhánh master<br />
-            <code>git checkout master</code><br />
+            trở lại nhánh main<br />
+            <code>git checkout main</code><br />
             và xóa nhánh feature_x đó lần nửa<br />
             <code>git branch -d feature_x</code><br />
             một nhánh <i>không có giá trị với các nhánh khác</i> trừ khi bạn đẩy nhánh đó đến remote repository<br />
@@ -149,7 +149,7 @@
             để cập nhật repository cục bộ của bạn và commit mới nhất, thực thi<br />
             <code>git pull</code><br />
             trong thự mục đang làm việc để <i>lấy về (fetch)</i> và <i>trộn (merge)</i> các thay đổi ở remote.<br />
-            để trộn một nhánh khác vào nhánh đang hoạt động (vd: master), sử dụng<br />
+            để trộn một nhánh khác vào nhánh đang hoạt động (vd: main), sử dụng<br />
             <code>git merge &lt;nhánh&gt;</code><br />
             trong cả hai trường hợp, git cố gắng trộn tự động (auto-merge) các thay đổi. Không may, điều này không phải lúc nào cũng làm được và thường dẫn đến <i>xung đột</i>.
             Trách nhiệm của bạn là trộn <i>các xung đột</i> đó
@@ -179,9 +179,9 @@
             lệnh này thay thế những thay đổi trong "tree" đang làm việc với nội dung mới nhất của HEAD. Các thay đổi đã được thêm vào chỉ mục, kể cả các tập tin mới, điều này sẽ được giữ lại.
         </p>
         <p>
-            Nếu bạn muốn hủy tất cả thay đổi và commit cục bộ, lấy về (fetch) lịch sử gần đây nhất từ máy chủ và trỏ nhánh master cục bộ vào nó như sau<br />
+            Nếu bạn muốn hủy tất cả thay đổi và commit cục bộ, lấy về (fetch) lịch sử gần đây nhất từ máy chủ và trỏ nhánh main cục bộ vào nó như sau<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>

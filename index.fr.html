@@ -124,8 +124,8 @@
             <h2>envoyer des changements</h2>
             <p>
                 Vos changements sont maintenant dans le <b>HEAD</b> de la copie de votre d&eacute;p&ocirc;t local. Pour les envoyer &agrave; votre d&eacute;p&ocirc;t distant, ex&eacute;cutez la commande<br />
-                <code>git push origin master</code><br />
-                Remplacez <i>master</i> par la branche dans laquelle vous souhaitez envoyer vos changements.
+                <code>git push origin main</code><br />
+                Remplacez <i>main</i> par la branche dans laquelle vous souhaitez envoyer vos changements.
                 <br /><br />
                 Si vous n'avez pas clon&eacute; votre d&eacute;p&ocirc;t existant et voulez le connecter &agrave; votre d&eacute;p&ocirc;t sur un serveur distant, vous devez l'ajouter avec<br />
                 <code>git remote add origin &lt;server&gt;</code><br />
@@ -138,7 +138,7 @@
             <h2>branches</h2>
             <p>
                 Les branches sont utilis&eacute;es pour d&eacute;velopper des fonctionnalit&eacute;s isol&eacute;es des autres.
-                La branche <i>master</i> est la branche par d&eacute;faut quand vous cr&eacute;ez un d&eacute;p&ocirc;t.
+                La branche <i>main</i> est la branche par d&eacute;faut quand vous cr&eacute;ez un d&eacute;p&ocirc;t.
                 Utilisez les autres branches pour le d&eacute;veloppement et fusionnez ensuite &agrave; la branche principale quand vous avez fini.
             </p>
             <img src="img/branches.png" alt="" />
@@ -146,7 +146,7 @@
                 cr&eacute;er une nouvelle branche nomm&eacute;e &quot;feature_x&quot; et <!-- BAD TRANSLATE -->passer dessus pour l'utiliser<br />
                 <code>git checkout -b feature_x</code><br />
                 retourner sur la branche principale<br />
-                <code>git checkout master</code><br />
+                <code>git checkout main</code><br />
                 et supprimer la branche<br />
                 <code>git branch -d feature_x</code><br />
                 une branche n'est <i>pas disponible pour les autres</i> tant que vous ne l'aurez pas envoy&eacute;e vers votre d&eacute;p&ocirc;t distant<br />
@@ -160,7 +160,7 @@
                 pour mettre &agrave; jour votre d&eacute;p&ocirc;t local vers les derni&egrave;res validations, ex&eacute;cutez la commande<br />
                 <code>git pull</code><br />
                 dans votre espace de travail pour <i>r&eacute;cup&eacute;rer</i> et <i>fusionner</i> les changements distants.<br />
-                pour fusionner une autre branche avec la branche active (par exemple master), utilisez<br />
+                pour fusionner une autre branche avec la branche active (par exemple main), utilisez<br />
                 <code>git merge &lt;branch&gt;</code><br />
                 dans les deux cas, git tente d'auto-fusionner les changements. Malheureusement, &ccedil;a n'est pas toujours possible et r&eacute;sulte par des <i>conflits</i>.
                 Vous devez alors r&eacute;gler ces <i>conflits</i>
@@ -192,7 +192,7 @@
             <p>
                 Si &agrave; la place vous voulez supprimer tous les changements et validations locaux, r&eacute;cup&eacute;rez le dernier historique depuis le serveur et pointez la branche principale locale dessus comme ceci<br />
                 <code>git fetch origin</code><br />
-                <code>git reset --hard origin/master</code>
+                <code>git reset --hard origin/main</code>
             </p>
         </div>
         <a name="hints"></a>
