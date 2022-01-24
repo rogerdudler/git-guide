@@ -125,8 +125,8 @@
         <p>
             Twoje zmiany są obecnie w <b>HEAD</b> twojej kopii roboczej. Aby
             wysłać te zmiany do zdalnego repozytorium, wykonaj <br />
-            <code>git push origin master</code><br />
-            Zmień <i>master</i> na dowolną gałąź, której zmiany wysyłasz.
+            <code>git push origin main</code><br />
+            Zmień <i>main</i> na dowolną gałąź, której zmiany wysyłasz.
             <br /><br />
             Jeśli nie sklonowałeś istniejącego repozytorium i chcesz połączyć
             je ze zdalnym serwerem, musisz go dodać poprzez <br />
@@ -140,7 +140,7 @@
         <h2>branching</h2>
         <p>
             Gałęzie są używane do rozwijania funkcjonalności odizolowanych od
-            siebie. Gałąź <i>master</i> jest domyślną gałęzią kiedy
+            siebie. Gałąź <i>main</i> jest domyślną gałęzią kiedy
             tworzysz repozytorium. <br />
             Używaj innych gałęzi do rozwoju projektu, a
             kiedy skończysz
@@ -150,8 +150,8 @@
         <p>
             utwórz nową gałąź o nazwie "feature_x" i przełącz się na nią<br />
             <code>git checkout -b feature_x</code><br />
-            przełącz się z powrotem na master<br />
-            <code>git checkout master</code><br />
+            przełącz się z powrotem na main<br />
+            <code>git checkout main</code><br />
             i usuń gałąź<br />
             <code>git branch -d feature_x</code><br />
             gałąź <i>nie jest dostępna dla innych</i> dopóki nie wyślesz jej do
@@ -169,7 +169,7 @@
             w swoim katalogu roboczym aby pobrać(<i>fetch</i>) i
             scalić(<i>merge</i>) zdalne
             zmiany.<br />
-            aby scalić inną gałąź z gałęzią aktywną (np. master), użyj<br />
+            aby scalić inną gałąź z gałęzią aktywną (np. main), użyj<br />
             <code>git merge &lt;branch&gt;</code><br />
             w obu przypadkach git próbuje scalić zmiany automatycznie. Niestety
             nie zawsze jest to możliwe i powoduje <i>konflikty</i>.
@@ -232,7 +232,7 @@
             commity pobierz ostatnią historię z serwera i ustaw na nią swoją
             gałąź lokalną<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>

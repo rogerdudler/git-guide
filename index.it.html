@@ -113,8 +113,8 @@
         <h2>invio delle modifiche</h2>
         <p>
             Quello che hai cambiato ora &egrave; nell'<b>HEAD</b> della copia locale. Per inviare queste modifiche al repository remoto, esegui<br />
-            <code>git push origin master</code><br />
-            Cambia <i>master</i> nel branch al quale vuoi inviare i cambiamenti.
+            <code>git push origin main</code><br />
+            Cambia <i>main</i> nel branch al quale vuoi inviare i cambiamenti.
             <br /><br />
             Se non hai copiato un repository esistente, e vuoi connettere il tuo repository ad un server remoto, c'e' bisogno che tu lo aggiunga con<br />
             <code>git remote add origin &lt;server&gt;</code><br />
@@ -126,14 +126,14 @@
     <div class="scrollblock block-branching">
         <h2>branching</h2>
         <p>
-            I branch ('ramificazioni') sono utilizzati per sviluppare features che sono isolate l'una dall'altra. Il branch <i>master</i> &egrave; quello di default quando crei un repository. Puoi usare altri branch per lo sviluppo ed infine incorporarli ('merge') nel master branch una volta completati.
+            I branch ('ramificazioni') sono utilizzati per sviluppare features che sono isolate l'una dall'altra. Il branch <i>main</i> &egrave; quello di default quando crei un repository. Puoi usare altri branch per lo sviluppo ed infine incorporarli ('merge') nel main branch una volta completati.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
             crea un nuovo branch chiamato "feature_x" e passa al nuovo branch usando<br />
             <code>git checkout -b feature_x</code><br />
-            ritorna di nuovo su master<br />
-            <code>git checkout master</code><br />
+            ritorna di nuovo su main<br />
+            <code>git checkout main</code><br />
             e cancella il branch creato in precedenza<br />
             <code>git branch -d feature_x</code><br />
             il branch </i>non sar&agrave; disponibile agli altri</i> fino a quando non verr&agrave; inviato al repository remoto<br /><br />
@@ -147,7 +147,7 @@
             per aggiornare il tuo repository locale alla commit pi&ugrave; recente, esegui<br />
             <code>git pull</code><br />
             nella tua directory corrente per fare una <i>fetch</i> (recuperare) ed incorporare(<i>merge</i>) le modifiche fatte sul server remoto. <br />
-            per incorporare un altro branch nel tuo branch attivo (ad esempio master), utilizza<br />
+            per incorporare un altro branch nel tuo branch attivo (ad esempio main), utilizza<br />
             <code>git merge &lt;branch&gt;</code><br />
             in entrambi i casi git prova ad auto-incorporare le modifiche. Sfortunatamente, a volte questa procedura automatizzata non &egrave; possibile, ed in questo caso ci saranno dei <i>conflitti</i>.
             Sei tu il responsabile che sistemer&agrave; questi <i>conflitti</i>
@@ -177,9 +177,9 @@
             questo rimpiazza le modifiche nell'albero di lavoro con l'ultimo contenuto presente in HEAD. I cambiamenti fatti ed aggiunti all'index, cos&igrave; come i nuovi files, verranno mantenuti.
         </p>
         <p>
-            Se vuoi in alternativa eliminare tutti i cambiamenti e commits fatti in locale, recupera l'ultima versione dal server e fai puntare il tuo master branch a quella versione in questo modo<br />
+            Se vuoi in alternativa eliminare tutti i cambiamenti e commits fatti in locale, recupera l'ultima versione dal server e fai puntare il tuo main branch a quella versione in questo modo<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>

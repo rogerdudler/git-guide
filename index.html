@@ -117,8 +117,8 @@
         <h2>pushing changes</h2>
         <p>
             Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
-            <code>git push origin master</code><br />
-            Change <i>master</i> to whatever branch you want to push your changes to.
+            <code>git push origin main</code><br />
+            Change <i>main</i> to whatever branch you want to push your changes to.
             <br /><br />
             If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
             <code>git remote add origin &lt;server&gt;</code><br />
@@ -130,14 +130,14 @@
     <div class="scrollblock block-branching">
         <h2>branching</h2>
         <p>
-            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+            Branches are used to develop features isolated from each other. The <i>main</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the main branch upon completion.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
             create a new branch named "feature_x" and switch to it using<br />
             <code>git checkout -b feature_x</code><br />
-            switch back to master<br />
-            <code>git checkout master</code><br />
+            switch back to main<br />
+            <code>git checkout main</code><br />
             and delete the branch again<br />
             <code>git branch -d feature_x</code><br />
             a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
@@ -151,7 +151,7 @@
             to update your local repository to the newest commit, execute <br />
             <code>git pull</code><br />
             in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
-            to merge another branch into your active branch (e.g. master), use<br />
+            to merge another branch into your active branch (e.g. main), use<br />
             <code>git merge &lt;branch&gt;</code><br />
             in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
             You are responsible to merge those <i>conflicts</i>
@@ -197,9 +197,9 @@
             this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
         </p>
         <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local main branch at it like this<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>

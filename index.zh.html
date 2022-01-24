@@ -113,8 +113,8 @@
         <h2>推送改动</h2>
         <p>
             你的改动现在已经在本地仓库的 <b>HEAD</b> 中了。执行如下命令以将这些改动提交到远端仓库：<br />
-            <code>git push origin master</code><br />
-            可以把 <i>master</i> 换成你想要推送的任何分支。
+            <code>git push origin main</code><br />
+            可以把 <i>main</i> 换成你想要推送的任何分支。
             <br /><br />
             如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：<br />
             <code>git remote add origin &lt;server&gt;</code><br />
@@ -126,14 +126,14 @@
     <div class="scrollblock block-branching">
         <h2>分支</h2>
         <p>
-    		分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<i>master</i> 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。
+    		分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<i>main</i> 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。
 		</p>
         <img src="img/branches.png" alt="" />
         <p>
             创建一个叫做“feature_x”的分支，并切换过去：<br />
             <code>git checkout -b feature_x</code><br />
             切换回主分支：<br />
-            <code>git checkout master</code><br />
+            <code>git checkout main</code><br />
             再把新建的分支删掉：<br />
             <code>git branch -d feature_x</code><br />
 			除非你将分支推送到远端仓库，不然该分支就是 <i>不为他人所见的</i>：<br />
@@ -147,7 +147,7 @@
             要更新你的本地仓库至最新改动，执行：<br />
             <code>git pull</code><br />
             以在你的工作目录中 <i>获取（fetch）</i> 并 <i>合并（merge）</i> 远端的改动。<br />
-            要合并其他分支到你的当前分支（例如 master），执行：<br />
+            要合并其他分支到你的当前分支（例如 main），执行：<br />
             <code>git merge &lt;branch&gt;</code><br />
             在这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现<i>冲突（conflicts）</i>。
             这时候就需要你修改这些文件来手动合并这些<i>冲突（conflicts）</i>。改完之后，你需要执行如下命令以将它们标记为合并成功：<br />
@@ -196,7 +196,7 @@
         <p>
             假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>

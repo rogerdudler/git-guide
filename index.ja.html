@@ -115,8 +115,8 @@
         <h2>変更のプッシュ</h2>
         <p>
             この時点で、変更がローカルリポジトリの<b>HEAD</b>に適用されました。この変更をリモートリポジトリに適用するには<br />
-            <code>git push origin master</code><br />
-            を実行し、<i>master</i>の代わりに適用のブランチ名を入れます。
+            <code>git push origin main</code><br />
+            を実行し、<i>main</i>の代わりに適用のブランチ名を入れます。
             <br /><br />
             もし既存リポジトリをクローンせずに使用した場合<br />
             <code>git remote add origin &lt;server&gt;</code><br />
@@ -128,14 +128,14 @@
     <div class="scrollblock block-branching">
         <h2>ブランチ</h2>
         <p>
-            ブランチは関連性のない機能を実装するときに使用されるもので、リポジトリを作成する際にデフォルトのブランチは<i>master</i>です。ブランチを作って使用を終えたらメインのブランチに戻すようにしましょう。
+            ブランチは関連性のない機能を実装するときに使用されるもので、リポジトリを作成する際にデフォルトのブランチは<i>main</i>です。ブランチを作って使用を終えたらメインのブランチに戻すようにしましょう。
         </p>
         <img src="img/branches.png" alt="" />
         <p>
             "feature_x"という名前のブランチを作って スイッチします<br />
             <code>git checkout -b feature_x</code><br />
             メインのブランチに戻る<br />
-            <code>git checkout master</code><br />
+            <code>git checkout main</code><br />
             ブランチの削除<br />
             <code>git branch -d feature_x</code><br />
             ブランチをリモートリポジトリにプッシュしない限りブランチは他人には見れないようになっていますのでご注意ください。<br />
@@ -182,7 +182,7 @@
         <p>
             一方、全ての変更とローカルコミットを捨てる場合、サーバーから最新情報を取得し、masterブランチがそこを指す様にする事ができます。<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>

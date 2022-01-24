@@ -115,8 +115,8 @@
         <h2>enviando altera&ccedil;&otilde;es</h2>
         <p>
             Suas altera&ccedil;&otilde;es agora est&atilde;o no <b>HEAD</b> da sua c&oacute;pia de trabalho local. Para enviar estas altera&ccedil;&otilde;es ao seu reposit&oacute;rio remoto, execute <br />
-            <code>git push origin master</code><br />
-            Altere <i>master</i> para qualquer ramo (<i>branch</i>) desejado, enviando suas altera&ccedil;&otilde;es para ele.
+            <code>git push origin main</code><br />
+            Altere <i>main</i> para qualquer ramo (<i>branch</i>) desejado, enviando suas altera&ccedil;&otilde;es para ele.
             <br /><br />
             Se voc&ecirc; n&atilde;o clonou um reposit&oacute;rio existente e quer conectar seu reposit&oacute;rio a um servidor remoto, voc&ecirc; deve adicion&aacute;-lo com<br />
             <code>git remote add origin &lt;servidor&gt;</code><br />
@@ -128,14 +128,14 @@
     <div class="scrollblock block-branching">
         <h2>ramificando</h2>
         <p>
-            <i>Branches</i> ("ramos") s&atilde;o utilizados para desenvolver funcionalidades isoladas umas das outras. O branch <i>master</i> &eacute; o branch "padr&atilde;o" quando voc&ecirc; cria um reposit&oacute;rio. Use outros branches para desenvolver e mescle-os (<i>merge</i>) ao branch master ap&oacute;s a conclus&atilde;o.
+            <i>Branches</i> ("ramos") s&atilde;o utilizados para desenvolver funcionalidades isoladas umas das outras. O branch <i>main</i> &eacute; o branch "padr&atilde;o" quando voc&ecirc; cria um reposit&oacute;rio. Use outros branches para desenvolver e mescle-os (<i>merge</i>) ao branch main ap&oacute;s a conclus&atilde;o.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
             crie um novo branch chamado "funcionalidade_x" e selecione-o usando<br />
             <code>git checkout -b funcionalidade_x</code><br />
-            retorne para o master usando<br />
-            <code>git checkout master</code><br />
+            retorne para o main usando<br />
+            <code>git checkout main</code><br />
             e remova o branch da seguinte forma<br />
             <code>git branch -d funcionalidade_x</code><br />
             um branch <i> n&atilde;o est&aacute; dispon&iacute;vel a outros</i> a menos que voc&ecirc; envie o branch para seu reposit&oacute;rio remoto<br />
@@ -149,7 +149,7 @@
             para atualizar seu reposit&oacute;rio local com a mais nova vers&atilde;o, execute <br />
             <code>git pull</code><br />
             na sua pasta de trabalho para <i>obter</i> e <i>fazer merge</i> (mesclar) altera&ccedil;&otilde;es remotas.<br />
-            para fazer merge de um outro branch ao seu branch ativo (ex. master), use<br />
+            para fazer merge de um outro branch ao seu branch ativo (ex. main), use<br />
             <code>git merge &lt;branch&gt;</code><br />
             em ambos os casos o git tenta fazer o merge das altera&ccedil;&otilde;es automaticamente. Infelizmente, isto nem sempre &eacute; poss&iacute;vel e resulta em <i>conflitos</i>.
             Voc&ecirc; &eacute; respons&aacute;vel por fazer o merge estes <i>conflitos</i>
@@ -179,9 +179,9 @@
             isto substitui as altera&ccedil;&otilde;es na sua &aacute;rvore de trabalho com o conte&uacute;do mais recente no HEAD. Altera&ccedil;&otilde;es j&aacute; adicionadas ao index, bem como novos arquivos ser&atilde;o mantidos.
         </p>
         <p>
-            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e commits locais, recupere o hist&oacute;rico mais recente do servidor e aponte para seu branch master local desta forma<br />
+            Se ao inv&eacute;s disso voc&ecirc; deseja remover todas as altera&ccedil;&otilde;es e commits locais, recupere o hist&oacute;rico mais recente do servidor e aponte para seu branch main local desta forma<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>
