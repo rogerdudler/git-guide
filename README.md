@@ -1,4 +1,9 @@
 # Git - The Simple Guide
 
-http://rogerdudler.github.com/git-guide/
+<div dir='rtl'>
+
+این مخزن ترجمه‌ای از پروژه انگلیسی https://rogerdudler.github.io/git-guide/ است. پروژه اصلی مدت‌هاست متوقف شده و Pull Request ترجمه فارسی هم مثل سایر PRها به دلیل عدم نگهداری، ادغام نشده است.
+
+
+</div>
 
