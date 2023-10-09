@@ -1,4 +1,4 @@
 # Git - The Simple Guide
 
-http://rogerdudler.github.com/git-guide/
+[https://rogerdudler.github.io/git-guide/](https://rogerdudler.github.io/git-guide/)
 
