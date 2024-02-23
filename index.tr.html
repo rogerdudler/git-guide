@@ -115,8 +115,8 @@
         <h2>değişiklikleri göndermek</h2>
         <p>
             Şimdi değişiklikleriniz yerel deponuzun <b>HEAD</b>'i içerisinde.<br /> Bu değişiklikleri uzak deponuza göndermek için,<br />
-            <code>git push origin master</code><br />
-            Değişiklikleri uzak deponuzdaki göndermek istediğiniz dal'ı <i>master</i> ile değiştirin.
+            <code>git push origin main</code><br />
+            Değişiklikleri uzak deponuzdaki göndermek istediğiniz dal'ı <i>main</i> ile değiştirin.
             <br /><br />
             Henüz uzak bir deponuz yoksa ve uzak depo eklemek istiyorsanız,<br />
             <code>git remote add origin &lt;sunucu&gt;</code><br />
@@ -128,14 +128,14 @@
     <div class="scrollblock block-branching">
         <h2>dallar ile çalışmak</h2>
         <p>
-            Dallar farklı özellikleri ayrı ayrı geliştirmek için kullanılır. Yeni bir depo oluşturduğunuzda <i>master</i> "varsayılan" daldır. Diğer dallar geliştirildikten sonra <i>master</i>'a birleştirilir.
+            Dallar farklı özellikleri ayrı ayrı geliştirmek için kullanılır. Yeni bir depo oluşturduğunuzda <i>main</i> "varsayılan" daldır. Diğer dallar geliştirildikten sonra <i>main</i>'a birleştirilir.
         </p>
         <img src="img/branches.png" alt="" />
         <p>
             "feature_x" adıyla yeni bir dal oluşturup o dala geçmek için <br />
             <code>git checkout -b feature_x</code><br />
-            master'a geri geçmek için<br />
-            <code>git checkout master</code><br />
+            main'a geri geçmek için<br />
+            <code>git checkout main</code><br />
             ve oluşturduğumuz dalı silmek için<br />
             <code>git branch -d feature_x</code><br />
             bir dalı uzak deponuza göndermedikçe<br /><i>başkaları tarafından kullanılabilir olmaz</i><br />
@@ -149,7 +149,7 @@
             en son değişiklikleri (commit) yerel deponuza almak için<br />
             <code>git pull</code><br />
             komutunu çalıştırın. Bu değişiklikleri al <i>(fetch)</i> ve  birleştir <i>(merge)</i> yapacaktır.
-            Aktif dala (örn. master) başka bir dalı birleştirmek için <br />
+            Aktif dala (örn. main) başka bir dalı birleştirmek için <br />
             <code>git merge &lt;dal&gt;</code><br />
             her iki durumda da git değişiklikleri otomatik birleştirmeyi (auto-merge) dener.
             Maalesef, bu her zaman mümkün olmaz ve <i>çakışmalarla (conflict)</i> sonuçlanır.
@@ -181,9 +181,9 @@
             bu değişikliklerinizi HEAD içerisindeki son içerik ile değiştirir. Index'e önceden eklenmiş değişiklikler ve yeni dosyalar korunacaktır.
         </p>
         <p>
-            Eğer tüm yerel değişiklik ve teslimlerinizi iptal etmek istiyorsanız, sunucudan en son kayıtları getirin ve yerel master dalınıza gösterin<br />
+            Eğer tüm yerel değişiklik ve teslimlerinizi iptal etmek istiyorsanız, sunucudan en son kayıtları getirin ve yerel main dalınıza gösterin<br />
             <code>git fetch origin</code><br />
-            <code>git reset --hard origin/master</code>
+            <code>git reset --hard origin/main</code>
         </p>
     </div>
     <a name="hints"></a>
