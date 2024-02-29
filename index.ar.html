@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>دليل git المبسّط</title>
+    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/style.ar.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-652147-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function recordOutboundLink(link, category, action) {
+         _gat._getTrackerByName()._trackEvent(category, action);
+         setTimeout('document.location = "' + link.href + '"', 100);
+      }
+    </script>
+</head>
+<body>
+    <div class="scrollblock block-title">
+        <h1>git - الدليل المبسّط</h1>
+        <p>الشرح الأبسط لنظام إدارة الإصدارات git</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="mukhtar.ss" data-size="large" data-url="https://github.com/MukhtarSayedSaleh/git-guide.git" data-related="mukhtar.ss" data-hashtags="git_بالعربي">غرّد عبر تويتر</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="meta">
+            حقوق الإصدار الأصلي محفوظة لـ: <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
+            
+            <br/>
+            حقوق الترجمة محفوظة لـ: <a href="http://www.mukhtar.me">مختار سيّد صالح</a>
+            
+            <br/>هذا الدليل متوفر أيضاً باللغات:
+            this guide in 
+            <a href="index.de.html">deutsch</a>, 
+            <a href="index.es.html">español</a>, 
+            <a href="index.fr.html">français</a>, 
+            <a href="index.id.html">indonesian</a>, 
+            <a href="index.it.html">italiano</a>, 
+            <a href="index.nl.html">nederlands</a>, 
+            <a href="index.pl.html">polski</a>,
+            <a href="index.pt_BR.html">português</a>, 
+            <a href="index.ru.html">русский</a>,
+            <a href="index.tr.html">türkçe</a>,
+            <br/>
+            <a href="index.my.html">မြန်မာ</a>,
+            <a href="index.ja.html">日本語</a>, 
+            <a href="index.zh.html">中文</a>, 
+            <a href="index.ko.html">한국어</a>
+            <a href="index.vi.html">Vietnamese</a>
+            <a href="index.ar.html">العربية</a>
+            <br />
+            يرجى الإبلاغ عن أي خطأ في الترجمة من خلال الرابط: <a href="https://github.com/MukhtarSayedSaleh/git-guide.git">github</a>
+        </p>
+        
+        <img src="img/arrow.png" alt="" />
+    </div>
+    <!-- setup -->
+    <a name="setup"></a>
+    <div class="scrollblock block-setup">
+        <h2>الإعداد</h2>
+        <p>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">الإعداد لحواسيب ماكنتوش</a>
+        </p>
+        <p>
+            <a href="http://msysgit.github.io/">الإعداد لمختلف إصدارات ويندوز</a>
+        </p>
+        <p>
+            <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">الإعداد لمختلف توزيعات لينكس</a>
+        </p>
+    </div>
+    <a name="create"></a>
+    <div class="scrollblock block-create">
+        <h2>إنشاء مستودع جديد</h2>
+        <p>
+            عند بداية كل مشروع نقوم بتنفيذ الأمر التالي بعد الانتقال إلى مجلد المشروع <br />
+            <code>git init</code><br />
+            و ذلك لإنشاء مستودع جديد ضمن مجلد المشروع.
+        </p>
+    </div>
+    <a name="checkout"></a>
+    <div class="scrollblock block-checkout">
+        <h2>العمل مع مستودع موجود مسبقاً</h2>
+        <p>
+            للعمل مع مستودع موجود مسبقاً يجب أن تقوم بنسخه إلى الجهاز الحالي عن طريق الأمر التالي مع مراعاة تغيير المسار<br />
+            <code>git clone /path/to/repository</code><br />
+            و هذا في حال كون المستودع القديم موجوداً ضمن نفس الجهاز <br/> أمّا في حال كونه مستودعاً بعيداً عبر الانترنت فيتم نسخه باستخدام الأمر التالي مع مراعاة تغيير المسار و بيانات الوصول<br />
+            <code>git clone username@host:/path/to/repository</code>
+        </p>
+    </div>
+    <a name="trees"></a>
+    <div class="scrollblock block-trees">
+        <h2>كيف يعمل نظام git</h2>
+        <p>
+            "الشجرة" بنية معطيات معروفة, و يتكون كل مستودع git من ثلاث "أشجار" تتم إدارتها آلياً.<br/>
+            تمثل الشجرة الأولى <code>مجلد العمل الحالي Working Directory</code> و هي ببساطة نسخة مطابقة تماماً في كل لحظة لمجلد العمل الحالي في تلك اللحظة.<br/>
+            أمّا الشجرة الثانية فهي شجرة <code>الفهرس Index</code> التي يتم استعمالها كمرحلة انتقالية تمر بها ملفات العمل الحالية قبل أخذ صورة عنها commit في لحظة زمنية ما.<br/>
+            و أمّا الشجرة الثالثة فهي<code>شجرة التاريخ</code> و تحوي مجموعة الصور الزمنيّة commits الخاصة بمشروعنا منذ بدايته و يشير المتغير الخاص <code>HEAD</code> إلى عنوان آخر صورة مضافة لشجرة التاريخ.
+        </p>
+        <img src="img/trees.png" alt="" />
+    </div>
+    <a name="add"></a>
+    <div class="scrollblock block-add">
+        <h2>أمرا add &amp; commit</h2>
+        <p>
+            يستخدم الأمر add لإضافة التغييرات التي طرأت على ملف ما أو مجموعة من الملفات إلى شجرة المرحلة الانتقالية تمهيداً لأخذ صورة زمنية عنه كمايلي:<br />
+            <code>git add filename</code><br />
+            <code> * git add</code><br />
+            و يتم أخذ الصورة الزمنية بشكل فعلي من خلال الأمر<br />
+            <code>"git commit -m "Commit message</code><br />
+            حيث يتم إرفاق الرسالة الخاصة بالصورة لعرضها لاحقاً كتسمية تدل على هذه الصورة و بالتالي يصبح الـ <b>HEAD</b>الآن مشيراً إلى الصورة الأخيرة التي أخذت للتوّ.
+        </p>
+    </div>
+    <a name="push"></a>
+    <div class="scrollblock block-remote">
+        <h2>إرسال الصور الزمنية للمستودع البعيد</h2>
+        <p>
+            لإرسال الصور الزمنية commits المأخوذة إلى المستودع البعيد نقوم بتنفيذ الأمر التالي: <br />
+            <code>git push origin master</code><br />
+            ملحوظة: يمكنك تغيير <i>master</i> لأي فرع ترغب بإرسال الصور الزمنية إليه.
+            <br /><br />
+            إذا كان مستودع git الذي تعمل عليه حالياً مستودعاً خاصاً بك و لم تقم باستنساخه من مكان آخر, و كنت ما تزال ترغب بإرساله لمخدم بعيد يمكنك عندها إضافة هذه المخدم كـ origin باستخدام الأمر<br />
+            <code>&lt;git remote add origin &lt;server</code><br />
+            و الآن أصبح بمقدورك إرسال الصور الزمنية إلى المستودع البعيد<br />
+
+        </p>
+    </div>
+    <a name="branching"></a>
+    <div class="scrollblock block-branching">
+        <h2>الفروع</h2>
+        <p>
+            تستخدم الفروع Branches لتطوير ميزات برمجية مستقلة عن بعضها البعض و ذلك بغية منع عملية التطوير من التأثير على سير التطبيق الأصلي.<br/> في العادة يعتمد الفرع <i>master</i> كفرع افتراضي لأي مستودع git و يتم التفريع منه من أجل كل ميزة جديدة ثم و عند تجربة الميزة و استقرارها يتم دمج فرعها مرة أخرى بالفرع master و هكذا.
+        </p>
+        <img src="img/branches.png" alt="" />
+        <p>
+            لإنشاء فرع جديد اسمه "feature_x" و الانتقال إليه ننفذ الأمر<br />
+            <code>git checkout -b feature_x</code><br />
+            للعودة إلى الفرع master<br />
+            <code>git checkout master</code><br />
+            لحذف الفرع feature_x<br />
+            <code>git branch -d feature_x</code><br />
+            ملحوظة: لا تكون الفروع التي تنشؤها متوفرة للآخرين إلا في حال قمت بإرسالها إلى المستودع البعيد بشكل صريح بأمر يشبه مايلي<br />
+            <code>&lt;git push origin &lt;branch</code>
+        </p>
+    </div>
+    <a name="update"></a>
+    <div class="scrollblock block-merging">
+        <h2>تحديث المستودع و دمج الفروع</h2>
+        <p>
+            لتحديث المستودع المحلي بحيث يطابق آخر التحديثات المرسلة إلى المستودع البعيد من قبل زملاء العمل ننفذ الأمر <br />
+            <code>git pull</code><br />
+            حيث يقوم الأمر السابق بجلب <i>fetch</i> التغييرات و دمجها <i>merge</i> مع المحتوى المحلي.<br />
+            لدمج فرع آخر مع الفرع النشط حالياً (دمج الفرع branch مع الفرع master النشط حالياً على سبيل المثال) نستخدم الأمر<br />
+            <code>git merge branch</code><br />
+            git يحاول دائماً أن يقوم بدمج التعديلات المحلية بالتعديلات البعيدة ضمن الملفات البرمجية بشكل آلي, و العملية تسير بسهولة و يسر في الغالب إلّا أننا أحياناً نصادف تعارضات  <i>conflicts</i> عندما يقوم مطوران بتعديل نفس الأسطر في نفس الملف ضمن نفس الفترة.<br/>
+            عند حصول أي تعارضات <i>conflicts</i> فإنّ git ينبهك إليها و يترك عملية الدمج على عاتقك حيث تقوم بإصلاح التعارض و من ثم تنفذ الأمر. <br/>
+            <code>&lt;git add &lt;filename</code><br />
+            ملحوظة: يمكنك دائماً استعمال الأمر التالي لملاحظة التغيرات بين فرعين<br />
+            <code>&lt;git diff &lt;source_branch&gt; &lt;target_branch</code>
+        </p>
+    </div>
+    <a name="tagging"></a>
+    <div class="scrollblock block-tagging">
+        <h2>الوسوم</h2>
+        <p>
+            يقوم git بشكل آلي بإعطاء كل صورة زمنية رقماً فريداً و يمكن بشكل اختياري إرفاق وسم بهذا الرقم الفريد, و غالباً ما يتم إعطاء الوسم للصورة الزمنية الخاصة بإصدار ما مثلاً <i>version_1.0.0</i> عن طريق تنفيذ الأمر<br />
+            <code>git tag version_1.0.0 1b2e1d63ff</code><br />
+            حيث أن <i>1b2e1d63ff</i> تمثل الخانات العشرة الأولى من رقم الصورة الزمنية الفريد <br />
+            ملحوظة: يمكن الحصول على رقم الصورة الزمنية من خلال الأمر <br/>
+            <code>git log</code>
+        </p>
+    </div>
+    <a name="log"></a>
+    <div class="scrollblock block-log">
+        <h2>سجل الصور الزمنية</h2>
+        <p>
+            يمكنك قراءة سجل تاريخ الصور الزمنية الخاص بالمستودع من خلال الأمر<br/>
+            <code>git log</code><br />
+            و بالطبع يمكنك تمرير بعض الوسائط لتخصيص نتيجة العرض فملاً للبحث عن الصور الزمنية التي أنشأها bob فقط نقوم بتنفيذ الأمر:<br />
+            <code>git log --author=bob</code><br />
+            و لعرض النتائج على شكل سطر واحد لكل صورة زمنية ننفذ الأمر كمايلي:<br />
+            <code>git log --pretty=oneline</code><br />
+            و يمكنك عرض تاريخ السجل بشكل بياني يوضع الفروع المختلفة من خلال الأمر: <br />
+            <code>git log --graph --oneline --decorate --all</code><br />
+            و لعرض الملفات المتغيرة فقط: <br />
+            <code>git log --name-status</code><br />
+            ما سبق عرضه هو جزء يسير من كمية كبيرة من البارامترات التي تخصص عرض السجل, للاطلاع على كافة البارامترات يمكنك تنفيذ الأمر<br/>
+            <code>git log --help</code><br />
+        </p>
+    </div>
+    <a name="checkout-replace"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>التراجع عن التعديلات المحلية</h2>
+        <p>
+            في حال ارتكابك خطأ ما في أحد الملفات و رغبتك بإعادة هذا الملف لحالته التي كان عليها عند أخذ آخر صورة زمنية يمكنك استخدام الأمر<br />
+            <code>&lt;git checkout -- &lt;filename</code><br />
+        </p>
+        <p>
+            أما في حال رغبتك بالعودة بكامل مجلد العمل الحالي إلى آخر صورة زمنية تم أخذها يمكنك القيام بمايلي:<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+    </div>
+    <a name="hints"></a>
+    <div class="scrollblock block-hints">
+        <h2>ملحوظات مفيدة</h2>
+        <p>
+            واجهة أوامر مرئية لـ git<br />
+            <code>gitk</code><br />
+            لجعل خرج git ملوناً<br />
+            <code>git config color.ui true</code><br />
+            عرض سطر واحد لكل صورة زمنية في السجل بشكل افتراضي<br />
+            <code>git config format.pretty oneline</code><br />
+            الإضافة بشكل تفاعلي<br />
+            <code>git add -i</code>
+        </p>
+    </div>
+    <a name="resources"></a>
+    <div class="scrollblock block-resources">
+        <h2>مصادر</h2>
+        <h3>واجهات مرئية لـ git</h3>
+        <p>
+            <ul>
+                <li><a href="http://gitx.laullon.com/">GitX (L) (OSX, open source)</a></li>
+                <li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, free)</a></li>
+                <li><a href="http://mac.github.com/">GitHub for Mac (OSX, free)</a></li>
+                <li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
+            </ul>
+        </p>
+        <h3>شروحات</h3>
+        <p>
+            <ul>
+                <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+                <li><a href="http://progit.org/book/">Pro Git</a></li>
+                <li><a href="http://think-like-a-git.net/">Think like a git</a></li>
+                <li><a href="http://help.github.com/">GitHub Help</a></li>
+                <li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+            </ul>
+        </p>
+        <h3>تواصل مع الخبراء</h3>
+        <p>
+            <ul>
+                <li><a href="http://groups.google.com/group/git-users/">Git User Mailing List</a></li>
+                <li><a href="http://jk.gs/git/">#git on irc.freenode.net</a></li>
+            </ul>
+        </p>
+    </div>
+    <a name="comments"></a>
+    <div class="scrollblock block-comments">
+        <h2>التعليقات</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+</body>
+</html>
