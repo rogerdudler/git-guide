@@ -104,6 +104,10 @@ code {
 .block-setup h2 a { background: none; padding: 0; font-size: normal; }
 .block-setup a { color: #FFF; font-size: 40px; font-weight: normal;font-style: normal; background-color: #06406c; padding: 10px 15px; border-radius: 10px; text-decoration: none; }
 .block-setup a:hover { text-decoration: underline; }
+.block-who { background-color: #26A65B; }
+.block-who h2 { color: #FFF; }
+.block-who p { color: #FFF; }
+.block-who code { background-color: #000; color: #FFF; }
 .block-create { background-color: #06406c; }
 .block-create h2 { color: #FFF; }
 .block-create p { color: #FFF; }
