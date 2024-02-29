@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - prosty przewodnik - nic skomplikowanego!</title>
-    <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git - prosty przewodnik - nic skomplikowanego!</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-652147-13']);
-      _gaq.push(['_trackPageview']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-652147-13']);
+        _gaq.push(['_trackPageview']);
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
 
-      function recordOutboundLink(link, category, action) {
-         _gat._getTrackerByName()._trackEvent(category, action);
-         setTimeout('document.location = "' + link.href + '"', 100);
-      }
+        function recordOutboundLink(link, category, action) {
+            _gat._getTrackerByName()._trackEvent(category, action);
+            setTimeout('document.location = "' + link.href + '"', 100);
+        }
     </script>
 </head>
+
 <body>
     <div class="scrollblock block-title">
         <h1>git - prosty przewodnik</h1>
-      <p>Prosty przewodnik dla początkujących. nic skomplikowanego ;)</p>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large" data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p>Prosty przewodnik dla początkujących. nic skomplikowanego ;)</p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-size="large"
+            data-url="http://rogerdudler.github.com/git-guide" data-related="rogerdudler" data-hashtags="git">Tweet</a>
+        <script>
+            ! function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, "script", "twitter-wjs");
+        </script>
         <p class="meta">
             by <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
-            <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
+            <br />credits to <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a
+                href="http://www.twitter.com/fhd">@fhd</a> and <a href="http://www.namics.com">Namics</a><br />
             this guide in
             <a href="index.html">english</a>,
             <a href="index.de.html">deutsch</a>,
@@ -43,7 +60,7 @@
             <a href="index.pt_BR.html">português</a>,
             <a href="index.ru.html">русский</a>,
             <a href="index.tr.html">türkçe</a>,
-            <br/>
+            <br />
             <a href="index.my.html">မြန်မာ</a>,
             <a href="index.ja.html">日本語</a>,
             <a href="index.zh.html">中文</a>,
@@ -59,9 +76,8 @@
     <div class="scrollblock block-setup">
         <h2>Instalacja</h2>
         <p>
-            <a
-                href="http://git-scm.com/download/mac">Pobierz
-            git dla OSX</a>
+            <a href="http://git-scm.com/download/mac">Pobierz
+                git dla OSX</a>
         </p>
         <p>
             <a href="http://msysgit.github.io/">Pobierz git dla Windows</a>
@@ -289,15 +305,22 @@
             var disqus_shortname = 'git-the-simple-guide'; // required: replace example with your forum shortname
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
                 dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                    dsq);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
     </div>
-    <a href="http://www.git-tower.com/?source=rd" onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
-    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;" class="cheatsheet"></a>
+    <a href="http://www.git-tower.com/?source=rd"
+        onClick="recordOutboundLink(this, 'Outbound Links', 'git-tower.com');return false;" class="tower"></a>
+    <a href="files/git_cheat_sheet.pdf" onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-guide');return false;"
+        class="cheatsheet"></a>
 </body>
+
 </html>
